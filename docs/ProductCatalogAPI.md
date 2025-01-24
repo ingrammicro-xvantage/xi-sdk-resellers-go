@@ -28,7 +28,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -38,8 +38,8 @@ func main() {
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction accross all the systems
 	iMSenderID := "MyCompany" // string | Sender Identification text (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productdetail(context.Background(), ingramPartNumber).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6Productdetail``: %v\n", err)
@@ -184,7 +184,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -207,9 +207,9 @@ func main() {
 	planID := "471490" // string | ID of the plan (optional)
 	showGroupInfo := true // bool | In case of value true, below Group related information will displayed without the plan info. Group Name, Group Description, Number of plans, link in the group. A link will be provided if customer want to see all the plans in that group. (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productsearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).GroupName(groupName).PlanID(planID).ShowGroupInfo(showGroupInfo).Execute()
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productsearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6Productsearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -284,7 +284,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -297,9 +297,10 @@ func main() {
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 	priceAndAvailabilityRequest := *openapiclient.NewPriceAndAvailabilityRequest() // PriceAndAvailabilityRequest |  (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCatalogAPI.PostPriceandavailability(context.Background()).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).Execute()
+
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductCatalogAPI.PostPriceandavailability(context.Background()).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.PostPriceandavailability``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
