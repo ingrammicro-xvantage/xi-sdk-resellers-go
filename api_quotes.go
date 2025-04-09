@@ -721,3 +721,167 @@ func (a *QuotesAPIService) GetResellersV6QuotesExecute(r ApiGetResellersV6Quotes
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
+type ApiQuoteCreateRequest struct {
+	ctx context.Context
+	ApiService *QuotesAPIService
+	iMCustomerNumber *string
+	iMCountryCode *string
+	iMCorrelationID *string
+	quoteCreateRequest *QuoteCreateRequest
+	iMSenderID *string
+}
+
+// Your unique Ingram Micro customer number.
+func (r ApiQuoteCreateRequest) IMCustomerNumber(iMCustomerNumber string) ApiQuoteCreateRequest {
+	r.iMCustomerNumber = &iMCustomerNumber
+	return r
+}
+
+// Two-character ISO country code.
+func (r ApiQuoteCreateRequest) IMCountryCode(iMCountryCode string) ApiQuoteCreateRequest {
+	r.iMCountryCode = &iMCountryCode
+	return r
+}
+
+// Unique transaction number to identify each transaction across all the systems.
+func (r ApiQuoteCreateRequest) IMCorrelationID(iMCorrelationID string) ApiQuoteCreateRequest {
+	r.iMCorrelationID = &iMCorrelationID
+	return r
+}
+
+func (r ApiQuoteCreateRequest) QuoteCreateRequest(quoteCreateRequest QuoteCreateRequest) ApiQuoteCreateRequest {
+	r.quoteCreateRequest = &quoteCreateRequest
+	return r
+}
+
+// Unique value used to identify the sender of the transaction. Example: MyCompany
+func (r ApiQuoteCreateRequest) IMSenderID(iMSenderID string) ApiQuoteCreateRequest {
+	r.iMSenderID = &iMSenderID
+	return r
+}
+
+func (r ApiQuoteCreateRequest) Execute() (*QuoteCreateResponse, *http.Response, error) {
+	return r.ApiService.QuoteCreateExecute(r)
+}
+
+/*
+QuoteCreate Quote Create
+
+The quote create endpoint will allow customers to create a quote using the Ingram Micro part number or Vendor Part number.  The customer can also create Configure to Order (CTO) quotes using the Special Bid number (Deal ID).  Upon successfully creating the quote with the product lines, the quote will be activated and placed in a 'Ready To Order' status.<ul><li>For CTO quote creation, we only support Cisco as a vendor at the moment.</li></ul>
+
+ Once the quote is created and activated, you will receive an immediate 'confirmation'.  A webhook will be sent with the details of the quote.  In the event, we have an error creating a quote, an error message will be notified via webhook as well. The quote create webhook will send the notifications for all the quotes created via the Xvantage platform, APIs, associates, etc.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiQuoteCreateRequest
+*/
+func (a *QuotesAPIService) QuoteCreate(ctx context.Context) ApiQuoteCreateRequest {
+	return ApiQuoteCreateRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return QuoteCreateResponse
+func (a *QuotesAPIService) QuoteCreateExecute(r ApiQuoteCreateRequest) (*QuoteCreateResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *QuoteCreateResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuotesAPIService.QuoteCreate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/resellers/v6/quotes/create"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.iMCustomerNumber == nil {
+		return localVarReturnValue, nil, reportError("iMCustomerNumber is required and must be specified")
+	}
+	if strlen(*r.iMCustomerNumber) > 10 {
+		return localVarReturnValue, nil, reportError("iMCustomerNumber must have less than 10 elements")
+	}
+	if r.iMCountryCode == nil {
+		return localVarReturnValue, nil, reportError("iMCountryCode is required and must be specified")
+	}
+	if strlen(*r.iMCountryCode) > 2 {
+		return localVarReturnValue, nil, reportError("iMCountryCode must have less than 2 elements")
+	}
+	if r.iMCorrelationID == nil {
+		return localVarReturnValue, nil, reportError("iMCorrelationID is required and must be specified")
+	}
+	if strlen(*r.iMCorrelationID) > 32 {
+		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
+	}
+	if r.quoteCreateRequest == nil {
+		return localVarReturnValue, nil, reportError("quoteCreateRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
+	if r.iMSenderID != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
+	}
+	// body params
+	localVarPostBody = r.quoteCreateRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}

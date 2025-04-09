@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**GetQuotessearchV6**](QuotesAPI.md#GetQuotessearchV6) | **Get** /resellers/v6/quotes/search | Quote Search
 [**GetResellerV6ValidateQuote**](QuotesAPI.md#GetResellerV6ValidateQuote) | **Get** /resellers/v6/q2o/validatequote | Validate Quote
 [**GetResellersV6Quotes**](QuotesAPI.md#GetResellersV6Quotes) | **Get** /resellers/v6/quotes/{quoteNumber} | Get Quote Details
+[**QuoteCreate**](QuotesAPI.md#QuoteCreate) | **Post** /resellers/v6/quotes/create | Quote Create
 
 
 
@@ -253,6 +254,80 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## QuoteCreate
+
+> QuoteCreateResponse QuoteCreate(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).QuoteCreateRequest(quoteCreateRequest).IMSenderID(iMSenderID).Execute()
+
+Quote Create
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
+	iMCountryCode := "US" // string | Two-character ISO country code.
+	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems.
+	quoteCreateRequest := *openapiclient.NewQuoteCreateRequest() // QuoteCreateRequest | 
+	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.QuotesAPI.QuoteCreate(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).QuoteCreateRequest(quoteCreateRequest).IMSenderID(iMSenderID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `QuotesAPI.QuoteCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `QuoteCreate`: QuoteCreateResponse
+	fmt.Fprintf(os.Stdout, "Response from `QuotesAPI.QuoteCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiQuoteCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
+ **iMCountryCode** | **string** | Two-character ISO country code. | 
+ **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems. | 
+ **quoteCreateRequest** | [**QuoteCreateRequest**](QuoteCreateRequest.md) |  | 
+ **iMSenderID** | **string** | Unique value used to identify the sender of the transaction. Example: MyCompany | 
+
+### Return type
+
+[**QuoteCreateResponse**](QuoteCreateResponse.md)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
