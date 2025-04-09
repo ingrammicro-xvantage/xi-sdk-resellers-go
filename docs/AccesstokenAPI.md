@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -33,8 +33,8 @@ func main() {
 	clientId := "clientId_example" // string | 
 	clientSecret := "clientSecret_example" // string | 
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.AccesstokenAPI.GetAccesstoken(context.Background()).GrantType(grantType).ClientId(clientId).ClientSecret(clientSecret).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccesstokenAPI.GetAccesstoken``: %v\n", err)

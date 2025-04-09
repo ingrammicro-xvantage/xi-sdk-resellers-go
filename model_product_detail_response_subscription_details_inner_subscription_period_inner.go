@@ -22,7 +22,7 @@ type ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner struct
 	// Unit period of the subscription. Example, Years, Months
 	SubscriptionPeriodUnit *string `json:"subscriptionPeriodUnit,omitempty"`
 	// Length of the subscription. Example 1, 3
-	SubscriptionPeriod *int32 `json:"subscriptionPeriod,omitempty"`
+	SubscriptionPeriod *string `json:"subscriptionPeriod,omitempty"`
 }
 
 // NewProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner instantiates a new ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner object
@@ -75,9 +75,9 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) S
 }
 
 // GetSubscriptionPeriod returns the SubscriptionPeriod field value if set, zero value otherwise.
-func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) GetSubscriptionPeriod() int32 {
+func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) GetSubscriptionPeriod() string {
 	if o == nil || IsNil(o.SubscriptionPeriod) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.SubscriptionPeriod
@@ -85,7 +85,7 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) G
 
 // GetSubscriptionPeriodOk returns a tuple with the SubscriptionPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) GetSubscriptionPeriodOk() (*int32, bool) {
+func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) GetSubscriptionPeriodOk() (*string, bool) {
 	if o == nil || IsNil(o.SubscriptionPeriod) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) H
 	return false
 }
 
-// SetSubscriptionPeriod gets a reference to the given int32 and assigns it to the SubscriptionPeriod field.
-func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) SetSubscriptionPeriod(v int32) {
+// SetSubscriptionPeriod gets a reference to the given string and assigns it to the SubscriptionPeriod field.
+func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) SetSubscriptionPeriod(v string) {
 	o.SubscriptionPeriod = &v
 }
 

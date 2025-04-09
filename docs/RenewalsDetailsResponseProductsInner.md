@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **VendorPartNumber** | Pointer to **string** | The vendor&#39;s part number for the line item. | [optional] 
 **IngramPartNumber** | Pointer to **string** | Unique IngramMicro part number. | [optional] 
 **ManufacturerPartNumber** | Pointer to **string** | The manufacturer&#39;s part number for the line item. | [optional] 
-**Quantity** | Pointer to **string** | The quantity of the line item. | [optional] 
+**Quantity** | Pointer to **int32** | The quantity of the line item. | [optional] 
 **UnitPrice** | Pointer to **float32** | The unit price of the line item. | [optional] 
 **IsConsolidated** | Pointer to **string** | Is the line item consolidated? Yes or No. | [optional] 
 
@@ -159,20 +159,20 @@ HasManufacturerPartNumber returns a boolean if a field has been set.
 
 ### GetQuantity
 
-`func (o *RenewalsDetailsResponseProductsInner) GetQuantity() string`
+`func (o *RenewalsDetailsResponseProductsInner) GetQuantity() int32`
 
 GetQuantity returns the Quantity field if non-nil, zero value otherwise.
 
 ### GetQuantityOk
 
-`func (o *RenewalsDetailsResponseProductsInner) GetQuantityOk() (*string, bool)`
+`func (o *RenewalsDetailsResponseProductsInner) GetQuantityOk() (*int32, bool)`
 
 GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuantity
 
-`func (o *RenewalsDetailsResponseProductsInner) SetQuantity(v string)`
+`func (o *RenewalsDetailsResponseProductsInner) SetQuantity(v int32)`
 
 SetQuantity sets Quantity field to given value.
 

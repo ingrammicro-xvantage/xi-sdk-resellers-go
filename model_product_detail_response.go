@@ -24,7 +24,7 @@ type ProductDetailResponse struct {
 	// Vendor’s part number for the product.
 	VendorPartNumber NullableString `json:"vendorPartNumber,omitempty"`
 	// Boolean that indicates whether a product is authorized.
-	ProductAuthorized NullableBool `json:"productAuthorized,omitempty"`
+	ProductAuthorized NullableString `json:"productAuthorized,omitempty"`
 	// The description given for the product.
 	Description NullableString `json:"description,omitempty"`
 	// The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item.
@@ -154,9 +154,9 @@ func (o *ProductDetailResponse) UnsetVendorPartNumber() {
 }
 
 // GetProductAuthorized returns the ProductAuthorized field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ProductDetailResponse) GetProductAuthorized() bool {
+func (o *ProductDetailResponse) GetProductAuthorized() string {
 	if o == nil || IsNil(o.ProductAuthorized.Get()) {
-		var ret bool
+		var ret string
 		return ret
 	}
 	return *o.ProductAuthorized.Get()
@@ -165,7 +165,7 @@ func (o *ProductDetailResponse) GetProductAuthorized() bool {
 // GetProductAuthorizedOk returns a tuple with the ProductAuthorized field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ProductDetailResponse) GetProductAuthorizedOk() (*bool, bool) {
+func (o *ProductDetailResponse) GetProductAuthorizedOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -181,8 +181,8 @@ func (o *ProductDetailResponse) HasProductAuthorized() bool {
 	return false
 }
 
-// SetProductAuthorized gets a reference to the given NullableBool and assigns it to the ProductAuthorized field.
-func (o *ProductDetailResponse) SetProductAuthorized(v bool) {
+// SetProductAuthorized gets a reference to the given NullableString and assigns it to the ProductAuthorized field.
+func (o *ProductDetailResponse) SetProductAuthorized(v string) {
 	o.ProductAuthorized.Set(&v)
 }
 // SetProductAuthorizedNil sets the value for ProductAuthorized to be an explicit nil

@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -36,10 +36,9 @@ func main() {
 	iMApplicationId := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany
 	dealId := "12345678" // string | Unique deal ID.
 
-
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
-	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealsdetails(context.Background(), dealId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationId(iMApplicationId).IMEnvironment(iMEnvironment).Execute()
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealsdetails(context.Background(), dealId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationId(iMApplicationId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DealsAPI.GetResellersV6Dealsdetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -105,7 +104,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -119,8 +118,8 @@ func main() {
 	size := int32(56) // int32 | The number of records required in the call - max records 100 per page. (optional)
 	page := int32(56) // int32 | The page number reference. (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).EndUser(endUser).Vendor(vendor).DealId(dealId).Size(size).Page(page).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DealsAPI.GetResellersV6Dealssearch``: %v\n", err)

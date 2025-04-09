@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **ResourceId** | Pointer to **string** | ID of the subscription resource | [optional] 
 **ResourceName** | Pointer to **string** | Name of the subscription resource | [optional] 
 **VendorPartNumber** | Pointer to **string** | Vendor’s part number for the product. | [optional] 
-**MinUnits** | Pointer to **int32** | Minimum units must be purchased. | [optional] 
-**MaxUnits** | Pointer to **int32** | Maximum units are available for purchase. | [optional] 
+**MinUnits** | Pointer to **string** | Minimum units must be purchased. | [optional] 
+**MaxUnits** | Pointer to **string** | Maximum units are available for purchase. | [optional] 
 **DependsOn** | Pointer to **string** | The name of the product must be purchased to purchase this product. | [optional] 
 
 ## Methods
@@ -107,20 +107,20 @@ HasVendorPartNumber returns a boolean if a field has been set.
 
 ### GetMinUnits
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnits() int32`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnits() string`
 
 GetMinUnits returns the MinUnits field if non-nil, zero value otherwise.
 
 ### GetMinUnitsOk
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnitsOk() (*int32, bool)`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnitsOk() (*string, bool)`
 
 GetMinUnitsOk returns a tuple with the MinUnits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinUnits
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetMinUnits(v int32)`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetMinUnits(v string)`
 
 SetMinUnits sets MinUnits field to given value.
 
@@ -132,20 +132,20 @@ HasMinUnits returns a boolean if a field has been set.
 
 ### GetMaxUnits
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnits() int32`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnits() string`
 
 GetMaxUnits returns the MaxUnits field if non-nil, zero value otherwise.
 
 ### GetMaxUnitsOk
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnitsOk() (*int32, bool)`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnitsOk() (*string, bool)`
 
 GetMaxUnitsOk returns a tuple with the MaxUnits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxUnits
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetMaxUnits(v int32)`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetMaxUnits(v string)`
 
 SetMaxUnits sets MaxUnits field to given value.
 

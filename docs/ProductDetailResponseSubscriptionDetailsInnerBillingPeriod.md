@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingPeriodUnit** | Pointer to **string** | Billing unit period of the subscription. Example, Years, Months | [optional] 
-**BillingPeriod** | Pointer to **int32** | Billing period of the subscription. Example 1, 3 | [optional] 
+**BillingPeriod** | Pointer to **string** | Billing period of the subscription. Example 1, 3 | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBillingPeriodUnit returns a boolean if a field has been set.
 
 ### GetBillingPeriod
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingPeriod() int32`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingPeriod() string`
 
 GetBillingPeriod returns the BillingPeriod field if non-nil, zero value otherwise.
 
 ### GetBillingPeriodOk
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingPeriodOk() (*int32, bool)`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingPeriodOk() (*string, bool)`
 
 GetBillingPeriodOk returns a tuple with the BillingPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillingPeriod
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) SetBillingPeriod(v int32)`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) SetBillingPeriod(v string)`
 
 SetBillingPeriod sets BillingPeriod field to given value.
 

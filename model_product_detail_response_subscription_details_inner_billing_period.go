@@ -22,7 +22,7 @@ type ProductDetailResponseSubscriptionDetailsInnerBillingPeriod struct {
 	// Billing unit period of the subscription. Example, Years, Months
 	BillingPeriodUnit *string `json:"billingPeriodUnit,omitempty"`
 	// Billing period of the subscription. Example 1, 3
-	BillingPeriod *int32 `json:"billingPeriod,omitempty"`
+	BillingPeriod *string `json:"billingPeriod,omitempty"`
 }
 
 // NewProductDetailResponseSubscriptionDetailsInnerBillingPeriod instantiates a new ProductDetailResponseSubscriptionDetailsInnerBillingPeriod object
@@ -75,9 +75,9 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) SetBillingP
 }
 
 // GetBillingPeriod returns the BillingPeriod field value if set, zero value otherwise.
-func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingPeriod() int32 {
+func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingPeriod() string {
 	if o == nil || IsNil(o.BillingPeriod) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.BillingPeriod
@@ -85,7 +85,7 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingP
 
 // GetBillingPeriodOk returns a tuple with the BillingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingPeriodOk() (*int32, bool) {
+func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) GetBillingPeriodOk() (*string, bool) {
 	if o == nil || IsNil(o.BillingPeriod) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) HasBillingP
 	return false
 }
 
-// SetBillingPeriod gets a reference to the given int32 and assigns it to the BillingPeriod field.
-func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) SetBillingPeriod(v int32) {
+// SetBillingPeriod gets a reference to the given string and assigns it to the BillingPeriod field.
+func (o *ProductDetailResponseSubscriptionDetailsInnerBillingPeriod) SetBillingPeriod(v string) {
 	o.BillingPeriod = &v
 }
 

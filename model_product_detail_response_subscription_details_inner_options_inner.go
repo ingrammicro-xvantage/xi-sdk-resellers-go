@@ -26,9 +26,9 @@ type ProductDetailResponseSubscriptionDetailsInnerOptionsInner struct {
 	// Vendor’s part number for the product.
 	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
 	// Minimum units must be purchased.
-	MinUnits *int32 `json:"minUnits,omitempty"`
+	MinUnits *string `json:"minUnits,omitempty"`
 	// Maximum units are available for purchase.
-	MaxUnits *int32 `json:"maxUnits,omitempty"`
+	MaxUnits *string `json:"maxUnits,omitempty"`
 	// The name of the product must be purchased to purchase this product.
 	DependsOn *string `json:"dependsOn,omitempty"`
 }
@@ -147,9 +147,9 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetVendorPar
 }
 
 // GetMinUnits returns the MinUnits field value if set, zero value otherwise.
-func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnits() int32 {
+func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnits() string {
 	if o == nil || IsNil(o.MinUnits) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.MinUnits
@@ -157,7 +157,7 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnits(
 
 // GetMinUnitsOk returns a tuple with the MinUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnitsOk() (*int32, bool) {
+func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMinUnitsOk() (*string, bool) {
 	if o == nil || IsNil(o.MinUnits) {
 		return nil, false
 	}
@@ -173,15 +173,15 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) HasMinUnits(
 	return false
 }
 
-// SetMinUnits gets a reference to the given int32 and assigns it to the MinUnits field.
-func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetMinUnits(v int32) {
+// SetMinUnits gets a reference to the given string and assigns it to the MinUnits field.
+func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetMinUnits(v string) {
 	o.MinUnits = &v
 }
 
 // GetMaxUnits returns the MaxUnits field value if set, zero value otherwise.
-func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnits() int32 {
+func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnits() string {
 	if o == nil || IsNil(o.MaxUnits) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.MaxUnits
@@ -189,7 +189,7 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnits(
 
 // GetMaxUnitsOk returns a tuple with the MaxUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnitsOk() (*int32, bool) {
+func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) GetMaxUnitsOk() (*string, bool) {
 	if o == nil || IsNil(o.MaxUnits) {
 		return nil, false
 	}
@@ -205,8 +205,8 @@ func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) HasMaxUnits(
 	return false
 }
 
-// SetMaxUnits gets a reference to the given int32 and assigns it to the MaxUnits field.
-func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetMaxUnits(v int32) {
+// SetMaxUnits gets a reference to the given string and assigns it to the MaxUnits field.
+func (o *ProductDetailResponseSubscriptionDetailsInnerOptionsInner) SetMaxUnits(v string) {
 	o.MaxUnits = &v
 }
 

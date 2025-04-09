@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SubscriptionPeriodUnit** | Pointer to **string** | Unit period of the subscription. Example, Years, Months | [optional] 
-**SubscriptionPeriod** | Pointer to **int32** | Length of the subscription. Example 1, 3 | [optional] 
+**SubscriptionPeriod** | Pointer to **string** | Length of the subscription. Example 1, 3 | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasSubscriptionPeriodUnit returns a boolean if a field has been set.
 
 ### GetSubscriptionPeriod
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) GetSubscriptionPeriod() int32`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) GetSubscriptionPeriod() string`
 
 GetSubscriptionPeriod returns the SubscriptionPeriod field if non-nil, zero value otherwise.
 
 ### GetSubscriptionPeriodOk
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) GetSubscriptionPeriodOk() (*int32, bool)`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) GetSubscriptionPeriodOk() (*string, bool)`
 
 GetSubscriptionPeriodOk returns a tuple with the SubscriptionPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscriptionPeriod
 
-`func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) SetSubscriptionPeriod(v int32)`
+`func (o *ProductDetailResponseSubscriptionDetailsInnerSubscriptionPeriodInner) SetSubscriptionPeriod(v string)`
 
 SetSubscriptionPeriod sets SubscriptionPeriod field to given value.
 

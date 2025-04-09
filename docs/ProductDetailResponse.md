@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IngramPartNumber** | Pointer to **NullableString** | Ingram Micro unique part number for the product. | [optional] 
 **VendorPartNumber** | Pointer to **NullableString** | Vendor’s part number for the product. | [optional] 
-**ProductAuthorized** | Pointer to **NullableBool** | Boolean that indicates whether a product is authorized. | [optional] 
+**ProductAuthorized** | Pointer to **NullableString** | Boolean that indicates whether a product is authorized. | [optional] 
 **Description** | Pointer to **NullableString** | The description given for the product. | [optional] 
 **Upc** | Pointer to **NullableString** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
 **ProductCategory** | Pointer to **NullableString** | The category of the product. | [optional] 
@@ -113,20 +113,20 @@ HasVendorPartNumber returns a boolean if a field has been set.
 UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
 ### GetProductAuthorized
 
-`func (o *ProductDetailResponse) GetProductAuthorized() bool`
+`func (o *ProductDetailResponse) GetProductAuthorized() string`
 
 GetProductAuthorized returns the ProductAuthorized field if non-nil, zero value otherwise.
 
 ### GetProductAuthorizedOk
 
-`func (o *ProductDetailResponse) GetProductAuthorizedOk() (*bool, bool)`
+`func (o *ProductDetailResponse) GetProductAuthorizedOk() (*string, bool)`
 
 GetProductAuthorizedOk returns a tuple with the ProductAuthorized field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProductAuthorized
 
-`func (o *ProductDetailResponse) SetProductAuthorized(v bool)`
+`func (o *ProductDetailResponse) SetProductAuthorized(v string)`
 
 SetProductAuthorized sets ProductAuthorized field to given value.
 
