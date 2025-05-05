@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the FreightRequestShipToAddressInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &FreightRequestShipToAddressInner{}
+// checks if the FreightRequestShipToAddress type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FreightRequestShipToAddress{}
 
-// FreightRequestShipToAddressInner struct for FreightRequestShipToAddressInner
-type FreightRequestShipToAddressInner struct {
+// FreightRequestShipToAddress The shipping information.
+type FreightRequestShipToAddress struct {
 	// The name of the company the order will be shipped to.
 	CompanyName *string `json:"companyName,omitempty"`
 	// Line 1 of the address the order will be shipped to.
@@ -37,25 +37,25 @@ type FreightRequestShipToAddressInner struct {
 	CountryCode *string `json:"countryCode,omitempty"`
 }
 
-// NewFreightRequestShipToAddressInner instantiates a new FreightRequestShipToAddressInner object
+// NewFreightRequestShipToAddress instantiates a new FreightRequestShipToAddress object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreightRequestShipToAddressInner() *FreightRequestShipToAddressInner {
-	this := FreightRequestShipToAddressInner{}
+func NewFreightRequestShipToAddress() *FreightRequestShipToAddress {
+	this := FreightRequestShipToAddress{}
 	return &this
 }
 
-// NewFreightRequestShipToAddressInnerWithDefaults instantiates a new FreightRequestShipToAddressInner object
+// NewFreightRequestShipToAddressWithDefaults instantiates a new FreightRequestShipToAddress object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewFreightRequestShipToAddressInnerWithDefaults() *FreightRequestShipToAddressInner {
-	this := FreightRequestShipToAddressInner{}
+func NewFreightRequestShipToAddressWithDefaults() *FreightRequestShipToAddress {
+	this := FreightRequestShipToAddress{}
 	return &this
 }
 
 // GetCompanyName returns the CompanyName field value if set, zero value otherwise.
-func (o *FreightRequestShipToAddressInner) GetCompanyName() string {
+func (o *FreightRequestShipToAddress) GetCompanyName() string {
 	if o == nil || IsNil(o.CompanyName) {
 		var ret string
 		return ret
@@ -65,7 +65,7 @@ func (o *FreightRequestShipToAddressInner) GetCompanyName() string {
 
 // GetCompanyNameOk returns a tuple with the CompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequestShipToAddressInner) GetCompanyNameOk() (*string, bool) {
+func (o *FreightRequestShipToAddress) GetCompanyNameOk() (*string, bool) {
 	if o == nil || IsNil(o.CompanyName) {
 		return nil, false
 	}
@@ -73,7 +73,7 @@ func (o *FreightRequestShipToAddressInner) GetCompanyNameOk() (*string, bool) {
 }
 
 // HasCompanyName returns a boolean if a field has been set.
-func (o *FreightRequestShipToAddressInner) HasCompanyName() bool {
+func (o *FreightRequestShipToAddress) HasCompanyName() bool {
 	if o != nil && !IsNil(o.CompanyName) {
 		return true
 	}
@@ -82,12 +82,12 @@ func (o *FreightRequestShipToAddressInner) HasCompanyName() bool {
 }
 
 // SetCompanyName gets a reference to the given string and assigns it to the CompanyName field.
-func (o *FreightRequestShipToAddressInner) SetCompanyName(v string) {
+func (o *FreightRequestShipToAddress) SetCompanyName(v string) {
 	o.CompanyName = &v
 }
 
 // GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise.
-func (o *FreightRequestShipToAddressInner) GetAddressLine1() string {
+func (o *FreightRequestShipToAddress) GetAddressLine1() string {
 	if o == nil || IsNil(o.AddressLine1) {
 		var ret string
 		return ret
@@ -97,7 +97,7 @@ func (o *FreightRequestShipToAddressInner) GetAddressLine1() string {
 
 // GetAddressLine1Ok returns a tuple with the AddressLine1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequestShipToAddressInner) GetAddressLine1Ok() (*string, bool) {
+func (o *FreightRequestShipToAddress) GetAddressLine1Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine1) {
 		return nil, false
 	}
@@ -105,7 +105,7 @@ func (o *FreightRequestShipToAddressInner) GetAddressLine1Ok() (*string, bool) {
 }
 
 // HasAddressLine1 returns a boolean if a field has been set.
-func (o *FreightRequestShipToAddressInner) HasAddressLine1() bool {
+func (o *FreightRequestShipToAddress) HasAddressLine1() bool {
 	if o != nil && !IsNil(o.AddressLine1) {
 		return true
 	}
@@ -114,12 +114,12 @@ func (o *FreightRequestShipToAddressInner) HasAddressLine1() bool {
 }
 
 // SetAddressLine1 gets a reference to the given string and assigns it to the AddressLine1 field.
-func (o *FreightRequestShipToAddressInner) SetAddressLine1(v string) {
+func (o *FreightRequestShipToAddress) SetAddressLine1(v string) {
 	o.AddressLine1 = &v
 }
 
 // GetAddressLine2 returns the AddressLine2 field value if set, zero value otherwise.
-func (o *FreightRequestShipToAddressInner) GetAddressLine2() string {
+func (o *FreightRequestShipToAddress) GetAddressLine2() string {
 	if o == nil || IsNil(o.AddressLine2) {
 		var ret string
 		return ret
@@ -129,7 +129,7 @@ func (o *FreightRequestShipToAddressInner) GetAddressLine2() string {
 
 // GetAddressLine2Ok returns a tuple with the AddressLine2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequestShipToAddressInner) GetAddressLine2Ok() (*string, bool) {
+func (o *FreightRequestShipToAddress) GetAddressLine2Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine2) {
 		return nil, false
 	}
@@ -137,7 +137,7 @@ func (o *FreightRequestShipToAddressInner) GetAddressLine2Ok() (*string, bool) {
 }
 
 // HasAddressLine2 returns a boolean if a field has been set.
-func (o *FreightRequestShipToAddressInner) HasAddressLine2() bool {
+func (o *FreightRequestShipToAddress) HasAddressLine2() bool {
 	if o != nil && !IsNil(o.AddressLine2) {
 		return true
 	}
@@ -146,12 +146,12 @@ func (o *FreightRequestShipToAddressInner) HasAddressLine2() bool {
 }
 
 // SetAddressLine2 gets a reference to the given string and assigns it to the AddressLine2 field.
-func (o *FreightRequestShipToAddressInner) SetAddressLine2(v string) {
+func (o *FreightRequestShipToAddress) SetAddressLine2(v string) {
 	o.AddressLine2 = &v
 }
 
 // GetAddressLine3 returns the AddressLine3 field value if set, zero value otherwise.
-func (o *FreightRequestShipToAddressInner) GetAddressLine3() string {
+func (o *FreightRequestShipToAddress) GetAddressLine3() string {
 	if o == nil || IsNil(o.AddressLine3) {
 		var ret string
 		return ret
@@ -161,7 +161,7 @@ func (o *FreightRequestShipToAddressInner) GetAddressLine3() string {
 
 // GetAddressLine3Ok returns a tuple with the AddressLine3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequestShipToAddressInner) GetAddressLine3Ok() (*string, bool) {
+func (o *FreightRequestShipToAddress) GetAddressLine3Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine3) {
 		return nil, false
 	}
@@ -169,7 +169,7 @@ func (o *FreightRequestShipToAddressInner) GetAddressLine3Ok() (*string, bool) {
 }
 
 // HasAddressLine3 returns a boolean if a field has been set.
-func (o *FreightRequestShipToAddressInner) HasAddressLine3() bool {
+func (o *FreightRequestShipToAddress) HasAddressLine3() bool {
 	if o != nil && !IsNil(o.AddressLine3) {
 		return true
 	}
@@ -178,12 +178,12 @@ func (o *FreightRequestShipToAddressInner) HasAddressLine3() bool {
 }
 
 // SetAddressLine3 gets a reference to the given string and assigns it to the AddressLine3 field.
-func (o *FreightRequestShipToAddressInner) SetAddressLine3(v string) {
+func (o *FreightRequestShipToAddress) SetAddressLine3(v string) {
 	o.AddressLine3 = &v
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
-func (o *FreightRequestShipToAddressInner) GetCity() string {
+func (o *FreightRequestShipToAddress) GetCity() string {
 	if o == nil || IsNil(o.City) {
 		var ret string
 		return ret
@@ -193,7 +193,7 @@ func (o *FreightRequestShipToAddressInner) GetCity() string {
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequestShipToAddressInner) GetCityOk() (*string, bool) {
+func (o *FreightRequestShipToAddress) GetCityOk() (*string, bool) {
 	if o == nil || IsNil(o.City) {
 		return nil, false
 	}
@@ -201,7 +201,7 @@ func (o *FreightRequestShipToAddressInner) GetCityOk() (*string, bool) {
 }
 
 // HasCity returns a boolean if a field has been set.
-func (o *FreightRequestShipToAddressInner) HasCity() bool {
+func (o *FreightRequestShipToAddress) HasCity() bool {
 	if o != nil && !IsNil(o.City) {
 		return true
 	}
@@ -210,12 +210,12 @@ func (o *FreightRequestShipToAddressInner) HasCity() bool {
 }
 
 // SetCity gets a reference to the given string and assigns it to the City field.
-func (o *FreightRequestShipToAddressInner) SetCity(v string) {
+func (o *FreightRequestShipToAddress) SetCity(v string) {
 	o.City = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *FreightRequestShipToAddressInner) GetState() string {
+func (o *FreightRequestShipToAddress) GetState() string {
 	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
@@ -225,7 +225,7 @@ func (o *FreightRequestShipToAddressInner) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequestShipToAddressInner) GetStateOk() (*string, bool) {
+func (o *FreightRequestShipToAddress) GetStateOk() (*string, bool) {
 	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
@@ -233,7 +233,7 @@ func (o *FreightRequestShipToAddressInner) GetStateOk() (*string, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *FreightRequestShipToAddressInner) HasState() bool {
+func (o *FreightRequestShipToAddress) HasState() bool {
 	if o != nil && !IsNil(o.State) {
 		return true
 	}
@@ -242,12 +242,12 @@ func (o *FreightRequestShipToAddressInner) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *FreightRequestShipToAddressInner) SetState(v string) {
+func (o *FreightRequestShipToAddress) SetState(v string) {
 	o.State = &v
 }
 
 // GetPostalCode returns the PostalCode field value if set, zero value otherwise.
-func (o *FreightRequestShipToAddressInner) GetPostalCode() string {
+func (o *FreightRequestShipToAddress) GetPostalCode() string {
 	if o == nil || IsNil(o.PostalCode) {
 		var ret string
 		return ret
@@ -257,7 +257,7 @@ func (o *FreightRequestShipToAddressInner) GetPostalCode() string {
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequestShipToAddressInner) GetPostalCodeOk() (*string, bool) {
+func (o *FreightRequestShipToAddress) GetPostalCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.PostalCode) {
 		return nil, false
 	}
@@ -265,7 +265,7 @@ func (o *FreightRequestShipToAddressInner) GetPostalCodeOk() (*string, bool) {
 }
 
 // HasPostalCode returns a boolean if a field has been set.
-func (o *FreightRequestShipToAddressInner) HasPostalCode() bool {
+func (o *FreightRequestShipToAddress) HasPostalCode() bool {
 	if o != nil && !IsNil(o.PostalCode) {
 		return true
 	}
@@ -274,12 +274,12 @@ func (o *FreightRequestShipToAddressInner) HasPostalCode() bool {
 }
 
 // SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
-func (o *FreightRequestShipToAddressInner) SetPostalCode(v string) {
+func (o *FreightRequestShipToAddress) SetPostalCode(v string) {
 	o.PostalCode = &v
 }
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise.
-func (o *FreightRequestShipToAddressInner) GetCountryCode() string {
+func (o *FreightRequestShipToAddress) GetCountryCode() string {
 	if o == nil || IsNil(o.CountryCode) {
 		var ret string
 		return ret
@@ -289,7 +289,7 @@ func (o *FreightRequestShipToAddressInner) GetCountryCode() string {
 
 // GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequestShipToAddressInner) GetCountryCodeOk() (*string, bool) {
+func (o *FreightRequestShipToAddress) GetCountryCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.CountryCode) {
 		return nil, false
 	}
@@ -297,7 +297,7 @@ func (o *FreightRequestShipToAddressInner) GetCountryCodeOk() (*string, bool) {
 }
 
 // HasCountryCode returns a boolean if a field has been set.
-func (o *FreightRequestShipToAddressInner) HasCountryCode() bool {
+func (o *FreightRequestShipToAddress) HasCountryCode() bool {
 	if o != nil && !IsNil(o.CountryCode) {
 		return true
 	}
@@ -306,11 +306,11 @@ func (o *FreightRequestShipToAddressInner) HasCountryCode() bool {
 }
 
 // SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
-func (o *FreightRequestShipToAddressInner) SetCountryCode(v string) {
+func (o *FreightRequestShipToAddress) SetCountryCode(v string) {
 	o.CountryCode = &v
 }
 
-func (o FreightRequestShipToAddressInner) MarshalJSON() ([]byte, error) {
+func (o FreightRequestShipToAddress) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -318,7 +318,7 @@ func (o FreightRequestShipToAddressInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o FreightRequestShipToAddressInner) ToMap() (map[string]interface{}, error) {
+func (o FreightRequestShipToAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CompanyName) {
 		toSerialize["companyName"] = o.CompanyName
@@ -347,38 +347,38 @@ func (o FreightRequestShipToAddressInner) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 
-type NullableFreightRequestShipToAddressInner struct {
-	value *FreightRequestShipToAddressInner
+type NullableFreightRequestShipToAddress struct {
+	value *FreightRequestShipToAddress
 	isSet bool
 }
 
-func (v NullableFreightRequestShipToAddressInner) Get() *FreightRequestShipToAddressInner {
+func (v NullableFreightRequestShipToAddress) Get() *FreightRequestShipToAddress {
 	return v.value
 }
 
-func (v *NullableFreightRequestShipToAddressInner) Set(val *FreightRequestShipToAddressInner) {
+func (v *NullableFreightRequestShipToAddress) Set(val *FreightRequestShipToAddress) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableFreightRequestShipToAddressInner) IsSet() bool {
+func (v NullableFreightRequestShipToAddress) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableFreightRequestShipToAddressInner) Unset() {
+func (v *NullableFreightRequestShipToAddress) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableFreightRequestShipToAddressInner(val *FreightRequestShipToAddressInner) *NullableFreightRequestShipToAddressInner {
-	return &NullableFreightRequestShipToAddressInner{value: val, isSet: true}
+func NewNullableFreightRequestShipToAddress(val *FreightRequestShipToAddress) *NullableFreightRequestShipToAddress {
+	return &NullableFreightRequestShipToAddress{value: val, isSet: true}
 }
 
-func (v NullableFreightRequestShipToAddressInner) MarshalJSON() ([]byte, error) {
+func (v NullableFreightRequestShipToAddress) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableFreightRequestShipToAddressInner) UnmarshalJSON(src []byte) error {
+func (v *NullableFreightRequestShipToAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

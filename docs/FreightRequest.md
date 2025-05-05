@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BillToAddressId** | Pointer to **string** | Suffix used to identify billing address. Created during onboarding. Resellers are provided with one or more address IDs depending on how many bill to addresses they need for various flooring companies they are using for credit. | [optional] 
+**BillToAddressId** | Pointer to **interface{}** | Suffix used to identify billing address. Created during onboarding. Resellers are provided with one or more address IDs depending on how many bill to addresses they need for various flooring companies they are using for credit. | [optional] 
 **ShipToAddressId** | Pointer to **string** | The ID references the reseller&#39;s address in Ingram Micro&#39;s system for shipping. Provided to resellers during the onboarding process. | [optional] 
-**ShipToAddress** | Pointer to [**[]FreightRequestShipToAddressInner**](FreightRequestShipToAddressInner.md) | The shipping information. | [optional] 
+**ShipToAddress** | Pointer to [**FreightRequestShipToAddress**](FreightRequestShipToAddress.md) |  | [optional] 
 **Lines** | Pointer to [**[]FreightRequestLinesInner**](FreightRequestLinesInner.md) |  | [optional] 
 
 ## Methods
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBillToAddressId
 
-`func (o *FreightRequest) GetBillToAddressId() string`
+`func (o *FreightRequest) GetBillToAddressId() interface{}`
 
 GetBillToAddressId returns the BillToAddressId field if non-nil, zero value otherwise.
 
 ### GetBillToAddressIdOk
 
-`func (o *FreightRequest) GetBillToAddressIdOk() (*string, bool)`
+`func (o *FreightRequest) GetBillToAddressIdOk() (*interface{}, bool)`
 
 GetBillToAddressIdOk returns a tuple with the BillToAddressId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillToAddressId
 
-`func (o *FreightRequest) SetBillToAddressId(v string)`
+`func (o *FreightRequest) SetBillToAddressId(v interface{})`
 
 SetBillToAddressId sets BillToAddressId field to given value.
 
@@ -53,6 +53,16 @@ SetBillToAddressId sets BillToAddressId field to given value.
 
 HasBillToAddressId returns a boolean if a field has been set.
 
+### SetBillToAddressIdNil
+
+`func (o *FreightRequest) SetBillToAddressIdNil(b bool)`
+
+ SetBillToAddressIdNil sets the value for BillToAddressId to be an explicit nil
+
+### UnsetBillToAddressId
+`func (o *FreightRequest) UnsetBillToAddressId()`
+
+UnsetBillToAddressId ensures that no value is present for BillToAddressId, not even an explicit nil
 ### GetShipToAddressId
 
 `func (o *FreightRequest) GetShipToAddressId() string`
@@ -80,20 +90,20 @@ HasShipToAddressId returns a boolean if a field has been set.
 
 ### GetShipToAddress
 
-`func (o *FreightRequest) GetShipToAddress() []FreightRequestShipToAddressInner`
+`func (o *FreightRequest) GetShipToAddress() FreightRequestShipToAddress`
 
 GetShipToAddress returns the ShipToAddress field if non-nil, zero value otherwise.
 
 ### GetShipToAddressOk
 
-`func (o *FreightRequest) GetShipToAddressOk() (*[]FreightRequestShipToAddressInner, bool)`
+`func (o *FreightRequest) GetShipToAddressOk() (*FreightRequestShipToAddress, bool)`
 
 GetShipToAddressOk returns a tuple with the ShipToAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipToAddress
 
-`func (o *FreightRequest) SetShipToAddress(v []FreightRequestShipToAddressInner)`
+`func (o *FreightRequest) SetShipToAddress(v FreightRequestShipToAddress)`
 
 SetShipToAddress sets ShipToAddress field to given value.
 
