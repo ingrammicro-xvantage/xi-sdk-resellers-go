@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetResellersV6Dealsdetails
 
-> DealsDetailsResponse GetResellersV6Dealsdetails(ctx, dealId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationId(iMApplicationId).Execute()
+> DealsDetailsResponse GetResellersV6Dealsdetails(ctx, dealId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationId(iMApplicationId).VendorName(vendorName).Execute()
 
 Deals Details
 
@@ -35,10 +35,11 @@ func main() {
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems.
 	iMApplicationId := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany
 	dealId := "12345678" // string | Unique deal ID.
+	vendorName := "Cisco" // string | Vendor for that bid
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealsdetails(context.Background(), dealId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationId(iMApplicationId).Execute()
+	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealsdetails(context.Background(), dealId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationId(iMApplicationId).VendorName(vendorName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DealsAPI.GetResellersV6Dealsdetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -68,6 +69,7 @@ Name | Type | Description  | Notes
  **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems. | 
  **iMApplicationId** | **string** | Unique value used to identify the sender of the transaction. Example: MyCompany | 
 
+ **vendorName** | **string** | Vendor for that bid | 
 
 ### Return type
 

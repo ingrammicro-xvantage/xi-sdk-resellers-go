@@ -31,6 +31,7 @@ type ApiGetResellersV6DealsdetailsRequest struct {
 	iMCorrelationID *string
 	iMApplicationId *string
 	dealId string
+	vendorName *string
 }
 
 // Your unique Ingram Micro customer number.
@@ -54,6 +55,12 @@ func (r ApiGetResellersV6DealsdetailsRequest) IMCorrelationID(iMCorrelationID st
 // Unique value used to identify the sender of the transaction. Example: MyCompany
 func (r ApiGetResellersV6DealsdetailsRequest) IMApplicationId(iMApplicationId string) ApiGetResellersV6DealsdetailsRequest {
 	r.iMApplicationId = &iMApplicationId
+	return r
+}
+
+// Vendor for that bid
+func (r ApiGetResellersV6DealsdetailsRequest) VendorName(vendorName string) ApiGetResellersV6DealsdetailsRequest {
+	r.vendorName = &vendorName
 	return r
 }
 
@@ -126,7 +133,11 @@ func (a *DealsAPIService) GetResellersV6DealsdetailsExecute(r ApiGetResellersV6D
 	if strlen(*r.iMApplicationId) > 32 {
 		return localVarReturnValue, nil, reportError("iMApplicationId must have less than 32 elements")
 	}
+	if r.vendorName == nil {
+		return localVarReturnValue, nil, reportError("vendorName is required and must be specified")
+	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "vendorName", r.vendorName, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
