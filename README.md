@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 *OrdersAPI* | [**PostCreateorderV6**](docs/OrdersAPI.md#postcreateorderv6) | **Post** /resellers/v6/orders | Create your Order
 *OrdersAPI* | [**PostCreateorderV7**](docs/OrdersAPI.md#postcreateorderv7) | **Post** /resellers/v7/orders | Create your Order v7
 *OrdersAPI* | [**PutOrdermodify**](docs/OrdersAPI.md#putordermodify) | **Put** /resellers/v6/orders/{orderNumber} | Modify your Order
+*OrdersAPI* | [**VendorRequiredInfo**](docs/OrdersAPI.md#vendorrequiredinfo) | **Post** /resellers/v7/vendorrequiredinfo | Vendor Required Info
 *ProductCatalogAPI* | [**GetResellerV6Productdetail**](docs/ProductCatalogAPI.md#getresellerv6productdetail) | **Get** /resellers/v6/catalog/details/{ingramPartNumber} | Product Details
 *ProductCatalogAPI* | [**GetResellerV6Productdetailcmp**](docs/ProductCatalogAPI.md#getresellerv6productdetailcmp) | **Get** /resellers/v6/catalog/details | Product Details
 *ProductCatalogAPI* | [**GetResellerV6Productsearch**](docs/ProductCatalogAPI.md#getresellerv6productsearch) | **Get** /resellers/v6/catalog | Search Products
@@ -327,6 +328,13 @@ Class | Method | HTTP request | Description
  - [ValidateQuoteResponseLinesInner](docs/ValidateQuoteResponseLinesInner.md)
  - [ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner](docs/ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner.md)
  - [ValidateQuoteResponseVmfAdditionalAttributesInner](docs/ValidateQuoteResponseVmfAdditionalAttributesInner.md)
+ - [VendorRequiredInfoRequest](docs/VendorRequiredInfoRequest.md)
+ - [VendorRequiredInfoRequestProductsInner](docs/VendorRequiredInfoRequestProductsInner.md)
+ - [VendorRequiredInforesponse](docs/VendorRequiredInforesponse.md)
+ - [VendorRequiredInforesponseResponseMessagesInner](docs/VendorRequiredInforesponseResponseMessagesInner.md)
+ - [VendorRequiredInforesponseVmfAdditionalAttributesInner](docs/VendorRequiredInforesponseVmfAdditionalAttributesInner.md)
+ - [VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInner](docs/VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInner.md)
+ - [VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInnerChoicesInner](docs/VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInnerChoicesInner.md)
 
 
 ## Documentation For Authorization

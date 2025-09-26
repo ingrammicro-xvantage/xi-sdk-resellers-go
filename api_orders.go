@@ -1435,3 +1435,166 @@ func (a *OrdersAPIService) PutOrdermodifyExecute(r ApiPutOrdermodifyRequest) (*O
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
+type ApiVendorRequiredInfoRequest struct {
+	ctx context.Context
+	ApiService *OrdersAPIService
+	iMCustomerNumber *string
+	iMCorrelationID *string
+	iMCountryCode *string
+	iMSenderID *string
+	vendorRequiredInfoRequest *VendorRequiredInfoRequest
+}
+
+// Your unique Ingram Micro customer number.
+func (r ApiVendorRequiredInfoRequest) IMCustomerNumber(iMCustomerNumber string) ApiVendorRequiredInfoRequest {
+	r.iMCustomerNumber = &iMCustomerNumber
+	return r
+}
+
+// Unique transaction number to identify each transaction across all the systems.
+func (r ApiVendorRequiredInfoRequest) IMCorrelationID(iMCorrelationID string) ApiVendorRequiredInfoRequest {
+	r.iMCorrelationID = &iMCorrelationID
+	return r
+}
+
+// Two-character ISO country code.
+func (r ApiVendorRequiredInfoRequest) IMCountryCode(iMCountryCode string) ApiVendorRequiredInfoRequest {
+	r.iMCountryCode = &iMCountryCode
+	return r
+}
+
+// Unique value used to identify the sender of the transaction. 
+func (r ApiVendorRequiredInfoRequest) IMSenderID(iMSenderID string) ApiVendorRequiredInfoRequest {
+	r.iMSenderID = &iMSenderID
+	return r
+}
+
+func (r ApiVendorRequiredInfoRequest) VendorRequiredInfoRequest(vendorRequiredInfoRequest VendorRequiredInfoRequest) ApiVendorRequiredInfoRequest {
+	r.vendorRequiredInfoRequest = &vendorRequiredInfoRequest
+	return r
+}
+
+func (r ApiVendorRequiredInfoRequest) Execute() (*VendorRequiredInforesponse, *http.Response, error) {
+	return r.ApiService.VendorRequiredInfoExecute(r)
+}
+
+/*
+VendorRequiredInfo Vendor Required Info
+
+<p>The vendor required info API allows customers to identify all the mandatory fields that will be required to create an order before placing an order. These fields are required by the vendor to process orders. The customers can identify Vendor Required Information, aka Vendor Mandatory Fields or VMFs, using any of the following.</p><ul><li>Ingram Part Number</li><li>Vendor Part Number</li><li>Plan ID</li><li>Ingram Quote Number</li></ul><p>For the non-cloud Technology Solutions products, such as Hardware, Software, or Warranty, the VMFs will be returned in the “vmfAdditionalAttributes” object in the response, whereas for the cloud subscriptions products, the VMFs will be returned in the “vriAdditionalAttributes” object in the response.</p><p>While creating an Order Create request for the non-cloud products, such as Hardware, Software, or Warranty, pass “vmfAdditionalAttributes” object with the necessary response in the “attributeValue” field.</p><p>While creating an Order Create request, for Subscription products, pass “vriAdditionalAttributes” object with the necessary response in the “attributeValue” field and any other applicable subcomponents to create an order. </p>
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVendorRequiredInfoRequest
+*/
+func (a *OrdersAPIService) VendorRequiredInfo(ctx context.Context) ApiVendorRequiredInfoRequest {
+	return ApiVendorRequiredInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return VendorRequiredInforesponse
+func (a *OrdersAPIService) VendorRequiredInfoExecute(r ApiVendorRequiredInfoRequest) (*VendorRequiredInforesponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *VendorRequiredInforesponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersAPIService.VendorRequiredInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/resellers/v7/vendorrequiredinfo"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.iMCustomerNumber == nil {
+		return localVarReturnValue, nil, reportError("iMCustomerNumber is required and must be specified")
+	}
+	if strlen(*r.iMCustomerNumber) > 10 {
+		return localVarReturnValue, nil, reportError("iMCustomerNumber must have less than 10 elements")
+	}
+	if r.iMCorrelationID == nil {
+		return localVarReturnValue, nil, reportError("iMCorrelationID is required and must be specified")
+	}
+	if strlen(*r.iMCorrelationID) > 32 {
+		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
+	}
+	if r.iMCountryCode == nil {
+		return localVarReturnValue, nil, reportError("iMCountryCode is required and must be specified")
+	}
+	if strlen(*r.iMCountryCode) > 10 {
+		return localVarReturnValue, nil, reportError("iMCountryCode must have less than 10 elements")
+	}
+	if r.iMSenderID == nil {
+		return localVarReturnValue, nil, reportError("iMSenderID is required and must be specified")
+	}
+	if strlen(*r.iMSenderID) > 32 {
+		return localVarReturnValue, nil, reportError("iMSenderID must have less than 32 elements")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
+	// body params
+	localVarPostBody = r.vendorRequiredInfoRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}

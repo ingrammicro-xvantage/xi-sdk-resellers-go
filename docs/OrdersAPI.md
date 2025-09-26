@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**PostCreateorderV6**](OrdersAPI.md#PostCreateorderV6) | **Post** /resellers/v6/orders | Create your Order
 [**PostCreateorderV7**](OrdersAPI.md#PostCreateorderV7) | **Post** /resellers/v7/orders | Create your Order v7
 [**PutOrdermodify**](OrdersAPI.md#PutOrdermodify) | **Put** /resellers/v6/orders/{orderNumber} | Modify your Order
+[**VendorRequiredInfo**](OrdersAPI.md#VendorRequiredInfo) | **Post** /resellers/v7/vendorrequiredinfo | Vendor Required Info
 
 
 
@@ -505,6 +506,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderModifyResponse**](OrderModifyResponse.md)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VendorRequiredInfo
+
+> VendorRequiredInforesponse VendorRequiredInfo(ctx).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).IMSenderID(iMSenderID).VendorRequiredInfoRequest(vendorRequiredInfoRequest).Execute()
+
+Vendor Required Info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
+	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems.
+	iMCountryCode := "US" // string | Two-character ISO country code.
+	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. 
+	vendorRequiredInfoRequest := *openapiclient.NewVendorRequiredInfoRequest() // VendorRequiredInfoRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrdersAPI.VendorRequiredInfo(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).IMSenderID(iMSenderID).VendorRequiredInfoRequest(vendorRequiredInfoRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.VendorRequiredInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VendorRequiredInfo`: VendorRequiredInforesponse
+	fmt.Fprintf(os.Stdout, "Response from `OrdersAPI.VendorRequiredInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVendorRequiredInfoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
+ **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems. | 
+ **iMCountryCode** | **string** | Two-character ISO country code. | 
+ **iMSenderID** | **string** | Unique value used to identify the sender of the transaction.  | 
+ **vendorRequiredInfoRequest** | [**VendorRequiredInfoRequest**](VendorRequiredInfoRequest.md) |  | 
+
+### Return type
+
+[**VendorRequiredInforesponse**](VendorRequiredInforesponse.md)
 
 ### Authorization
 
