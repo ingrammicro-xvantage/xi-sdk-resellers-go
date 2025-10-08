@@ -26,7 +26,7 @@ type VendorRequiredInforesponse struct {
 	// The vendor's part number for the line item.
 	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
 	// ID of the subscription plan
-	PlanId *int32 `json:"planId,omitempty"`
+	PlanId *string `json:"planId,omitempty"`
 	// Name of the subscription plan
 	PlanName *string `json:"planName,omitempty"`
 	ResponseMessages []VendorRequiredInforesponseResponseMessagesInner `json:"responseMessages,omitempty"`
@@ -148,9 +148,9 @@ func (o *VendorRequiredInforesponse) SetVendorPartNumber(v string) {
 }
 
 // GetPlanId returns the PlanId field value if set, zero value otherwise.
-func (o *VendorRequiredInforesponse) GetPlanId() int32 {
+func (o *VendorRequiredInforesponse) GetPlanId() string {
 	if o == nil || IsNil(o.PlanId) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.PlanId
@@ -158,7 +158,7 @@ func (o *VendorRequiredInforesponse) GetPlanId() int32 {
 
 // GetPlanIdOk returns a tuple with the PlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VendorRequiredInforesponse) GetPlanIdOk() (*int32, bool) {
+func (o *VendorRequiredInforesponse) GetPlanIdOk() (*string, bool) {
 	if o == nil || IsNil(o.PlanId) {
 		return nil, false
 	}
@@ -174,8 +174,8 @@ func (o *VendorRequiredInforesponse) HasPlanId() bool {
 	return false
 }
 
-// SetPlanId gets a reference to the given int32 and assigns it to the PlanId field.
-func (o *VendorRequiredInforesponse) SetPlanId(v int32) {
+// SetPlanId gets a reference to the given string and assigns it to the PlanId field.
+func (o *VendorRequiredInforesponse) SetPlanId(v string) {
 	o.PlanId = &v
 }
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IngramPartNumber** | Pointer to **string** | Ingram Micro unique part number for the product. | [optional] 
 **VendorPartNumber** | Pointer to **string** | Vendor’s part number for the product. It can be either TS Product or Cloud Product vendorpartnumber. | [optional] 
-**PlanID** | Pointer to **int32** | The ID of the subscription plan. | [optional] 
+**PlanID** | Pointer to **string** | The ID of the subscription plan. | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasVendorPartNumber returns a boolean if a field has been set.
 
 ### GetPlanID
 
-`func (o *VendorRequiredInfoRequestProductsInner) GetPlanID() int32`
+`func (o *VendorRequiredInfoRequestProductsInner) GetPlanID() string`
 
 GetPlanID returns the PlanID field if non-nil, zero value otherwise.
 
 ### GetPlanIDOk
 
-`func (o *VendorRequiredInfoRequestProductsInner) GetPlanIDOk() (*int32, bool)`
+`func (o *VendorRequiredInfoRequestProductsInner) GetPlanIDOk() (*string, bool)`
 
 GetPlanIDOk returns a tuple with the PlanID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanID
 
-`func (o *VendorRequiredInfoRequestProductsInner) SetPlanID(v int32)`
+`func (o *VendorRequiredInfoRequestProductsInner) SetPlanID(v string)`
 
 SetPlanID sets PlanID field to given value.
 

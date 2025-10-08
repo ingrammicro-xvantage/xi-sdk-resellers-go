@@ -24,7 +24,7 @@ type VendorRequiredInfoRequestProductsInner struct {
 	// Vendor’s part number for the product. It can be either TS Product or Cloud Product vendorpartnumber.
 	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
 	// The ID of the subscription plan.
-	PlanID *int32 `json:"planID,omitempty"`
+	PlanID *string `json:"planID,omitempty"`
 }
 
 // NewVendorRequiredInfoRequestProductsInner instantiates a new VendorRequiredInfoRequestProductsInner object
@@ -109,9 +109,9 @@ func (o *VendorRequiredInfoRequestProductsInner) SetVendorPartNumber(v string) {
 }
 
 // GetPlanID returns the PlanID field value if set, zero value otherwise.
-func (o *VendorRequiredInfoRequestProductsInner) GetPlanID() int32 {
+func (o *VendorRequiredInfoRequestProductsInner) GetPlanID() string {
 	if o == nil || IsNil(o.PlanID) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.PlanID
@@ -119,7 +119,7 @@ func (o *VendorRequiredInfoRequestProductsInner) GetPlanID() int32 {
 
 // GetPlanIDOk returns a tuple with the PlanID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VendorRequiredInfoRequestProductsInner) GetPlanIDOk() (*int32, bool) {
+func (o *VendorRequiredInfoRequestProductsInner) GetPlanIDOk() (*string, bool) {
 	if o == nil || IsNil(o.PlanID) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *VendorRequiredInfoRequestProductsInner) HasPlanID() bool {
 	return false
 }
 
-// SetPlanID gets a reference to the given int32 and assigns it to the PlanID field.
-func (o *VendorRequiredInfoRequestProductsInner) SetPlanID(v int32) {
+// SetPlanID gets a reference to the given string and assigns it to the PlanID field.
+func (o *VendorRequiredInfoRequestProductsInner) SetPlanID(v string) {
 	o.PlanID = &v
 }
 
