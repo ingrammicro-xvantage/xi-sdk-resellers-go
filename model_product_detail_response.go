@@ -45,8 +45,8 @@ type ProductDetailResponse struct {
 	CustomerPartNumber NullableString `json:"customerPartNumber,omitempty"`
 	Indicators *ProductDetailResponseIndicators `json:"indicators,omitempty"`
 	CiscoFields *ProductDetailResponseCiscoFields `json:"ciscoFields,omitempty"`
-	// Warranty information related to the product.
-	WarrantyInformation []map[string]interface{} `json:"warrantyInformation,omitempty"`
+	// Warranty codes related to the product.
+	WarrantyInformation []string `json:"warrantyInformation,omitempty"`
 	AdditionalInformation *ProductDetailResponseAdditionalInformation `json:"additionalInformation,omitempty"`
 	// Subscription product Details
 	SubscriptionDetails []ProductDetailResponseSubscriptionDetailsInner `json:"subscriptionDetails,omitempty"`
@@ -638,9 +638,9 @@ func (o *ProductDetailResponse) SetCiscoFields(v ProductDetailResponseCiscoField
 }
 
 // GetWarrantyInformation returns the WarrantyInformation field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetWarrantyInformation() []map[string]interface{} {
+func (o *ProductDetailResponse) GetWarrantyInformation() []string {
 	if o == nil || IsNil(o.WarrantyInformation) {
-		var ret []map[string]interface{}
+		var ret []string
 		return ret
 	}
 	return o.WarrantyInformation
@@ -648,7 +648,7 @@ func (o *ProductDetailResponse) GetWarrantyInformation() []map[string]interface{
 
 // GetWarrantyInformationOk returns a tuple with the WarrantyInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetWarrantyInformationOk() ([]map[string]interface{}, bool) {
+func (o *ProductDetailResponse) GetWarrantyInformationOk() ([]string, bool) {
 	if o == nil || IsNil(o.WarrantyInformation) {
 		return nil, false
 	}
@@ -664,8 +664,8 @@ func (o *ProductDetailResponse) HasWarrantyInformation() bool {
 	return false
 }
 
-// SetWarrantyInformation gets a reference to the given []map[string]interface{} and assigns it to the WarrantyInformation field.
-func (o *ProductDetailResponse) SetWarrantyInformation(v []map[string]interface{}) {
+// SetWarrantyInformation gets a reference to the given []string and assigns it to the WarrantyInformation field.
+func (o *ProductDetailResponse) SetWarrantyInformation(v []string) {
 	o.WarrantyInformation = v
 }
 

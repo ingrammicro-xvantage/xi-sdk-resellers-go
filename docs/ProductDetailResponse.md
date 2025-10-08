@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **CustomerPartNumber** | Pointer to **NullableString** | Reseller / end-user’s part number for the product. | [optional] 
 **Indicators** | Pointer to [**ProductDetailResponseIndicators**](ProductDetailResponseIndicators.md) |  | [optional] 
 **CiscoFields** | Pointer to [**ProductDetailResponseCiscoFields**](ProductDetailResponseCiscoFields.md) |  | [optional] 
-**WarrantyInformation** | Pointer to **[]map[string]interface{}** | Warranty information related to the product. | [optional] 
+**WarrantyInformation** | Pointer to **[]string** | Warranty codes related to the product. | [optional] 
 **AdditionalInformation** | Pointer to [**ProductDetailResponseAdditionalInformation**](ProductDetailResponseAdditionalInformation.md) |  | [optional] 
 **SubscriptionDetails** | Pointer to [**[]ProductDetailResponseSubscriptionDetailsInner**](ProductDetailResponseSubscriptionDetailsInner.md) | Subscription product Details | [optional] 
 
@@ -513,20 +513,20 @@ HasCiscoFields returns a boolean if a field has been set.
 
 ### GetWarrantyInformation
 
-`func (o *ProductDetailResponse) GetWarrantyInformation() []map[string]interface{}`
+`func (o *ProductDetailResponse) GetWarrantyInformation() []string`
 
 GetWarrantyInformation returns the WarrantyInformation field if non-nil, zero value otherwise.
 
 ### GetWarrantyInformationOk
 
-`func (o *ProductDetailResponse) GetWarrantyInformationOk() (*[]map[string]interface{}, bool)`
+`func (o *ProductDetailResponse) GetWarrantyInformationOk() (*[]string, bool)`
 
 GetWarrantyInformationOk returns a tuple with the WarrantyInformation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWarrantyInformation
 
-`func (o *ProductDetailResponse) SetWarrantyInformation(v []map[string]interface{})`
+`func (o *ProductDetailResponse) SetWarrantyInformation(v []string)`
 
 SetWarrantyInformation sets WarrantyInformation field to given value.
 
