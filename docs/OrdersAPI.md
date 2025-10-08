@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 
 ## VendorRequiredInfo
 
-> VendorRequiredInforesponse VendorRequiredInfo(ctx).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).IMSenderID(iMSenderID).VendorRequiredInfoRequest(vendorRequiredInfoRequest).Execute()
+> []VendorRequiredInforesponseInner VendorRequiredInfo(ctx).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).IMSenderID(iMSenderID).VendorRequiredInfoRequest(vendorRequiredInfoRequest).Execute()
 
 Vendor Required Info
 
@@ -555,7 +555,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.VendorRequiredInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `VendorRequiredInfo`: VendorRequiredInforesponse
+	// response from `VendorRequiredInfo`: []VendorRequiredInforesponseInner
 	fmt.Fprintf(os.Stdout, "Response from `OrdersAPI.VendorRequiredInfo`: %v\n", resp)
 }
 ```
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VendorRequiredInforesponse**](VendorRequiredInforesponse.md)
+[**[]VendorRequiredInforesponseInner**](VendorRequiredInforesponseInner.md)
 
 ### Authorization
 

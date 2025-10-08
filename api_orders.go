@@ -1475,7 +1475,7 @@ func (r ApiVendorRequiredInfoRequest) VendorRequiredInfoRequest(vendorRequiredIn
 	return r
 }
 
-func (r ApiVendorRequiredInfoRequest) Execute() (*VendorRequiredInforesponse, *http.Response, error) {
+func (r ApiVendorRequiredInfoRequest) Execute() ([]VendorRequiredInforesponseInner, *http.Response, error) {
 	return r.ApiService.VendorRequiredInfoExecute(r)
 }
 
@@ -1495,13 +1495,13 @@ func (a *OrdersAPIService) VendorRequiredInfo(ctx context.Context) ApiVendorRequ
 }
 
 // Execute executes the request
-//  @return VendorRequiredInforesponse
-func (a *OrdersAPIService) VendorRequiredInfoExecute(r ApiVendorRequiredInfoRequest) (*VendorRequiredInforesponse, *http.Response, error) {
+//  @return []VendorRequiredInforesponseInner
+func (a *OrdersAPIService) VendorRequiredInfoExecute(r ApiVendorRequiredInfoRequest) ([]VendorRequiredInforesponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VendorRequiredInforesponse
+		localVarReturnValue  []VendorRequiredInforesponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersAPIService.VendorRequiredInfo")

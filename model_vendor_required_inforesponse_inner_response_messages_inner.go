@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the VendorRequiredInforesponseResponseMessagesInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &VendorRequiredInforesponseResponseMessagesInner{}
+// checks if the VendorRequiredInforesponseInnerResponseMessagesInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VendorRequiredInforesponseInnerResponseMessagesInner{}
 
-// VendorRequiredInforesponseResponseMessagesInner struct for VendorRequiredInforesponseResponseMessagesInner
-type VendorRequiredInforesponseResponseMessagesInner struct {
+// VendorRequiredInforesponseInnerResponseMessagesInner struct for VendorRequiredInforesponseInnerResponseMessagesInner
+type VendorRequiredInforesponseInnerResponseMessagesInner struct {
 	// Unique ID to identify the error.
 	Id *string `json:"id,omitempty"`
 	// A unique trace id to identify the issue.
@@ -29,25 +29,25 @@ type VendorRequiredInforesponseResponseMessagesInner struct {
 	Message *string `json:"message,omitempty"`
 }
 
-// NewVendorRequiredInforesponseResponseMessagesInner instantiates a new VendorRequiredInforesponseResponseMessagesInner object
+// NewVendorRequiredInforesponseInnerResponseMessagesInner instantiates a new VendorRequiredInforesponseInnerResponseMessagesInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVendorRequiredInforesponseResponseMessagesInner() *VendorRequiredInforesponseResponseMessagesInner {
-	this := VendorRequiredInforesponseResponseMessagesInner{}
+func NewVendorRequiredInforesponseInnerResponseMessagesInner() *VendorRequiredInforesponseInnerResponseMessagesInner {
+	this := VendorRequiredInforesponseInnerResponseMessagesInner{}
 	return &this
 }
 
-// NewVendorRequiredInforesponseResponseMessagesInnerWithDefaults instantiates a new VendorRequiredInforesponseResponseMessagesInner object
+// NewVendorRequiredInforesponseInnerResponseMessagesInnerWithDefaults instantiates a new VendorRequiredInforesponseInnerResponseMessagesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewVendorRequiredInforesponseResponseMessagesInnerWithDefaults() *VendorRequiredInforesponseResponseMessagesInner {
-	this := VendorRequiredInforesponseResponseMessagesInner{}
+func NewVendorRequiredInforesponseInnerResponseMessagesInnerWithDefaults() *VendorRequiredInforesponseInnerResponseMessagesInner {
+	this := VendorRequiredInforesponseInnerResponseMessagesInner{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *VendorRequiredInforesponseResponseMessagesInner) GetId() string {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetId() string {
 	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
@@ -57,7 +57,7 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VendorRequiredInforesponseResponseMessagesInner) GetIdOk() (*string, bool) {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetIdOk() (*string, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) GetIdOk() (*string, bo
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *VendorRequiredInforesponseResponseMessagesInner) HasId() bool {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -74,12 +74,12 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *VendorRequiredInforesponseResponseMessagesInner) SetId(v string) {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) SetId(v string) {
 	o.Id = &v
 }
 
 // GetTraceId returns the TraceId field value if set, zero value otherwise.
-func (o *VendorRequiredInforesponseResponseMessagesInner) GetTraceId() string {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetTraceId() string {
 	if o == nil || IsNil(o.TraceId) {
 		var ret string
 		return ret
@@ -89,7 +89,7 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) GetTraceId() string {
 
 // GetTraceIdOk returns a tuple with the TraceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VendorRequiredInforesponseResponseMessagesInner) GetTraceIdOk() (*string, bool) {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetTraceIdOk() (*string, bool) {
 	if o == nil || IsNil(o.TraceId) {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) GetTraceIdOk() (*strin
 }
 
 // HasTraceId returns a boolean if a field has been set.
-func (o *VendorRequiredInforesponseResponseMessagesInner) HasTraceId() bool {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) HasTraceId() bool {
 	if o != nil && !IsNil(o.TraceId) {
 		return true
 	}
@@ -106,12 +106,12 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) HasTraceId() bool {
 }
 
 // SetTraceId gets a reference to the given string and assigns it to the TraceId field.
-func (o *VendorRequiredInforesponseResponseMessagesInner) SetTraceId(v string) {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) SetTraceId(v string) {
 	o.TraceId = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *VendorRequiredInforesponseResponseMessagesInner) GetType() string {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetType() string {
 	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
@@ -121,7 +121,7 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VendorRequiredInforesponseResponseMessagesInner) GetTypeOk() (*string, bool) {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -129,7 +129,7 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) GetTypeOk() (*string, 
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *VendorRequiredInforesponseResponseMessagesInner) HasType() bool {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -138,12 +138,12 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *VendorRequiredInforesponseResponseMessagesInner) SetType(v string) {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) SetType(v string) {
 	o.Type = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *VendorRequiredInforesponseResponseMessagesInner) GetMessage() string {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetMessage() string {
 	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
@@ -153,7 +153,7 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VendorRequiredInforesponseResponseMessagesInner) GetMessageOk() (*string, bool) {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
@@ -161,7 +161,7 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) GetMessageOk() (*strin
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *VendorRequiredInforesponseResponseMessagesInner) HasMessage() bool {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -170,11 +170,11 @@ func (o *VendorRequiredInforesponseResponseMessagesInner) HasMessage() bool {
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *VendorRequiredInforesponseResponseMessagesInner) SetMessage(v string) {
+func (o *VendorRequiredInforesponseInnerResponseMessagesInner) SetMessage(v string) {
 	o.Message = &v
 }
 
-func (o VendorRequiredInforesponseResponseMessagesInner) MarshalJSON() ([]byte, error) {
+func (o VendorRequiredInforesponseInnerResponseMessagesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -182,7 +182,7 @@ func (o VendorRequiredInforesponseResponseMessagesInner) MarshalJSON() ([]byte, 
 	return json.Marshal(toSerialize)
 }
 
-func (o VendorRequiredInforesponseResponseMessagesInner) ToMap() (map[string]interface{}, error) {
+func (o VendorRequiredInforesponseInnerResponseMessagesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -199,38 +199,38 @@ func (o VendorRequiredInforesponseResponseMessagesInner) ToMap() (map[string]int
 	return toSerialize, nil
 }
 
-type NullableVendorRequiredInforesponseResponseMessagesInner struct {
-	value *VendorRequiredInforesponseResponseMessagesInner
+type NullableVendorRequiredInforesponseInnerResponseMessagesInner struct {
+	value *VendorRequiredInforesponseInnerResponseMessagesInner
 	isSet bool
 }
 
-func (v NullableVendorRequiredInforesponseResponseMessagesInner) Get() *VendorRequiredInforesponseResponseMessagesInner {
+func (v NullableVendorRequiredInforesponseInnerResponseMessagesInner) Get() *VendorRequiredInforesponseInnerResponseMessagesInner {
 	return v.value
 }
 
-func (v *NullableVendorRequiredInforesponseResponseMessagesInner) Set(val *VendorRequiredInforesponseResponseMessagesInner) {
+func (v *NullableVendorRequiredInforesponseInnerResponseMessagesInner) Set(val *VendorRequiredInforesponseInnerResponseMessagesInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableVendorRequiredInforesponseResponseMessagesInner) IsSet() bool {
+func (v NullableVendorRequiredInforesponseInnerResponseMessagesInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableVendorRequiredInforesponseResponseMessagesInner) Unset() {
+func (v *NullableVendorRequiredInforesponseInnerResponseMessagesInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableVendorRequiredInforesponseResponseMessagesInner(val *VendorRequiredInforesponseResponseMessagesInner) *NullableVendorRequiredInforesponseResponseMessagesInner {
-	return &NullableVendorRequiredInforesponseResponseMessagesInner{value: val, isSet: true}
+func NewNullableVendorRequiredInforesponseInnerResponseMessagesInner(val *VendorRequiredInforesponseInnerResponseMessagesInner) *NullableVendorRequiredInforesponseInnerResponseMessagesInner {
+	return &NullableVendorRequiredInforesponseInnerResponseMessagesInner{value: val, isSet: true}
 }
 
-func (v NullableVendorRequiredInforesponseResponseMessagesInner) MarshalJSON() ([]byte, error) {
+func (v NullableVendorRequiredInforesponseInnerResponseMessagesInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableVendorRequiredInforesponseResponseMessagesInner) UnmarshalJSON(src []byte) error {
+func (v *NullableVendorRequiredInforesponseInnerResponseMessagesInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

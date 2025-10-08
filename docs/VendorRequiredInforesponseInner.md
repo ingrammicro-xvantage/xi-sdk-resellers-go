@@ -1,4 +1,4 @@
-# VendorRequiredInforesponse
+# VendorRequiredInforesponseInner
 
 ## Properties
 
@@ -9,226 +9,226 @@ Name | Type | Description | Notes
 **VendorPartNumber** | Pointer to **string** | The vendor&#39;s part number for the line item. | [optional] 
 **PlanId** | Pointer to **string** | ID of the subscription plan | [optional] 
 **PlanName** | Pointer to **string** | Name of the subscription plan | [optional] 
-**ResponseMessages** | Pointer to [**[]VendorRequiredInforesponseResponseMessagesInner**](VendorRequiredInforesponseResponseMessagesInner.md) |  | [optional] 
-**VmfAdditionalAttributes** | Pointer to [**[]VendorRequiredInforesponseVmfAdditionalAttributesInner**](VendorRequiredInforesponseVmfAdditionalAttributesInner.md) |  | [optional] 
-**VriAdditionalAttributes** | Pointer to [**[]VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInner**](VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInner.md) |  | [optional] 
+**ResponseMessages** | Pointer to [**[]VendorRequiredInforesponseInnerResponseMessagesInner**](VendorRequiredInforesponseInnerResponseMessagesInner.md) |  | [optional] 
+**VmfAdditionalAttributes** | Pointer to [**[]VendorRequiredInforesponseInnerVmfAdditionalAttributesInner**](VendorRequiredInforesponseInnerVmfAdditionalAttributesInner.md) |  | [optional] 
+**VriAdditionalAttributes** | Pointer to [**[]VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner**](VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner.md) |  | [optional] 
 
 ## Methods
 
-### NewVendorRequiredInforesponse
+### NewVendorRequiredInforesponseInner
 
-`func NewVendorRequiredInforesponse() *VendorRequiredInforesponse`
+`func NewVendorRequiredInforesponseInner() *VendorRequiredInforesponseInner`
 
-NewVendorRequiredInforesponse instantiates a new VendorRequiredInforesponse object
+NewVendorRequiredInforesponseInner instantiates a new VendorRequiredInforesponseInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewVendorRequiredInforesponseWithDefaults
+### NewVendorRequiredInforesponseInnerWithDefaults
 
-`func NewVendorRequiredInforesponseWithDefaults() *VendorRequiredInforesponse`
+`func NewVendorRequiredInforesponseInnerWithDefaults() *VendorRequiredInforesponseInner`
 
-NewVendorRequiredInforesponseWithDefaults instantiates a new VendorRequiredInforesponse object
+NewVendorRequiredInforesponseInnerWithDefaults instantiates a new VendorRequiredInforesponseInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetQuoteNumber
 
-`func (o *VendorRequiredInforesponse) GetQuoteNumber() string`
+`func (o *VendorRequiredInforesponseInner) GetQuoteNumber() string`
 
 GetQuoteNumber returns the QuoteNumber field if non-nil, zero value otherwise.
 
 ### GetQuoteNumberOk
 
-`func (o *VendorRequiredInforesponse) GetQuoteNumberOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInner) GetQuoteNumberOk() (*string, bool)`
 
 GetQuoteNumberOk returns a tuple with the QuoteNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuoteNumber
 
-`func (o *VendorRequiredInforesponse) SetQuoteNumber(v string)`
+`func (o *VendorRequiredInforesponseInner) SetQuoteNumber(v string)`
 
 SetQuoteNumber sets QuoteNumber field to given value.
 
 ### HasQuoteNumber
 
-`func (o *VendorRequiredInforesponse) HasQuoteNumber() bool`
+`func (o *VendorRequiredInforesponseInner) HasQuoteNumber() bool`
 
 HasQuoteNumber returns a boolean if a field has been set.
 
 ### GetIngramPartNumber
 
-`func (o *VendorRequiredInforesponse) GetIngramPartNumber() string`
+`func (o *VendorRequiredInforesponseInner) GetIngramPartNumber() string`
 
 GetIngramPartNumber returns the IngramPartNumber field if non-nil, zero value otherwise.
 
 ### GetIngramPartNumberOk
 
-`func (o *VendorRequiredInforesponse) GetIngramPartNumberOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInner) GetIngramPartNumberOk() (*string, bool)`
 
 GetIngramPartNumberOk returns a tuple with the IngramPartNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIngramPartNumber
 
-`func (o *VendorRequiredInforesponse) SetIngramPartNumber(v string)`
+`func (o *VendorRequiredInforesponseInner) SetIngramPartNumber(v string)`
 
 SetIngramPartNumber sets IngramPartNumber field to given value.
 
 ### HasIngramPartNumber
 
-`func (o *VendorRequiredInforesponse) HasIngramPartNumber() bool`
+`func (o *VendorRequiredInforesponseInner) HasIngramPartNumber() bool`
 
 HasIngramPartNumber returns a boolean if a field has been set.
 
 ### GetVendorPartNumber
 
-`func (o *VendorRequiredInforesponse) GetVendorPartNumber() string`
+`func (o *VendorRequiredInforesponseInner) GetVendorPartNumber() string`
 
 GetVendorPartNumber returns the VendorPartNumber field if non-nil, zero value otherwise.
 
 ### GetVendorPartNumberOk
 
-`func (o *VendorRequiredInforesponse) GetVendorPartNumberOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInner) GetVendorPartNumberOk() (*string, bool)`
 
 GetVendorPartNumberOk returns a tuple with the VendorPartNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVendorPartNumber
 
-`func (o *VendorRequiredInforesponse) SetVendorPartNumber(v string)`
+`func (o *VendorRequiredInforesponseInner) SetVendorPartNumber(v string)`
 
 SetVendorPartNumber sets VendorPartNumber field to given value.
 
 ### HasVendorPartNumber
 
-`func (o *VendorRequiredInforesponse) HasVendorPartNumber() bool`
+`func (o *VendorRequiredInforesponseInner) HasVendorPartNumber() bool`
 
 HasVendorPartNumber returns a boolean if a field has been set.
 
 ### GetPlanId
 
-`func (o *VendorRequiredInforesponse) GetPlanId() string`
+`func (o *VendorRequiredInforesponseInner) GetPlanId() string`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *VendorRequiredInforesponse) GetPlanIdOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInner) GetPlanIdOk() (*string, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *VendorRequiredInforesponse) SetPlanId(v string)`
+`func (o *VendorRequiredInforesponseInner) SetPlanId(v string)`
 
 SetPlanId sets PlanId field to given value.
 
 ### HasPlanId
 
-`func (o *VendorRequiredInforesponse) HasPlanId() bool`
+`func (o *VendorRequiredInforesponseInner) HasPlanId() bool`
 
 HasPlanId returns a boolean if a field has been set.
 
 ### GetPlanName
 
-`func (o *VendorRequiredInforesponse) GetPlanName() string`
+`func (o *VendorRequiredInforesponseInner) GetPlanName() string`
 
 GetPlanName returns the PlanName field if non-nil, zero value otherwise.
 
 ### GetPlanNameOk
 
-`func (o *VendorRequiredInforesponse) GetPlanNameOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInner) GetPlanNameOk() (*string, bool)`
 
 GetPlanNameOk returns a tuple with the PlanName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanName
 
-`func (o *VendorRequiredInforesponse) SetPlanName(v string)`
+`func (o *VendorRequiredInforesponseInner) SetPlanName(v string)`
 
 SetPlanName sets PlanName field to given value.
 
 ### HasPlanName
 
-`func (o *VendorRequiredInforesponse) HasPlanName() bool`
+`func (o *VendorRequiredInforesponseInner) HasPlanName() bool`
 
 HasPlanName returns a boolean if a field has been set.
 
 ### GetResponseMessages
 
-`func (o *VendorRequiredInforesponse) GetResponseMessages() []VendorRequiredInforesponseResponseMessagesInner`
+`func (o *VendorRequiredInforesponseInner) GetResponseMessages() []VendorRequiredInforesponseInnerResponseMessagesInner`
 
 GetResponseMessages returns the ResponseMessages field if non-nil, zero value otherwise.
 
 ### GetResponseMessagesOk
 
-`func (o *VendorRequiredInforesponse) GetResponseMessagesOk() (*[]VendorRequiredInforesponseResponseMessagesInner, bool)`
+`func (o *VendorRequiredInforesponseInner) GetResponseMessagesOk() (*[]VendorRequiredInforesponseInnerResponseMessagesInner, bool)`
 
 GetResponseMessagesOk returns a tuple with the ResponseMessages field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponseMessages
 
-`func (o *VendorRequiredInforesponse) SetResponseMessages(v []VendorRequiredInforesponseResponseMessagesInner)`
+`func (o *VendorRequiredInforesponseInner) SetResponseMessages(v []VendorRequiredInforesponseInnerResponseMessagesInner)`
 
 SetResponseMessages sets ResponseMessages field to given value.
 
 ### HasResponseMessages
 
-`func (o *VendorRequiredInforesponse) HasResponseMessages() bool`
+`func (o *VendorRequiredInforesponseInner) HasResponseMessages() bool`
 
 HasResponseMessages returns a boolean if a field has been set.
 
 ### GetVmfAdditionalAttributes
 
-`func (o *VendorRequiredInforesponse) GetVmfAdditionalAttributes() []VendorRequiredInforesponseVmfAdditionalAttributesInner`
+`func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributes() []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner`
 
 GetVmfAdditionalAttributes returns the VmfAdditionalAttributes field if non-nil, zero value otherwise.
 
 ### GetVmfAdditionalAttributesOk
 
-`func (o *VendorRequiredInforesponse) GetVmfAdditionalAttributesOk() (*[]VendorRequiredInforesponseVmfAdditionalAttributesInner, bool)`
+`func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributesOk() (*[]VendorRequiredInforesponseInnerVmfAdditionalAttributesInner, bool)`
 
 GetVmfAdditionalAttributesOk returns a tuple with the VmfAdditionalAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVmfAdditionalAttributes
 
-`func (o *VendorRequiredInforesponse) SetVmfAdditionalAttributes(v []VendorRequiredInforesponseVmfAdditionalAttributesInner)`
+`func (o *VendorRequiredInforesponseInner) SetVmfAdditionalAttributes(v []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner)`
 
 SetVmfAdditionalAttributes sets VmfAdditionalAttributes field to given value.
 
 ### HasVmfAdditionalAttributes
 
-`func (o *VendorRequiredInforesponse) HasVmfAdditionalAttributes() bool`
+`func (o *VendorRequiredInforesponseInner) HasVmfAdditionalAttributes() bool`
 
 HasVmfAdditionalAttributes returns a boolean if a field has been set.
 
 ### GetVriAdditionalAttributes
 
-`func (o *VendorRequiredInforesponse) GetVriAdditionalAttributes() []VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInner`
+`func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributes() []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner`
 
 GetVriAdditionalAttributes returns the VriAdditionalAttributes field if non-nil, zero value otherwise.
 
 ### GetVriAdditionalAttributesOk
 
-`func (o *VendorRequiredInforesponse) GetVriAdditionalAttributesOk() (*[]VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInner, bool)`
+`func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributesOk() (*[]VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner, bool)`
 
 GetVriAdditionalAttributesOk returns a tuple with the VriAdditionalAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVriAdditionalAttributes
 
-`func (o *VendorRequiredInforesponse) SetVriAdditionalAttributes(v []VendorRequiredInforesponseVmfAdditionalAttributesInnerAdditionalAttributesInner)`
+`func (o *VendorRequiredInforesponseInner) SetVriAdditionalAttributes(v []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner)`
 
 SetVriAdditionalAttributes sets VriAdditionalAttributes field to given value.
 
 ### HasVriAdditionalAttributes
 
-`func (o *VendorRequiredInforesponse) HasVriAdditionalAttributes() bool`
+`func (o *VendorRequiredInforesponseInner) HasVriAdditionalAttributes() bool`
 
 HasVriAdditionalAttributes returns a boolean if a field has been set.
 

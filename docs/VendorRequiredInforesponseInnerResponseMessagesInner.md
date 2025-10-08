@@ -1,4 +1,4 @@
-# VendorRequiredInforesponseResponseMessagesInner
+# VendorRequiredInforesponseInnerResponseMessagesInner
 
 ## Properties
 
@@ -11,120 +11,120 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewVendorRequiredInforesponseResponseMessagesInner
+### NewVendorRequiredInforesponseInnerResponseMessagesInner
 
-`func NewVendorRequiredInforesponseResponseMessagesInner() *VendorRequiredInforesponseResponseMessagesInner`
+`func NewVendorRequiredInforesponseInnerResponseMessagesInner() *VendorRequiredInforesponseInnerResponseMessagesInner`
 
-NewVendorRequiredInforesponseResponseMessagesInner instantiates a new VendorRequiredInforesponseResponseMessagesInner object
+NewVendorRequiredInforesponseInnerResponseMessagesInner instantiates a new VendorRequiredInforesponseInnerResponseMessagesInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewVendorRequiredInforesponseResponseMessagesInnerWithDefaults
+### NewVendorRequiredInforesponseInnerResponseMessagesInnerWithDefaults
 
-`func NewVendorRequiredInforesponseResponseMessagesInnerWithDefaults() *VendorRequiredInforesponseResponseMessagesInner`
+`func NewVendorRequiredInforesponseInnerResponseMessagesInnerWithDefaults() *VendorRequiredInforesponseInnerResponseMessagesInner`
 
-NewVendorRequiredInforesponseResponseMessagesInnerWithDefaults instantiates a new VendorRequiredInforesponseResponseMessagesInner object
+NewVendorRequiredInforesponseInnerResponseMessagesInnerWithDefaults instantiates a new VendorRequiredInforesponseInnerResponseMessagesInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) GetId() string`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) GetIdOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) SetId(v string)`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) SetId(v string)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) HasId() bool`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetTraceId
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) GetTraceId() string`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetTraceId() string`
 
 GetTraceId returns the TraceId field if non-nil, zero value otherwise.
 
 ### GetTraceIdOk
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) GetTraceIdOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetTraceIdOk() (*string, bool)`
 
 GetTraceIdOk returns a tuple with the TraceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTraceId
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) SetTraceId(v string)`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) SetTraceId(v string)`
 
 SetTraceId sets TraceId field to given value.
 
 ### HasTraceId
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) HasTraceId() bool`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) HasTraceId() bool`
 
 HasTraceId returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) GetType() string`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) GetTypeOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) SetType(v string)`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) SetType(v string)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) HasType() bool`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetMessage
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) GetMessage() string`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetMessage() string`
 
 GetMessage returns the Message field if non-nil, zero value otherwise.
 
 ### GetMessageOk
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) GetMessageOk() (*string, bool)`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) GetMessageOk() (*string, bool)`
 
 GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessage
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) SetMessage(v string)`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) SetMessage(v string)`
 
 SetMessage sets Message field to given value.
 
 ### HasMessage
 
-`func (o *VendorRequiredInforesponseResponseMessagesInner) HasMessage() bool`
+`func (o *VendorRequiredInforesponseInnerResponseMessagesInner) HasMessage() bool`
 
 HasMessage returns a boolean if a field has been set.
 
