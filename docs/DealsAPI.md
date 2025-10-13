@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -37,8 +37,8 @@ func main() {
 	dealId := "12345678" // string | Unique deal ID.
 	vendorName := "Cisco" // string | Vendor for that bid
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealsdetails(context.Background(), dealId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationId(iMApplicationId).VendorName(vendorName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DealsAPI.GetResellersV6Dealsdetails``: %v\n", err)
@@ -106,7 +106,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -120,8 +120,8 @@ func main() {
 	size := int32(56) // int32 | The number of records required in the call - max records 100 per page. (optional)
 	page := int32(56) // int32 | The page number reference. (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).EndUser(endUser).Vendor(vendor).DealId(dealId).Size(size).Page(page).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DealsAPI.GetResellersV6Dealssearch``: %v\n", err)

@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -38,8 +38,8 @@ func main() {
 	customerType := "invoice" // string | it should be invoice or order (optional)
 	includeSerialNumbers := false // bool | if serial in the response send as true or else false (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.InvoicesAPI.GetInvoicedetailsV61(context.Background(), invoiceNumber).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationID(iMApplicationID).CustomerType(customerType).IncludeSerialNumbers(includeSerialNumbers).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.GetInvoicedetailsV61``: %v\n", err)
@@ -108,7 +108,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -140,8 +140,8 @@ func main() {
 	direction := "desc" // string | asc or desc , along with orderby column result set will be sorted. (optional)
 	serialNumber := "serialNumber_example" // string | Serial number of the product. (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.InvoicesAPI.GetResellersV6Invoicesearch(context.Background()).IMApplicationID(iMApplicationID).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).PaymentTermsNetDate(paymentTermsNetDate).InvoiceDate(invoiceDate).InvoiceDueDate(invoiceDueDate).OrderDate(orderDate).OrderFromDate(orderFromDate).OrderToDate(orderToDate).OrderNumber(orderNumber).DeliveryNumber(deliveryNumber).InvoiceNumber(invoiceNumber).InvoiceStatus(invoiceStatus).InvoiceType(invoiceType).CustomerOrderNumber(customerOrderNumber).EndCustomerOrderNumber(endCustomerOrderNumber).SpecialBidNumber(specialBidNumber).InvoiceFromDueDate(invoiceFromDueDate).InvoiceToDueDate(invoiceToDueDate).InvoiceFromDate(invoiceFromDate).InvoiceToDate(invoiceToDate).PageSize(pageSize).PageNumber(pageNumber).Orderby(orderby).Direction(direction).SerialNumber(serialNumber).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.GetResellersV6Invoicesearch``: %v\n", err)

@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -37,8 +37,8 @@ func main() {
 	caseRequestNumber := "12345678" // string | A unique return request number.
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.ReturnsAPI.GetResellersV6Returnsdetails(context.Background(), caseRequestNumber).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReturnsAPI.GetResellersV6Returnsdetails``: %v\n", err)
@@ -105,7 +105,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -129,8 +129,8 @@ func main() {
 	sort := "sort_example" // string | Refers to the column selected to apply the sorting criteria. (optional)
 	sortingColumnName := "sortingColumnName_example" // string | The column name which will be sorted on. (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.ReturnsAPI.GetResellersV6Returnssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).CaseRequestNumber(caseRequestNumber).InvoiceNumber(invoiceNumber).ReturnClaimId(returnClaimId).ReferenceNumber(referenceNumber).IngramPartNumber(ingramPartNumber).VendorPartNumber(vendorPartNumber).ReturnStatusIn(returnStatusIn).ClaimStatusIn(claimStatusIn).CreatedOnBt(createdOnBt).ModifiedOnBt(modifiedOnBt).ReturnReasonIn(returnReasonIn).Page(page).Size(size).Sort(sort).SortingColumnName(sortingColumnName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReturnsAPI.GetResellersV6Returnssearch``: %v\n", err)
@@ -207,7 +207,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -217,8 +217,8 @@ func main() {
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 	returnsCreateRequest := *openapiclient.NewReturnsCreateRequest() // ReturnsCreateRequest |  (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.ReturnsAPI.PostReturnscreate(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).ReturnsCreateRequest(returnsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReturnsAPI.PostReturnscreate``: %v\n", err)
