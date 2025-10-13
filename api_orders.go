@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -125,7 +125,7 @@ func (a *OrdersAPIService) DeleteOrdercancelExecute(r ApiDeleteOrdercancelReques
 	}
 
 	if r.regionCode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "regionCode", r.regionCode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "regionCode", r.regionCode, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -144,11 +144,11 @@ func (a *OrdersAPIService) DeleteOrdercancelExecute(r ApiDeleteOrdercancelReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -368,19 +368,19 @@ func (a *OrdersAPIService) GetOrderdetailsV61Execute(r ApiGetOrderdetailsV61Requ
 	}
 
 	if r.ingramOrderDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate", r.ingramOrderDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate", r.ingramOrderDate, "form", "")
 	}
 	if r.vendorNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorNumber", r.vendorNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorNumber", r.vendorNumber, "form", "")
 	}
 	if r.simulateStatus != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "simulateStatus", r.simulateStatus, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "simulateStatus", r.simulateStatus, "form", "")
 	}
 	if r.isIml != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "isIml", r.isIml, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "isIml", r.isIml, "form", "")
 	}
 	if r.regionCode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "regionCode", r.regionCode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "regionCode", r.regionCode, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -399,11 +399,11 @@ func (a *OrdersAPIService) GetOrderdetailsV61Execute(r ApiGetOrderdetailsV61Requ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -673,57 +673,57 @@ func (a *OrdersAPIService) GetResellersV6OrdersearchExecute(r ApiGetResellersV6O
 	}
 
 	if r.ingramOrderNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderNumber", r.ingramOrderNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderNumber", r.ingramOrderNumber, "form", "")
 	}
 	if r.orderStatus != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "orderStatus", r.orderStatus, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orderStatus", r.orderStatus, "form", "")
 	}
 	if r.orderStatusIn != nil {
 		t := *r.orderStatusIn
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "orderStatus-in", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "orderStatus-in", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "orderStatus-in", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "orderStatus-in", t, "form", "multi")
 		}
 	}
 	if r.ingramOrderDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate", r.ingramOrderDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate", r.ingramOrderDate, "form", "")
 	}
 	if r.ingramOrderDateBt != nil {
 		t := *r.ingramOrderDateBt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate-bt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate-bt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate-bt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate-bt", t, "form", "multi")
 		}
 	}
 	if r.customerOrderNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "customerOrderNumber", r.customerOrderNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "customerOrderNumber", r.customerOrderNumber, "form", "")
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	}
 	if r.pageNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "form", "")
 	}
 	if r.endCustomerOrderNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "endCustomerOrderNumber", r.endCustomerOrderNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "endCustomerOrderNumber", r.endCustomerOrderNumber, "form", "")
 	}
 	if r.invoiceDateBt != nil {
 		t := *r.invoiceDateBt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceDate_bt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceDate_bt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceDate_bt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceDate_bt", t, "form", "multi")
 		}
 	}
 	if r.shipDateBt != nil {
@@ -731,10 +731,10 @@ func (a *OrdersAPIService) GetResellersV6OrdersearchExecute(r ApiGetResellersV6O
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "shipDate_bt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "shipDate_bt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "shipDate_bt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "shipDate_bt", t, "form", "multi")
 		}
 	}
 	if r.deliveryDateBt != nil {
@@ -742,29 +742,29 @@ func (a *OrdersAPIService) GetResellersV6OrdersearchExecute(r ApiGetResellersV6O
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "deliveryDate_bt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "deliveryDate_bt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "deliveryDate_bt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "deliveryDate_bt", t, "form", "multi")
 		}
 	}
 	if r.ingramPartNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramPartNumber", r.ingramPartNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramPartNumber", r.ingramPartNumber, "form", "")
 	}
 	if r.vendorPartNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", r.vendorPartNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", r.vendorPartNumber, "form", "")
 	}
 	if r.serialNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "serialNumber", r.serialNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "serialNumber", r.serialNumber, "form", "")
 	}
 	if r.trackingNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "trackingNumber", r.trackingNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "trackingNumber", r.trackingNumber, "form", "")
 	}
 	if r.vendorName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorName", r.vendorName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorName", r.vendorName, "form", "")
 	}
 	if r.specialBidNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "specialBidNumber", r.specialBidNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "specialBidNumber", r.specialBidNumber, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -783,11 +783,11 @@ func (a *OrdersAPIService) GetResellersV6OrdersearchExecute(r ApiGetResellersV6O
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -970,12 +970,12 @@ func (a *OrdersAPIService) PostCreateorderV6Execute(r ApiPostCreateorderV6Reques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	// body params
 	localVarPostBody = r.orderCreateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1042,7 +1042,7 @@ type ApiPostCreateorderV7Request struct {
 	iMCustomerNumber *string
 	iMCountryCode *string
 	iMCorrelationID *string
-	asyncOrderCreateDTO *AsyncOrderCreateDTO
+	orderCreateV7Request *OrderCreateV7Request
 	iMSenderID *string
 }
 
@@ -1058,36 +1058,31 @@ func (r ApiPostCreateorderV7Request) IMCountryCode(iMCountryCode string) ApiPost
 	return r
 }
 
-// Unique transaction number to identify each transaction accross all the systems.
+// Unique transaction number to identify each transaction across all the systems.
 func (r ApiPostCreateorderV7Request) IMCorrelationID(iMCorrelationID string) ApiPostCreateorderV7Request {
 	r.iMCorrelationID = &iMCorrelationID
 	return r
 }
 
-func (r ApiPostCreateorderV7Request) AsyncOrderCreateDTO(asyncOrderCreateDTO AsyncOrderCreateDTO) ApiPostCreateorderV7Request {
-	r.asyncOrderCreateDTO = &asyncOrderCreateDTO
+func (r ApiPostCreateorderV7Request) OrderCreateV7Request(orderCreateV7Request OrderCreateV7Request) ApiPostCreateorderV7Request {
+	r.orderCreateV7Request = &orderCreateV7Request
 	return r
 }
 
-// Unique value used to identify the sender of the transaction.
+// Unique value used to identify the sender of the transaction. Example: MyCompany
 func (r ApiPostCreateorderV7Request) IMSenderID(iMSenderID string) ApiPostCreateorderV7Request {
 	r.iMSenderID = &iMSenderID
 	return r
 }
 
-func (r ApiPostCreateorderV7Request) Execute() (*AsyncOrderCreateResponse, *http.Response, error) {
+func (r ApiPostCreateorderV7Request) Execute() (*OrderCreateV7Response201, *http.Response, error) {
 	return r.ApiService.PostCreateorderV7Execute(r)
 }
 
 /*
 PostCreateorderV7 Create your Order v7
 
-This API will allow customers to perform both standard ordering and quote to order functionality via a single API enabling them to have a single endpoint to cater to all types of orders.
-
-This approach will standardize the ordering flow for customers where they will get the response for all orders on to their webhooks.
-
-It provides the much-awaited async ordering flow for Reseller API where large orders can also be placed via a single API with guaranteed delivery.
-
+The Order Create v7 allows our customers to create orders asynchronously. The customer can create either standard orders using stocked SKUs and/or create a “Quote to Order” using the existing quote which is in “Ready to Order” status, or the customer can create an order using the “Configure to order” (CTO) quote. Upon successful submission of the order create request, a confirmation message will be returned as an API response. <br > <br > Once the order is processed, Ingram Micro will notify customers via webhook using a pre-defined callback URL as an HTTP post regarding the updates related to the order. Upon successful order creation, a notification will be sent via webhook regarding the order details, in the event of any error occurring during the order creation process, an error message will be delivered via webhook. Nightly system unavailability will delay response Async response. <br > <br > The key differentiator between standard ordering and “Quote To Order” is the optional input field in the request body which is “quoteNumber”. If a customer passes the quote number in the request body, the order will be processed as a “Quote To Order” using the details from the quote. Any SKUs, quantity, or price information that are passed in the lines object within the request will be ignored in the case of “Quote To Order”.<br > <br > **Prerequisite:** Pre-defined callback URL <br > <br > **Standard ordering::**<br><br>Ingram Micro recommends that you provide the ingramPartNumber for each SKU contained in each order. NOTE: You must have net terms to use the Ingram Micro Order Create API. Ingram Micro offers trade credit when using our APIs, and repayment is based on net terms. For example, if your net terms agreement is net 30, you will have 30 days to make a full payment. Ingram Micro does not allow credit card transactions for API ordering. <br><br>[**Key differences between v6 and v7 Migration**](https://developer.ingrammicro.com/reseller/page/v6-and-v7-migration) <br><br> <br><br>**Quote to Order / Configure to Order:**<br><br>If customers are planning to use Quote to Order or Configure to Order Quotes, it’s recommended to validate the quote using the “Validate Quote” endpoint before creating an order using the quote. Validate Quote endpoint will not only validate the quote but also outline all the mandatory fields required by the vendor at a header level and at the line level which a customer needs to pass to the Quote to Order endpoint request. For a detailed understanding of the “Validate Quote” endpoint, review the “Validate Quote” endpoint documentation. <br><br> **How it works:**<br><br>- The customer validates the quote with a quote number from the Validate Quote endpoint.<br>- The customer copies all the mandatory fields required by the vendor and adds them to the QTO request body.<br>- The customer provides all the values for Vendor mandatory fields along with other required information for QTO to create an order.<br>- After the order creation request receipt acknowledgment from the QTO endpoint, all further order creation updates will be provided via webhook push notification.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostCreateorderV7Request
@@ -1100,13 +1095,13 @@ func (a *OrdersAPIService) PostCreateorderV7(ctx context.Context) ApiPostCreateo
 }
 
 // Execute executes the request
-//  @return AsyncOrderCreateResponse
-func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Request) (*AsyncOrderCreateResponse, *http.Response, error) {
+//  @return OrderCreateV7Response201
+func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Request) (*OrderCreateV7Response201, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AsyncOrderCreateResponse
+		localVarReturnValue  *OrderCreateV7Response201
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersAPIService.PostCreateorderV7")
@@ -1140,8 +1135,8 @@ func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Reques
 	if strlen(*r.iMCorrelationID) > 32 {
 		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
 	}
-	if r.asyncOrderCreateDTO == nil {
-		return localVarReturnValue, nil, reportError("asyncOrderCreateDTO is required and must be specified")
+	if r.orderCreateV7Request == nil {
+		return localVarReturnValue, nil, reportError("orderCreateV7Request is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1161,14 +1156,14 @@ func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Reques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	// body params
-	localVarPostBody = r.asyncOrderCreateDTO
+	localVarPostBody = r.orderCreateV7Request
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1353,10 +1348,10 @@ func (a *OrdersAPIService) PutOrdermodifyExecute(r ApiPutOrdermodifyRequest) (*O
 	}
 
 	if r.actionCode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "actionCode", r.actionCode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "actionCode", r.actionCode, "form", "")
 	}
 	if r.regionCode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "regionCode", r.regionCode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "regionCode", r.regionCode, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1375,11 +1370,11 @@ func (a *OrdersAPIService) PutOrdermodifyExecute(r ApiPutOrdermodifyRequest) (*O
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.orderModifyRequest
@@ -1425,6 +1420,169 @@ func (a *OrdersAPIService) PutOrdermodifyExecute(r ApiPutOrdermodifyRequest) (*O
 			}
 					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiVendorRequiredInfoRequest struct {
+	ctx context.Context
+	ApiService *OrdersAPIService
+	iMCustomerNumber *string
+	iMCorrelationID *string
+	iMCountryCode *string
+	iMSenderID *string
+	vendorRequiredInfoRequest *VendorRequiredInfoRequest
+}
+
+// Your unique Ingram Micro customer number.
+func (r ApiVendorRequiredInfoRequest) IMCustomerNumber(iMCustomerNumber string) ApiVendorRequiredInfoRequest {
+	r.iMCustomerNumber = &iMCustomerNumber
+	return r
+}
+
+// Unique transaction number to identify each transaction across all the systems.
+func (r ApiVendorRequiredInfoRequest) IMCorrelationID(iMCorrelationID string) ApiVendorRequiredInfoRequest {
+	r.iMCorrelationID = &iMCorrelationID
+	return r
+}
+
+// Two-character ISO country code.
+func (r ApiVendorRequiredInfoRequest) IMCountryCode(iMCountryCode string) ApiVendorRequiredInfoRequest {
+	r.iMCountryCode = &iMCountryCode
+	return r
+}
+
+// Unique value used to identify the sender of the transaction. 
+func (r ApiVendorRequiredInfoRequest) IMSenderID(iMSenderID string) ApiVendorRequiredInfoRequest {
+	r.iMSenderID = &iMSenderID
+	return r
+}
+
+func (r ApiVendorRequiredInfoRequest) VendorRequiredInfoRequest(vendorRequiredInfoRequest VendorRequiredInfoRequest) ApiVendorRequiredInfoRequest {
+	r.vendorRequiredInfoRequest = &vendorRequiredInfoRequest
+	return r
+}
+
+func (r ApiVendorRequiredInfoRequest) Execute() ([]VendorRequiredInforesponseInner, *http.Response, error) {
+	return r.ApiService.VendorRequiredInfoExecute(r)
+}
+
+/*
+VendorRequiredInfo Vendor Required Info
+
+<p>The vendor required info API allows customers to identify all the mandatory fields that will be required to create an order before placing an order. These fields are required by the vendor to process orders. The customers can identify Vendor Required Information, aka Vendor Mandatory Fields or VMFs, using any of the following.</p><ul><li>Ingram Part Number</li><li>Vendor Part Number</li><li>Plan ID</li><li>Ingram Quote Number</li></ul><p>For the non-cloud Technology Solutions products, such as Hardware, Software, or Warranty, the VMFs will be returned in the “vmfAdditionalAttributes” object in the response, whereas for the cloud subscriptions products, the VMFs will be returned in the “vriAdditionalAttributes” object in the response.</p><p>While creating an Order Create request for the non-cloud products, such as Hardware, Software, or Warranty, pass “vmfAdditionalAttributes” object with the necessary response in the “attributeValue” field.</p><p>While creating an Order Create request, for Subscription products, pass “vriAdditionalAttributes” object with the necessary response in the “attributeValue” field and any other applicable subcomponents to create an order. </p>
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVendorRequiredInfoRequest
+*/
+func (a *OrdersAPIService) VendorRequiredInfo(ctx context.Context) ApiVendorRequiredInfoRequest {
+	return ApiVendorRequiredInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return []VendorRequiredInforesponseInner
+func (a *OrdersAPIService) VendorRequiredInfoExecute(r ApiVendorRequiredInfoRequest) ([]VendorRequiredInforesponseInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []VendorRequiredInforesponseInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersAPIService.VendorRequiredInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/resellers/v7/vendorrequiredinfo"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.iMCustomerNumber == nil {
+		return localVarReturnValue, nil, reportError("iMCustomerNumber is required and must be specified")
+	}
+	if strlen(*r.iMCustomerNumber) > 10 {
+		return localVarReturnValue, nil, reportError("iMCustomerNumber must have less than 10 elements")
+	}
+	if r.iMCorrelationID == nil {
+		return localVarReturnValue, nil, reportError("iMCorrelationID is required and must be specified")
+	}
+	if strlen(*r.iMCorrelationID) > 32 {
+		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
+	}
+	if r.iMCountryCode == nil {
+		return localVarReturnValue, nil, reportError("iMCountryCode is required and must be specified")
+	}
+	if strlen(*r.iMCountryCode) > 10 {
+		return localVarReturnValue, nil, reportError("iMCountryCode must have less than 10 elements")
+	}
+	if r.iMSenderID == nil {
+		return localVarReturnValue, nil, reportError("iMSenderID is required and must be specified")
+	}
+	if strlen(*r.iMSenderID) > 32 {
+		return localVarReturnValue, nil, reportError("iMSenderID must have less than 32 elements")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
+	// body params
+	localVarPostBody = r.vendorRequiredInfoRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

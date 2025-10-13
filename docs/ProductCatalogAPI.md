@@ -5,6 +5,7 @@ All URIs are relative to *https://api.ingrammicro.com:443*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetResellerV6Productdetail**](ProductCatalogAPI.md#GetResellerV6Productdetail) | **Get** /resellers/v6/catalog/details/{ingramPartNumber} | Product Details
+[**GetResellerV6Productdetailcmp**](ProductCatalogAPI.md#GetResellerV6Productdetailcmp) | **Get** /resellers/v6/catalog/details | Product Details
 [**GetResellerV6Productsearch**](ProductCatalogAPI.md#GetResellerV6Productsearch) | **Get** /resellers/v6/catalog | Search Products
 [**PostPriceandavailability**](ProductCatalogAPI.md#PostPriceandavailability) | **Post** /resellers/v6/catalog/priceandavailability | Price and Availability
 
@@ -27,7 +28,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -37,8 +38,8 @@ func main() {
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction accross all the systems
 	iMSenderID := "MyCompany" // string | Sender Identification text (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productdetail(context.Background(), ingramPartNumber).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6Productdetail``: %v\n", err)
@@ -88,9 +89,87 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetResellerV6Productdetailcmp
+
+> ProductDetailResponse GetResellerV6Productdetailcmp(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).PlanName(planName).PlanId(planId).VendorPartNumber(vendorPartNumber).Execute()
+
+Product Details
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number
+	iMCountryCode := "US" // string | Two-character ISO country code.
+	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems
+	iMSenderID := "MyCompany" // string | Sender Identification text (optional)
+	planName := "planName_example" // string | Name of the subscription plan (optional)
+	planId := "planId_example" // string | Id of the subscription plan.   <span style='color:red'>To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.</span> (optional)
+	vendorPartNumber := "vendorPartNumber_example" // string | Vendor’s part number for the product. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productdetailcmp(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).PlanName(planName).PlanId(planId).VendorPartNumber(vendorPartNumber).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6Productdetailcmp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetResellerV6Productdetailcmp`: ProductDetailResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductCatalogAPI.GetResellerV6Productdetailcmp`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetResellerV6ProductdetailcmpRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number | 
+ **iMCountryCode** | **string** | Two-character ISO country code. | 
+ **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems | 
+ **iMSenderID** | **string** | Sender Identification text | 
+ **planName** | **string** | Name of the subscription plan | 
+ **planId** | **string** | Id of the subscription plan.   &lt;span style&#x3D;&#39;color:red&#39;&gt;To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.&lt;/span&gt; | 
+ **vendorPartNumber** | **string** | Vendor’s part number for the product. | 
+
+### Return type
+
+[**ProductDetailResponse**](ProductDetailResponse.md)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetResellerV6Productsearch
 
-> ProductSearchResponse GetResellerV6Productsearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).Execute()
+> ProductSearchResponse GetResellerV6Productsearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).GroupName(groupName).PlanID(planID).ShowGroupInfo(showGroupInfo).Execute()
 
 Search Products
 
@@ -105,7 +184,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -124,10 +203,13 @@ func main() {
 	keyword := []string{"Inner_example"} // []string | Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name. (optional)
 	category := "Accessories" // string | The category of the product. Example: Displays. (optional)
 	skipAuthorisation := "true" // string | This parameter is True when you want Skip the authorization, so template will work like current B2b template. (optional)
+	groupName := "Microsoft Defender for Endpoint P2 (NCE COM MTH)" // string | Name of the Product Group (optional)
+	planID := "471490" // string | ID of the plan (optional)
+	showGroupInfo := true // bool | In case of value true, below Group related information will displayed without the plan info. Group Name, Group Description, Number of plans, link in the group. A link will be provided if customer want to see all the plans in that group. (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productsearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).Execute()
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productsearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).GroupName(groupName).PlanID(planID).ShowGroupInfo(showGroupInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6Productsearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -163,6 +245,9 @@ Name | Type | Description  | Notes
  **keyword** | **[]string** | Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name. | 
  **category** | **string** | The category of the product. Example: Displays. | 
  **skipAuthorisation** | **string** | This parameter is True when you want Skip the authorization, so template will work like current B2b template. | 
+ **groupName** | **string** | Name of the Product Group | 
+ **planID** | **string** | ID of the plan | 
+ **showGroupInfo** | **bool** | In case of value true, below Group related information will displayed without the plan info. Group Name, Group Description, Number of plans, link in the group. A link will be provided if customer want to see all the plans in that group. | 
 
 ### Return type
 
@@ -184,7 +269,7 @@ Name | Type | Description  | Notes
 
 ## PostPriceandavailability
 
-> []PriceAndAvailabilityResponseInner PostPriceandavailability(ctx).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).Execute()
+> []PriceAndAvailabilityResponseInner PostPriceandavailability(ctx).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).Execute()
 
 Price and Availability
 
@@ -199,7 +284,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -208,13 +293,13 @@ func main() {
 	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
 	iMCountryCode := "US" // string | Two-character ISO country code.
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems.
-	priceAndAvailabilityRequest := *openapiclient.NewPriceAndAvailabilityRequest() // PriceAndAvailabilityRequest | 
 	includeProductAttributes := true // bool | Pass boolean value as input, if true the response will contain detailed attributes related to the Product, if false or not sent the response will contain very few Product details. (optional)
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
+	priceAndAvailabilityRequest := *openapiclient.NewPriceAndAvailabilityRequest() // PriceAndAvailabilityRequest |  (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCatalogAPI.PostPriceandavailability(context.Background()).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).Execute()
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductCatalogAPI.PostPriceandavailability(context.Background()).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.PostPriceandavailability``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,9 +325,9 @@ Name | Type | Description  | Notes
  **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
  **iMCountryCode** | **string** | Two-character ISO country code. | 
  **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems. | 
- **priceAndAvailabilityRequest** | [**PriceAndAvailabilityRequest**](PriceAndAvailabilityRequest.md) |  | 
  **includeProductAttributes** | **bool** | Pass boolean value as input, if true the response will contain detailed attributes related to the Product, if false or not sent the response will contain very few Product details. | 
  **iMSenderID** | **string** | Unique value used to identify the sender of the transaction. Example: MyCompany | 
+ **priceAndAvailabilityRequest** | [**PriceAndAvailabilityRequest**](PriceAndAvailabilityRequest.md) |  | 
 
 ### Return type
 

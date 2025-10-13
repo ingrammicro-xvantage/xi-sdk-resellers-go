@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -30,7 +30,7 @@ type RenewalsDetailsResponseProductsInner struct {
 	// The manufacturer's part number for the line item.
 	ManufacturerPartNumber *string `json:"manufacturerPartNumber,omitempty"`
 	// The quantity of the line item.
-	Quantity *string `json:"quantity,omitempty"`
+	Quantity *int32 `json:"quantity,omitempty"`
 	// The unit price of the line item.
 	UnitPrice *float32 `json:"unitPrice,omitempty"`
 	// Is the line item consolidated? Yes or No.
@@ -215,9 +215,9 @@ func (o *RenewalsDetailsResponseProductsInner) SetManufacturerPartNumber(v strin
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseProductsInner) GetQuantity() string {
+func (o *RenewalsDetailsResponseProductsInner) GetQuantity() int32 {
 	if o == nil || IsNil(o.Quantity) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.Quantity
@@ -225,7 +225,7 @@ func (o *RenewalsDetailsResponseProductsInner) GetQuantity() string {
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseProductsInner) GetQuantityOk() (*string, bool) {
+func (o *RenewalsDetailsResponseProductsInner) GetQuantityOk() (*int32, bool) {
 	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
@@ -241,8 +241,8 @@ func (o *RenewalsDetailsResponseProductsInner) HasQuantity() bool {
 	return false
 }
 
-// SetQuantity gets a reference to the given string and assigns it to the Quantity field.
-func (o *RenewalsDetailsResponseProductsInner) SetQuantity(v string) {
+// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
+func (o *RenewalsDetailsResponseProductsInner) SetQuantity(v int32) {
 	o.Quantity = &v
 }
 

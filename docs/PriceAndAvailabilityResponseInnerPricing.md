@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CurrencyCode** | Pointer to **string** | The 3-digit ISO currency code. | [optional] 
-**RetailPrice** | Pointer to **float32** | The retail price of the product. | [optional] 
-**MapPrice** | Pointer to **float32** | Minimum Advertised Price (MAP). If required by the vendor, resellers can not sell below MAP price. | [optional] 
-**CustomerPrice** | Pointer to **float32** | The price customer pays after all special pricing and discounts have been applied. | [optional] 
-**SpecialBidPricingAvailable** | Pointer to **bool** | Boolean values specifies whether special Bid discounts are available for the product. | [optional] 
-**WebDiscountsAvailable** | Pointer to **bool** | Boolean values specifies whether web Discounts are available for the product. | [optional] 
+**RetailPrice** | Pointer to **NullableFloat32** | The retail price of the product. | [optional] 
+**MapPrice** | Pointer to **NullableFloat32** | Minimum Advertised Price (MAP). If required by the vendor, resellers can not sell below MAP price. | [optional] 
+**CustomerPrice** | Pointer to **NullableFloat32** | The price customer pays after all special pricing and discounts have been applied. | [optional] 
+**SpecialBidPricingAvailable** | Pointer to **NullableBool** | Boolean values specifies whether special Bid discounts are available for the product. | [optional] 
+**WebDiscountsAvailable** | Pointer to **NullableBool** | Boolean values specifies whether web Discounts are available for the product. | [optional] 
 
 ## Methods
 
@@ -80,6 +80,16 @@ SetRetailPrice sets RetailPrice field to given value.
 
 HasRetailPrice returns a boolean if a field has been set.
 
+### SetRetailPriceNil
+
+`func (o *PriceAndAvailabilityResponseInnerPricing) SetRetailPriceNil(b bool)`
+
+ SetRetailPriceNil sets the value for RetailPrice to be an explicit nil
+
+### UnsetRetailPrice
+`func (o *PriceAndAvailabilityResponseInnerPricing) UnsetRetailPrice()`
+
+UnsetRetailPrice ensures that no value is present for RetailPrice, not even an explicit nil
 ### GetMapPrice
 
 `func (o *PriceAndAvailabilityResponseInnerPricing) GetMapPrice() float32`
@@ -105,6 +115,16 @@ SetMapPrice sets MapPrice field to given value.
 
 HasMapPrice returns a boolean if a field has been set.
 
+### SetMapPriceNil
+
+`func (o *PriceAndAvailabilityResponseInnerPricing) SetMapPriceNil(b bool)`
+
+ SetMapPriceNil sets the value for MapPrice to be an explicit nil
+
+### UnsetMapPrice
+`func (o *PriceAndAvailabilityResponseInnerPricing) UnsetMapPrice()`
+
+UnsetMapPrice ensures that no value is present for MapPrice, not even an explicit nil
 ### GetCustomerPrice
 
 `func (o *PriceAndAvailabilityResponseInnerPricing) GetCustomerPrice() float32`
@@ -130,6 +150,16 @@ SetCustomerPrice sets CustomerPrice field to given value.
 
 HasCustomerPrice returns a boolean if a field has been set.
 
+### SetCustomerPriceNil
+
+`func (o *PriceAndAvailabilityResponseInnerPricing) SetCustomerPriceNil(b bool)`
+
+ SetCustomerPriceNil sets the value for CustomerPrice to be an explicit nil
+
+### UnsetCustomerPrice
+`func (o *PriceAndAvailabilityResponseInnerPricing) UnsetCustomerPrice()`
+
+UnsetCustomerPrice ensures that no value is present for CustomerPrice, not even an explicit nil
 ### GetSpecialBidPricingAvailable
 
 `func (o *PriceAndAvailabilityResponseInnerPricing) GetSpecialBidPricingAvailable() bool`
@@ -155,6 +185,16 @@ SetSpecialBidPricingAvailable sets SpecialBidPricingAvailable field to given val
 
 HasSpecialBidPricingAvailable returns a boolean if a field has been set.
 
+### SetSpecialBidPricingAvailableNil
+
+`func (o *PriceAndAvailabilityResponseInnerPricing) SetSpecialBidPricingAvailableNil(b bool)`
+
+ SetSpecialBidPricingAvailableNil sets the value for SpecialBidPricingAvailable to be an explicit nil
+
+### UnsetSpecialBidPricingAvailable
+`func (o *PriceAndAvailabilityResponseInnerPricing) UnsetSpecialBidPricingAvailable()`
+
+UnsetSpecialBidPricingAvailable ensures that no value is present for SpecialBidPricingAvailable, not even an explicit nil
 ### GetWebDiscountsAvailable
 
 `func (o *PriceAndAvailabilityResponseInnerPricing) GetWebDiscountsAvailable() bool`
@@ -180,6 +220,16 @@ SetWebDiscountsAvailable sets WebDiscountsAvailable field to given value.
 
 HasWebDiscountsAvailable returns a boolean if a field has been set.
 
+### SetWebDiscountsAvailableNil
+
+`func (o *PriceAndAvailabilityResponseInnerPricing) SetWebDiscountsAvailableNil(b bool)`
+
+ SetWebDiscountsAvailableNil sets the value for WebDiscountsAvailable to be an explicit nil
+
+### UnsetWebDiscountsAvailable
+`func (o *PriceAndAvailabilityResponseInnerPricing) UnsetWebDiscountsAvailable()`
+
+UnsetWebDiscountsAvailable ensures that no value is present for WebDiscountsAvailable, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

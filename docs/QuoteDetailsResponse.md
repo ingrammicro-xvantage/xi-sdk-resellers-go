@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **SpecialBidEffectiveDate** | Pointer to **string** | If price discount has been applied to the quote - the starting date the discount begins. | [optional] 
 **SpecialBidExpirationDate** | Pointer to **string** | If a price discount has been applied to the quote - The date the discount expires and will no longer be applicable. | [optional] 
 **VendorQuoteNumber** | Pointer to **string** |  | [optional] 
+**IsPartialOrderAllowed** | Pointer to **NullableBool** |  | [optional] 
 **Status** | Pointer to **string** | This refers to the primary status of the quote.  API responses will return | [optional] 
 **StatusReason** | Pointer to **string** |  | [optional] 
 **ClosingReason** | Pointer to **string** | Closing Reason for quote. | [optional] 
@@ -36,7 +37,7 @@ Name | Type | Description | Notes
 **ShippingInfo** | Pointer to [**QuoteDetailsResponseShippingInfo**](QuoteDetailsResponseShippingInfo.md) |  | [optional] 
 **Products** | Pointer to [**[]QuoteDetailsResponseProductsInner**](QuoteDetailsResponseProductsInner.md) |  | [optional] 
 **ProductsCount** | Pointer to **int32** | Total number of products included in the quote | [optional] 
-**ExtendedMsrpTotal** | Pointer to **float32** | Total extended MSRP for all products included in the quote | [optional] 
+**ExtendedMsrpTotal** | Pointer to **NullableFloat32** | Total extended MSRP for all products included in the quote | [optional] 
 **QuantityTotal** | Pointer to **int32** | Total quantity of all items in the quote. | [optional] 
 **ExtraFeesTotal** | Pointer to **float32** |  | [optional] 
 **ExtraFeesTotalDetails** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner**](QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner.md) |  | [optional] 
@@ -365,6 +366,41 @@ SetVendorQuoteNumber sets VendorQuoteNumber field to given value.
 
 HasVendorQuoteNumber returns a boolean if a field has been set.
 
+### GetIsPartialOrderAllowed
+
+`func (o *QuoteDetailsResponse) GetIsPartialOrderAllowed() bool`
+
+GetIsPartialOrderAllowed returns the IsPartialOrderAllowed field if non-nil, zero value otherwise.
+
+### GetIsPartialOrderAllowedOk
+
+`func (o *QuoteDetailsResponse) GetIsPartialOrderAllowedOk() (*bool, bool)`
+
+GetIsPartialOrderAllowedOk returns a tuple with the IsPartialOrderAllowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsPartialOrderAllowed
+
+`func (o *QuoteDetailsResponse) SetIsPartialOrderAllowed(v bool)`
+
+SetIsPartialOrderAllowed sets IsPartialOrderAllowed field to given value.
+
+### HasIsPartialOrderAllowed
+
+`func (o *QuoteDetailsResponse) HasIsPartialOrderAllowed() bool`
+
+HasIsPartialOrderAllowed returns a boolean if a field has been set.
+
+### SetIsPartialOrderAllowedNil
+
+`func (o *QuoteDetailsResponse) SetIsPartialOrderAllowedNil(b bool)`
+
+ SetIsPartialOrderAllowedNil sets the value for IsPartialOrderAllowed to be an explicit nil
+
+### UnsetIsPartialOrderAllowed
+`func (o *QuoteDetailsResponse) UnsetIsPartialOrderAllowed()`
+
+UnsetIsPartialOrderAllowed ensures that no value is present for IsPartialOrderAllowed, not even an explicit nil
 ### GetStatus
 
 `func (o *QuoteDetailsResponse) GetStatus() string`
@@ -890,6 +926,16 @@ SetExtendedMsrpTotal sets ExtendedMsrpTotal field to given value.
 
 HasExtendedMsrpTotal returns a boolean if a field has been set.
 
+### SetExtendedMsrpTotalNil
+
+`func (o *QuoteDetailsResponse) SetExtendedMsrpTotalNil(b bool)`
+
+ SetExtendedMsrpTotalNil sets the value for ExtendedMsrpTotal to be an explicit nil
+
+### UnsetExtendedMsrpTotal
+`func (o *QuoteDetailsResponse) UnsetExtendedMsrpTotal()`
+
+UnsetExtendedMsrpTotal ensures that no value is present for ExtendedMsrpTotal, not even an explicit nil
 ### GetQuantityTotal
 
 `func (o *QuoteDetailsResponse) GetQuantityTotal() int32`

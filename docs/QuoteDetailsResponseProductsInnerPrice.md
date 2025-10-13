@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**QuotePrice** | Pointer to **float32** | Ingram Micro quoted price specific to the reseller and quote. | [optional] 
-**Msrp** | Pointer to **float32** | Manufacturer Suggested Retail Price | [optional] 
-**ExtendedMsrp** | Pointer to **float32** | Extended MSRP - Manufacturer Suggested Retail Price X Quantity | [optional] 
-**ExtendedQuotePrice** | Pointer to **float32** | Extended reseller quoted price (cost to reseller) X Quantity | [optional] 
-**DiscountOffList** | Pointer to **string** | Discount off list percentage extended | [optional] 
+**QuotePrice** | Pointer to **NullableFloat32** | Ingram Micro quoted price specific to the reseller and quote. | [optional] 
+**Msrp** | Pointer to **NullableFloat32** | Manufacturer Suggested Retail Price | [optional] 
+**ExtendedMsrp** | Pointer to **NullableFloat32** | Extended MSRP - Manufacturer Suggested Retail Price X Quantity | [optional] 
+**ExtendedQuotePrice** | Pointer to **NullableFloat32** | Extended reseller quoted price (cost to reseller) X Quantity | [optional] 
+**RemainingQuantityExtendedMsrp** | Pointer to **NullableFloat32** |  | [optional] 
+**RemainingQuantityExtendedQuotePrice** | Pointer to **NullableFloat32** |  | [optional] 
+**DiscountOffList** | Pointer to **NullableString** | Discount off list percentage extended | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **RecurringPriceModel** | Pointer to **string** |  | [optional] 
 **UnitOfMeasure** | Pointer to **string** |  | [optional] 
@@ -61,6 +63,16 @@ SetQuotePrice sets QuotePrice field to given value.
 
 HasQuotePrice returns a boolean if a field has been set.
 
+### SetQuotePriceNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetQuotePriceNil(b bool)`
+
+ SetQuotePriceNil sets the value for QuotePrice to be an explicit nil
+
+### UnsetQuotePrice
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetQuotePrice()`
+
+UnsetQuotePrice ensures that no value is present for QuotePrice, not even an explicit nil
 ### GetMsrp
 
 `func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrp() float32`
@@ -86,6 +98,16 @@ SetMsrp sets Msrp field to given value.
 
 HasMsrp returns a boolean if a field has been set.
 
+### SetMsrpNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetMsrpNil(b bool)`
+
+ SetMsrpNil sets the value for Msrp to be an explicit nil
+
+### UnsetMsrp
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetMsrp()`
+
+UnsetMsrp ensures that no value is present for Msrp, not even an explicit nil
 ### GetExtendedMsrp
 
 `func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrp() float32`
@@ -111,6 +133,16 @@ SetExtendedMsrp sets ExtendedMsrp field to given value.
 
 HasExtendedMsrp returns a boolean if a field has been set.
 
+### SetExtendedMsrpNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedMsrpNil(b bool)`
+
+ SetExtendedMsrpNil sets the value for ExtendedMsrp to be an explicit nil
+
+### UnsetExtendedMsrp
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetExtendedMsrp()`
+
+UnsetExtendedMsrp ensures that no value is present for ExtendedMsrp, not even an explicit nil
 ### GetExtendedQuotePrice
 
 `func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePrice() float32`
@@ -136,6 +168,86 @@ SetExtendedQuotePrice sets ExtendedQuotePrice field to given value.
 
 HasExtendedQuotePrice returns a boolean if a field has been set.
 
+### SetExtendedQuotePriceNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedQuotePriceNil(b bool)`
+
+ SetExtendedQuotePriceNil sets the value for ExtendedQuotePrice to be an explicit nil
+
+### UnsetExtendedQuotePrice
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetExtendedQuotePrice()`
+
+UnsetExtendedQuotePrice ensures that no value is present for ExtendedQuotePrice, not even an explicit nil
+### GetRemainingQuantityExtendedMsrp
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetRemainingQuantityExtendedMsrp() float32`
+
+GetRemainingQuantityExtendedMsrp returns the RemainingQuantityExtendedMsrp field if non-nil, zero value otherwise.
+
+### GetRemainingQuantityExtendedMsrpOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetRemainingQuantityExtendedMsrpOk() (*float32, bool)`
+
+GetRemainingQuantityExtendedMsrpOk returns a tuple with the RemainingQuantityExtendedMsrp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemainingQuantityExtendedMsrp
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetRemainingQuantityExtendedMsrp(v float32)`
+
+SetRemainingQuantityExtendedMsrp sets RemainingQuantityExtendedMsrp field to given value.
+
+### HasRemainingQuantityExtendedMsrp
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasRemainingQuantityExtendedMsrp() bool`
+
+HasRemainingQuantityExtendedMsrp returns a boolean if a field has been set.
+
+### SetRemainingQuantityExtendedMsrpNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetRemainingQuantityExtendedMsrpNil(b bool)`
+
+ SetRemainingQuantityExtendedMsrpNil sets the value for RemainingQuantityExtendedMsrp to be an explicit nil
+
+### UnsetRemainingQuantityExtendedMsrp
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetRemainingQuantityExtendedMsrp()`
+
+UnsetRemainingQuantityExtendedMsrp ensures that no value is present for RemainingQuantityExtendedMsrp, not even an explicit nil
+### GetRemainingQuantityExtendedQuotePrice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetRemainingQuantityExtendedQuotePrice() float32`
+
+GetRemainingQuantityExtendedQuotePrice returns the RemainingQuantityExtendedQuotePrice field if non-nil, zero value otherwise.
+
+### GetRemainingQuantityExtendedQuotePriceOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetRemainingQuantityExtendedQuotePriceOk() (*float32, bool)`
+
+GetRemainingQuantityExtendedQuotePriceOk returns a tuple with the RemainingQuantityExtendedQuotePrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemainingQuantityExtendedQuotePrice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetRemainingQuantityExtendedQuotePrice(v float32)`
+
+SetRemainingQuantityExtendedQuotePrice sets RemainingQuantityExtendedQuotePrice field to given value.
+
+### HasRemainingQuantityExtendedQuotePrice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasRemainingQuantityExtendedQuotePrice() bool`
+
+HasRemainingQuantityExtendedQuotePrice returns a boolean if a field has been set.
+
+### SetRemainingQuantityExtendedQuotePriceNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetRemainingQuantityExtendedQuotePriceNil(b bool)`
+
+ SetRemainingQuantityExtendedQuotePriceNil sets the value for RemainingQuantityExtendedQuotePrice to be an explicit nil
+
+### UnsetRemainingQuantityExtendedQuotePrice
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetRemainingQuantityExtendedQuotePrice()`
+
+UnsetRemainingQuantityExtendedQuotePrice ensures that no value is present for RemainingQuantityExtendedQuotePrice, not even an explicit nil
 ### GetDiscountOffList
 
 `func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountOffList() string`
@@ -161,6 +273,16 @@ SetDiscountOffList sets DiscountOffList field to given value.
 
 HasDiscountOffList returns a boolean if a field has been set.
 
+### SetDiscountOffListNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetDiscountOffListNil(b bool)`
+
+ SetDiscountOffListNil sets the value for DiscountOffList to be an explicit nil
+
+### UnsetDiscountOffList
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetDiscountOffList()`
+
+UnsetDiscountOffList ensures that no value is present for DiscountOffList, not even an explicit nil
 ### GetType
 
 `func (o *QuoteDetailsResponseProductsInnerPrice) GetType() string`

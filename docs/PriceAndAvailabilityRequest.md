@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ShowAvailableDiscounts** | Pointer to **bool** | Boolean value that will display Discount details in the response when true. | [optional] 
-**ShowReserveInventoryDetails** | Pointer to **bool** | Boolean value that will display reserve inventory details in the response when true. | [optional] 
-**SpecialBidNumber** | Pointer to **string** | Pre-approved special pricing/bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number where different line items have different bid numbers. | [optional] 
+**ShowAvailableDiscounts** | Pointer to **NullableBool** | Boolean value that will display Discount details in the response when true. | [optional] 
+**ShowReserveInventoryDetails** | Pointer to **NullableBool** | Boolean value that will display reserve inventory details in the response when true. | [optional] 
+**SpecialBidNumber** | Pointer to **NullableString** | Pre-approved special pricing/bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number where different line items have different bid numbers. | [optional] 
 **AvailabilityByWarehouse** | Pointer to [**[]PriceAndAvailabilityRequestAvailabilityByWarehouseInner**](PriceAndAvailabilityRequestAvailabilityByWarehouseInner.md) |  | [optional] 
 **Products** | Pointer to [**[]PriceAndAvailabilityRequestProductsInner**](PriceAndAvailabilityRequestProductsInner.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]PriceAndAvailabilityRequestAdditionalAttributesInner**](PriceAndAvailabilityRequestAdditionalAttributesInner.md) |  | [optional] 
@@ -55,6 +55,16 @@ SetShowAvailableDiscounts sets ShowAvailableDiscounts field to given value.
 
 HasShowAvailableDiscounts returns a boolean if a field has been set.
 
+### SetShowAvailableDiscountsNil
+
+`func (o *PriceAndAvailabilityRequest) SetShowAvailableDiscountsNil(b bool)`
+
+ SetShowAvailableDiscountsNil sets the value for ShowAvailableDiscounts to be an explicit nil
+
+### UnsetShowAvailableDiscounts
+`func (o *PriceAndAvailabilityRequest) UnsetShowAvailableDiscounts()`
+
+UnsetShowAvailableDiscounts ensures that no value is present for ShowAvailableDiscounts, not even an explicit nil
 ### GetShowReserveInventoryDetails
 
 `func (o *PriceAndAvailabilityRequest) GetShowReserveInventoryDetails() bool`
@@ -80,6 +90,16 @@ SetShowReserveInventoryDetails sets ShowReserveInventoryDetails field to given v
 
 HasShowReserveInventoryDetails returns a boolean if a field has been set.
 
+### SetShowReserveInventoryDetailsNil
+
+`func (o *PriceAndAvailabilityRequest) SetShowReserveInventoryDetailsNil(b bool)`
+
+ SetShowReserveInventoryDetailsNil sets the value for ShowReserveInventoryDetails to be an explicit nil
+
+### UnsetShowReserveInventoryDetails
+`func (o *PriceAndAvailabilityRequest) UnsetShowReserveInventoryDetails()`
+
+UnsetShowReserveInventoryDetails ensures that no value is present for ShowReserveInventoryDetails, not even an explicit nil
 ### GetSpecialBidNumber
 
 `func (o *PriceAndAvailabilityRequest) GetSpecialBidNumber() string`
@@ -105,6 +125,16 @@ SetSpecialBidNumber sets SpecialBidNumber field to given value.
 
 HasSpecialBidNumber returns a boolean if a field has been set.
 
+### SetSpecialBidNumberNil
+
+`func (o *PriceAndAvailabilityRequest) SetSpecialBidNumberNil(b bool)`
+
+ SetSpecialBidNumberNil sets the value for SpecialBidNumber to be an explicit nil
+
+### UnsetSpecialBidNumber
+`func (o *PriceAndAvailabilityRequest) UnsetSpecialBidNumber()`
+
+UnsetSpecialBidNumber ensures that no value is present for SpecialBidNumber, not even an explicit nil
 ### GetAvailabilityByWarehouse
 
 `func (o *PriceAndAvailabilityRequest) GetAvailabilityByWarehouse() []PriceAndAvailabilityRequestAvailabilityByWarehouseInner`
@@ -130,6 +160,16 @@ SetAvailabilityByWarehouse sets AvailabilityByWarehouse field to given value.
 
 HasAvailabilityByWarehouse returns a boolean if a field has been set.
 
+### SetAvailabilityByWarehouseNil
+
+`func (o *PriceAndAvailabilityRequest) SetAvailabilityByWarehouseNil(b bool)`
+
+ SetAvailabilityByWarehouseNil sets the value for AvailabilityByWarehouse to be an explicit nil
+
+### UnsetAvailabilityByWarehouse
+`func (o *PriceAndAvailabilityRequest) UnsetAvailabilityByWarehouse()`
+
+UnsetAvailabilityByWarehouse ensures that no value is present for AvailabilityByWarehouse, not even an explicit nil
 ### GetProducts
 
 `func (o *PriceAndAvailabilityRequest) GetProducts() []PriceAndAvailabilityRequestProductsInner`
@@ -180,6 +220,16 @@ SetAdditionalAttributes sets AdditionalAttributes field to given value.
 
 HasAdditionalAttributes returns a boolean if a field has been set.
 
+### SetAdditionalAttributesNil
+
+`func (o *PriceAndAvailabilityRequest) SetAdditionalAttributesNil(b bool)`
+
+ SetAdditionalAttributesNil sets the value for AdditionalAttributes to be an explicit nil
+
+### UnsetAdditionalAttributes
+`func (o *PriceAndAvailabilityRequest) UnsetAdditionalAttributes()`
+
+UnsetAdditionalAttributes ensures that no value is present for AdditionalAttributes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

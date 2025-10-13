@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerReserveInventoryDetails
 // PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner struct for PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner
 type PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner struct {
 	// The quantity of the product reserved for the customer.
-	QuantityReserved *int32 `json:"quantityReserved,omitempty"`
+	QuantityReserved NullableInt32 `json:"quantityReserved,omitempty"`
 	// The availability of the product reserved.
-	QuantityAvailable *int32 `json:"quantityAvailable,omitempty"`
+	QuantityAvailable NullableInt32 `json:"quantityAvailable,omitempty"`
 	// The reservation date for the product in UTC format.
-	Effectivedate *string `json:"effectivedate,omitempty"`
+	Effectivedate NullableString `json:"effectivedate,omitempty"`
 	// The expiration date for the reservation of the product in UTC format.
-	Expirydate *string `json:"expirydate,omitempty"`
+	Expirydate NullableString `json:"expirydate,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerReserveInventoryDetailsInner instantiates a new PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner object
@@ -46,132 +46,172 @@ func NewPriceAndAvailabilityResponseInnerReserveInventoryDetailsInnerWithDefault
 	return &this
 }
 
-// GetQuantityReserved returns the QuantityReserved field value if set, zero value otherwise.
+// GetQuantityReserved returns the QuantityReserved field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetQuantityReserved() int32 {
-	if o == nil || IsNil(o.QuantityReserved) {
+	if o == nil || IsNil(o.QuantityReserved.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.QuantityReserved
+	return *o.QuantityReserved.Get()
 }
 
 // GetQuantityReservedOk returns a tuple with the QuantityReserved field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetQuantityReservedOk() (*int32, bool) {
-	if o == nil || IsNil(o.QuantityReserved) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QuantityReserved, true
+	return o.QuantityReserved.Get(), o.QuantityReserved.IsSet()
 }
 
 // HasQuantityReserved returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) HasQuantityReserved() bool {
-	if o != nil && !IsNil(o.QuantityReserved) {
+	if o != nil && o.QuantityReserved.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantityReserved gets a reference to the given int32 and assigns it to the QuantityReserved field.
+// SetQuantityReserved gets a reference to the given NullableInt32 and assigns it to the QuantityReserved field.
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetQuantityReserved(v int32) {
-	o.QuantityReserved = &v
+	o.QuantityReserved.Set(&v)
+}
+// SetQuantityReservedNil sets the value for QuantityReserved to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetQuantityReservedNil() {
+	o.QuantityReserved.Set(nil)
 }
 
-// GetQuantityAvailable returns the QuantityAvailable field value if set, zero value otherwise.
+// UnsetQuantityReserved ensures that no value is present for QuantityReserved, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) UnsetQuantityReserved() {
+	o.QuantityReserved.Unset()
+}
+
+// GetQuantityAvailable returns the QuantityAvailable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetQuantityAvailable() int32 {
-	if o == nil || IsNil(o.QuantityAvailable) {
+	if o == nil || IsNil(o.QuantityAvailable.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.QuantityAvailable
+	return *o.QuantityAvailable.Get()
 }
 
 // GetQuantityAvailableOk returns a tuple with the QuantityAvailable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetQuantityAvailableOk() (*int32, bool) {
-	if o == nil || IsNil(o.QuantityAvailable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QuantityAvailable, true
+	return o.QuantityAvailable.Get(), o.QuantityAvailable.IsSet()
 }
 
 // HasQuantityAvailable returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) HasQuantityAvailable() bool {
-	if o != nil && !IsNil(o.QuantityAvailable) {
+	if o != nil && o.QuantityAvailable.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantityAvailable gets a reference to the given int32 and assigns it to the QuantityAvailable field.
+// SetQuantityAvailable gets a reference to the given NullableInt32 and assigns it to the QuantityAvailable field.
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetQuantityAvailable(v int32) {
-	o.QuantityAvailable = &v
+	o.QuantityAvailable.Set(&v)
+}
+// SetQuantityAvailableNil sets the value for QuantityAvailable to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetQuantityAvailableNil() {
+	o.QuantityAvailable.Set(nil)
 }
 
-// GetEffectivedate returns the Effectivedate field value if set, zero value otherwise.
+// UnsetQuantityAvailable ensures that no value is present for QuantityAvailable, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) UnsetQuantityAvailable() {
+	o.QuantityAvailable.Unset()
+}
+
+// GetEffectivedate returns the Effectivedate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetEffectivedate() string {
-	if o == nil || IsNil(o.Effectivedate) {
+	if o == nil || IsNil(o.Effectivedate.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Effectivedate
+	return *o.Effectivedate.Get()
 }
 
 // GetEffectivedateOk returns a tuple with the Effectivedate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetEffectivedateOk() (*string, bool) {
-	if o == nil || IsNil(o.Effectivedate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Effectivedate, true
+	return o.Effectivedate.Get(), o.Effectivedate.IsSet()
 }
 
 // HasEffectivedate returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) HasEffectivedate() bool {
-	if o != nil && !IsNil(o.Effectivedate) {
+	if o != nil && o.Effectivedate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEffectivedate gets a reference to the given string and assigns it to the Effectivedate field.
+// SetEffectivedate gets a reference to the given NullableString and assigns it to the Effectivedate field.
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetEffectivedate(v string) {
-	o.Effectivedate = &v
+	o.Effectivedate.Set(&v)
+}
+// SetEffectivedateNil sets the value for Effectivedate to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetEffectivedateNil() {
+	o.Effectivedate.Set(nil)
 }
 
-// GetExpirydate returns the Expirydate field value if set, zero value otherwise.
+// UnsetEffectivedate ensures that no value is present for Effectivedate, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) UnsetEffectivedate() {
+	o.Effectivedate.Unset()
+}
+
+// GetExpirydate returns the Expirydate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetExpirydate() string {
-	if o == nil || IsNil(o.Expirydate) {
+	if o == nil || IsNil(o.Expirydate.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Expirydate
+	return *o.Expirydate.Get()
 }
 
 // GetExpirydateOk returns a tuple with the Expirydate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetExpirydateOk() (*string, bool) {
-	if o == nil || IsNil(o.Expirydate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Expirydate, true
+	return o.Expirydate.Get(), o.Expirydate.IsSet()
 }
 
 // HasExpirydate returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) HasExpirydate() bool {
-	if o != nil && !IsNil(o.Expirydate) {
+	if o != nil && o.Expirydate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExpirydate gets a reference to the given string and assigns it to the Expirydate field.
+// SetExpirydate gets a reference to the given NullableString and assigns it to the Expirydate field.
 func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetExpirydate(v string) {
-	o.Expirydate = &v
+	o.Expirydate.Set(&v)
+}
+// SetExpirydateNil sets the value for Expirydate to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetExpirydateNil() {
+	o.Expirydate.Set(nil)
+}
+
+// UnsetExpirydate ensures that no value is present for Expirydate, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) UnsetExpirydate() {
+	o.Expirydate.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) MarshalJSON() ([]byte, error) {
@@ -184,17 +224,17 @@ func (o PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) MarshalJS
 
 func (o PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.QuantityReserved) {
-		toSerialize["quantityReserved"] = o.QuantityReserved
+	if o.QuantityReserved.IsSet() {
+		toSerialize["quantityReserved"] = o.QuantityReserved.Get()
 	}
-	if !IsNil(o.QuantityAvailable) {
-		toSerialize["quantityAvailable"] = o.QuantityAvailable
+	if o.QuantityAvailable.IsSet() {
+		toSerialize["quantityAvailable"] = o.QuantityAvailable.Get()
 	}
-	if !IsNil(o.Effectivedate) {
-		toSerialize["effectivedate"] = o.Effectivedate
+	if o.Effectivedate.IsSet() {
+		toSerialize["effectivedate"] = o.Effectivedate.Get()
 	}
-	if !IsNil(o.Expirydate) {
-		toSerialize["expirydate"] = o.Expirydate
+	if o.Expirydate.IsSet() {
+		toSerialize["expirydate"] = o.Expirydate.Get()
 	}
 	return toSerialize, nil
 }

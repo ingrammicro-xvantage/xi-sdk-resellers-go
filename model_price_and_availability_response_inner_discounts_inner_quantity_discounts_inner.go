@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerDiscountsInnerQuantityD
 // PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner struct for PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner
 type PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner struct {
 	// Indicates when the discount is applied after ordering the product.
-	ConditionType *string `json:"conditionType,omitempty"`
+	ConditionType NullableString `json:"conditionType,omitempty"`
 	// The country-specific three digit ISO 4217 currency code for the order.
-	CurrencyCode *string `json:"currencyCode,omitempty"`
+	CurrencyCode NullableString `json:"currencyCode,omitempty"`
 	// Type of currency.
-	CurrencyType *string `json:"currencyType,omitempty"`
+	CurrencyType NullableString `json:"currencyType,omitempty"`
 	// The total discounted quantity of the product.
-	Quantity *int32 `json:"quantity,omitempty"`
+	Quantity NullableInt32 `json:"quantity,omitempty"`
 	// The total price of all the discounts applied.
-	Amount *float32 `json:"amount,omitempty"`
+	Amount NullableFloat32 `json:"amount,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner instantiates a new PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner object
@@ -48,164 +48,214 @@ func NewPriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInnerWit
 	return &this
 }
 
-// GetConditionType returns the ConditionType field value if set, zero value otherwise.
+// GetConditionType returns the ConditionType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetConditionType() string {
-	if o == nil || IsNil(o.ConditionType) {
+	if o == nil || IsNil(o.ConditionType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConditionType
+	return *o.ConditionType.Get()
 }
 
 // GetConditionTypeOk returns a tuple with the ConditionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetConditionTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ConditionType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConditionType, true
+	return o.ConditionType.Get(), o.ConditionType.IsSet()
 }
 
 // HasConditionType returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) HasConditionType() bool {
-	if o != nil && !IsNil(o.ConditionType) {
+	if o != nil && o.ConditionType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConditionType gets a reference to the given string and assigns it to the ConditionType field.
+// SetConditionType gets a reference to the given NullableString and assigns it to the ConditionType field.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetConditionType(v string) {
-	o.ConditionType = &v
+	o.ConditionType.Set(&v)
+}
+// SetConditionTypeNil sets the value for ConditionType to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetConditionTypeNil() {
+	o.ConditionType.Set(nil)
 }
 
-// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
+// UnsetConditionType ensures that no value is present for ConditionType, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetConditionType() {
+	o.ConditionType.Unset()
+}
+
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetCurrencyCode() string {
-	if o == nil || IsNil(o.CurrencyCode) {
+	if o == nil || IsNil(o.CurrencyCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CurrencyCode
+	return *o.CurrencyCode.Get()
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.CurrencyCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CurrencyCode, true
+	return o.CurrencyCode.Get(), o.CurrencyCode.IsSet()
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) HasCurrencyCode() bool {
-	if o != nil && !IsNil(o.CurrencyCode) {
+	if o != nil && o.CurrencyCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
+// SetCurrencyCode gets a reference to the given NullableString and assigns it to the CurrencyCode field.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetCurrencyCode(v string) {
-	o.CurrencyCode = &v
+	o.CurrencyCode.Set(&v)
+}
+// SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetCurrencyCodeNil() {
+	o.CurrencyCode.Set(nil)
 }
 
-// GetCurrencyType returns the CurrencyType field value if set, zero value otherwise.
+// UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetCurrencyCode() {
+	o.CurrencyCode.Unset()
+}
+
+// GetCurrencyType returns the CurrencyType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetCurrencyType() string {
-	if o == nil || IsNil(o.CurrencyType) {
+	if o == nil || IsNil(o.CurrencyType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CurrencyType
+	return *o.CurrencyType.Get()
 }
 
 // GetCurrencyTypeOk returns a tuple with the CurrencyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetCurrencyTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.CurrencyType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CurrencyType, true
+	return o.CurrencyType.Get(), o.CurrencyType.IsSet()
 }
 
 // HasCurrencyType returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) HasCurrencyType() bool {
-	if o != nil && !IsNil(o.CurrencyType) {
+	if o != nil && o.CurrencyType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyType gets a reference to the given string and assigns it to the CurrencyType field.
+// SetCurrencyType gets a reference to the given NullableString and assigns it to the CurrencyType field.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetCurrencyType(v string) {
-	o.CurrencyType = &v
+	o.CurrencyType.Set(&v)
+}
+// SetCurrencyTypeNil sets the value for CurrencyType to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetCurrencyTypeNil() {
+	o.CurrencyType.Set(nil)
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
+// UnsetCurrencyType ensures that no value is present for CurrencyType, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetCurrencyType() {
+	o.CurrencyType.Unset()
+}
+
+// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetQuantity() int32 {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil || IsNil(o.Quantity.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Quantity
+	return *o.Quantity.Get()
 }
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetQuantityOk() (*int32, bool) {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Quantity, true
+	return o.Quantity.Get(), o.Quantity.IsSet()
 }
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) HasQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
+	if o != nil && o.Quantity.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
+// SetQuantity gets a reference to the given NullableInt32 and assigns it to the Quantity field.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetQuantity(v int32) {
-	o.Quantity = &v
+	o.Quantity.Set(&v)
+}
+// SetQuantityNil sets the value for Quantity to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetQuantityNil() {
+	o.Quantity.Set(nil)
 }
 
-// GetAmount returns the Amount field value if set, zero value otherwise.
+// UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetQuantity() {
+	o.Quantity.Unset()
+}
+
+// GetAmount returns the Amount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetAmount() float32 {
-	if o == nil || IsNil(o.Amount) {
+	if o == nil || IsNil(o.Amount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Amount
+	return *o.Amount.Get()
 }
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetAmountOk() (*float32, bool) {
-	if o == nil || IsNil(o.Amount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Amount, true
+	return o.Amount.Get(), o.Amount.IsSet()
 }
 
 // HasAmount returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) HasAmount() bool {
-	if o != nil && !IsNil(o.Amount) {
+	if o != nil && o.Amount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
+// SetAmount gets a reference to the given NullableFloat32 and assigns it to the Amount field.
 func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetAmount(v float32) {
-	o.Amount = &v
+	o.Amount.Set(&v)
+}
+// SetAmountNil sets the value for Amount to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetAmountNil() {
+	o.Amount.Set(nil)
+}
+
+// UnsetAmount ensures that no value is present for Amount, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetAmount() {
+	o.Amount.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) MarshalJSON() ([]byte, error) {
@@ -218,20 +268,20 @@ func (o PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) M
 
 func (o PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ConditionType) {
-		toSerialize["conditionType"] = o.ConditionType
+	if o.ConditionType.IsSet() {
+		toSerialize["conditionType"] = o.ConditionType.Get()
 	}
-	if !IsNil(o.CurrencyCode) {
-		toSerialize["currencyCode"] = o.CurrencyCode
+	if o.CurrencyCode.IsSet() {
+		toSerialize["currencyCode"] = o.CurrencyCode.Get()
 	}
-	if !IsNil(o.CurrencyType) {
-		toSerialize["currencyType"] = o.CurrencyType
+	if o.CurrencyType.IsSet() {
+		toSerialize["currencyType"] = o.CurrencyType.Get()
 	}
-	if !IsNil(o.Quantity) {
-		toSerialize["quantity"] = o.Quantity
+	if o.Quantity.IsSet() {
+		toSerialize["quantity"] = o.Quantity.Get()
 	}
-	if !IsNil(o.Amount) {
-		toSerialize["amount"] = o.Amount
+	if o.Amount.IsSet() {
+		toSerialize["amount"] = o.Amount.Get()
 	}
 	return toSerialize, nil
 }

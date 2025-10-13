@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -109,8 +109,8 @@ func (a *OrderStatusAPIService) ResellersV1WebhooksOrderstatuseventPostExecute(r
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "targeturl", r.targeturl, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "x-hub-signature", r.xHubSignature, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "targeturl", r.targeturl, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "x-hub-signature", r.xHubSignature, "simple", "")
 	// body params
 	localVarPostBody = r.orderStatusAsyncNotificationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

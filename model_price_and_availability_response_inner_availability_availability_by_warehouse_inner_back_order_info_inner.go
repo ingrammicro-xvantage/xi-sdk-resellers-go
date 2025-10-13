@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerAvailabilityAvailabilit
 // PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner struct for PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner
 type PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner struct {
 	// Quantity backordered.
-	Quantity *int32 `json:"quantity,omitempty"`
+	Quantity NullableInt32 `json:"quantity,omitempty"`
 	// Expected availability date.
-	EtaDate *string `json:"etaDate,omitempty"`
+	EtaDate NullableString `json:"etaDate,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner instantiates a new PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner object
@@ -42,68 +42,88 @@ func NewPriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInne
 	return &this
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
+// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) GetQuantity() int32 {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil || IsNil(o.Quantity.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Quantity
+	return *o.Quantity.Get()
 }
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) GetQuantityOk() (*int32, bool) {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Quantity, true
+	return o.Quantity.Get(), o.Quantity.IsSet()
 }
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) HasQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
+	if o != nil && o.Quantity.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
+// SetQuantity gets a reference to the given NullableInt32 and assigns it to the Quantity field.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) SetQuantity(v int32) {
-	o.Quantity = &v
+	o.Quantity.Set(&v)
+}
+// SetQuantityNil sets the value for Quantity to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) SetQuantityNil() {
+	o.Quantity.Set(nil)
 }
 
-// GetEtaDate returns the EtaDate field value if set, zero value otherwise.
+// UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) UnsetQuantity() {
+	o.Quantity.Unset()
+}
+
+// GetEtaDate returns the EtaDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) GetEtaDate() string {
-	if o == nil || IsNil(o.EtaDate) {
+	if o == nil || IsNil(o.EtaDate.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EtaDate
+	return *o.EtaDate.Get()
 }
 
 // GetEtaDateOk returns a tuple with the EtaDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) GetEtaDateOk() (*string, bool) {
-	if o == nil || IsNil(o.EtaDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EtaDate, true
+	return o.EtaDate.Get(), o.EtaDate.IsSet()
 }
 
 // HasEtaDate returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) HasEtaDate() bool {
-	if o != nil && !IsNil(o.EtaDate) {
+	if o != nil && o.EtaDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEtaDate gets a reference to the given string and assigns it to the EtaDate field.
+// SetEtaDate gets a reference to the given NullableString and assigns it to the EtaDate field.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) SetEtaDate(v string) {
-	o.EtaDate = &v
+	o.EtaDate.Set(&v)
+}
+// SetEtaDateNil sets the value for EtaDate to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) SetEtaDateNil() {
+	o.EtaDate.Set(nil)
+}
+
+// UnsetEtaDate ensures that no value is present for EtaDate, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) UnsetEtaDate() {
+	o.EtaDate.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) MarshalJSON() ([]byte, error) {
@@ -116,11 +136,11 @@ func (o PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInne
 
 func (o PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Quantity) {
-		toSerialize["quantity"] = o.Quantity
+	if o.Quantity.IsSet() {
+		toSerialize["quantity"] = o.Quantity.Get()
 	}
-	if !IsNil(o.EtaDate) {
-		toSerialize["etaDate"] = o.EtaDate
+	if o.EtaDate.IsSet() {
+		toSerialize["etaDate"] = o.EtaDate.Get()
 	}
 	return toSerialize, nil
 }

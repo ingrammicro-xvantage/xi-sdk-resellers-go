@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -36,8 +36,8 @@ func main() {
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
 	freightRequest := *openapiclient.NewFreightRequest() // FreightRequest |  (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.FreightEstimateAPI.PostFreightestimate(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMCustomerContact(iMCustomerContact).IMSenderID(iMSenderID).FreightRequest(freightRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FreightEstimateAPI.PostFreightestimate``: %v\n", err)

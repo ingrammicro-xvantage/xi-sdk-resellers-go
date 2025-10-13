@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConditionType** | Pointer to **string** | Indicates when the discount is applied after ordering the product. | [optional] 
-**CurrencyCode** | Pointer to **string** | The country-specific three digit ISO 4217 currency code for the order. | [optional] 
-**CurrencyType** | Pointer to **string** | Type of currency. | [optional] 
-**Quantity** | Pointer to **int32** | The total discounted quantity of the product. | [optional] 
-**Amount** | Pointer to **float32** | The total price of all the discounts applied. | [optional] 
+**ConditionType** | Pointer to **NullableString** | Indicates when the discount is applied after ordering the product. | [optional] 
+**CurrencyCode** | Pointer to **NullableString** | The country-specific three digit ISO 4217 currency code for the order. | [optional] 
+**CurrencyType** | Pointer to **NullableString** | Type of currency. | [optional] 
+**Quantity** | Pointer to **NullableInt32** | The total discounted quantity of the product. | [optional] 
+**Amount** | Pointer to **NullableFloat32** | The total price of all the discounts applied. | [optional] 
 
 ## Methods
 
@@ -54,6 +54,16 @@ SetConditionType sets ConditionType field to given value.
 
 HasConditionType returns a boolean if a field has been set.
 
+### SetConditionTypeNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetConditionTypeNil(b bool)`
+
+ SetConditionTypeNil sets the value for ConditionType to be an explicit nil
+
+### UnsetConditionType
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetConditionType()`
+
+UnsetConditionType ensures that no value is present for ConditionType, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetCurrencyCode() string`
@@ -79,6 +89,16 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 HasCurrencyCode returns a boolean if a field has been set.
 
+### SetCurrencyCodeNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetCurrencyCodeNil(b bool)`
+
+ SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+
+### UnsetCurrencyCode
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetCurrencyCode()`
+
+UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
 ### GetCurrencyType
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetCurrencyType() string`
@@ -104,6 +124,16 @@ SetCurrencyType sets CurrencyType field to given value.
 
 HasCurrencyType returns a boolean if a field has been set.
 
+### SetCurrencyTypeNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetCurrencyTypeNil(b bool)`
+
+ SetCurrencyTypeNil sets the value for CurrencyType to be an explicit nil
+
+### UnsetCurrencyType
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetCurrencyType()`
+
+UnsetCurrencyType ensures that no value is present for CurrencyType, not even an explicit nil
 ### GetQuantity
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetQuantity() int32`
@@ -129,6 +159,16 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
+### SetQuantityNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetQuantityNil(b bool)`
+
+ SetQuantityNil sets the value for Quantity to be an explicit nil
+
+### UnsetQuantity
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetQuantity()`
+
+UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
 ### GetAmount
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) GetAmount() float32`
@@ -154,6 +194,16 @@ SetAmount sets Amount field to given value.
 
 HasAmount returns a boolean if a field has been set.
 
+### SetAmountNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) SetAmountNil(b bool)`
+
+ SetAmountNil sets the value for Amount to be an explicit nil
+
+### UnsetAmount
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner) UnsetAmount()`
+
+UnsetAmount ensures that no value is present for Amount, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

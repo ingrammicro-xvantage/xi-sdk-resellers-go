@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &PriceAndAvailabilityRequestAdditionalAttributesInner{}
 // PriceAndAvailabilityRequestAdditionalAttributesInner struct for PriceAndAvailabilityRequestAdditionalAttributesInner
 type PriceAndAvailabilityRequestAdditionalAttributesInner struct {
 	// key value pair -key Name.
-	AttributeName *string `json:"attributeName,omitempty"`
+	AttributeName NullableString `json:"attributeName,omitempty"`
 	// key value pair -key value.
-	AttributeValue *string `json:"attributeValue,omitempty"`
+	AttributeValue NullableString `json:"attributeValue,omitempty"`
 }
 
 // NewPriceAndAvailabilityRequestAdditionalAttributesInner instantiates a new PriceAndAvailabilityRequestAdditionalAttributesInner object
@@ -42,68 +42,88 @@ func NewPriceAndAvailabilityRequestAdditionalAttributesInnerWithDefaults() *Pric
 	return &this
 }
 
-// GetAttributeName returns the AttributeName field value if set, zero value otherwise.
+// GetAttributeName returns the AttributeName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) GetAttributeName() string {
-	if o == nil || IsNil(o.AttributeName) {
+	if o == nil || IsNil(o.AttributeName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AttributeName
+	return *o.AttributeName.Get()
 }
 
 // GetAttributeNameOk returns a tuple with the AttributeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) GetAttributeNameOk() (*string, bool) {
-	if o == nil || IsNil(o.AttributeName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AttributeName, true
+	return o.AttributeName.Get(), o.AttributeName.IsSet()
 }
 
 // HasAttributeName returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) HasAttributeName() bool {
-	if o != nil && !IsNil(o.AttributeName) {
+	if o != nil && o.AttributeName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributeName gets a reference to the given string and assigns it to the AttributeName field.
+// SetAttributeName gets a reference to the given NullableString and assigns it to the AttributeName field.
 func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) SetAttributeName(v string) {
-	o.AttributeName = &v
+	o.AttributeName.Set(&v)
+}
+// SetAttributeNameNil sets the value for AttributeName to be an explicit nil
+func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) SetAttributeNameNil() {
+	o.AttributeName.Set(nil)
 }
 
-// GetAttributeValue returns the AttributeValue field value if set, zero value otherwise.
+// UnsetAttributeName ensures that no value is present for AttributeName, not even an explicit nil
+func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) UnsetAttributeName() {
+	o.AttributeName.Unset()
+}
+
+// GetAttributeValue returns the AttributeValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) GetAttributeValue() string {
-	if o == nil || IsNil(o.AttributeValue) {
+	if o == nil || IsNil(o.AttributeValue.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AttributeValue
+	return *o.AttributeValue.Get()
 }
 
 // GetAttributeValueOk returns a tuple with the AttributeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) GetAttributeValueOk() (*string, bool) {
-	if o == nil || IsNil(o.AttributeValue) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AttributeValue, true
+	return o.AttributeValue.Get(), o.AttributeValue.IsSet()
 }
 
 // HasAttributeValue returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) HasAttributeValue() bool {
-	if o != nil && !IsNil(o.AttributeValue) {
+	if o != nil && o.AttributeValue.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributeValue gets a reference to the given string and assigns it to the AttributeValue field.
+// SetAttributeValue gets a reference to the given NullableString and assigns it to the AttributeValue field.
 func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) SetAttributeValue(v string) {
-	o.AttributeValue = &v
+	o.AttributeValue.Set(&v)
+}
+// SetAttributeValueNil sets the value for AttributeValue to be an explicit nil
+func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) SetAttributeValueNil() {
+	o.AttributeValue.Set(nil)
+}
+
+// UnsetAttributeValue ensures that no value is present for AttributeValue, not even an explicit nil
+func (o *PriceAndAvailabilityRequestAdditionalAttributesInner) UnsetAttributeValue() {
+	o.AttributeValue.Unset()
 }
 
 func (o PriceAndAvailabilityRequestAdditionalAttributesInner) MarshalJSON() ([]byte, error) {
@@ -116,11 +136,11 @@ func (o PriceAndAvailabilityRequestAdditionalAttributesInner) MarshalJSON() ([]b
 
 func (o PriceAndAvailabilityRequestAdditionalAttributesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AttributeName) {
-		toSerialize["attributeName"] = o.AttributeName
+	if o.AttributeName.IsSet() {
+		toSerialize["attributeName"] = o.AttributeName.Get()
 	}
-	if !IsNil(o.AttributeValue) {
-		toSerialize["attributeValue"] = o.AttributeValue
+	if o.AttributeValue.IsSet() {
+		toSerialize["attributeValue"] = o.AttributeValue.Get()
 	}
 	return toSerialize, nil
 }

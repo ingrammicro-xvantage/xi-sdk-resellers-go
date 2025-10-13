@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -220,47 +220,47 @@ func (a *QuotesAPIService) GetQuotessearchV6Execute(r ApiGetQuotessearchV6Reques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate-bt", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate-bt", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate-bt", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ingramOrderDate-bt", t, "form", "multi")
 		}
 	}
 	if r.quoteNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "quoteNumber", r.quoteNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "quoteNumber", r.quoteNumber, "form", "")
 	}
 	if r.specialBidNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "specialBidNumber", r.specialBidNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "specialBidNumber", r.specialBidNumber, "form", "")
 	}
 	if r.endUserContact != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "endUserContact", r.endUserContact, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "endUserContact", r.endUserContact, "form", "")
 	}
 	if r.sortingOrder != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortingOrder", r.sortingOrder, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortingOrder", r.sortingOrder, "form", "")
 	}
 	if r.sortBy != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortBy", r.sortBy, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortBy", r.sortBy, "form", "")
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	}
 	if r.pageNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.pageNumber = &defaultValue
 	}
 	if r.vendorName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorName", r.vendorName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorName", r.vendorName, "form", "")
 	}
 	if r.quoteName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "quoteName", r.quoteName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "quoteName", r.quoteName, "form", "")
 	}
 	if r.status != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "status", r.status, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "status", r.status, "form", "")
 	}
 	if r.quoteCreateDateBt != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "quoteCreateDate-bt", r.quoteCreateDateBt, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "quoteCreateDate-bt", r.quoteCreateDateBt, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -279,12 +279,12 @@ func (a *QuotesAPIService) GetQuotessearchV6Execute(r ApiGetQuotessearchV6Reques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerContact", r.iMCustomerContact, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerContact", r.iMCustomerContact, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -459,7 +459,7 @@ func (a *QuotesAPIService) GetResellerV6ValidateQuoteExecute(r ApiGetResellerV6V
 		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "quoteNumber", r.quoteNumber, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "quoteNumber", r.quoteNumber, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -477,12 +477,12 @@ func (a *QuotesAPIService) GetResellerV6ValidateQuoteExecute(r ApiGetResellerV6V
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -658,12 +658,12 @@ func (a *QuotesAPIService) GetResellersV6QuotesExecute(r ApiGetResellersV6Quotes
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

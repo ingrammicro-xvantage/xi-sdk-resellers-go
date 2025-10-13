@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -30,8 +30,8 @@ type ApiGetResellersV6DealsdetailsRequest struct {
 	iMCountryCode *string
 	iMCorrelationID *string
 	iMApplicationId *string
-	iMEnvironment *string
 	dealId string
+	vendorName *string
 }
 
 // Your unique Ingram Micro customer number.
@@ -58,9 +58,9 @@ func (r ApiGetResellersV6DealsdetailsRequest) IMApplicationId(iMApplicationId st
 	return r
 }
 
-// Environment name.
-func (r ApiGetResellersV6DealsdetailsRequest) IMEnvironment(iMEnvironment string) ApiGetResellersV6DealsdetailsRequest {
-	r.iMEnvironment = &iMEnvironment
+// Vendor for that bid
+func (r ApiGetResellersV6DealsdetailsRequest) VendorName(vendorName string) ApiGetResellersV6DealsdetailsRequest {
+	r.vendorName = &vendorName
 	return r
 }
 
@@ -133,13 +133,11 @@ func (a *DealsAPIService) GetResellersV6DealsdetailsExecute(r ApiGetResellersV6D
 	if strlen(*r.iMApplicationId) > 32 {
 		return localVarReturnValue, nil, reportError("iMApplicationId must have less than 32 elements")
 	}
-	if r.iMEnvironment == nil {
-		return localVarReturnValue, nil, reportError("iMEnvironment is required and must be specified")
-	}
-	if strlen(*r.iMEnvironment) > 32 {
-		return localVarReturnValue, nil, reportError("iMEnvironment must have less than 32 elements")
+	if r.vendorName == nil {
+		return localVarReturnValue, nil, reportError("vendorName is required and must be specified")
 	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "vendorName", r.vendorName, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -157,11 +155,10 @@ func (a *DealsAPIService) GetResellersV6DealsdetailsExecute(r ApiGetResellersV6D
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationId", r.iMApplicationId, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-Environment", r.iMEnvironment, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationId", r.iMApplicationId, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -350,19 +347,19 @@ func (a *DealsAPIService) GetResellersV6DealssearchExecute(r ApiGetResellersV6De
 	}
 
 	if r.endUser != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "endUser", r.endUser, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "endUser", r.endUser, "form", "")
 	}
 	if r.vendor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendor", r.vendor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendor", r.vendor, "form", "")
 	}
 	if r.dealId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dealId", r.dealId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dealId", r.dealId, "form", "")
 	}
 	if r.size != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "Size", r.size, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "Size", r.size, "form", "")
 	}
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "Page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "Page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -381,11 +378,11 @@ func (a *DealsAPIService) GetResellersV6DealssearchExecute(r ApiGetResellersV6De
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

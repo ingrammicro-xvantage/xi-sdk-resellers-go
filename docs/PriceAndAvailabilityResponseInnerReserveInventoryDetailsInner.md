@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**QuantityReserved** | Pointer to **int32** | The quantity of the product reserved for the customer. | [optional] 
-**QuantityAvailable** | Pointer to **int32** | The availability of the product reserved. | [optional] 
-**Effectivedate** | Pointer to **string** | The reservation date for the product in UTC format. | [optional] 
-**Expirydate** | Pointer to **string** | The expiration date for the reservation of the product in UTC format. | [optional] 
+**QuantityReserved** | Pointer to **NullableInt32** | The quantity of the product reserved for the customer. | [optional] 
+**QuantityAvailable** | Pointer to **NullableInt32** | The availability of the product reserved. | [optional] 
+**Effectivedate** | Pointer to **NullableString** | The reservation date for the product in UTC format. | [optional] 
+**Expirydate** | Pointer to **NullableString** | The expiration date for the reservation of the product in UTC format. | [optional] 
 
 ## Methods
 
@@ -53,6 +53,16 @@ SetQuantityReserved sets QuantityReserved field to given value.
 
 HasQuantityReserved returns a boolean if a field has been set.
 
+### SetQuantityReservedNil
+
+`func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetQuantityReservedNil(b bool)`
+
+ SetQuantityReservedNil sets the value for QuantityReserved to be an explicit nil
+
+### UnsetQuantityReserved
+`func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) UnsetQuantityReserved()`
+
+UnsetQuantityReserved ensures that no value is present for QuantityReserved, not even an explicit nil
 ### GetQuantityAvailable
 
 `func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetQuantityAvailable() int32`
@@ -78,6 +88,16 @@ SetQuantityAvailable sets QuantityAvailable field to given value.
 
 HasQuantityAvailable returns a boolean if a field has been set.
 
+### SetQuantityAvailableNil
+
+`func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetQuantityAvailableNil(b bool)`
+
+ SetQuantityAvailableNil sets the value for QuantityAvailable to be an explicit nil
+
+### UnsetQuantityAvailable
+`func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) UnsetQuantityAvailable()`
+
+UnsetQuantityAvailable ensures that no value is present for QuantityAvailable, not even an explicit nil
 ### GetEffectivedate
 
 `func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetEffectivedate() string`
@@ -103,6 +123,16 @@ SetEffectivedate sets Effectivedate field to given value.
 
 HasEffectivedate returns a boolean if a field has been set.
 
+### SetEffectivedateNil
+
+`func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetEffectivedateNil(b bool)`
+
+ SetEffectivedateNil sets the value for Effectivedate to be an explicit nil
+
+### UnsetEffectivedate
+`func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) UnsetEffectivedate()`
+
+UnsetEffectivedate ensures that no value is present for Effectivedate, not even an explicit nil
 ### GetExpirydate
 
 `func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) GetExpirydate() string`
@@ -128,6 +158,16 @@ SetExpirydate sets Expirydate field to given value.
 
 HasExpirydate returns a boolean if a field has been set.
 
+### SetExpirydateNil
+
+`func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) SetExpirydateNil(b bool)`
+
+ SetExpirydateNil sets the value for Expirydate to be an explicit nil
+
+### UnsetExpirydate
+`func (o *PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner) UnsetExpirydate()`
+
+UnsetExpirydate ensures that no value is present for Expirydate, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

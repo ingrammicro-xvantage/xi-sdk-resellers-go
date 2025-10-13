@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,15 +20,17 @@ var _ MappedNullable = &PriceAndAvailabilityRequestProductsInner{}
 // PriceAndAvailabilityRequestProductsInner struct for PriceAndAvailabilityRequestProductsInner
 type PriceAndAvailabilityRequestProductsInner struct {
 	// Ingram Micro unique part number for the product.
-	IngramPartNumber *string `json:"ingramPartNumber,omitempty"`
+	IngramPartNumber NullableString `json:"ingramPartNumber,omitempty"`
 	// Vendor’s part number for the product.
-	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
+	VendorPartNumber NullableString `json:"vendorPartNumber,omitempty"`
 	// Reseller/end-user’s part number for the product.
-	CustomerPartNumber *string `json:"customerPartNumber,omitempty"`
+	CustomerPartNumber NullableString `json:"customerPartNumber,omitempty"`
 	// The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item.
-	Upc *string `json:"upc,omitempty"`
+	Upc NullableString `json:"upc,omitempty"`
 	// Number of quantity of the Product.
-	QuantityRequested *string `json:"quantityRequested,omitempty"`
+	QuantityRequested NullableString `json:"quantityRequested,omitempty"`
+	// Id of the plan
+	PlanID NullableString `json:"planID,omitempty"`
 	AdditionalAttributes []PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
 
@@ -49,169 +51,261 @@ func NewPriceAndAvailabilityRequestProductsInnerWithDefaults() *PriceAndAvailabi
 	return &this
 }
 
-// GetIngramPartNumber returns the IngramPartNumber field value if set, zero value otherwise.
+// GetIngramPartNumber returns the IngramPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestProductsInner) GetIngramPartNumber() string {
-	if o == nil || IsNil(o.IngramPartNumber) {
+	if o == nil || IsNil(o.IngramPartNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IngramPartNumber
+	return *o.IngramPartNumber.Get()
 }
 
 // GetIngramPartNumberOk returns a tuple with the IngramPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestProductsInner) GetIngramPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.IngramPartNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IngramPartNumber, true
+	return o.IngramPartNumber.Get(), o.IngramPartNumber.IsSet()
 }
 
 // HasIngramPartNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestProductsInner) HasIngramPartNumber() bool {
-	if o != nil && !IsNil(o.IngramPartNumber) {
+	if o != nil && o.IngramPartNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIngramPartNumber gets a reference to the given string and assigns it to the IngramPartNumber field.
+// SetIngramPartNumber gets a reference to the given NullableString and assigns it to the IngramPartNumber field.
 func (o *PriceAndAvailabilityRequestProductsInner) SetIngramPartNumber(v string) {
-	o.IngramPartNumber = &v
+	o.IngramPartNumber.Set(&v)
+}
+// SetIngramPartNumberNil sets the value for IngramPartNumber to be an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) SetIngramPartNumberNil() {
+	o.IngramPartNumber.Set(nil)
 }
 
-// GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise.
+// UnsetIngramPartNumber ensures that no value is present for IngramPartNumber, not even an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) UnsetIngramPartNumber() {
+	o.IngramPartNumber.Unset()
+}
+
+// GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestProductsInner) GetVendorPartNumber() string {
-	if o == nil || IsNil(o.VendorPartNumber) {
+	if o == nil || IsNil(o.VendorPartNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VendorPartNumber
+	return *o.VendorPartNumber.Get()
 }
 
 // GetVendorPartNumberOk returns a tuple with the VendorPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestProductsInner) GetVendorPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.VendorPartNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VendorPartNumber, true
+	return o.VendorPartNumber.Get(), o.VendorPartNumber.IsSet()
 }
 
 // HasVendorPartNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestProductsInner) HasVendorPartNumber() bool {
-	if o != nil && !IsNil(o.VendorPartNumber) {
+	if o != nil && o.VendorPartNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVendorPartNumber gets a reference to the given string and assigns it to the VendorPartNumber field.
+// SetVendorPartNumber gets a reference to the given NullableString and assigns it to the VendorPartNumber field.
 func (o *PriceAndAvailabilityRequestProductsInner) SetVendorPartNumber(v string) {
-	o.VendorPartNumber = &v
+	o.VendorPartNumber.Set(&v)
+}
+// SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) SetVendorPartNumberNil() {
+	o.VendorPartNumber.Set(nil)
 }
 
-// GetCustomerPartNumber returns the CustomerPartNumber field value if set, zero value otherwise.
+// UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) UnsetVendorPartNumber() {
+	o.VendorPartNumber.Unset()
+}
+
+// GetCustomerPartNumber returns the CustomerPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestProductsInner) GetCustomerPartNumber() string {
-	if o == nil || IsNil(o.CustomerPartNumber) {
+	if o == nil || IsNil(o.CustomerPartNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CustomerPartNumber
+	return *o.CustomerPartNumber.Get()
 }
 
 // GetCustomerPartNumberOk returns a tuple with the CustomerPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestProductsInner) GetCustomerPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.CustomerPartNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CustomerPartNumber, true
+	return o.CustomerPartNumber.Get(), o.CustomerPartNumber.IsSet()
 }
 
 // HasCustomerPartNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestProductsInner) HasCustomerPartNumber() bool {
-	if o != nil && !IsNil(o.CustomerPartNumber) {
+	if o != nil && o.CustomerPartNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerPartNumber gets a reference to the given string and assigns it to the CustomerPartNumber field.
+// SetCustomerPartNumber gets a reference to the given NullableString and assigns it to the CustomerPartNumber field.
 func (o *PriceAndAvailabilityRequestProductsInner) SetCustomerPartNumber(v string) {
-	o.CustomerPartNumber = &v
+	o.CustomerPartNumber.Set(&v)
+}
+// SetCustomerPartNumberNil sets the value for CustomerPartNumber to be an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) SetCustomerPartNumberNil() {
+	o.CustomerPartNumber.Set(nil)
 }
 
-// GetUpc returns the Upc field value if set, zero value otherwise.
+// UnsetCustomerPartNumber ensures that no value is present for CustomerPartNumber, not even an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) UnsetCustomerPartNumber() {
+	o.CustomerPartNumber.Unset()
+}
+
+// GetUpc returns the Upc field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestProductsInner) GetUpc() string {
-	if o == nil || IsNil(o.Upc) {
+	if o == nil || IsNil(o.Upc.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Upc
+	return *o.Upc.Get()
 }
 
 // GetUpcOk returns a tuple with the Upc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestProductsInner) GetUpcOk() (*string, bool) {
-	if o == nil || IsNil(o.Upc) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Upc, true
+	return o.Upc.Get(), o.Upc.IsSet()
 }
 
 // HasUpc returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestProductsInner) HasUpc() bool {
-	if o != nil && !IsNil(o.Upc) {
+	if o != nil && o.Upc.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUpc gets a reference to the given string and assigns it to the Upc field.
+// SetUpc gets a reference to the given NullableString and assigns it to the Upc field.
 func (o *PriceAndAvailabilityRequestProductsInner) SetUpc(v string) {
-	o.Upc = &v
+	o.Upc.Set(&v)
+}
+// SetUpcNil sets the value for Upc to be an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) SetUpcNil() {
+	o.Upc.Set(nil)
 }
 
-// GetQuantityRequested returns the QuantityRequested field value if set, zero value otherwise.
+// UnsetUpc ensures that no value is present for Upc, not even an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) UnsetUpc() {
+	o.Upc.Unset()
+}
+
+// GetQuantityRequested returns the QuantityRequested field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequested() string {
-	if o == nil || IsNil(o.QuantityRequested) {
+	if o == nil || IsNil(o.QuantityRequested.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.QuantityRequested
+	return *o.QuantityRequested.Get()
 }
 
 // GetQuantityRequestedOk returns a tuple with the QuantityRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequestedOk() (*string, bool) {
-	if o == nil || IsNil(o.QuantityRequested) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QuantityRequested, true
+	return o.QuantityRequested.Get(), o.QuantityRequested.IsSet()
 }
 
 // HasQuantityRequested returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestProductsInner) HasQuantityRequested() bool {
-	if o != nil && !IsNil(o.QuantityRequested) {
+	if o != nil && o.QuantityRequested.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantityRequested gets a reference to the given string and assigns it to the QuantityRequested field.
+// SetQuantityRequested gets a reference to the given NullableString and assigns it to the QuantityRequested field.
 func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequested(v string) {
-	o.QuantityRequested = &v
+	o.QuantityRequested.Set(&v)
+}
+// SetQuantityRequestedNil sets the value for QuantityRequested to be an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequestedNil() {
+	o.QuantityRequested.Set(nil)
 }
 
-// GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.
+// UnsetQuantityRequested ensures that no value is present for QuantityRequested, not even an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) UnsetQuantityRequested() {
+	o.QuantityRequested.Unset()
+}
+
+// GetPlanID returns the PlanID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PriceAndAvailabilityRequestProductsInner) GetPlanID() string {
+	if o == nil || IsNil(o.PlanID.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PlanID.Get()
+}
+
+// GetPlanIDOk returns a tuple with the PlanID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PriceAndAvailabilityRequestProductsInner) GetPlanIDOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PlanID.Get(), o.PlanID.IsSet()
+}
+
+// HasPlanID returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityRequestProductsInner) HasPlanID() bool {
+	if o != nil && o.PlanID.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPlanID gets a reference to the given NullableString and assigns it to the PlanID field.
+func (o *PriceAndAvailabilityRequestProductsInner) SetPlanID(v string) {
+	o.PlanID.Set(&v)
+}
+// SetPlanIDNil sets the value for PlanID to be an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) SetPlanIDNil() {
+	o.PlanID.Set(nil)
+}
+
+// UnsetPlanID ensures that no value is present for PlanID, not even an explicit nil
+func (o *PriceAndAvailabilityRequestProductsInner) UnsetPlanID() {
+	o.PlanID.Unset()
+}
+
+// GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestProductsInner) GetAdditionalAttributes() []PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner {
-	if o == nil || IsNil(o.AdditionalAttributes) {
+	if o == nil {
 		var ret []PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner
 		return ret
 	}
@@ -220,6 +314,7 @@ func (o *PriceAndAvailabilityRequestProductsInner) GetAdditionalAttributes() []P
 
 // GetAdditionalAttributesOk returns a tuple with the AdditionalAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestProductsInner) GetAdditionalAttributesOk() ([]PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner, bool) {
 	if o == nil || IsNil(o.AdditionalAttributes) {
 		return nil, false
@@ -251,22 +346,25 @@ func (o PriceAndAvailabilityRequestProductsInner) MarshalJSON() ([]byte, error) 
 
 func (o PriceAndAvailabilityRequestProductsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IngramPartNumber) {
-		toSerialize["ingramPartNumber"] = o.IngramPartNumber
+	if o.IngramPartNumber.IsSet() {
+		toSerialize["ingramPartNumber"] = o.IngramPartNumber.Get()
 	}
-	if !IsNil(o.VendorPartNumber) {
-		toSerialize["vendorPartNumber"] = o.VendorPartNumber
+	if o.VendorPartNumber.IsSet() {
+		toSerialize["vendorPartNumber"] = o.VendorPartNumber.Get()
 	}
-	if !IsNil(o.CustomerPartNumber) {
-		toSerialize["customerPartNumber"] = o.CustomerPartNumber
+	if o.CustomerPartNumber.IsSet() {
+		toSerialize["customerPartNumber"] = o.CustomerPartNumber.Get()
 	}
-	if !IsNil(o.Upc) {
-		toSerialize["upc"] = o.Upc
+	if o.Upc.IsSet() {
+		toSerialize["upc"] = o.Upc.Get()
 	}
-	if !IsNil(o.QuantityRequested) {
-		toSerialize["quantityRequested"] = o.QuantityRequested
+	if o.QuantityRequested.IsSet() {
+		toSerialize["quantityRequested"] = o.QuantityRequested.Get()
 	}
-	if !IsNil(o.AdditionalAttributes) {
+	if o.PlanID.IsSet() {
+		toSerialize["planID"] = o.PlanID.Get()
+	}
+	if o.AdditionalAttributes != nil {
 		toSerialize["additionalAttributes"] = o.AdditionalAttributes
 	}
 	return toSerialize, nil

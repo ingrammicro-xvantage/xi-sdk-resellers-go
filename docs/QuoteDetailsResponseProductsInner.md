@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **QuoteProductGuid** | Pointer to **string** | Quote Product GUID  is the primary quote key in Ingram Micro&#39;s CRM - needed to retrieve quote details. | [optional] 
 **LineNumber** | Pointer to **string** | Line number which the product will appear in the quote.  Line number is manditory when unique configurations are included in a quote and mainting the item line order is required. | [optional] 
 **Quantity** | Pointer to **int32** | Quantity of product line item quoted. | [optional] 
+**RemainingQuoteQty** | Pointer to **NullableInt32** |  | [optional] 
+**MinimumOrderAllowedQty** | Pointer to **NullableInt32** |  | [optional] 
 **Notes** | Pointer to **string** | Product line item comments. | [optional] 
 **Ean** | Pointer to **string** | EANUPC | [optional] 
 **Coo** | Pointer to **string** | Country of Origin. | [optional] 
@@ -124,6 +126,76 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
+### GetRemainingQuoteQty
+
+`func (o *QuoteDetailsResponseProductsInner) GetRemainingQuoteQty() int32`
+
+GetRemainingQuoteQty returns the RemainingQuoteQty field if non-nil, zero value otherwise.
+
+### GetRemainingQuoteQtyOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetRemainingQuoteQtyOk() (*int32, bool)`
+
+GetRemainingQuoteQtyOk returns a tuple with the RemainingQuoteQty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemainingQuoteQty
+
+`func (o *QuoteDetailsResponseProductsInner) SetRemainingQuoteQty(v int32)`
+
+SetRemainingQuoteQty sets RemainingQuoteQty field to given value.
+
+### HasRemainingQuoteQty
+
+`func (o *QuoteDetailsResponseProductsInner) HasRemainingQuoteQty() bool`
+
+HasRemainingQuoteQty returns a boolean if a field has been set.
+
+### SetRemainingQuoteQtyNil
+
+`func (o *QuoteDetailsResponseProductsInner) SetRemainingQuoteQtyNil(b bool)`
+
+ SetRemainingQuoteQtyNil sets the value for RemainingQuoteQty to be an explicit nil
+
+### UnsetRemainingQuoteQty
+`func (o *QuoteDetailsResponseProductsInner) UnsetRemainingQuoteQty()`
+
+UnsetRemainingQuoteQty ensures that no value is present for RemainingQuoteQty, not even an explicit nil
+### GetMinimumOrderAllowedQty
+
+`func (o *QuoteDetailsResponseProductsInner) GetMinimumOrderAllowedQty() int32`
+
+GetMinimumOrderAllowedQty returns the MinimumOrderAllowedQty field if non-nil, zero value otherwise.
+
+### GetMinimumOrderAllowedQtyOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetMinimumOrderAllowedQtyOk() (*int32, bool)`
+
+GetMinimumOrderAllowedQtyOk returns a tuple with the MinimumOrderAllowedQty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinimumOrderAllowedQty
+
+`func (o *QuoteDetailsResponseProductsInner) SetMinimumOrderAllowedQty(v int32)`
+
+SetMinimumOrderAllowedQty sets MinimumOrderAllowedQty field to given value.
+
+### HasMinimumOrderAllowedQty
+
+`func (o *QuoteDetailsResponseProductsInner) HasMinimumOrderAllowedQty() bool`
+
+HasMinimumOrderAllowedQty returns a boolean if a field has been set.
+
+### SetMinimumOrderAllowedQtyNil
+
+`func (o *QuoteDetailsResponseProductsInner) SetMinimumOrderAllowedQtyNil(b bool)`
+
+ SetMinimumOrderAllowedQtyNil sets the value for MinimumOrderAllowedQty to be an explicit nil
+
+### UnsetMinimumOrderAllowedQty
+`func (o *QuoteDetailsResponseProductsInner) UnsetMinimumOrderAllowedQty()`
+
+UnsetMinimumOrderAllowedQty ensures that no value is present for MinimumOrderAllowedQty, not even an explicit nil
 ### GetNotes
 
 `func (o *QuoteDetailsResponseProductsInner) GetNotes() string`

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeName** | Pointer to **string** | governmentprogramcode: Special Discount details will be provided based on the governmentprogramcode if available. shiptostatebrazil: Attribute Specific to Brazil. shipfrombranchnumber: If provided, displays only the availability of the specified branch number. | [optional] 
-**AttributeValue** | Pointer to **string** | key value pair -key value. | [optional] 
+**AttributeName** | Pointer to **NullableString** | governmentprogramcode: Special Discount details will be provided based on the governmentprogramcode if available. shiptostatebrazil: Attribute Specific to Brazil. shipfrombranchnumber: If provided, displays only the availability of the specified branch number. | [optional] 
+**AttributeValue** | Pointer to **NullableString** | key value pair -key value. | [optional] 
 
 ## Methods
 
@@ -51,6 +51,16 @@ SetAttributeName sets AttributeName field to given value.
 
 HasAttributeName returns a boolean if a field has been set.
 
+### SetAttributeNameNil
+
+`func (o *PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner) SetAttributeNameNil(b bool)`
+
+ SetAttributeNameNil sets the value for AttributeName to be an explicit nil
+
+### UnsetAttributeName
+`func (o *PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner) UnsetAttributeName()`
+
+UnsetAttributeName ensures that no value is present for AttributeName, not even an explicit nil
 ### GetAttributeValue
 
 `func (o *PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner) GetAttributeValue() string`
@@ -76,6 +86,16 @@ SetAttributeValue sets AttributeValue field to given value.
 
 HasAttributeValue returns a boolean if a field has been set.
 
+### SetAttributeValueNil
+
+`func (o *PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner) SetAttributeValueNil(b bool)`
+
+ SetAttributeValueNil sets the value for AttributeValue to be an explicit nil
+
+### UnsetAttributeValue
+`func (o *PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner) UnsetAttributeValue()`
+
+UnsetAttributeValue ensures that no value is present for AttributeValue, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

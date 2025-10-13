@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Quantity** | Pointer to **int32** | Quantity backordered. | [optional] 
-**EtaDate** | Pointer to **string** | Expected availability date. | [optional] 
+**Quantity** | Pointer to **NullableInt32** | Quantity backordered. | [optional] 
+**EtaDate** | Pointer to **NullableString** | Expected availability date. | [optional] 
 
 ## Methods
 
@@ -51,6 +51,16 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
+### SetQuantityNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) SetQuantityNil(b bool)`
+
+ SetQuantityNil sets the value for Quantity to be an explicit nil
+
+### UnsetQuantity
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) UnsetQuantity()`
+
+UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
 ### GetEtaDate
 
 `func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) GetEtaDate() string`
@@ -76,6 +86,16 @@ SetEtaDate sets EtaDate field to given value.
 
 HasEtaDate returns a boolean if a field has been set.
 
+### SetEtaDateNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) SetEtaDateNil(b bool)`
+
+ SetEtaDateNil sets the value for EtaDate to be an explicit nil
+
+### UnsetEtaDate
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner) UnsetEtaDate()`
+
+UnsetEtaDate ensures that no value is present for EtaDate, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

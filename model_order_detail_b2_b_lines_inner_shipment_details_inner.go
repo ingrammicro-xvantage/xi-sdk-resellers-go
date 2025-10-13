@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &OrderDetailB2BLinesInnerShipmentDetailsInner{}
 // OrderDetailB2BLinesInnerShipmentDetailsInner struct for OrderDetailB2BLinesInnerShipmentDetailsInner
 type OrderDetailB2BLinesInnerShipmentDetailsInner struct {
 	// The quantity shipped of the line item.
-	Quantity *int32 `json:"quantity,omitempty"`
+	Quantity NullableInt32 `json:"quantity,omitempty"`
 	// The actual date of delivery of the line item.
 	DeliveryNumber *string `json:"deliveryNumber,omitempty"`
 	// The date the line item is expected to be shipped.
@@ -56,36 +56,46 @@ func NewOrderDetailB2BLinesInnerShipmentDetailsInnerWithDefaults() *OrderDetailB
 	return &this
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
+// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetQuantity() int32 {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil || IsNil(o.Quantity.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Quantity
+	return *o.Quantity.Get()
 }
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetQuantityOk() (*int32, bool) {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Quantity, true
+	return o.Quantity.Get(), o.Quantity.IsSet()
 }
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) HasQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
+	if o != nil && o.Quantity.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
+// SetQuantity gets a reference to the given NullableInt32 and assigns it to the Quantity field.
 func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) SetQuantity(v int32) {
-	o.Quantity = &v
+	o.Quantity.Set(&v)
+}
+// SetQuantityNil sets the value for Quantity to be an explicit nil
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) SetQuantityNil() {
+	o.Quantity.Set(nil)
+}
+
+// UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) UnsetQuantity() {
+	o.Quantity.Unset()
 }
 
 // GetDeliveryNumber returns the DeliveryNumber field value if set, zero value otherwise.
@@ -387,8 +397,8 @@ func (o OrderDetailB2BLinesInnerShipmentDetailsInner) MarshalJSON() ([]byte, err
 
 func (o OrderDetailB2BLinesInnerShipmentDetailsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Quantity) {
-		toSerialize["quantity"] = o.Quantity
+	if o.Quantity.IsSet() {
+		toSerialize["quantity"] = o.Quantity.Get()
 	}
 	if !IsNil(o.DeliveryNumber) {
 		toSerialize["deliveryNumber"] = o.DeliveryNumber

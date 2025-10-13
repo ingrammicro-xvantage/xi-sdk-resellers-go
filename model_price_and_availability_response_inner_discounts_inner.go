@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -72,9 +72,9 @@ func (o *PriceAndAvailabilityResponseInnerDiscountsInner) SetSpecialPricing(v []
 	o.SpecialPricing = v
 }
 
-// GetQuantityDiscounts returns the QuantityDiscounts field value if set, zero value otherwise.
+// GetQuantityDiscounts returns the QuantityDiscounts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerDiscountsInner) GetQuantityDiscounts() []PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner {
-	if o == nil || IsNil(o.QuantityDiscounts) {
+	if o == nil {
 		var ret []PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner
 		return ret
 	}
@@ -83,6 +83,7 @@ func (o *PriceAndAvailabilityResponseInnerDiscountsInner) GetQuantityDiscounts()
 
 // GetQuantityDiscountsOk returns a tuple with the QuantityDiscounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerDiscountsInner) GetQuantityDiscountsOk() ([]PriceAndAvailabilityResponseInnerDiscountsInnerQuantityDiscountsInner, bool) {
 	if o == nil || IsNil(o.QuantityDiscounts) {
 		return nil, false
@@ -117,7 +118,7 @@ func (o PriceAndAvailabilityResponseInnerDiscountsInner) ToMap() (map[string]int
 	if !IsNil(o.SpecialPricing) {
 		toSerialize["specialPricing"] = o.SpecialPricing
 	}
-	if !IsNil(o.QuantityDiscounts) {
+	if o.QuantityDiscounts != nil {
 		toSerialize["quantityDiscounts"] = o.QuantityDiscounts
 	}
 	return toSerialize, nil

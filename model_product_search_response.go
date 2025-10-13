@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -26,6 +26,7 @@ type ProductSearchResponse struct {
 	// current page number default is 1
 	PageNumber *int32 `json:"pageNumber,omitempty"`
 	Catalog []ProductSearchResponseCatalogInner `json:"catalog,omitempty"`
+	SubscriptionCatalog []ProductSearchResponseSubscriptionCatalogInner `json:"subscriptionCatalog,omitempty"`
 	// link/URL for accessing next page.
 	NextPage *string `json:"nextPage,omitempty"`
 	// link/URL for accessing previous page.
@@ -177,6 +178,38 @@ func (o *ProductSearchResponse) SetCatalog(v []ProductSearchResponseCatalogInner
 	o.Catalog = v
 }
 
+// GetSubscriptionCatalog returns the SubscriptionCatalog field value if set, zero value otherwise.
+func (o *ProductSearchResponse) GetSubscriptionCatalog() []ProductSearchResponseSubscriptionCatalogInner {
+	if o == nil || IsNil(o.SubscriptionCatalog) {
+		var ret []ProductSearchResponseSubscriptionCatalogInner
+		return ret
+	}
+	return o.SubscriptionCatalog
+}
+
+// GetSubscriptionCatalogOk returns a tuple with the SubscriptionCatalog field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponse) GetSubscriptionCatalogOk() ([]ProductSearchResponseSubscriptionCatalogInner, bool) {
+	if o == nil || IsNil(o.SubscriptionCatalog) {
+		return nil, false
+	}
+	return o.SubscriptionCatalog, true
+}
+
+// HasSubscriptionCatalog returns a boolean if a field has been set.
+func (o *ProductSearchResponse) HasSubscriptionCatalog() bool {
+	if o != nil && !IsNil(o.SubscriptionCatalog) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscriptionCatalog gets a reference to the given []ProductSearchResponseSubscriptionCatalogInner and assigns it to the SubscriptionCatalog field.
+func (o *ProductSearchResponse) SetSubscriptionCatalog(v []ProductSearchResponseSubscriptionCatalogInner) {
+	o.SubscriptionCatalog = v
+}
+
 // GetNextPage returns the NextPage field value if set, zero value otherwise.
 func (o *ProductSearchResponse) GetNextPage() string {
 	if o == nil || IsNil(o.NextPage) {
@@ -262,6 +295,9 @@ func (o ProductSearchResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Catalog) {
 		toSerialize["catalog"] = o.Catalog
+	}
+	if !IsNil(o.SubscriptionCatalog) {
+		toSerialize["subscriptionCatalog"] = o.SubscriptionCatalog
 	}
 	if !IsNil(o.NextPage) {
 		toSerialize["nextPage"] = o.NextPage

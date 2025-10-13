@@ -76,6 +76,16 @@ SetQuantityDiscounts sets QuantityDiscounts field to given value.
 
 HasQuantityDiscounts returns a boolean if a field has been set.
 
+### SetQuantityDiscountsNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInner) SetQuantityDiscountsNil(b bool)`
+
+ SetQuantityDiscountsNil sets the value for QuantityDiscounts to be an explicit nil
+
+### UnsetQuantityDiscounts
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInner) UnsetQuantityDiscounts()`
+
+UnsetQuantityDiscounts ensures that no value is present for QuantityDiscounts, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

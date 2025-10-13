@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Available** | Pointer to **bool** | Boolean that indicates if the product ordered is available | [optional] 
-**TotalAvailability** | Pointer to **int32** | The total amount of available products | [optional] 
+**TotalAvailability** | Pointer to **NullableInt32** | The total amount of available products | [optional] 
 **AvailabilityByWarehouse** | Pointer to [**[]PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner**](PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner.md) |  | [optional] 
 
 ## Methods
@@ -77,6 +77,16 @@ SetTotalAvailability sets TotalAvailability field to given value.
 
 HasTotalAvailability returns a boolean if a field has been set.
 
+### SetTotalAvailabilityNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailability) SetTotalAvailabilityNil(b bool)`
+
+ SetTotalAvailabilityNil sets the value for TotalAvailability to be an explicit nil
+
+### UnsetTotalAvailability
+`func (o *PriceAndAvailabilityResponseInnerAvailability) UnsetTotalAvailability()`
+
+UnsetTotalAvailability ensures that no value is present for TotalAvailability, not even an explicit nil
 ### GetAvailabilityByWarehouse
 
 `func (o *PriceAndAvailabilityResponseInnerAvailability) GetAvailabilityByWarehouse() []PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner`
@@ -102,6 +112,16 @@ SetAvailabilityByWarehouse sets AvailabilityByWarehouse field to given value.
 
 HasAvailabilityByWarehouse returns a boolean if a field has been set.
 
+### SetAvailabilityByWarehouseNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailability) SetAvailabilityByWarehouseNil(b bool)`
+
+ SetAvailabilityByWarehouseNil sets the value for AvailabilityByWarehouse to be an explicit nil
+
+### UnsetAvailabilityByWarehouse
+`func (o *PriceAndAvailabilityResponseInnerAvailability) UnsetAvailabilityByWarehouse()`
+
+UnsetAvailabilityByWarehouse ensures that no value is present for AvailabilityByWarehouse, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

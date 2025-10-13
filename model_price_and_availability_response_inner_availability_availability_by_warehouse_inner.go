@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,17 +20,17 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerAvailabilityAvailabilit
 // PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner struct for PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner
 type PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner struct {
 	// Indicates where (location) the product is available.
-	Location *string `json:"location,omitempty"`
+	Location NullableString `json:"location,omitempty"`
 	// Indicates where (Ingram Warehouse Id) the product is available.
-	WarehouseId *string `json:"warehouseId,omitempty"`
+	WarehouseId NullableString `json:"warehouseId,omitempty"`
 	// The quantity of the product available in a given warehouse.
-	QuantityAvailable *int32 `json:"quantityAvailable,omitempty"`
+	QuantityAvailable NullableInt32 `json:"quantityAvailable,omitempty"`
 	// The quantity of a product backordered in a given warehouse.
-	QuantityBackordered *int32 `json:"quantityBackordered,omitempty"`
+	QuantityBackordered NullableInt32 `json:"quantityBackordered,omitempty"`
 	// The estimated time of arrival of a product that has been backordered in a given warehouse.
-	QuantityBackorderedEta *string `json:"quantityBackorderedEta,omitempty"`
+	QuantityBackorderedEta NullableString `json:"quantityBackorderedEta,omitempty"`
 	// The quantity of the product on order.
-	QuantityOnOrder *int32 `json:"quantityOnOrder,omitempty"`
+	QuantityOnOrder NullableInt32 `json:"quantityOnOrder,omitempty"`
 	// *Currently, this feature is not available in these countries (Mexico, Turkey, New Zealand, Colombia, Chile, Brazil, Peru, Western Sahara).
 	BackOrderInfo []PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner `json:"backOrderInfo,omitempty"`
 }
@@ -52,196 +52,256 @@ func NewPriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInne
 	return &this
 }
 
-// GetLocation returns the Location field value if set, zero value otherwise.
+// GetLocation returns the Location field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetLocation() string {
-	if o == nil || IsNil(o.Location) {
+	if o == nil || IsNil(o.Location.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Location
+	return *o.Location.Get()
 }
 
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.Location) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Location, true
+	return o.Location.Get(), o.Location.IsSet()
 }
 
 // HasLocation returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasLocation() bool {
-	if o != nil && !IsNil(o.Location) {
+	if o != nil && o.Location.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocation gets a reference to the given string and assigns it to the Location field.
+// SetLocation gets a reference to the given NullableString and assigns it to the Location field.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetLocation(v string) {
-	o.Location = &v
+	o.Location.Set(&v)
+}
+// SetLocationNil sets the value for Location to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetLocationNil() {
+	o.Location.Set(nil)
 }
 
-// GetWarehouseId returns the WarehouseId field value if set, zero value otherwise.
+// UnsetLocation ensures that no value is present for Location, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetLocation() {
+	o.Location.Unset()
+}
+
+// GetWarehouseId returns the WarehouseId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetWarehouseId() string {
-	if o == nil || IsNil(o.WarehouseId) {
+	if o == nil || IsNil(o.WarehouseId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WarehouseId
+	return *o.WarehouseId.Get()
 }
 
 // GetWarehouseIdOk returns a tuple with the WarehouseId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetWarehouseIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WarehouseId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WarehouseId, true
+	return o.WarehouseId.Get(), o.WarehouseId.IsSet()
 }
 
 // HasWarehouseId returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasWarehouseId() bool {
-	if o != nil && !IsNil(o.WarehouseId) {
+	if o != nil && o.WarehouseId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWarehouseId gets a reference to the given string and assigns it to the WarehouseId field.
+// SetWarehouseId gets a reference to the given NullableString and assigns it to the WarehouseId field.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetWarehouseId(v string) {
-	o.WarehouseId = &v
+	o.WarehouseId.Set(&v)
+}
+// SetWarehouseIdNil sets the value for WarehouseId to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetWarehouseIdNil() {
+	o.WarehouseId.Set(nil)
 }
 
-// GetQuantityAvailable returns the QuantityAvailable field value if set, zero value otherwise.
+// UnsetWarehouseId ensures that no value is present for WarehouseId, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetWarehouseId() {
+	o.WarehouseId.Unset()
+}
+
+// GetQuantityAvailable returns the QuantityAvailable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityAvailable() int32 {
-	if o == nil || IsNil(o.QuantityAvailable) {
+	if o == nil || IsNil(o.QuantityAvailable.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.QuantityAvailable
+	return *o.QuantityAvailable.Get()
 }
 
 // GetQuantityAvailableOk returns a tuple with the QuantityAvailable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityAvailableOk() (*int32, bool) {
-	if o == nil || IsNil(o.QuantityAvailable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QuantityAvailable, true
+	return o.QuantityAvailable.Get(), o.QuantityAvailable.IsSet()
 }
 
 // HasQuantityAvailable returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasQuantityAvailable() bool {
-	if o != nil && !IsNil(o.QuantityAvailable) {
+	if o != nil && o.QuantityAvailable.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantityAvailable gets a reference to the given int32 and assigns it to the QuantityAvailable field.
+// SetQuantityAvailable gets a reference to the given NullableInt32 and assigns it to the QuantityAvailable field.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityAvailable(v int32) {
-	o.QuantityAvailable = &v
+	o.QuantityAvailable.Set(&v)
+}
+// SetQuantityAvailableNil sets the value for QuantityAvailable to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityAvailableNil() {
+	o.QuantityAvailable.Set(nil)
 }
 
-// GetQuantityBackordered returns the QuantityBackordered field value if set, zero value otherwise.
+// UnsetQuantityAvailable ensures that no value is present for QuantityAvailable, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetQuantityAvailable() {
+	o.QuantityAvailable.Unset()
+}
+
+// GetQuantityBackordered returns the QuantityBackordered field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityBackordered() int32 {
-	if o == nil || IsNil(o.QuantityBackordered) {
+	if o == nil || IsNil(o.QuantityBackordered.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.QuantityBackordered
+	return *o.QuantityBackordered.Get()
 }
 
 // GetQuantityBackorderedOk returns a tuple with the QuantityBackordered field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityBackorderedOk() (*int32, bool) {
-	if o == nil || IsNil(o.QuantityBackordered) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QuantityBackordered, true
+	return o.QuantityBackordered.Get(), o.QuantityBackordered.IsSet()
 }
 
 // HasQuantityBackordered returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasQuantityBackordered() bool {
-	if o != nil && !IsNil(o.QuantityBackordered) {
+	if o != nil && o.QuantityBackordered.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantityBackordered gets a reference to the given int32 and assigns it to the QuantityBackordered field.
+// SetQuantityBackordered gets a reference to the given NullableInt32 and assigns it to the QuantityBackordered field.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityBackordered(v int32) {
-	o.QuantityBackordered = &v
+	o.QuantityBackordered.Set(&v)
+}
+// SetQuantityBackorderedNil sets the value for QuantityBackordered to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityBackorderedNil() {
+	o.QuantityBackordered.Set(nil)
 }
 
-// GetQuantityBackorderedEta returns the QuantityBackorderedEta field value if set, zero value otherwise.
+// UnsetQuantityBackordered ensures that no value is present for QuantityBackordered, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetQuantityBackordered() {
+	o.QuantityBackordered.Unset()
+}
+
+// GetQuantityBackorderedEta returns the QuantityBackorderedEta field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityBackorderedEta() string {
-	if o == nil || IsNil(o.QuantityBackorderedEta) {
+	if o == nil || IsNil(o.QuantityBackorderedEta.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.QuantityBackorderedEta
+	return *o.QuantityBackorderedEta.Get()
 }
 
 // GetQuantityBackorderedEtaOk returns a tuple with the QuantityBackorderedEta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityBackorderedEtaOk() (*string, bool) {
-	if o == nil || IsNil(o.QuantityBackorderedEta) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QuantityBackorderedEta, true
+	return o.QuantityBackorderedEta.Get(), o.QuantityBackorderedEta.IsSet()
 }
 
 // HasQuantityBackorderedEta returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasQuantityBackorderedEta() bool {
-	if o != nil && !IsNil(o.QuantityBackorderedEta) {
+	if o != nil && o.QuantityBackorderedEta.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantityBackorderedEta gets a reference to the given string and assigns it to the QuantityBackorderedEta field.
+// SetQuantityBackorderedEta gets a reference to the given NullableString and assigns it to the QuantityBackorderedEta field.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityBackorderedEta(v string) {
-	o.QuantityBackorderedEta = &v
+	o.QuantityBackorderedEta.Set(&v)
+}
+// SetQuantityBackorderedEtaNil sets the value for QuantityBackorderedEta to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityBackorderedEtaNil() {
+	o.QuantityBackorderedEta.Set(nil)
 }
 
-// GetQuantityOnOrder returns the QuantityOnOrder field value if set, zero value otherwise.
+// UnsetQuantityBackorderedEta ensures that no value is present for QuantityBackorderedEta, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetQuantityBackorderedEta() {
+	o.QuantityBackorderedEta.Unset()
+}
+
+// GetQuantityOnOrder returns the QuantityOnOrder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityOnOrder() int32 {
-	if o == nil || IsNil(o.QuantityOnOrder) {
+	if o == nil || IsNil(o.QuantityOnOrder.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.QuantityOnOrder
+	return *o.QuantityOnOrder.Get()
 }
 
 // GetQuantityOnOrderOk returns a tuple with the QuantityOnOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityOnOrderOk() (*int32, bool) {
-	if o == nil || IsNil(o.QuantityOnOrder) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QuantityOnOrder, true
+	return o.QuantityOnOrder.Get(), o.QuantityOnOrder.IsSet()
 }
 
 // HasQuantityOnOrder returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasQuantityOnOrder() bool {
-	if o != nil && !IsNil(o.QuantityOnOrder) {
+	if o != nil && o.QuantityOnOrder.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantityOnOrder gets a reference to the given int32 and assigns it to the QuantityOnOrder field.
+// SetQuantityOnOrder gets a reference to the given NullableInt32 and assigns it to the QuantityOnOrder field.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityOnOrder(v int32) {
-	o.QuantityOnOrder = &v
+	o.QuantityOnOrder.Set(&v)
+}
+// SetQuantityOnOrderNil sets the value for QuantityOnOrder to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityOnOrderNil() {
+	o.QuantityOnOrder.Set(nil)
+}
+
+// UnsetQuantityOnOrder ensures that no value is present for QuantityOnOrder, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetQuantityOnOrder() {
+	o.QuantityOnOrder.Unset()
 }
 
 // GetBackOrderInfo returns the BackOrderInfo field value if set, zero value otherwise.
@@ -286,23 +346,23 @@ func (o PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInne
 
 func (o PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Location) {
-		toSerialize["location"] = o.Location
+	if o.Location.IsSet() {
+		toSerialize["location"] = o.Location.Get()
 	}
-	if !IsNil(o.WarehouseId) {
-		toSerialize["warehouseId"] = o.WarehouseId
+	if o.WarehouseId.IsSet() {
+		toSerialize["warehouseId"] = o.WarehouseId.Get()
 	}
-	if !IsNil(o.QuantityAvailable) {
-		toSerialize["quantityAvailable"] = o.QuantityAvailable
+	if o.QuantityAvailable.IsSet() {
+		toSerialize["quantityAvailable"] = o.QuantityAvailable.Get()
 	}
-	if !IsNil(o.QuantityBackordered) {
-		toSerialize["quantityBackordered"] = o.QuantityBackordered
+	if o.QuantityBackordered.IsSet() {
+		toSerialize["quantityBackordered"] = o.QuantityBackordered.Get()
 	}
-	if !IsNil(o.QuantityBackorderedEta) {
-		toSerialize["quantityBackorderedEta"] = o.QuantityBackorderedEta
+	if o.QuantityBackorderedEta.IsSet() {
+		toSerialize["quantityBackorderedEta"] = o.QuantityBackorderedEta.Get()
 	}
-	if !IsNil(o.QuantityOnOrder) {
-		toSerialize["quantityOnOrder"] = o.QuantityOnOrder
+	if o.QuantityOnOrder.IsSet() {
+		toSerialize["quantityOnOrder"] = o.QuantityOnOrder.Get()
 	}
 	if !IsNil(o.BackOrderInfo) {
 		toSerialize["backOrderInfo"] = o.BackOrderInfo

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Quantity** | Pointer to **int32** | The quantity shipped of the line item. | [optional] 
+**Quantity** | Pointer to **NullableInt32** | The quantity shipped of the line item. | [optional] 
 **DeliveryNumber** | Pointer to **string** | The actual date of delivery of the line item. | [optional] 
 **EstimatedShipDate** | Pointer to **string** | The date the line item is expected to be shipped. | [optional] 
 **ShippedDate** | Pointer to **string** |  | [optional] 
@@ -59,6 +59,16 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
+### SetQuantityNil
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) SetQuantityNil(b bool)`
+
+ SetQuantityNil sets the value for Quantity to be an explicit nil
+
+### UnsetQuantity
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) UnsetQuantity()`
+
+UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
 ### GetDeliveryNumber
 
 `func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetDeliveryNumber() string`

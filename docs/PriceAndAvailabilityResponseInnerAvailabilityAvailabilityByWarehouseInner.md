@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Location** | Pointer to **string** | Indicates where (location) the product is available. | [optional] 
-**WarehouseId** | Pointer to **string** | Indicates where (Ingram Warehouse Id) the product is available. | [optional] 
-**QuantityAvailable** | Pointer to **int32** | The quantity of the product available in a given warehouse. | [optional] 
-**QuantityBackordered** | Pointer to **int32** | The quantity of a product backordered in a given warehouse. | [optional] 
-**QuantityBackorderedEta** | Pointer to **string** | The estimated time of arrival of a product that has been backordered in a given warehouse. | [optional] 
-**QuantityOnOrder** | Pointer to **int32** | The quantity of the product on order. | [optional] 
+**Location** | Pointer to **NullableString** | Indicates where (location) the product is available. | [optional] 
+**WarehouseId** | Pointer to **NullableString** | Indicates where (Ingram Warehouse Id) the product is available. | [optional] 
+**QuantityAvailable** | Pointer to **NullableInt32** | The quantity of the product available in a given warehouse. | [optional] 
+**QuantityBackordered** | Pointer to **NullableInt32** | The quantity of a product backordered in a given warehouse. | [optional] 
+**QuantityBackorderedEta** | Pointer to **NullableString** | The estimated time of arrival of a product that has been backordered in a given warehouse. | [optional] 
+**QuantityOnOrder** | Pointer to **NullableInt32** | The quantity of the product on order. | [optional] 
 **BackOrderInfo** | Pointer to [**[]PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner**](PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner.md) | *Currently, this feature is not available in these countries (Mexico, Turkey, New Zealand, Colombia, Chile, Brazil, Peru, Western Sahara). | [optional] 
 
 ## Methods
@@ -56,6 +56,16 @@ SetLocation sets Location field to given value.
 
 HasLocation returns a boolean if a field has been set.
 
+### SetLocationNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetLocationNil(b bool)`
+
+ SetLocationNil sets the value for Location to be an explicit nil
+
+### UnsetLocation
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetLocation()`
+
+UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetWarehouseId
 
 `func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetWarehouseId() string`
@@ -81,6 +91,16 @@ SetWarehouseId sets WarehouseId field to given value.
 
 HasWarehouseId returns a boolean if a field has been set.
 
+### SetWarehouseIdNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetWarehouseIdNil(b bool)`
+
+ SetWarehouseIdNil sets the value for WarehouseId to be an explicit nil
+
+### UnsetWarehouseId
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetWarehouseId()`
+
+UnsetWarehouseId ensures that no value is present for WarehouseId, not even an explicit nil
 ### GetQuantityAvailable
 
 `func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityAvailable() int32`
@@ -106,6 +126,16 @@ SetQuantityAvailable sets QuantityAvailable field to given value.
 
 HasQuantityAvailable returns a boolean if a field has been set.
 
+### SetQuantityAvailableNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityAvailableNil(b bool)`
+
+ SetQuantityAvailableNil sets the value for QuantityAvailable to be an explicit nil
+
+### UnsetQuantityAvailable
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetQuantityAvailable()`
+
+UnsetQuantityAvailable ensures that no value is present for QuantityAvailable, not even an explicit nil
 ### GetQuantityBackordered
 
 `func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityBackordered() int32`
@@ -131,6 +161,16 @@ SetQuantityBackordered sets QuantityBackordered field to given value.
 
 HasQuantityBackordered returns a boolean if a field has been set.
 
+### SetQuantityBackorderedNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityBackorderedNil(b bool)`
+
+ SetQuantityBackorderedNil sets the value for QuantityBackordered to be an explicit nil
+
+### UnsetQuantityBackordered
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetQuantityBackordered()`
+
+UnsetQuantityBackordered ensures that no value is present for QuantityBackordered, not even an explicit nil
 ### GetQuantityBackorderedEta
 
 `func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityBackorderedEta() string`
@@ -156,6 +196,16 @@ SetQuantityBackorderedEta sets QuantityBackorderedEta field to given value.
 
 HasQuantityBackorderedEta returns a boolean if a field has been set.
 
+### SetQuantityBackorderedEtaNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityBackorderedEtaNil(b bool)`
+
+ SetQuantityBackorderedEtaNil sets the value for QuantityBackorderedEta to be an explicit nil
+
+### UnsetQuantityBackorderedEta
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetQuantityBackorderedEta()`
+
+UnsetQuantityBackorderedEta ensures that no value is present for QuantityBackorderedEta, not even an explicit nil
 ### GetQuantityOnOrder
 
 `func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityOnOrder() int32`
@@ -181,6 +231,16 @@ SetQuantityOnOrder sets QuantityOnOrder field to given value.
 
 HasQuantityOnOrder returns a boolean if a field has been set.
 
+### SetQuantityOnOrderNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityOnOrderNil(b bool)`
+
+ SetQuantityOnOrderNil sets the value for QuantityOnOrder to be an explicit nil
+
+### UnsetQuantityOnOrder
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) UnsetQuantityOnOrder()`
+
+UnsetQuantityOnOrder ensures that no value is present for QuantityOnOrder, not even an explicit nil
 ### GetBackOrderInfo
 
 `func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetBackOrderInfo() []PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner`

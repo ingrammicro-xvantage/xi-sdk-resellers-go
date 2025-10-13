@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -11,7 +11,9 @@ API version: 1.0.0
 package xi_sdk_resellers
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"reflect"
 	"time"
 )
@@ -344,4 +346,16 @@ func IsNil(i interface{}) bool {
 
 type MappedNullable interface {
 	ToMap() (map[string]interface{}, error)
+}
+
+// A wrapper for strict JSON decoding
+func newStrictDecoder(data []byte) *json.Decoder {
+	dec := json.NewDecoder(bytes.NewBuffer(data))
+	dec.DisallowUnknownFields()
+	return dec
+}
+
+// Prevent trying to import "fmt"
+func reportError(format string, a ...interface{}) error {
+	return fmt.Errorf(format, a...)
 }

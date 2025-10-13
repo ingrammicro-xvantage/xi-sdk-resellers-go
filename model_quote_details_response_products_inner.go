@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -25,6 +25,8 @@ type QuoteDetailsResponseProductsInner struct {
 	LineNumber *string `json:"lineNumber,omitempty"`
 	// Quantity of product line item quoted.
 	Quantity *int32 `json:"quantity,omitempty"`
+	RemainingQuoteQty NullableInt32 `json:"remainingQuoteQty,omitempty"`
+	MinimumOrderAllowedQty NullableInt32 `json:"minimumOrderAllowedQty,omitempty"`
 	// Product line item comments.
 	Notes *string `json:"notes,omitempty"`
 	// EANUPC
@@ -173,6 +175,90 @@ func (o *QuoteDetailsResponseProductsInner) HasQuantity() bool {
 // SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
 func (o *QuoteDetailsResponseProductsInner) SetQuantity(v int32) {
 	o.Quantity = &v
+}
+
+// GetRemainingQuoteQty returns the RemainingQuoteQty field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QuoteDetailsResponseProductsInner) GetRemainingQuoteQty() int32 {
+	if o == nil || IsNil(o.RemainingQuoteQty.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.RemainingQuoteQty.Get()
+}
+
+// GetRemainingQuoteQtyOk returns a tuple with the RemainingQuoteQty field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QuoteDetailsResponseProductsInner) GetRemainingQuoteQtyOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.RemainingQuoteQty.Get(), o.RemainingQuoteQty.IsSet()
+}
+
+// HasRemainingQuoteQty returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasRemainingQuoteQty() bool {
+	if o != nil && o.RemainingQuoteQty.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRemainingQuoteQty gets a reference to the given NullableInt32 and assigns it to the RemainingQuoteQty field.
+func (o *QuoteDetailsResponseProductsInner) SetRemainingQuoteQty(v int32) {
+	o.RemainingQuoteQty.Set(&v)
+}
+// SetRemainingQuoteQtyNil sets the value for RemainingQuoteQty to be an explicit nil
+func (o *QuoteDetailsResponseProductsInner) SetRemainingQuoteQtyNil() {
+	o.RemainingQuoteQty.Set(nil)
+}
+
+// UnsetRemainingQuoteQty ensures that no value is present for RemainingQuoteQty, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInner) UnsetRemainingQuoteQty() {
+	o.RemainingQuoteQty.Unset()
+}
+
+// GetMinimumOrderAllowedQty returns the MinimumOrderAllowedQty field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QuoteDetailsResponseProductsInner) GetMinimumOrderAllowedQty() int32 {
+	if o == nil || IsNil(o.MinimumOrderAllowedQty.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.MinimumOrderAllowedQty.Get()
+}
+
+// GetMinimumOrderAllowedQtyOk returns a tuple with the MinimumOrderAllowedQty field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QuoteDetailsResponseProductsInner) GetMinimumOrderAllowedQtyOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MinimumOrderAllowedQty.Get(), o.MinimumOrderAllowedQty.IsSet()
+}
+
+// HasMinimumOrderAllowedQty returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasMinimumOrderAllowedQty() bool {
+	if o != nil && o.MinimumOrderAllowedQty.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMinimumOrderAllowedQty gets a reference to the given NullableInt32 and assigns it to the MinimumOrderAllowedQty field.
+func (o *QuoteDetailsResponseProductsInner) SetMinimumOrderAllowedQty(v int32) {
+	o.MinimumOrderAllowedQty.Set(&v)
+}
+// SetMinimumOrderAllowedQtyNil sets the value for MinimumOrderAllowedQty to be an explicit nil
+func (o *QuoteDetailsResponseProductsInner) SetMinimumOrderAllowedQtyNil() {
+	o.MinimumOrderAllowedQty.Set(nil)
+}
+
+// UnsetMinimumOrderAllowedQty ensures that no value is present for MinimumOrderAllowedQty, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInner) UnsetMinimumOrderAllowedQty() {
+	o.MinimumOrderAllowedQty.Unset()
 }
 
 // GetNotes returns the Notes field value if set, zero value otherwise.
@@ -897,6 +983,12 @@ func (o QuoteDetailsResponseProductsInner) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.Quantity) {
 		toSerialize["quantity"] = o.Quantity
+	}
+	if o.RemainingQuoteQty.IsSet() {
+		toSerialize["remainingQuoteQty"] = o.RemainingQuoteQty.Get()
+	}
+	if o.MinimumOrderAllowedQty.IsSet() {
+		toSerialize["minimumOrderAllowedQty"] = o.MinimumOrderAllowedQty.Get()
 	}
 	if !IsNil(o.Notes) {
 		toSerialize["notes"] = o.Notes

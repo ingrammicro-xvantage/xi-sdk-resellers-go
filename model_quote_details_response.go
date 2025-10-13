@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -41,6 +41,7 @@ type QuoteDetailsResponse struct {
 	// If a price discount has been applied to the quote - The date the discount expires and will no longer be applicable.
 	SpecialBidExpirationDate *string `json:"specialBidExpirationDate,omitempty"`
 	VendorQuoteNumber *string `json:"vendorQuoteNumber,omitempty"`
+	IsPartialOrderAllowed NullableBool `json:"isPartialOrderAllowed,omitempty"`
 	// This refers to the primary status of the quote.  API responses will return
 	Status *string `json:"status,omitempty"`
 	StatusReason *string `json:"statusReason,omitempty"`
@@ -74,7 +75,7 @@ type QuoteDetailsResponse struct {
 	// Total number of products included in the quote
 	ProductsCount *int32 `json:"productsCount,omitempty"`
 	// Total extended MSRP for all products included in the quote
-	ExtendedMsrpTotal *float32 `json:"extendedMsrpTotal,omitempty"`
+	ExtendedMsrpTotal NullableFloat32 `json:"extendedMsrpTotal,omitempty"`
 	// Total quantity of all items in the quote.
 	QuantityTotal *int32 `json:"quantityTotal,omitempty"`
 	ExtraFeesTotal *float32 `json:"extraFeesTotal,omitempty"`
@@ -486,6 +487,48 @@ func (o *QuoteDetailsResponse) HasVendorQuoteNumber() bool {
 // SetVendorQuoteNumber gets a reference to the given string and assigns it to the VendorQuoteNumber field.
 func (o *QuoteDetailsResponse) SetVendorQuoteNumber(v string) {
 	o.VendorQuoteNumber = &v
+}
+
+// GetIsPartialOrderAllowed returns the IsPartialOrderAllowed field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QuoteDetailsResponse) GetIsPartialOrderAllowed() bool {
+	if o == nil || IsNil(o.IsPartialOrderAllowed.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.IsPartialOrderAllowed.Get()
+}
+
+// GetIsPartialOrderAllowedOk returns a tuple with the IsPartialOrderAllowed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QuoteDetailsResponse) GetIsPartialOrderAllowedOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IsPartialOrderAllowed.Get(), o.IsPartialOrderAllowed.IsSet()
+}
+
+// HasIsPartialOrderAllowed returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasIsPartialOrderAllowed() bool {
+	if o != nil && o.IsPartialOrderAllowed.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPartialOrderAllowed gets a reference to the given NullableBool and assigns it to the IsPartialOrderAllowed field.
+func (o *QuoteDetailsResponse) SetIsPartialOrderAllowed(v bool) {
+	o.IsPartialOrderAllowed.Set(&v)
+}
+// SetIsPartialOrderAllowedNil sets the value for IsPartialOrderAllowed to be an explicit nil
+func (o *QuoteDetailsResponse) SetIsPartialOrderAllowedNil() {
+	o.IsPartialOrderAllowed.Set(nil)
+}
+
+// UnsetIsPartialOrderAllowed ensures that no value is present for IsPartialOrderAllowed, not even an explicit nil
+func (o *QuoteDetailsResponse) UnsetIsPartialOrderAllowed() {
+	o.IsPartialOrderAllowed.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -1128,36 +1171,46 @@ func (o *QuoteDetailsResponse) SetProductsCount(v int32) {
 	o.ProductsCount = &v
 }
 
-// GetExtendedMsrpTotal returns the ExtendedMsrpTotal field value if set, zero value otherwise.
+// GetExtendedMsrpTotal returns the ExtendedMsrpTotal field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponse) GetExtendedMsrpTotal() float32 {
-	if o == nil || IsNil(o.ExtendedMsrpTotal) {
+	if o == nil || IsNil(o.ExtendedMsrpTotal.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.ExtendedMsrpTotal
+	return *o.ExtendedMsrpTotal.Get()
 }
 
 // GetExtendedMsrpTotalOk returns a tuple with the ExtendedMsrpTotal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponse) GetExtendedMsrpTotalOk() (*float32, bool) {
-	if o == nil || IsNil(o.ExtendedMsrpTotal) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExtendedMsrpTotal, true
+	return o.ExtendedMsrpTotal.Get(), o.ExtendedMsrpTotal.IsSet()
 }
 
 // HasExtendedMsrpTotal returns a boolean if a field has been set.
 func (o *QuoteDetailsResponse) HasExtendedMsrpTotal() bool {
-	if o != nil && !IsNil(o.ExtendedMsrpTotal) {
+	if o != nil && o.ExtendedMsrpTotal.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExtendedMsrpTotal gets a reference to the given float32 and assigns it to the ExtendedMsrpTotal field.
+// SetExtendedMsrpTotal gets a reference to the given NullableFloat32 and assigns it to the ExtendedMsrpTotal field.
 func (o *QuoteDetailsResponse) SetExtendedMsrpTotal(v float32) {
-	o.ExtendedMsrpTotal = &v
+	o.ExtendedMsrpTotal.Set(&v)
+}
+// SetExtendedMsrpTotalNil sets the value for ExtendedMsrpTotal to be an explicit nil
+func (o *QuoteDetailsResponse) SetExtendedMsrpTotalNil() {
+	o.ExtendedMsrpTotal.Set(nil)
+}
+
+// UnsetExtendedMsrpTotal ensures that no value is present for ExtendedMsrpTotal, not even an explicit nil
+func (o *QuoteDetailsResponse) UnsetExtendedMsrpTotal() {
+	o.ExtendedMsrpTotal.Unset()
 }
 
 // GetQuantityTotal returns the QuantityTotal field value if set, zero value otherwise.
@@ -1482,6 +1535,9 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VendorQuoteNumber) {
 		toSerialize["vendorQuoteNumber"] = o.VendorQuoteNumber
 	}
+	if o.IsPartialOrderAllowed.IsSet() {
+		toSerialize["isPartialOrderAllowed"] = o.IsPartialOrderAllowed.Get()
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
@@ -1542,8 +1598,8 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProductsCount) {
 		toSerialize["productsCount"] = o.ProductsCount
 	}
-	if !IsNil(o.ExtendedMsrpTotal) {
-		toSerialize["extendedMsrpTotal"] = o.ExtendedMsrpTotal
+	if o.ExtendedMsrpTotal.IsSet() {
+		toSerialize["extendedMsrpTotal"] = o.ExtendedMsrpTotal.Get()
 	}
 	if !IsNil(o.QuantityTotal) {
 		toSerialize["quantityTotal"] = o.QuantityTotal

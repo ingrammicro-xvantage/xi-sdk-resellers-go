@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AvailabilityByWarehouseId** | Pointer to **string** | Plant/warehouse Id of a particular location in order to get just the inventory of that location. | [optional] 
-**AvailabilityForAllLocation** | Pointer to **bool** | Pass boolean value as input, if true the response will contain warehouse location details, if false the response will not hold warehouse location details. By default value is true. | [optional] 
+**AvailabilityByWarehouseId** | Pointer to **NullableString** | Plant/warehouse Id of a particular location in order to get just the inventory of that location. | [optional] 
+**AvailabilityForAllLocation** | Pointer to **NullableBool** | Pass boolean value as input, if true the response will contain warehouse location details, if false the response will not hold warehouse location details. By default value is true. | [optional] 
 
 ## Methods
 
@@ -51,6 +51,16 @@ SetAvailabilityByWarehouseId sets AvailabilityByWarehouseId field to given value
 
 HasAvailabilityByWarehouseId returns a boolean if a field has been set.
 
+### SetAvailabilityByWarehouseIdNil
+
+`func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) SetAvailabilityByWarehouseIdNil(b bool)`
+
+ SetAvailabilityByWarehouseIdNil sets the value for AvailabilityByWarehouseId to be an explicit nil
+
+### UnsetAvailabilityByWarehouseId
+`func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) UnsetAvailabilityByWarehouseId()`
+
+UnsetAvailabilityByWarehouseId ensures that no value is present for AvailabilityByWarehouseId, not even an explicit nil
 ### GetAvailabilityForAllLocation
 
 `func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityForAllLocation() bool`
@@ -76,6 +86,16 @@ SetAvailabilityForAllLocation sets AvailabilityForAllLocation field to given val
 
 HasAvailabilityForAllLocation returns a boolean if a field has been set.
 
+### SetAvailabilityForAllLocationNil
+
+`func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) SetAvailabilityForAllLocationNil(b bool)`
+
+ SetAvailabilityForAllLocationNil sets the value for AvailabilityForAllLocation to be an explicit nil
+
+### UnsetAvailabilityForAllLocation
+`func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) UnsetAvailabilityForAllLocation()`
+
+UnsetAvailabilityForAllLocation ensures that no value is present for AvailabilityForAllLocation, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

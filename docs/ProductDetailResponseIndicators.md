@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **IsBackOrderAllowed** | Pointer to **bool** | Boolean that indicates whether back order is allowed for the product. | [optional] 
 **IsShippedFromPartner** | Pointer to **bool** | Boolean that indicates whether product is shipped from the partner. | [optional] 
 **IsReplacementProduct** | Pointer to **bool** | Boolean that indicates whether product is a replacement product. | [optional] 
-**ReplacementType** | Pointer to **string** |  | [optional] 
 **IsDirectship** | Pointer to **bool** | Boolean that indicates whether it’s a direct ship product. | [optional] 
 **IsDownloadable** | Pointer to **bool** | Boolean that indicates whether product is downloadable. | [optional] 
 **IsDigitalType** | Pointer to **bool** | Boolean that indicates whether it’s a digital product.  | [optional] 
@@ -19,11 +18,10 @@ Name | Type | Description | Notes
 **HasAcopSpecialPrice** | Pointer to **bool** | Boolean that indicates whether product has any ACOP special price. | [optional] 
 **HasAcopQuantityBreak** | Pointer to **bool** | Boolean that indicates whether product has any ACOP quantity break. | [optional] 
 **HasStdWebDiscount** | Pointer to **bool** | Boolean that indicates whether product has any standard web discount. | [optional] 
-**HasAcopWebDiscount** | Pointer to **bool** |  | [optional] 
 **HasSpecialBid** | Pointer to **bool** | Boolean that indicates whether product has any special bid. | [optional] 
 **IsExportableToCountry** | Pointer to **bool** | Boolean that indicates whether product is exportable. | [optional] 
 **IsDiscontinuedProduct** | Pointer to **bool** | Boolean that indicates whether it’s a discontinued product. | [optional] 
-**IsRefurbished** | Pointer to **bool** | Boolean that indicates whether product is refurbished. | [optional] 
+**IsRefurbishedProduct** | Pointer to **bool** | Boolean that indicates whether product is refurbished. | [optional] 
 **IsReturnableProduct** | Pointer to **bool** | Boolean that indicates if the product can be returned. | [optional] 
 **IsIngramShip** | Pointer to **bool** | Boolean that indicates whether it’s a Ingram shipped product. | [optional] 
 **IsEnduserRequired** | Pointer to **bool** | Do vendor requires Enduser name required to create an order. | [optional] 
@@ -206,31 +204,6 @@ SetIsReplacementProduct sets IsReplacementProduct field to given value.
 `func (o *ProductDetailResponseIndicators) HasIsReplacementProduct() bool`
 
 HasIsReplacementProduct returns a boolean if a field has been set.
-
-### GetReplacementType
-
-`func (o *ProductDetailResponseIndicators) GetReplacementType() string`
-
-GetReplacementType returns the ReplacementType field if non-nil, zero value otherwise.
-
-### GetReplacementTypeOk
-
-`func (o *ProductDetailResponseIndicators) GetReplacementTypeOk() (*string, bool)`
-
-GetReplacementTypeOk returns a tuple with the ReplacementType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReplacementType
-
-`func (o *ProductDetailResponseIndicators) SetReplacementType(v string)`
-
-SetReplacementType sets ReplacementType field to given value.
-
-### HasReplacementType
-
-`func (o *ProductDetailResponseIndicators) HasReplacementType() bool`
-
-HasReplacementType returns a boolean if a field has been set.
 
 ### GetIsDirectship
 
@@ -432,31 +405,6 @@ SetHasStdWebDiscount sets HasStdWebDiscount field to given value.
 
 HasHasStdWebDiscount returns a boolean if a field has been set.
 
-### GetHasAcopWebDiscount
-
-`func (o *ProductDetailResponseIndicators) GetHasAcopWebDiscount() bool`
-
-GetHasAcopWebDiscount returns the HasAcopWebDiscount field if non-nil, zero value otherwise.
-
-### GetHasAcopWebDiscountOk
-
-`func (o *ProductDetailResponseIndicators) GetHasAcopWebDiscountOk() (*bool, bool)`
-
-GetHasAcopWebDiscountOk returns a tuple with the HasAcopWebDiscount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasAcopWebDiscount
-
-`func (o *ProductDetailResponseIndicators) SetHasAcopWebDiscount(v bool)`
-
-SetHasAcopWebDiscount sets HasAcopWebDiscount field to given value.
-
-### HasHasAcopWebDiscount
-
-`func (o *ProductDetailResponseIndicators) HasHasAcopWebDiscount() bool`
-
-HasHasAcopWebDiscount returns a boolean if a field has been set.
-
 ### GetHasSpecialBid
 
 `func (o *ProductDetailResponseIndicators) GetHasSpecialBid() bool`
@@ -532,30 +480,30 @@ SetIsDiscontinuedProduct sets IsDiscontinuedProduct field to given value.
 
 HasIsDiscontinuedProduct returns a boolean if a field has been set.
 
-### GetIsRefurbished
+### GetIsRefurbishedProduct
 
-`func (o *ProductDetailResponseIndicators) GetIsRefurbished() bool`
+`func (o *ProductDetailResponseIndicators) GetIsRefurbishedProduct() bool`
 
-GetIsRefurbished returns the IsRefurbished field if non-nil, zero value otherwise.
+GetIsRefurbishedProduct returns the IsRefurbishedProduct field if non-nil, zero value otherwise.
 
-### GetIsRefurbishedOk
+### GetIsRefurbishedProductOk
 
-`func (o *ProductDetailResponseIndicators) GetIsRefurbishedOk() (*bool, bool)`
+`func (o *ProductDetailResponseIndicators) GetIsRefurbishedProductOk() (*bool, bool)`
 
-GetIsRefurbishedOk returns a tuple with the IsRefurbished field if it's non-nil, zero value otherwise
+GetIsRefurbishedProductOk returns a tuple with the IsRefurbishedProduct field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsRefurbished
+### SetIsRefurbishedProduct
 
-`func (o *ProductDetailResponseIndicators) SetIsRefurbished(v bool)`
+`func (o *ProductDetailResponseIndicators) SetIsRefurbishedProduct(v bool)`
 
-SetIsRefurbished sets IsRefurbished field to given value.
+SetIsRefurbishedProduct sets IsRefurbishedProduct field to given value.
 
-### HasIsRefurbished
+### HasIsRefurbishedProduct
 
-`func (o *ProductDetailResponseIndicators) HasIsRefurbished() bool`
+`func (o *ProductDetailResponseIndicators) HasIsRefurbishedProduct() bool`
 
-HasIsRefurbished returns a boolean if a field has been set.
+HasIsRefurbishedProduct returns a boolean if a field has been set.
 
 ### GetIsReturnableProduct
 

@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,11 +20,10 @@ var _ MappedNullable = &FreightRequest{}
 // FreightRequest struct for FreightRequest
 type FreightRequest struct {
 	// Suffix used to identify billing address. Created during onboarding. Resellers are provided with one or more address IDs depending on how many bill to addresses they need for various flooring companies they are using for credit.
-	BillToAddressId *string `json:"billToAddressId,omitempty"`
+	BillToAddressId interface{} `json:"billToAddressId,omitempty"`
 	// The ID references the reseller's address in Ingram Micro's system for shipping. Provided to resellers during the onboarding process.
 	ShipToAddressId *string `json:"shipToAddressId,omitempty"`
-	// The shipping information.
-	ShipToAddress []FreightRequestShipToAddressInner `json:"shipToAddress,omitempty"`
+	ShipToAddress *FreightRequestShipToAddress `json:"shipToAddress,omitempty"`
 	Lines []FreightRequestLinesInner `json:"lines,omitempty"`
 }
 
@@ -45,22 +44,23 @@ func NewFreightRequestWithDefaults() *FreightRequest {
 	return &this
 }
 
-// GetBillToAddressId returns the BillToAddressId field value if set, zero value otherwise.
-func (o *FreightRequest) GetBillToAddressId() string {
-	if o == nil || IsNil(o.BillToAddressId) {
-		var ret string
+// GetBillToAddressId returns the BillToAddressId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *FreightRequest) GetBillToAddressId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.BillToAddressId
+	return o.BillToAddressId
 }
 
 // GetBillToAddressIdOk returns a tuple with the BillToAddressId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequest) GetBillToAddressIdOk() (*string, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *FreightRequest) GetBillToAddressIdOk() (*interface{}, bool) {
 	if o == nil || IsNil(o.BillToAddressId) {
 		return nil, false
 	}
-	return o.BillToAddressId, true
+	return &o.BillToAddressId, true
 }
 
 // HasBillToAddressId returns a boolean if a field has been set.
@@ -72,9 +72,9 @@ func (o *FreightRequest) HasBillToAddressId() bool {
 	return false
 }
 
-// SetBillToAddressId gets a reference to the given string and assigns it to the BillToAddressId field.
-func (o *FreightRequest) SetBillToAddressId(v string) {
-	o.BillToAddressId = &v
+// SetBillToAddressId gets a reference to the given interface{} and assigns it to the BillToAddressId field.
+func (o *FreightRequest) SetBillToAddressId(v interface{}) {
+	o.BillToAddressId = v
 }
 
 // GetShipToAddressId returns the ShipToAddressId field value if set, zero value otherwise.
@@ -110,17 +110,17 @@ func (o *FreightRequest) SetShipToAddressId(v string) {
 }
 
 // GetShipToAddress returns the ShipToAddress field value if set, zero value otherwise.
-func (o *FreightRequest) GetShipToAddress() []FreightRequestShipToAddressInner {
+func (o *FreightRequest) GetShipToAddress() FreightRequestShipToAddress {
 	if o == nil || IsNil(o.ShipToAddress) {
-		var ret []FreightRequestShipToAddressInner
+		var ret FreightRequestShipToAddress
 		return ret
 	}
-	return o.ShipToAddress
+	return *o.ShipToAddress
 }
 
 // GetShipToAddressOk returns a tuple with the ShipToAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightRequest) GetShipToAddressOk() ([]FreightRequestShipToAddressInner, bool) {
+func (o *FreightRequest) GetShipToAddressOk() (*FreightRequestShipToAddress, bool) {
 	if o == nil || IsNil(o.ShipToAddress) {
 		return nil, false
 	}
@@ -136,9 +136,9 @@ func (o *FreightRequest) HasShipToAddress() bool {
 	return false
 }
 
-// SetShipToAddress gets a reference to the given []FreightRequestShipToAddressInner and assigns it to the ShipToAddress field.
-func (o *FreightRequest) SetShipToAddress(v []FreightRequestShipToAddressInner) {
-	o.ShipToAddress = v
+// SetShipToAddress gets a reference to the given FreightRequestShipToAddress and assigns it to the ShipToAddress field.
+func (o *FreightRequest) SetShipToAddress(v FreightRequestShipToAddress) {
+	o.ShipToAddress = &v
 }
 
 // GetLines returns the Lines field value if set, zero value otherwise.
@@ -183,7 +183,7 @@ func (o FreightRequest) MarshalJSON() ([]byte, error) {
 
 func (o FreightRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BillToAddressId) {
+	if o.BillToAddressId != nil {
 		toSerialize["billToAddressId"] = o.BillToAddressId
 	}
 	if !IsNil(o.ShipToAddressId) {

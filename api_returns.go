@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -138,11 +138,11 @@ func (a *ReturnsAPIService) GetResellersV6ReturnsdetailsExecute(r ApiGetReseller
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -402,49 +402,49 @@ func (a *ReturnsAPIService) GetResellersV6ReturnssearchExecute(r ApiGetResellers
 	}
 
 	if r.caseRequestNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "caseRequestNumber", r.caseRequestNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "caseRequestNumber", r.caseRequestNumber, "form", "")
 	}
 	if r.invoiceNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceNumber", r.invoiceNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceNumber", r.invoiceNumber, "form", "")
 	}
 	if r.returnClaimId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "returnClaimId", r.returnClaimId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "returnClaimId", r.returnClaimId, "form", "")
 	}
 	if r.referenceNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "referenceNumber", r.referenceNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "referenceNumber", r.referenceNumber, "form", "")
 	}
 	if r.ingramPartNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramPartNumber", r.ingramPartNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ingramPartNumber", r.ingramPartNumber, "form", "")
 	}
 	if r.vendorPartNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", r.vendorPartNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", r.vendorPartNumber, "form", "")
 	}
 	if r.returnStatusIn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "returnStatus-in", r.returnStatusIn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "returnStatus-in", r.returnStatusIn, "form", "")
 	}
 	if r.claimStatusIn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "claimStatus-in", r.claimStatusIn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "claimStatus-in", r.claimStatusIn, "form", "")
 	}
 	if r.createdOnBt != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "createdOn-bt", r.createdOnBt, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "createdOn-bt", r.createdOnBt, "form", "")
 	}
 	if r.modifiedOnBt != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "modifiedOn-bt", r.modifiedOnBt, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modifiedOn-bt", r.modifiedOnBt, "form", "")
 	}
 	if r.returnReasonIn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "returnReason-in", r.returnReasonIn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "returnReason-in", r.returnReasonIn, "form", "")
 	}
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	if r.size != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "size", r.size, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "size", r.size, "form", "")
 	}
 	if r.sort != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
 	}
 	if r.sortingColumnName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortingColumnName", r.sortingColumnName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortingColumnName", r.sortingColumnName, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -463,11 +463,11 @@ func (a *ReturnsAPIService) GetResellersV6ReturnssearchExecute(r ApiGetResellers
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -644,11 +644,11 @@ func (a *ReturnsAPIService) PostReturnscreateExecute(r ApiPostReturnscreateReque
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.returnsCreateRequest

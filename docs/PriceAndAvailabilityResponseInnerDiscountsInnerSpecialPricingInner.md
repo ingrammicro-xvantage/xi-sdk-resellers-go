@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DiscountType** | Pointer to **string** | The type of discount being given to the customer. | [optional] 
-**SpecialBidNumer** | Pointer to **string** | Pre-approved special pricing/bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number where different line items have different bid numbers. Line-level bid numbers take precedence over header-level bid numbers. | [optional] 
-**SpecialPricingDiscount** | Pointer to **float32** | Special pricing discount amount given to the customer. | [optional] 
-**SpecialPricingEffectiveDate** | Pointer to **string** | The effective date of the special pricing available to the customer. | [optional] 
-**SpecialPricingExpirationDate** | Pointer to **string** | The expiration date of the special pricing available to the customer. | [optional] 
-**SpecialPricingAvailableQuantity** | Pointer to **int32** | The available quantity of products with discounts. | [optional] 
-**SpecialPricingMinQuantity** | Pointer to **int32** | The minimum quantity of products that have to be purchased to ensure the discount is applied. | [optional] 
-**GovernmentDiscountType** | Pointer to **string** | Type of Government Discount. *Currently, this discount is only available in the USA. | [optional] 
-**GovernmentDiscountedCustomerPrice** | Pointer to **float32** | Government Discounted Customer Price. *Currently, this discount is only available in the USA. | [optional] 
+**DiscountType** | Pointer to **NullableString** | The type of discount being given to the customer. | [optional] 
+**SpecialBidNumer** | Pointer to **NullableString** | Pre-approved special pricing/bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number where different line items have different bid numbers. Line-level bid numbers take precedence over header-level bid numbers. | [optional] 
+**SpecialPricingDiscount** | Pointer to **NullableFloat32** | Special pricing discount amount given to the customer. | [optional] 
+**SpecialPricingEffectiveDate** | Pointer to **NullableString** | The effective date of the special pricing available to the customer. | [optional] 
+**SpecialPricingExpirationDate** | Pointer to **NullableString** | The expiration date of the special pricing available to the customer. | [optional] 
+**SpecialPricingAvailableQuantity** | Pointer to **NullableInt32** | The available quantity of products with discounts. | [optional] 
+**SpecialPricingMinQuantity** | Pointer to **NullableInt32** | The minimum quantity of products that have to be purchased to ensure the discount is applied. | [optional] 
+**GovernmentDiscountType** | Pointer to **NullableString** | Type of Government Discount. *Currently, this discount is only available in the USA. | [optional] 
+**GovernmentDiscountedCustomerPrice** | Pointer to **NullableFloat32** | Government Discounted Customer Price. *Currently, this discount is only available in the USA. | [optional] 
 
 ## Methods
 
@@ -58,6 +58,16 @@ SetDiscountType sets DiscountType field to given value.
 
 HasDiscountType returns a boolean if a field has been set.
 
+### SetDiscountTypeNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetDiscountTypeNil(b bool)`
+
+ SetDiscountTypeNil sets the value for DiscountType to be an explicit nil
+
+### UnsetDiscountType
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetDiscountType()`
+
+UnsetDiscountType ensures that no value is present for DiscountType, not even an explicit nil
 ### GetSpecialBidNumer
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) GetSpecialBidNumer() string`
@@ -83,6 +93,16 @@ SetSpecialBidNumer sets SpecialBidNumer field to given value.
 
 HasSpecialBidNumer returns a boolean if a field has been set.
 
+### SetSpecialBidNumerNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetSpecialBidNumerNil(b bool)`
+
+ SetSpecialBidNumerNil sets the value for SpecialBidNumer to be an explicit nil
+
+### UnsetSpecialBidNumer
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetSpecialBidNumer()`
+
+UnsetSpecialBidNumer ensures that no value is present for SpecialBidNumer, not even an explicit nil
 ### GetSpecialPricingDiscount
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) GetSpecialPricingDiscount() float32`
@@ -108,6 +128,16 @@ SetSpecialPricingDiscount sets SpecialPricingDiscount field to given value.
 
 HasSpecialPricingDiscount returns a boolean if a field has been set.
 
+### SetSpecialPricingDiscountNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetSpecialPricingDiscountNil(b bool)`
+
+ SetSpecialPricingDiscountNil sets the value for SpecialPricingDiscount to be an explicit nil
+
+### UnsetSpecialPricingDiscount
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetSpecialPricingDiscount()`
+
+UnsetSpecialPricingDiscount ensures that no value is present for SpecialPricingDiscount, not even an explicit nil
 ### GetSpecialPricingEffectiveDate
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) GetSpecialPricingEffectiveDate() string`
@@ -133,6 +163,16 @@ SetSpecialPricingEffectiveDate sets SpecialPricingEffectiveDate field to given v
 
 HasSpecialPricingEffectiveDate returns a boolean if a field has been set.
 
+### SetSpecialPricingEffectiveDateNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetSpecialPricingEffectiveDateNil(b bool)`
+
+ SetSpecialPricingEffectiveDateNil sets the value for SpecialPricingEffectiveDate to be an explicit nil
+
+### UnsetSpecialPricingEffectiveDate
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetSpecialPricingEffectiveDate()`
+
+UnsetSpecialPricingEffectiveDate ensures that no value is present for SpecialPricingEffectiveDate, not even an explicit nil
 ### GetSpecialPricingExpirationDate
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) GetSpecialPricingExpirationDate() string`
@@ -158,6 +198,16 @@ SetSpecialPricingExpirationDate sets SpecialPricingExpirationDate field to given
 
 HasSpecialPricingExpirationDate returns a boolean if a field has been set.
 
+### SetSpecialPricingExpirationDateNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetSpecialPricingExpirationDateNil(b bool)`
+
+ SetSpecialPricingExpirationDateNil sets the value for SpecialPricingExpirationDate to be an explicit nil
+
+### UnsetSpecialPricingExpirationDate
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetSpecialPricingExpirationDate()`
+
+UnsetSpecialPricingExpirationDate ensures that no value is present for SpecialPricingExpirationDate, not even an explicit nil
 ### GetSpecialPricingAvailableQuantity
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) GetSpecialPricingAvailableQuantity() int32`
@@ -183,6 +233,16 @@ SetSpecialPricingAvailableQuantity sets SpecialPricingAvailableQuantity field to
 
 HasSpecialPricingAvailableQuantity returns a boolean if a field has been set.
 
+### SetSpecialPricingAvailableQuantityNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetSpecialPricingAvailableQuantityNil(b bool)`
+
+ SetSpecialPricingAvailableQuantityNil sets the value for SpecialPricingAvailableQuantity to be an explicit nil
+
+### UnsetSpecialPricingAvailableQuantity
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetSpecialPricingAvailableQuantity()`
+
+UnsetSpecialPricingAvailableQuantity ensures that no value is present for SpecialPricingAvailableQuantity, not even an explicit nil
 ### GetSpecialPricingMinQuantity
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) GetSpecialPricingMinQuantity() int32`
@@ -208,6 +268,16 @@ SetSpecialPricingMinQuantity sets SpecialPricingMinQuantity field to given value
 
 HasSpecialPricingMinQuantity returns a boolean if a field has been set.
 
+### SetSpecialPricingMinQuantityNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetSpecialPricingMinQuantityNil(b bool)`
+
+ SetSpecialPricingMinQuantityNil sets the value for SpecialPricingMinQuantity to be an explicit nil
+
+### UnsetSpecialPricingMinQuantity
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetSpecialPricingMinQuantity()`
+
+UnsetSpecialPricingMinQuantity ensures that no value is present for SpecialPricingMinQuantity, not even an explicit nil
 ### GetGovernmentDiscountType
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) GetGovernmentDiscountType() string`
@@ -233,6 +303,16 @@ SetGovernmentDiscountType sets GovernmentDiscountType field to given value.
 
 HasGovernmentDiscountType returns a boolean if a field has been set.
 
+### SetGovernmentDiscountTypeNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetGovernmentDiscountTypeNil(b bool)`
+
+ SetGovernmentDiscountTypeNil sets the value for GovernmentDiscountType to be an explicit nil
+
+### UnsetGovernmentDiscountType
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetGovernmentDiscountType()`
+
+UnsetGovernmentDiscountType ensures that no value is present for GovernmentDiscountType, not even an explicit nil
 ### GetGovernmentDiscountedCustomerPrice
 
 `func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) GetGovernmentDiscountedCustomerPrice() float32`
@@ -258,6 +338,16 @@ SetGovernmentDiscountedCustomerPrice sets GovernmentDiscountedCustomerPrice fiel
 
 HasGovernmentDiscountedCustomerPrice returns a boolean if a field has been set.
 
+### SetGovernmentDiscountedCustomerPriceNil
+
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) SetGovernmentDiscountedCustomerPriceNil(b bool)`
+
+ SetGovernmentDiscountedCustomerPriceNil sets the value for GovernmentDiscountedCustomerPrice to be an explicit nil
+
+### UnsetGovernmentDiscountedCustomerPrice
+`func (o *PriceAndAvailabilityResponseInnerDiscountsInnerSpecialPricingInner) UnsetGovernmentDiscountedCustomerPrice()`
+
+UnsetGovernmentDiscountedCustomerPrice ensures that no value is present for GovernmentDiscountedCustomerPrice, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

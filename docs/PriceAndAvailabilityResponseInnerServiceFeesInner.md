@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConditionType** | Pointer to **string** | Condition Type of the service fees. | [optional] 
-**Description** | Pointer to **string** | Description of the service fees. | [optional] 
-**Amount** | Pointer to **float32** | Amount of the service fees. | [optional] 
-**EndDate** | Pointer to **string** | End Date of the service fees. | [optional] 
-**CurrencyCode** | Pointer to **string** | Currency Code of the service fees. | [optional] 
+**ConditionType** | Pointer to **NullableString** | Condition Type of the service fees. | [optional] 
+**Description** | Pointer to **NullableString** | Description of the service fees. | [optional] 
+**Amount** | Pointer to **NullableFloat32** | Amount of the service fees. | [optional] 
+**EndDate** | Pointer to **NullableString** | End Date of the service fees. | [optional] 
+**CurrencyCode** | Pointer to **NullableString** | Currency Code of the service fees. | [optional] 
 
 ## Methods
 
@@ -54,6 +54,16 @@ SetConditionType sets ConditionType field to given value.
 
 HasConditionType returns a boolean if a field has been set.
 
+### SetConditionTypeNil
+
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) SetConditionTypeNil(b bool)`
+
+ SetConditionTypeNil sets the value for ConditionType to be an explicit nil
+
+### UnsetConditionType
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) UnsetConditionType()`
+
+UnsetConditionType ensures that no value is present for ConditionType, not even an explicit nil
 ### GetDescription
 
 `func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) GetDescription() string`
@@ -79,6 +89,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetAmount
 
 `func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) GetAmount() float32`
@@ -104,6 +124,16 @@ SetAmount sets Amount field to given value.
 
 HasAmount returns a boolean if a field has been set.
 
+### SetAmountNil
+
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) SetAmountNil(b bool)`
+
+ SetAmountNil sets the value for Amount to be an explicit nil
+
+### UnsetAmount
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) UnsetAmount()`
+
+UnsetAmount ensures that no value is present for Amount, not even an explicit nil
 ### GetEndDate
 
 `func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) GetEndDate() string`
@@ -129,6 +159,16 @@ SetEndDate sets EndDate field to given value.
 
 HasEndDate returns a boolean if a field has been set.
 
+### SetEndDateNil
+
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) SetEndDateNil(b bool)`
+
+ SetEndDateNil sets the value for EndDate to be an explicit nil
+
+### UnsetEndDate
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) UnsetEndDate()`
+
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) GetCurrencyCode() string`
@@ -154,6 +194,16 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 HasCurrencyCode returns a boolean if a field has been set.
 
+### SetCurrencyCodeNil
+
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) SetCurrencyCodeNil(b bool)`
+
+ SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+
+### UnsetCurrencyCode
+`func (o *PriceAndAvailabilityResponseInnerServiceFeesInner) UnsetCurrencyCode()`
+
+UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

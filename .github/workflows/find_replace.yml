@@ -10,7 +10,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Find and Replace
         run: |
           find docs/ -type f -name "*.md" -exec sed -i 's/openapiclient "github.com\/GIT_USER_ID\/GIT_REPO_ID"/xi_sdk_resellers "https:\/\/github.com\/ingrammicro-xvantage\/xi-sdk-resellers-go"/g' {} +

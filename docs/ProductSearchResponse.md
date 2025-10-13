@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **PageSize** | Pointer to **int32** | The number of results per page. Default is 25. | [optional] 
 **PageNumber** | Pointer to **int32** | current page number default is 1 | [optional] 
 **Catalog** | Pointer to [**[]ProductSearchResponseCatalogInner**](ProductSearchResponseCatalogInner.md) |  | [optional] 
+**SubscriptionCatalog** | Pointer to [**[]ProductSearchResponseSubscriptionCatalogInner**](ProductSearchResponseSubscriptionCatalogInner.md) |  | [optional] 
 **NextPage** | Pointer to **string** | link/URL for accessing next page. | [optional] 
 **PreviousPage** | Pointer to **string** | link/URL for accessing previous page. | [optional] 
 
@@ -129,6 +130,31 @@ SetCatalog sets Catalog field to given value.
 `func (o *ProductSearchResponse) HasCatalog() bool`
 
 HasCatalog returns a boolean if a field has been set.
+
+### GetSubscriptionCatalog
+
+`func (o *ProductSearchResponse) GetSubscriptionCatalog() []ProductSearchResponseSubscriptionCatalogInner`
+
+GetSubscriptionCatalog returns the SubscriptionCatalog field if non-nil, zero value otherwise.
+
+### GetSubscriptionCatalogOk
+
+`func (o *ProductSearchResponse) GetSubscriptionCatalogOk() (*[]ProductSearchResponseSubscriptionCatalogInner, bool)`
+
+GetSubscriptionCatalogOk returns a tuple with the SubscriptionCatalog field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionCatalog
+
+`func (o *ProductSearchResponse) SetSubscriptionCatalog(v []ProductSearchResponseSubscriptionCatalogInner)`
+
+SetSubscriptionCatalog sets SubscriptionCatalog field to given value.
+
+### HasSubscriptionCatalog
+
+`func (o *ProductSearchResponse) HasSubscriptionCatalog() bool`
+
+HasSubscriptionCatalog returns a boolean if a field has been set.
 
 ### GetNextPage
 

@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -150,10 +150,10 @@ func (a *InvoicesAPIService) GetInvoicedetailsV61Execute(r ApiGetInvoicedetailsV
 	}
 
 	if r.customerType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "customerType", r.customerType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "customerType", r.customerType, "form", "")
 	}
 	if r.includeSerialNumbers != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSerialNumbers", r.includeSerialNumbers, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSerialNumbers", r.includeSerialNumbers, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -172,10 +172,10 @@ func (a *InvoicesAPIService) GetInvoicedetailsV61Execute(r ApiGetInvoicedetailsV
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationID", r.iMApplicationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationID", r.iMApplicationID, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -496,62 +496,62 @@ func (a *InvoicesAPIService) GetResellersV6InvoicesearchExecute(r ApiGetReseller
 	}
 
 	if r.paymentTermsNetDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "paymentTermsNetDate", r.paymentTermsNetDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "paymentTermsNetDate", r.paymentTermsNetDate, "form", "")
 	}
 	if r.invoiceDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceDate", r.invoiceDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceDate", r.invoiceDate, "form", "")
 	}
 	if r.invoiceDueDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceDueDate", r.invoiceDueDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceDueDate", r.invoiceDueDate, "form", "")
 	}
 	if r.orderDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "orderDate", r.orderDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orderDate", r.orderDate, "form", "")
 	}
 	if r.orderFromDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "orderFromDate", r.orderFromDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orderFromDate", r.orderFromDate, "form", "")
 	}
 	if r.orderToDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "orderToDate", r.orderToDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orderToDate", r.orderToDate, "form", "")
 	}
 	if r.orderNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "orderNumber", r.orderNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orderNumber", r.orderNumber, "form", "")
 	}
 	if r.deliveryNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "DeliveryNumber", r.deliveryNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "DeliveryNumber", r.deliveryNumber, "form", "")
 	}
 	if r.invoiceNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceNumber", r.invoiceNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceNumber", r.invoiceNumber, "form", "")
 	}
 	if r.invoiceStatus != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceStatus", r.invoiceStatus, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceStatus", r.invoiceStatus, "form", "")
 	}
 	if r.invoiceType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceType", r.invoiceType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceType", r.invoiceType, "form", "")
 	}
 	if r.customerOrderNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "customerOrderNumber", r.customerOrderNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "customerOrderNumber", r.customerOrderNumber, "form", "")
 	}
 	if r.endCustomerOrderNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "endCustomerOrderNumber", r.endCustomerOrderNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "endCustomerOrderNumber", r.endCustomerOrderNumber, "form", "")
 	}
 	if r.specialBidNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "specialBidNumber", r.specialBidNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "specialBidNumber", r.specialBidNumber, "form", "")
 	}
 	if r.invoiceFromDueDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceFromDueDate", r.invoiceFromDueDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceFromDueDate", r.invoiceFromDueDate, "form", "")
 	}
 	if r.invoiceToDueDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceToDueDate", r.invoiceToDueDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceToDueDate", r.invoiceToDueDate, "form", "")
 	}
 	if r.invoiceFromDate != nil {
 		t := *r.invoiceFromDate
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceFromDate", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceFromDate", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceFromDate", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceFromDate", t, "form", "multi")
 		}
 	}
 	if r.invoiceToDate != nil {
@@ -559,26 +559,26 @@ func (a *InvoicesAPIService) GetResellersV6InvoicesearchExecute(r ApiGetReseller
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceToDate", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceToDate", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceToDate", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "invoiceToDate", t, "form", "multi")
 		}
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	}
 	if r.pageNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "form", "")
 	}
 	if r.orderby != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "orderby", r.orderby, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orderby", r.orderby, "form", "")
 	}
 	if r.direction != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "direction", r.direction, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "direction", r.direction, "form", "")
 	}
 	if r.serialNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "serialNumber", r.serialNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "serialNumber", r.serialNumber, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -597,10 +597,10 @@ func (a *InvoicesAPIService) GetResellersV6InvoicesearchExecute(r ApiGetReseller
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationID", r.iMApplicationID, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationID", r.iMApplicationID, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

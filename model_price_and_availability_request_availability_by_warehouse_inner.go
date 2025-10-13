@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &PriceAndAvailabilityRequestAvailabilityByWarehouseInner{
 // PriceAndAvailabilityRequestAvailabilityByWarehouseInner struct for PriceAndAvailabilityRequestAvailabilityByWarehouseInner
 type PriceAndAvailabilityRequestAvailabilityByWarehouseInner struct {
 	// Plant/warehouse Id of a particular location in order to get just the inventory of that location.
-	AvailabilityByWarehouseId *string `json:"availabilityByWarehouseId,omitempty"`
+	AvailabilityByWarehouseId NullableString `json:"availabilityByWarehouseId,omitempty"`
 	// Pass boolean value as input, if true the response will contain warehouse location details, if false the response will not hold warehouse location details. By default value is true.
-	AvailabilityForAllLocation *bool `json:"availabilityForAllLocation,omitempty"`
+	AvailabilityForAllLocation NullableBool `json:"availabilityForAllLocation,omitempty"`
 }
 
 // NewPriceAndAvailabilityRequestAvailabilityByWarehouseInner instantiates a new PriceAndAvailabilityRequestAvailabilityByWarehouseInner object
@@ -42,68 +42,88 @@ func NewPriceAndAvailabilityRequestAvailabilityByWarehouseInnerWithDefaults() *P
 	return &this
 }
 
-// GetAvailabilityByWarehouseId returns the AvailabilityByWarehouseId field value if set, zero value otherwise.
+// GetAvailabilityByWarehouseId returns the AvailabilityByWarehouseId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityByWarehouseId() string {
-	if o == nil || IsNil(o.AvailabilityByWarehouseId) {
+	if o == nil || IsNil(o.AvailabilityByWarehouseId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AvailabilityByWarehouseId
+	return *o.AvailabilityByWarehouseId.Get()
 }
 
 // GetAvailabilityByWarehouseIdOk returns a tuple with the AvailabilityByWarehouseId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityByWarehouseIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AvailabilityByWarehouseId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AvailabilityByWarehouseId, true
+	return o.AvailabilityByWarehouseId.Get(), o.AvailabilityByWarehouseId.IsSet()
 }
 
 // HasAvailabilityByWarehouseId returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) HasAvailabilityByWarehouseId() bool {
-	if o != nil && !IsNil(o.AvailabilityByWarehouseId) {
+	if o != nil && o.AvailabilityByWarehouseId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAvailabilityByWarehouseId gets a reference to the given string and assigns it to the AvailabilityByWarehouseId field.
+// SetAvailabilityByWarehouseId gets a reference to the given NullableString and assigns it to the AvailabilityByWarehouseId field.
 func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) SetAvailabilityByWarehouseId(v string) {
-	o.AvailabilityByWarehouseId = &v
+	o.AvailabilityByWarehouseId.Set(&v)
+}
+// SetAvailabilityByWarehouseIdNil sets the value for AvailabilityByWarehouseId to be an explicit nil
+func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) SetAvailabilityByWarehouseIdNil() {
+	o.AvailabilityByWarehouseId.Set(nil)
 }
 
-// GetAvailabilityForAllLocation returns the AvailabilityForAllLocation field value if set, zero value otherwise.
+// UnsetAvailabilityByWarehouseId ensures that no value is present for AvailabilityByWarehouseId, not even an explicit nil
+func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) UnsetAvailabilityByWarehouseId() {
+	o.AvailabilityByWarehouseId.Unset()
+}
+
+// GetAvailabilityForAllLocation returns the AvailabilityForAllLocation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityForAllLocation() bool {
-	if o == nil || IsNil(o.AvailabilityForAllLocation) {
+	if o == nil || IsNil(o.AvailabilityForAllLocation.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AvailabilityForAllLocation
+	return *o.AvailabilityForAllLocation.Get()
 }
 
 // GetAvailabilityForAllLocationOk returns a tuple with the AvailabilityForAllLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityForAllLocationOk() (*bool, bool) {
-	if o == nil || IsNil(o.AvailabilityForAllLocation) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AvailabilityForAllLocation, true
+	return o.AvailabilityForAllLocation.Get(), o.AvailabilityForAllLocation.IsSet()
 }
 
 // HasAvailabilityForAllLocation returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) HasAvailabilityForAllLocation() bool {
-	if o != nil && !IsNil(o.AvailabilityForAllLocation) {
+	if o != nil && o.AvailabilityForAllLocation.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAvailabilityForAllLocation gets a reference to the given bool and assigns it to the AvailabilityForAllLocation field.
+// SetAvailabilityForAllLocation gets a reference to the given NullableBool and assigns it to the AvailabilityForAllLocation field.
 func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) SetAvailabilityForAllLocation(v bool) {
-	o.AvailabilityForAllLocation = &v
+	o.AvailabilityForAllLocation.Set(&v)
+}
+// SetAvailabilityForAllLocationNil sets the value for AvailabilityForAllLocation to be an explicit nil
+func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) SetAvailabilityForAllLocationNil() {
+	o.AvailabilityForAllLocation.Set(nil)
+}
+
+// UnsetAvailabilityForAllLocation ensures that no value is present for AvailabilityForAllLocation, not even an explicit nil
+func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) UnsetAvailabilityForAllLocation() {
+	o.AvailabilityForAllLocation.Unset()
 }
 
 func (o PriceAndAvailabilityRequestAvailabilityByWarehouseInner) MarshalJSON() ([]byte, error) {
@@ -116,11 +136,11 @@ func (o PriceAndAvailabilityRequestAvailabilityByWarehouseInner) MarshalJSON() (
 
 func (o PriceAndAvailabilityRequestAvailabilityByWarehouseInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AvailabilityByWarehouseId) {
-		toSerialize["availabilityByWarehouseId"] = o.AvailabilityByWarehouseId
+	if o.AvailabilityByWarehouseId.IsSet() {
+		toSerialize["availabilityByWarehouseId"] = o.AvailabilityByWarehouseId.Get()
 	}
-	if !IsNil(o.AvailabilityForAllLocation) {
-		toSerialize["availabilityForAllLocation"] = o.AvailabilityForAllLocation
+	if o.AvailabilityForAllLocation.IsSet() {
+		toSerialize["availabilityForAllLocation"] = o.AvailabilityForAllLocation.Get()
 	}
 	return toSerialize, nil
 }

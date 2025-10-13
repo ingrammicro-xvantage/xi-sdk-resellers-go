@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,15 +20,17 @@ var _ MappedNullable = &QuoteDetailsResponseProductsInnerPrice{}
 // QuoteDetailsResponseProductsInnerPrice struct for QuoteDetailsResponseProductsInnerPrice
 type QuoteDetailsResponseProductsInnerPrice struct {
 	// Ingram Micro quoted price specific to the reseller and quote.
-	QuotePrice *float32 `json:"quotePrice,omitempty"`
+	QuotePrice NullableFloat32 `json:"quotePrice,omitempty"`
 	// Manufacturer Suggested Retail Price
-	Msrp *float32 `json:"msrp,omitempty"`
+	Msrp NullableFloat32 `json:"msrp,omitempty"`
 	// Extended MSRP - Manufacturer Suggested Retail Price X Quantity
-	ExtendedMsrp *float32 `json:"extendedMsrp,omitempty"`
+	ExtendedMsrp NullableFloat32 `json:"extendedMsrp,omitempty"`
 	// Extended reseller quoted price (cost to reseller) X Quantity
-	ExtendedQuotePrice *float32 `json:"extendedQuotePrice,omitempty"`
+	ExtendedQuotePrice NullableFloat32 `json:"extendedQuotePrice,omitempty"`
+	RemainingQuantityExtendedMsrp NullableFloat32 `json:"remainingQuantityExtendedMsrp,omitempty"`
+	RemainingQuantityExtendedQuotePrice NullableFloat32 `json:"remainingQuantityExtendedQuotePrice,omitempty"`
 	// Discount off list percentage extended
-	DiscountOffList *string `json:"discountOffList,omitempty"`
+	DiscountOffList NullableString `json:"discountOffList,omitempty"`
 	Type *string `json:"type,omitempty"`
 	RecurringPriceModel *string `json:"recurringPriceModel,omitempty"`
 	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
@@ -55,164 +57,298 @@ func NewQuoteDetailsResponseProductsInnerPriceWithDefaults() *QuoteDetailsRespon
 	return &this
 }
 
-// GetQuotePrice returns the QuotePrice field value if set, zero value otherwise.
+// GetQuotePrice returns the QuotePrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePrice() float32 {
-	if o == nil || IsNil(o.QuotePrice) {
+	if o == nil || IsNil(o.QuotePrice.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.QuotePrice
+	return *o.QuotePrice.Get()
 }
 
 // GetQuotePriceOk returns a tuple with the QuotePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.QuotePrice) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QuotePrice, true
+	return o.QuotePrice.Get(), o.QuotePrice.IsSet()
 }
 
 // HasQuotePrice returns a boolean if a field has been set.
 func (o *QuoteDetailsResponseProductsInnerPrice) HasQuotePrice() bool {
-	if o != nil && !IsNil(o.QuotePrice) {
+	if o != nil && o.QuotePrice.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuotePrice gets a reference to the given float32 and assigns it to the QuotePrice field.
+// SetQuotePrice gets a reference to the given NullableFloat32 and assigns it to the QuotePrice field.
 func (o *QuoteDetailsResponseProductsInnerPrice) SetQuotePrice(v float32) {
-	o.QuotePrice = &v
+	o.QuotePrice.Set(&v)
+}
+// SetQuotePriceNil sets the value for QuotePrice to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetQuotePriceNil() {
+	o.QuotePrice.Set(nil)
 }
 
-// GetMsrp returns the Msrp field value if set, zero value otherwise.
+// UnsetQuotePrice ensures that no value is present for QuotePrice, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetQuotePrice() {
+	o.QuotePrice.Unset()
+}
+
+// GetMsrp returns the Msrp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrp() float32 {
-	if o == nil || IsNil(o.Msrp) {
+	if o == nil || IsNil(o.Msrp.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Msrp
+	return *o.Msrp.Get()
 }
 
 // GetMsrpOk returns a tuple with the Msrp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrpOk() (*float32, bool) {
-	if o == nil || IsNil(o.Msrp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Msrp, true
+	return o.Msrp.Get(), o.Msrp.IsSet()
 }
 
 // HasMsrp returns a boolean if a field has been set.
 func (o *QuoteDetailsResponseProductsInnerPrice) HasMsrp() bool {
-	if o != nil && !IsNil(o.Msrp) {
+	if o != nil && o.Msrp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMsrp gets a reference to the given float32 and assigns it to the Msrp field.
+// SetMsrp gets a reference to the given NullableFloat32 and assigns it to the Msrp field.
 func (o *QuoteDetailsResponseProductsInnerPrice) SetMsrp(v float32) {
-	o.Msrp = &v
+	o.Msrp.Set(&v)
+}
+// SetMsrpNil sets the value for Msrp to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetMsrpNil() {
+	o.Msrp.Set(nil)
 }
 
-// GetExtendedMsrp returns the ExtendedMsrp field value if set, zero value otherwise.
+// UnsetMsrp ensures that no value is present for Msrp, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetMsrp() {
+	o.Msrp.Unset()
+}
+
+// GetExtendedMsrp returns the ExtendedMsrp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrp() float32 {
-	if o == nil || IsNil(o.ExtendedMsrp) {
+	if o == nil || IsNil(o.ExtendedMsrp.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.ExtendedMsrp
+	return *o.ExtendedMsrp.Get()
 }
 
 // GetExtendedMsrpOk returns a tuple with the ExtendedMsrp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrpOk() (*float32, bool) {
-	if o == nil || IsNil(o.ExtendedMsrp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExtendedMsrp, true
+	return o.ExtendedMsrp.Get(), o.ExtendedMsrp.IsSet()
 }
 
 // HasExtendedMsrp returns a boolean if a field has been set.
 func (o *QuoteDetailsResponseProductsInnerPrice) HasExtendedMsrp() bool {
-	if o != nil && !IsNil(o.ExtendedMsrp) {
+	if o != nil && o.ExtendedMsrp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExtendedMsrp gets a reference to the given float32 and assigns it to the ExtendedMsrp field.
+// SetExtendedMsrp gets a reference to the given NullableFloat32 and assigns it to the ExtendedMsrp field.
 func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedMsrp(v float32) {
-	o.ExtendedMsrp = &v
+	o.ExtendedMsrp.Set(&v)
+}
+// SetExtendedMsrpNil sets the value for ExtendedMsrp to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedMsrpNil() {
+	o.ExtendedMsrp.Set(nil)
 }
 
-// GetExtendedQuotePrice returns the ExtendedQuotePrice field value if set, zero value otherwise.
+// UnsetExtendedMsrp ensures that no value is present for ExtendedMsrp, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetExtendedMsrp() {
+	o.ExtendedMsrp.Unset()
+}
+
+// GetExtendedQuotePrice returns the ExtendedQuotePrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePrice() float32 {
-	if o == nil || IsNil(o.ExtendedQuotePrice) {
+	if o == nil || IsNil(o.ExtendedQuotePrice.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.ExtendedQuotePrice
+	return *o.ExtendedQuotePrice.Get()
 }
 
 // GetExtendedQuotePriceOk returns a tuple with the ExtendedQuotePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.ExtendedQuotePrice) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExtendedQuotePrice, true
+	return o.ExtendedQuotePrice.Get(), o.ExtendedQuotePrice.IsSet()
 }
 
 // HasExtendedQuotePrice returns a boolean if a field has been set.
 func (o *QuoteDetailsResponseProductsInnerPrice) HasExtendedQuotePrice() bool {
-	if o != nil && !IsNil(o.ExtendedQuotePrice) {
+	if o != nil && o.ExtendedQuotePrice.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExtendedQuotePrice gets a reference to the given float32 and assigns it to the ExtendedQuotePrice field.
+// SetExtendedQuotePrice gets a reference to the given NullableFloat32 and assigns it to the ExtendedQuotePrice field.
 func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedQuotePrice(v float32) {
-	o.ExtendedQuotePrice = &v
+	o.ExtendedQuotePrice.Set(&v)
+}
+// SetExtendedQuotePriceNil sets the value for ExtendedQuotePrice to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedQuotePriceNil() {
+	o.ExtendedQuotePrice.Set(nil)
 }
 
-// GetDiscountOffList returns the DiscountOffList field value if set, zero value otherwise.
+// UnsetExtendedQuotePrice ensures that no value is present for ExtendedQuotePrice, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetExtendedQuotePrice() {
+	o.ExtendedQuotePrice.Unset()
+}
+
+// GetRemainingQuantityExtendedMsrp returns the RemainingQuantityExtendedMsrp field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QuoteDetailsResponseProductsInnerPrice) GetRemainingQuantityExtendedMsrp() float32 {
+	if o == nil || IsNil(o.RemainingQuantityExtendedMsrp.Get()) {
+		var ret float32
+		return ret
+	}
+	return *o.RemainingQuantityExtendedMsrp.Get()
+}
+
+// GetRemainingQuantityExtendedMsrpOk returns a tuple with the RemainingQuantityExtendedMsrp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QuoteDetailsResponseProductsInnerPrice) GetRemainingQuantityExtendedMsrpOk() (*float32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.RemainingQuantityExtendedMsrp.Get(), o.RemainingQuantityExtendedMsrp.IsSet()
+}
+
+// HasRemainingQuantityExtendedMsrp returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) HasRemainingQuantityExtendedMsrp() bool {
+	if o != nil && o.RemainingQuantityExtendedMsrp.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRemainingQuantityExtendedMsrp gets a reference to the given NullableFloat32 and assigns it to the RemainingQuantityExtendedMsrp field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetRemainingQuantityExtendedMsrp(v float32) {
+	o.RemainingQuantityExtendedMsrp.Set(&v)
+}
+// SetRemainingQuantityExtendedMsrpNil sets the value for RemainingQuantityExtendedMsrp to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetRemainingQuantityExtendedMsrpNil() {
+	o.RemainingQuantityExtendedMsrp.Set(nil)
+}
+
+// UnsetRemainingQuantityExtendedMsrp ensures that no value is present for RemainingQuantityExtendedMsrp, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetRemainingQuantityExtendedMsrp() {
+	o.RemainingQuantityExtendedMsrp.Unset()
+}
+
+// GetRemainingQuantityExtendedQuotePrice returns the RemainingQuantityExtendedQuotePrice field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QuoteDetailsResponseProductsInnerPrice) GetRemainingQuantityExtendedQuotePrice() float32 {
+	if o == nil || IsNil(o.RemainingQuantityExtendedQuotePrice.Get()) {
+		var ret float32
+		return ret
+	}
+	return *o.RemainingQuantityExtendedQuotePrice.Get()
+}
+
+// GetRemainingQuantityExtendedQuotePriceOk returns a tuple with the RemainingQuantityExtendedQuotePrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QuoteDetailsResponseProductsInnerPrice) GetRemainingQuantityExtendedQuotePriceOk() (*float32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.RemainingQuantityExtendedQuotePrice.Get(), o.RemainingQuantityExtendedQuotePrice.IsSet()
+}
+
+// HasRemainingQuantityExtendedQuotePrice returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) HasRemainingQuantityExtendedQuotePrice() bool {
+	if o != nil && o.RemainingQuantityExtendedQuotePrice.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRemainingQuantityExtendedQuotePrice gets a reference to the given NullableFloat32 and assigns it to the RemainingQuantityExtendedQuotePrice field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetRemainingQuantityExtendedQuotePrice(v float32) {
+	o.RemainingQuantityExtendedQuotePrice.Set(&v)
+}
+// SetRemainingQuantityExtendedQuotePriceNil sets the value for RemainingQuantityExtendedQuotePrice to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetRemainingQuantityExtendedQuotePriceNil() {
+	o.RemainingQuantityExtendedQuotePrice.Set(nil)
+}
+
+// UnsetRemainingQuantityExtendedQuotePrice ensures that no value is present for RemainingQuantityExtendedQuotePrice, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetRemainingQuantityExtendedQuotePrice() {
+	o.RemainingQuantityExtendedQuotePrice.Unset()
+}
+
+// GetDiscountOffList returns the DiscountOffList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountOffList() string {
-	if o == nil || IsNil(o.DiscountOffList) {
+	if o == nil || IsNil(o.DiscountOffList.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DiscountOffList
+	return *o.DiscountOffList.Get()
 }
 
 // GetDiscountOffListOk returns a tuple with the DiscountOffList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountOffListOk() (*string, bool) {
-	if o == nil || IsNil(o.DiscountOffList) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DiscountOffList, true
+	return o.DiscountOffList.Get(), o.DiscountOffList.IsSet()
 }
 
 // HasDiscountOffList returns a boolean if a field has been set.
 func (o *QuoteDetailsResponseProductsInnerPrice) HasDiscountOffList() bool {
-	if o != nil && !IsNil(o.DiscountOffList) {
+	if o != nil && o.DiscountOffList.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDiscountOffList gets a reference to the given string and assigns it to the DiscountOffList field.
+// SetDiscountOffList gets a reference to the given NullableString and assigns it to the DiscountOffList field.
 func (o *QuoteDetailsResponseProductsInnerPrice) SetDiscountOffList(v string) {
-	o.DiscountOffList = &v
+	o.DiscountOffList.Set(&v)
+}
+// SetDiscountOffListNil sets the value for DiscountOffList to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetDiscountOffListNil() {
+	o.DiscountOffList.Set(nil)
+}
+
+// UnsetDiscountOffList ensures that no value is present for DiscountOffList, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetDiscountOffList() {
+	o.DiscountOffList.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -469,20 +605,26 @@ func (o QuoteDetailsResponseProductsInnerPrice) MarshalJSON() ([]byte, error) {
 
 func (o QuoteDetailsResponseProductsInnerPrice) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.QuotePrice) {
-		toSerialize["quotePrice"] = o.QuotePrice
+	if o.QuotePrice.IsSet() {
+		toSerialize["quotePrice"] = o.QuotePrice.Get()
 	}
-	if !IsNil(o.Msrp) {
-		toSerialize["msrp"] = o.Msrp
+	if o.Msrp.IsSet() {
+		toSerialize["msrp"] = o.Msrp.Get()
 	}
-	if !IsNil(o.ExtendedMsrp) {
-		toSerialize["extendedMsrp"] = o.ExtendedMsrp
+	if o.ExtendedMsrp.IsSet() {
+		toSerialize["extendedMsrp"] = o.ExtendedMsrp.Get()
 	}
-	if !IsNil(o.ExtendedQuotePrice) {
-		toSerialize["extendedQuotePrice"] = o.ExtendedQuotePrice
+	if o.ExtendedQuotePrice.IsSet() {
+		toSerialize["extendedQuotePrice"] = o.ExtendedQuotePrice.Get()
 	}
-	if !IsNil(o.DiscountOffList) {
-		toSerialize["discountOffList"] = o.DiscountOffList
+	if o.RemainingQuantityExtendedMsrp.IsSet() {
+		toSerialize["remainingQuantityExtendedMsrp"] = o.RemainingQuantityExtendedMsrp.Get()
+	}
+	if o.RemainingQuantityExtendedQuotePrice.IsSet() {
+		toSerialize["remainingQuantityExtendedQuotePrice"] = o.RemainingQuantityExtendedQuotePrice.Get()
+	}
+	if o.DiscountOffList.IsSet() {
+		toSerialize["discountOffList"] = o.DiscountOffList.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

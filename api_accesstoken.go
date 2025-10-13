@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -95,9 +95,9 @@ func (a *AccesstokenAPIService) GetAccesstokenExecute(r ApiGetAccesstokenRequest
 		return localVarReturnValue, nil, reportError("clientSecret is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "grant_type", r.grantType, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "client_id", r.clientId, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "client_secret", r.clientSecret, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "grant_type", r.grantType, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "client_id", r.clientId, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "client_secret", r.clientSecret, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

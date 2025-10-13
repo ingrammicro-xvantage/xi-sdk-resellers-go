@@ -4,24 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IngramPartNumber** | Pointer to **string** | Ingram Micro unique part number for the product. | [optional] 
-**VendorPartNumber** | Pointer to **string** | Vendor’s part number for the product. | [optional] 
-**CustomerPartNumber** | Pointer to **string** | Reseller / end-user’s part number for the product. | [optional] 
-**ProductAuthorized** | Pointer to **string** | Boolean that indicates whether a product is authorized. | [optional] 
-**Description** | Pointer to **string** | The description given for the product. | [optional] 
-**ProductDetailDescription** | Pointer to **string** | The detailed description given for the product. | [optional] 
-**Upc** | Pointer to **string** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
-**ProductCategory** | Pointer to **string** | The category of the product. | [optional] 
-**ProductSubCategory** | Pointer to **string** | The sub-category of the product. | [optional] 
-**VendorName** | Pointer to **string** | Vendor name for the order. | [optional] 
-**VendorNumber** | Pointer to **string** | Vendor number that identifies the product. | [optional] 
-**ProductStatusCode** | Pointer to **string** | Status code of the product. | [optional] 
-**ProductClass** | Pointer to **string** | Indicates whether the product is directly shipped from the vendor’s warehouse or if the product ships from Ingram Micro’s warehouse. Class Codes are Ingram classifications on how skus are stocked A &#x3D; Product that is stocked usually in all IM warehouses and replenished on a regular basis. B &#x3D; Product that is stocked in limited IM warehouses and replenished on a regular basis C &#x3D; Product that is stocked in fewer IM warehouses and replenished on a regular basis. D &#x3D; Product that Ingram Micro has elected to discontinue. E &#x3D; Product that will be phased out later, according to the vendor. You may not want to replenish this product, but instead sell down what is in stock. F &#x3D; Product that we carry for a specific customer or supplier under a contractual agreement. N &#x3D; New Sku. Classification before first receipt O &#x3D; Discontinued product to be liquidated S&#x3D; Order for Specialized Demand (Order to backorder) X&#x3D; direct ship from Vendor V &#x3D; product that vendor has elected to discontinue. | [optional] 
+**IngramPartNumber** | Pointer to **NullableString** | Ingram Micro unique part number for the product. | [optional] 
+**VendorPartNumber** | Pointer to **NullableString** | Vendor’s part number for the product. | [optional] 
+**ProductAuthorized** | Pointer to **NullableString** | Boolean that indicates whether a product is authorized. | [optional] 
+**Description** | Pointer to **NullableString** | The description given for the product. | [optional] 
+**Upc** | Pointer to **NullableString** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
+**ProductCategory** | Pointer to **NullableString** | The category of the product. | [optional] 
+**ProductSubcategory** | Pointer to **NullableString** | The sub-category of the product. | [optional] 
+**VendorName** | Pointer to **NullableString** | Vendor name for the order. | [optional] 
+**VendorNumber** | Pointer to **NullableString** | Vendor number that identifies the product. | [optional] 
+**ProductStatusCode** | Pointer to **NullableString** | Status code of the product. | [optional] 
+**ProductClass** | Pointer to **NullableString** | Indicates whether the product is directly shipped from the vendor’s warehouse or if the product ships from Ingram Micro’s warehouse. Class Codes are Ingram classifications on how skus are stocked A &#x3D; Product that is stocked usually in all IM warehouses and replenished on a regular basis. B &#x3D; Product that is stocked in limited IM warehouses and replenished on a regular basis C &#x3D; Product that is stocked in fewer IM warehouses and replenished on a regular basis. D &#x3D; Product that Ingram Micro has elected to discontinue. E &#x3D; Product that will be phased out later, according to the vendor. You may not want to replenish this product, but instead sell down what is in stock. F &#x3D; Product that we carry for a specific customer or supplier under a contractual agreement. N &#x3D; New Sku. Classification before first receipt O &#x3D; Discontinued product to be liquidated S&#x3D; Order for Specialized Demand (Order to backorder) X&#x3D; direct ship from Vendor V &#x3D; product that vendor has elected to discontinue. | [optional] 
+**CustomerPartNumber** | Pointer to **NullableString** | Reseller / end-user’s part number for the product. | [optional] 
 **Indicators** | Pointer to [**ProductDetailResponseIndicators**](ProductDetailResponseIndicators.md) |  | [optional] 
 **CiscoFields** | Pointer to [**ProductDetailResponseCiscoFields**](ProductDetailResponseCiscoFields.md) |  | [optional] 
-**TechnicalSpecifications** | Pointer to [**[]ProductDetailResponseTechnicalSpecificationsInner**](ProductDetailResponseTechnicalSpecificationsInner.md) | Technical specifications of the product. | [optional] 
-**WarrantyInformation** | Pointer to **[]map[string]interface{}** | Warranty information related to the product. | [optional] 
+**WarrantyInformation** | Pointer to **[]string** | Warranty codes related to the product. | [optional] 
 **AdditionalInformation** | Pointer to [**ProductDetailResponseAdditionalInformation**](ProductDetailResponseAdditionalInformation.md) |  | [optional] 
+**SubscriptionDetails** | Pointer to [**[]ProductDetailResponseSubscriptionDetailsInner**](ProductDetailResponseSubscriptionDetailsInner.md) | Subscription product Details | [optional] 
 
 ## Methods
 
@@ -67,6 +66,16 @@ SetIngramPartNumber sets IngramPartNumber field to given value.
 
 HasIngramPartNumber returns a boolean if a field has been set.
 
+### SetIngramPartNumberNil
+
+`func (o *ProductDetailResponse) SetIngramPartNumberNil(b bool)`
+
+ SetIngramPartNumberNil sets the value for IngramPartNumber to be an explicit nil
+
+### UnsetIngramPartNumber
+`func (o *ProductDetailResponse) UnsetIngramPartNumber()`
+
+UnsetIngramPartNumber ensures that no value is present for IngramPartNumber, not even an explicit nil
 ### GetVendorPartNumber
 
 `func (o *ProductDetailResponse) GetVendorPartNumber() string`
@@ -92,31 +101,16 @@ SetVendorPartNumber sets VendorPartNumber field to given value.
 
 HasVendorPartNumber returns a boolean if a field has been set.
 
-### GetCustomerPartNumber
+### SetVendorPartNumberNil
 
-`func (o *ProductDetailResponse) GetCustomerPartNumber() string`
+`func (o *ProductDetailResponse) SetVendorPartNumberNil(b bool)`
 
-GetCustomerPartNumber returns the CustomerPartNumber field if non-nil, zero value otherwise.
+ SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
 
-### GetCustomerPartNumberOk
+### UnsetVendorPartNumber
+`func (o *ProductDetailResponse) UnsetVendorPartNumber()`
 
-`func (o *ProductDetailResponse) GetCustomerPartNumberOk() (*string, bool)`
-
-GetCustomerPartNumberOk returns a tuple with the CustomerPartNumber field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomerPartNumber
-
-`func (o *ProductDetailResponse) SetCustomerPartNumber(v string)`
-
-SetCustomerPartNumber sets CustomerPartNumber field to given value.
-
-### HasCustomerPartNumber
-
-`func (o *ProductDetailResponse) HasCustomerPartNumber() bool`
-
-HasCustomerPartNumber returns a boolean if a field has been set.
-
+UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
 ### GetProductAuthorized
 
 `func (o *ProductDetailResponse) GetProductAuthorized() string`
@@ -142,6 +136,16 @@ SetProductAuthorized sets ProductAuthorized field to given value.
 
 HasProductAuthorized returns a boolean if a field has been set.
 
+### SetProductAuthorizedNil
+
+`func (o *ProductDetailResponse) SetProductAuthorizedNil(b bool)`
+
+ SetProductAuthorizedNil sets the value for ProductAuthorized to be an explicit nil
+
+### UnsetProductAuthorized
+`func (o *ProductDetailResponse) UnsetProductAuthorized()`
+
+UnsetProductAuthorized ensures that no value is present for ProductAuthorized, not even an explicit nil
 ### GetDescription
 
 `func (o *ProductDetailResponse) GetDescription() string`
@@ -167,31 +171,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### GetProductDetailDescription
+### SetDescriptionNil
 
-`func (o *ProductDetailResponse) GetProductDetailDescription() string`
+`func (o *ProductDetailResponse) SetDescriptionNil(b bool)`
 
-GetProductDetailDescription returns the ProductDetailDescription field if non-nil, zero value otherwise.
+ SetDescriptionNil sets the value for Description to be an explicit nil
 
-### GetProductDetailDescriptionOk
+### UnsetDescription
+`func (o *ProductDetailResponse) UnsetDescription()`
 
-`func (o *ProductDetailResponse) GetProductDetailDescriptionOk() (*string, bool)`
-
-GetProductDetailDescriptionOk returns a tuple with the ProductDetailDescription field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProductDetailDescription
-
-`func (o *ProductDetailResponse) SetProductDetailDescription(v string)`
-
-SetProductDetailDescription sets ProductDetailDescription field to given value.
-
-### HasProductDetailDescription
-
-`func (o *ProductDetailResponse) HasProductDetailDescription() bool`
-
-HasProductDetailDescription returns a boolean if a field has been set.
-
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetUpc
 
 `func (o *ProductDetailResponse) GetUpc() string`
@@ -217,6 +206,16 @@ SetUpc sets Upc field to given value.
 
 HasUpc returns a boolean if a field has been set.
 
+### SetUpcNil
+
+`func (o *ProductDetailResponse) SetUpcNil(b bool)`
+
+ SetUpcNil sets the value for Upc to be an explicit nil
+
+### UnsetUpc
+`func (o *ProductDetailResponse) UnsetUpc()`
+
+UnsetUpc ensures that no value is present for Upc, not even an explicit nil
 ### GetProductCategory
 
 `func (o *ProductDetailResponse) GetProductCategory() string`
@@ -242,31 +241,51 @@ SetProductCategory sets ProductCategory field to given value.
 
 HasProductCategory returns a boolean if a field has been set.
 
-### GetProductSubCategory
+### SetProductCategoryNil
 
-`func (o *ProductDetailResponse) GetProductSubCategory() string`
+`func (o *ProductDetailResponse) SetProductCategoryNil(b bool)`
 
-GetProductSubCategory returns the ProductSubCategory field if non-nil, zero value otherwise.
+ SetProductCategoryNil sets the value for ProductCategory to be an explicit nil
 
-### GetProductSubCategoryOk
+### UnsetProductCategory
+`func (o *ProductDetailResponse) UnsetProductCategory()`
 
-`func (o *ProductDetailResponse) GetProductSubCategoryOk() (*string, bool)`
+UnsetProductCategory ensures that no value is present for ProductCategory, not even an explicit nil
+### GetProductSubcategory
 
-GetProductSubCategoryOk returns a tuple with the ProductSubCategory field if it's non-nil, zero value otherwise
+`func (o *ProductDetailResponse) GetProductSubcategory() string`
+
+GetProductSubcategory returns the ProductSubcategory field if non-nil, zero value otherwise.
+
+### GetProductSubcategoryOk
+
+`func (o *ProductDetailResponse) GetProductSubcategoryOk() (*string, bool)`
+
+GetProductSubcategoryOk returns a tuple with the ProductSubcategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProductSubCategory
+### SetProductSubcategory
 
-`func (o *ProductDetailResponse) SetProductSubCategory(v string)`
+`func (o *ProductDetailResponse) SetProductSubcategory(v string)`
 
-SetProductSubCategory sets ProductSubCategory field to given value.
+SetProductSubcategory sets ProductSubcategory field to given value.
 
-### HasProductSubCategory
+### HasProductSubcategory
 
-`func (o *ProductDetailResponse) HasProductSubCategory() bool`
+`func (o *ProductDetailResponse) HasProductSubcategory() bool`
 
-HasProductSubCategory returns a boolean if a field has been set.
+HasProductSubcategory returns a boolean if a field has been set.
 
+### SetProductSubcategoryNil
+
+`func (o *ProductDetailResponse) SetProductSubcategoryNil(b bool)`
+
+ SetProductSubcategoryNil sets the value for ProductSubcategory to be an explicit nil
+
+### UnsetProductSubcategory
+`func (o *ProductDetailResponse) UnsetProductSubcategory()`
+
+UnsetProductSubcategory ensures that no value is present for ProductSubcategory, not even an explicit nil
 ### GetVendorName
 
 `func (o *ProductDetailResponse) GetVendorName() string`
@@ -292,6 +311,16 @@ SetVendorName sets VendorName field to given value.
 
 HasVendorName returns a boolean if a field has been set.
 
+### SetVendorNameNil
+
+`func (o *ProductDetailResponse) SetVendorNameNil(b bool)`
+
+ SetVendorNameNil sets the value for VendorName to be an explicit nil
+
+### UnsetVendorName
+`func (o *ProductDetailResponse) UnsetVendorName()`
+
+UnsetVendorName ensures that no value is present for VendorName, not even an explicit nil
 ### GetVendorNumber
 
 `func (o *ProductDetailResponse) GetVendorNumber() string`
@@ -317,6 +346,16 @@ SetVendorNumber sets VendorNumber field to given value.
 
 HasVendorNumber returns a boolean if a field has been set.
 
+### SetVendorNumberNil
+
+`func (o *ProductDetailResponse) SetVendorNumberNil(b bool)`
+
+ SetVendorNumberNil sets the value for VendorNumber to be an explicit nil
+
+### UnsetVendorNumber
+`func (o *ProductDetailResponse) UnsetVendorNumber()`
+
+UnsetVendorNumber ensures that no value is present for VendorNumber, not even an explicit nil
 ### GetProductStatusCode
 
 `func (o *ProductDetailResponse) GetProductStatusCode() string`
@@ -342,6 +381,16 @@ SetProductStatusCode sets ProductStatusCode field to given value.
 
 HasProductStatusCode returns a boolean if a field has been set.
 
+### SetProductStatusCodeNil
+
+`func (o *ProductDetailResponse) SetProductStatusCodeNil(b bool)`
+
+ SetProductStatusCodeNil sets the value for ProductStatusCode to be an explicit nil
+
+### UnsetProductStatusCode
+`func (o *ProductDetailResponse) UnsetProductStatusCode()`
+
+UnsetProductStatusCode ensures that no value is present for ProductStatusCode, not even an explicit nil
 ### GetProductClass
 
 `func (o *ProductDetailResponse) GetProductClass() string`
@@ -367,6 +416,51 @@ SetProductClass sets ProductClass field to given value.
 
 HasProductClass returns a boolean if a field has been set.
 
+### SetProductClassNil
+
+`func (o *ProductDetailResponse) SetProductClassNil(b bool)`
+
+ SetProductClassNil sets the value for ProductClass to be an explicit nil
+
+### UnsetProductClass
+`func (o *ProductDetailResponse) UnsetProductClass()`
+
+UnsetProductClass ensures that no value is present for ProductClass, not even an explicit nil
+### GetCustomerPartNumber
+
+`func (o *ProductDetailResponse) GetCustomerPartNumber() string`
+
+GetCustomerPartNumber returns the CustomerPartNumber field if non-nil, zero value otherwise.
+
+### GetCustomerPartNumberOk
+
+`func (o *ProductDetailResponse) GetCustomerPartNumberOk() (*string, bool)`
+
+GetCustomerPartNumberOk returns a tuple with the CustomerPartNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerPartNumber
+
+`func (o *ProductDetailResponse) SetCustomerPartNumber(v string)`
+
+SetCustomerPartNumber sets CustomerPartNumber field to given value.
+
+### HasCustomerPartNumber
+
+`func (o *ProductDetailResponse) HasCustomerPartNumber() bool`
+
+HasCustomerPartNumber returns a boolean if a field has been set.
+
+### SetCustomerPartNumberNil
+
+`func (o *ProductDetailResponse) SetCustomerPartNumberNil(b bool)`
+
+ SetCustomerPartNumberNil sets the value for CustomerPartNumber to be an explicit nil
+
+### UnsetCustomerPartNumber
+`func (o *ProductDetailResponse) UnsetCustomerPartNumber()`
+
+UnsetCustomerPartNumber ensures that no value is present for CustomerPartNumber, not even an explicit nil
 ### GetIndicators
 
 `func (o *ProductDetailResponse) GetIndicators() ProductDetailResponseIndicators`
@@ -417,47 +511,22 @@ SetCiscoFields sets CiscoFields field to given value.
 
 HasCiscoFields returns a boolean if a field has been set.
 
-### GetTechnicalSpecifications
-
-`func (o *ProductDetailResponse) GetTechnicalSpecifications() []ProductDetailResponseTechnicalSpecificationsInner`
-
-GetTechnicalSpecifications returns the TechnicalSpecifications field if non-nil, zero value otherwise.
-
-### GetTechnicalSpecificationsOk
-
-`func (o *ProductDetailResponse) GetTechnicalSpecificationsOk() (*[]ProductDetailResponseTechnicalSpecificationsInner, bool)`
-
-GetTechnicalSpecificationsOk returns a tuple with the TechnicalSpecifications field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTechnicalSpecifications
-
-`func (o *ProductDetailResponse) SetTechnicalSpecifications(v []ProductDetailResponseTechnicalSpecificationsInner)`
-
-SetTechnicalSpecifications sets TechnicalSpecifications field to given value.
-
-### HasTechnicalSpecifications
-
-`func (o *ProductDetailResponse) HasTechnicalSpecifications() bool`
-
-HasTechnicalSpecifications returns a boolean if a field has been set.
-
 ### GetWarrantyInformation
 
-`func (o *ProductDetailResponse) GetWarrantyInformation() []map[string]interface{}`
+`func (o *ProductDetailResponse) GetWarrantyInformation() []string`
 
 GetWarrantyInformation returns the WarrantyInformation field if non-nil, zero value otherwise.
 
 ### GetWarrantyInformationOk
 
-`func (o *ProductDetailResponse) GetWarrantyInformationOk() (*[]map[string]interface{}, bool)`
+`func (o *ProductDetailResponse) GetWarrantyInformationOk() (*[]string, bool)`
 
 GetWarrantyInformationOk returns a tuple with the WarrantyInformation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWarrantyInformation
 
-`func (o *ProductDetailResponse) SetWarrantyInformation(v []map[string]interface{})`
+`func (o *ProductDetailResponse) SetWarrantyInformation(v []string)`
 
 SetWarrantyInformation sets WarrantyInformation field to given value.
 
@@ -491,6 +560,31 @@ SetAdditionalInformation sets AdditionalInformation field to given value.
 `func (o *ProductDetailResponse) HasAdditionalInformation() bool`
 
 HasAdditionalInformation returns a boolean if a field has been set.
+
+### GetSubscriptionDetails
+
+`func (o *ProductDetailResponse) GetSubscriptionDetails() []ProductDetailResponseSubscriptionDetailsInner`
+
+GetSubscriptionDetails returns the SubscriptionDetails field if non-nil, zero value otherwise.
+
+### GetSubscriptionDetailsOk
+
+`func (o *ProductDetailResponse) GetSubscriptionDetailsOk() (*[]ProductDetailResponseSubscriptionDetailsInner, bool)`
+
+GetSubscriptionDetailsOk returns a tuple with the SubscriptionDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionDetails
+
+`func (o *ProductDetailResponse) SetSubscriptionDetails(v []ProductDetailResponseSubscriptionDetailsInner)`
+
+SetSubscriptionDetails sets SubscriptionDetails field to given value.
+
+### HasSubscriptionDetails
+
+`func (o *ProductDetailResponse) HasSubscriptionDetails() bool`
+
+HasSubscriptionDetails returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

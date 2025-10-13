@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -19,56 +19,58 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInner{}
 
 // PriceAndAvailabilityResponseInner struct for PriceAndAvailabilityResponseInner
 type PriceAndAvailabilityResponseInner struct {
+	Index *float32 `json:"index,omitempty"`
 	// Codes signifying whether the sku is active or not.
-	ProductStatusCode *string `json:"productStatusCode,omitempty"`
+	ProductStatusCode NullableString `json:"productStatusCode,omitempty"`
 	// Message returned saying whether sku is active.
-	ProductStatusMessage *string `json:"productStatusMessage,omitempty"`
+	ProductStatusMessage NullableString `json:"productStatusMessage,omitempty"`
 	// Ingram Micro unique part number for the product.
-	IngramPartNumber *string `json:"ingramPartNumber,omitempty"`
+	IngramPartNumber NullableString `json:"ingramPartNumber,omitempty"`
 	// Vendor’s part number for the product.
-	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
+	VendorPartNumber NullableString `json:"vendorPartNumber,omitempty"`
 	// Extended Vendor Part Number. *Currently, this feature is not available in these countries (Mexico, Turkey, New Zealand, Colombia, Chile, Brazil, Peru, Western Sahara).
-	ExtendedVendorPartNumber *string `json:"extendedVendorPartNumber,omitempty"`
+	ExtendedVendorPartNumber NullableString `json:"extendedVendorPartNumber,omitempty"`
 	// Reseller / end-user’s part number for the product.
-	CustomerPartNumber *string `json:"customerPartNumber,omitempty"`
+	CustomerPartNumber NullableString `json:"customerPartNumber,omitempty"`
 	// The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item.
-	Upc *string `json:"upc,omitempty"`
+	Upc NullableString `json:"upc,omitempty"`
 	// Number type of the part.
-	PartNumberType *string `json:"partNumberType,omitempty"`
+	PartNumberType NullableString `json:"partNumberType,omitempty"`
 	// Vendor number that identifies the product.
-	VendorNumber *string `json:"vendorNumber,omitempty"`
+	VendorNumber NullableString `json:"vendorNumber,omitempty"`
 	// Vendor name for the order.
-	VendorName *string `json:"vendorName,omitempty"`
+	VendorName NullableString `json:"vendorName,omitempty"`
 	// The description given for the product.
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// Indicates whether the product is directly shipped from the vendor’s warehouse or if the product ships from Ingram Micro’s warehouse. Class Codes are Ingram classifications on how skus are stocked A = Product that is stocked usually in all IM warehouses and replenished on a regular basis. B = Product that is stocked in limited IM warehouses and replenished on a regular basis C = Product that is stocked in fewer IM warehouses and replenished on a regular basis. D = Product that Ingram Micro has elected to discontinue. E = Product that will be phased out later, according to the vendor. You may not want to replenish this product, but instead sell down what is in stock. F = Product that we carry for a specific customer or supplier under a contractual agreement. N = New Sku. Classification before first receipt O = Discontinued product to be liquidated S= Order for Specialized Demand (Order to backorder) X= direct ship from Vendor V = product that vendor has elected to discontinue.
-	ProductClass *string `json:"productClass,omitempty"`
+	ProductClass NullableString `json:"productClass,omitempty"`
 	// The description given for the product.
-	Uom *string `json:"uom,omitempty"`
+	Uom NullableString `json:"uom,omitempty"`
 	// Status that gives whether the product is Active.
-	ProductStatus *string `json:"productStatus,omitempty"`
+	ProductStatus NullableString `json:"productStatus,omitempty"`
 	// Boolean that indicates if the product accepts backorder.
-	AcceptBackOrder *bool `json:"acceptBackOrder,omitempty"`
+	AcceptBackOrder NullableBool `json:"acceptBackOrder,omitempty"`
 	// Boolean that indicates whether a product is authorized.
-	ProductAuthorized *bool `json:"productAuthorized,omitempty"`
+	ProductAuthorized NullableBool `json:"productAuthorized,omitempty"`
 	// Boolean that indicates if the product can be returned.
-	ReturnableProduct *bool `json:"returnableProduct,omitempty"`
+	ReturnableProduct NullableBool `json:"returnableProduct,omitempty"`
 	// Boolean that indicates  if end user information is required.
-	EndUserInfoRequired *bool `json:"endUserInfoRequired,omitempty"`
+	EndUserInfoRequired NullableBool `json:"endUserInfoRequired,omitempty"`
 	// Boolean that indicates if special pricing is available for the product.
-	GovtSpecialPriceAvailable *bool `json:"govtSpecialPriceAvailable,omitempty"`
+	GovtSpecialPriceAvailable NullableBool `json:"govtSpecialPriceAvailable,omitempty"`
 	// Program type, “PA” for government orders, “ED” for education order.
-	GovtProgramType *string `json:"govtProgramType,omitempty"`
+	GovtProgramType NullableString `json:"govtProgramType,omitempty"`
 	// Type of end user of the program. F = Federal, S = State, E = Local, K = K-12 school, and H = Higher Education.
-	GovtEndUserType *string `json:"govtEndUserType,omitempty"`
-	Availability *PriceAndAvailabilityResponseInnerAvailability `json:"availability,omitempty"`
+	GovtEndUserType NullableString `json:"govtEndUserType,omitempty"`
+	Availability NullablePriceAndAvailabilityResponseInnerAvailability `json:"availability,omitempty"`
 	ReserveInventoryDetails []PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner `json:"reserveInventoryDetails,omitempty"`
-	Pricing *PriceAndAvailabilityResponseInnerPricing `json:"pricing,omitempty"`
+	Pricing NullablePriceAndAvailabilityResponseInnerPricing `json:"pricing,omitempty"`
 	Discounts []PriceAndAvailabilityResponseInnerDiscountsInner `json:"discounts,omitempty"`
 	// True of false value to indicate whether it’s bundle part. *Currently, this feature is not available in these countries (Mexico, Turkey, New Zealand, Colombia, Chile, Brazil, Peru, Western Sahara).
-	BundlePartIndicator *bool `json:"bundlePartIndicator,omitempty"`
+	BundlePartIndicator NullableBool `json:"bundlePartIndicator,omitempty"`
 	// *Currently, this feature is not available in these countries (Mexico, Turkey, New Zealand, Colombia, Chile, Brazil, Peru, Western Sahara).
 	ServiceFees []PriceAndAvailabilityResponseInnerServiceFeesInner `json:"serviceFees,omitempty"`
+	SubscriptionPrice []PriceAndAvailabilityResponseInnerSubscriptionPriceInner `json:"subscriptionPrice,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInner instantiates a new PriceAndAvailabilityResponseInner object
@@ -88,708 +90,960 @@ func NewPriceAndAvailabilityResponseInnerWithDefaults() *PriceAndAvailabilityRes
 	return &this
 }
 
-// GetProductStatusCode returns the ProductStatusCode field value if set, zero value otherwise.
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInner) GetIndex() float32 {
+	if o == nil || IsNil(o.Index) {
+		var ret float32
+		return ret
+	}
+	return *o.Index
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInner) GetIndexOk() (*float32, bool) {
+	if o == nil || IsNil(o.Index) {
+		return nil, false
+	}
+	return o.Index, true
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInner) HasIndex() bool {
+	if o != nil && !IsNil(o.Index) {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given float32 and assigns it to the Index field.
+func (o *PriceAndAvailabilityResponseInner) SetIndex(v float32) {
+	o.Index = &v
+}
+
+// GetProductStatusCode returns the ProductStatusCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetProductStatusCode() string {
-	if o == nil || IsNil(o.ProductStatusCode) {
+	if o == nil || IsNil(o.ProductStatusCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProductStatusCode
+	return *o.ProductStatusCode.Get()
 }
 
 // GetProductStatusCodeOk returns a tuple with the ProductStatusCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetProductStatusCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductStatusCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductStatusCode, true
+	return o.ProductStatusCode.Get(), o.ProductStatusCode.IsSet()
 }
 
 // HasProductStatusCode returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasProductStatusCode() bool {
-	if o != nil && !IsNil(o.ProductStatusCode) {
+	if o != nil && o.ProductStatusCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductStatusCode gets a reference to the given string and assigns it to the ProductStatusCode field.
+// SetProductStatusCode gets a reference to the given NullableString and assigns it to the ProductStatusCode field.
 func (o *PriceAndAvailabilityResponseInner) SetProductStatusCode(v string) {
-	o.ProductStatusCode = &v
+	o.ProductStatusCode.Set(&v)
+}
+// SetProductStatusCodeNil sets the value for ProductStatusCode to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetProductStatusCodeNil() {
+	o.ProductStatusCode.Set(nil)
 }
 
-// GetProductStatusMessage returns the ProductStatusMessage field value if set, zero value otherwise.
+// UnsetProductStatusCode ensures that no value is present for ProductStatusCode, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetProductStatusCode() {
+	o.ProductStatusCode.Unset()
+}
+
+// GetProductStatusMessage returns the ProductStatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetProductStatusMessage() string {
-	if o == nil || IsNil(o.ProductStatusMessage) {
+	if o == nil || IsNil(o.ProductStatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProductStatusMessage
+	return *o.ProductStatusMessage.Get()
 }
 
 // GetProductStatusMessageOk returns a tuple with the ProductStatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetProductStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductStatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductStatusMessage, true
+	return o.ProductStatusMessage.Get(), o.ProductStatusMessage.IsSet()
 }
 
 // HasProductStatusMessage returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasProductStatusMessage() bool {
-	if o != nil && !IsNil(o.ProductStatusMessage) {
+	if o != nil && o.ProductStatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductStatusMessage gets a reference to the given string and assigns it to the ProductStatusMessage field.
+// SetProductStatusMessage gets a reference to the given NullableString and assigns it to the ProductStatusMessage field.
 func (o *PriceAndAvailabilityResponseInner) SetProductStatusMessage(v string) {
-	o.ProductStatusMessage = &v
+	o.ProductStatusMessage.Set(&v)
+}
+// SetProductStatusMessageNil sets the value for ProductStatusMessage to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetProductStatusMessageNil() {
+	o.ProductStatusMessage.Set(nil)
 }
 
-// GetIngramPartNumber returns the IngramPartNumber field value if set, zero value otherwise.
+// UnsetProductStatusMessage ensures that no value is present for ProductStatusMessage, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetProductStatusMessage() {
+	o.ProductStatusMessage.Unset()
+}
+
+// GetIngramPartNumber returns the IngramPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetIngramPartNumber() string {
-	if o == nil || IsNil(o.IngramPartNumber) {
+	if o == nil || IsNil(o.IngramPartNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IngramPartNumber
+	return *o.IngramPartNumber.Get()
 }
 
 // GetIngramPartNumberOk returns a tuple with the IngramPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetIngramPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.IngramPartNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IngramPartNumber, true
+	return o.IngramPartNumber.Get(), o.IngramPartNumber.IsSet()
 }
 
 // HasIngramPartNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasIngramPartNumber() bool {
-	if o != nil && !IsNil(o.IngramPartNumber) {
+	if o != nil && o.IngramPartNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIngramPartNumber gets a reference to the given string and assigns it to the IngramPartNumber field.
+// SetIngramPartNumber gets a reference to the given NullableString and assigns it to the IngramPartNumber field.
 func (o *PriceAndAvailabilityResponseInner) SetIngramPartNumber(v string) {
-	o.IngramPartNumber = &v
+	o.IngramPartNumber.Set(&v)
+}
+// SetIngramPartNumberNil sets the value for IngramPartNumber to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetIngramPartNumberNil() {
+	o.IngramPartNumber.Set(nil)
 }
 
-// GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise.
+// UnsetIngramPartNumber ensures that no value is present for IngramPartNumber, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetIngramPartNumber() {
+	o.IngramPartNumber.Unset()
+}
+
+// GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetVendorPartNumber() string {
-	if o == nil || IsNil(o.VendorPartNumber) {
+	if o == nil || IsNil(o.VendorPartNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VendorPartNumber
+	return *o.VendorPartNumber.Get()
 }
 
 // GetVendorPartNumberOk returns a tuple with the VendorPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetVendorPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.VendorPartNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VendorPartNumber, true
+	return o.VendorPartNumber.Get(), o.VendorPartNumber.IsSet()
 }
 
 // HasVendorPartNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasVendorPartNumber() bool {
-	if o != nil && !IsNil(o.VendorPartNumber) {
+	if o != nil && o.VendorPartNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVendorPartNumber gets a reference to the given string and assigns it to the VendorPartNumber field.
+// SetVendorPartNumber gets a reference to the given NullableString and assigns it to the VendorPartNumber field.
 func (o *PriceAndAvailabilityResponseInner) SetVendorPartNumber(v string) {
-	o.VendorPartNumber = &v
+	o.VendorPartNumber.Set(&v)
+}
+// SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetVendorPartNumberNil() {
+	o.VendorPartNumber.Set(nil)
 }
 
-// GetExtendedVendorPartNumber returns the ExtendedVendorPartNumber field value if set, zero value otherwise.
+// UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetVendorPartNumber() {
+	o.VendorPartNumber.Unset()
+}
+
+// GetExtendedVendorPartNumber returns the ExtendedVendorPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetExtendedVendorPartNumber() string {
-	if o == nil || IsNil(o.ExtendedVendorPartNumber) {
+	if o == nil || IsNil(o.ExtendedVendorPartNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExtendedVendorPartNumber
+	return *o.ExtendedVendorPartNumber.Get()
 }
 
 // GetExtendedVendorPartNumberOk returns a tuple with the ExtendedVendorPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetExtendedVendorPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.ExtendedVendorPartNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExtendedVendorPartNumber, true
+	return o.ExtendedVendorPartNumber.Get(), o.ExtendedVendorPartNumber.IsSet()
 }
 
 // HasExtendedVendorPartNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasExtendedVendorPartNumber() bool {
-	if o != nil && !IsNil(o.ExtendedVendorPartNumber) {
+	if o != nil && o.ExtendedVendorPartNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExtendedVendorPartNumber gets a reference to the given string and assigns it to the ExtendedVendorPartNumber field.
+// SetExtendedVendorPartNumber gets a reference to the given NullableString and assigns it to the ExtendedVendorPartNumber field.
 func (o *PriceAndAvailabilityResponseInner) SetExtendedVendorPartNumber(v string) {
-	o.ExtendedVendorPartNumber = &v
+	o.ExtendedVendorPartNumber.Set(&v)
+}
+// SetExtendedVendorPartNumberNil sets the value for ExtendedVendorPartNumber to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetExtendedVendorPartNumberNil() {
+	o.ExtendedVendorPartNumber.Set(nil)
 }
 
-// GetCustomerPartNumber returns the CustomerPartNumber field value if set, zero value otherwise.
+// UnsetExtendedVendorPartNumber ensures that no value is present for ExtendedVendorPartNumber, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetExtendedVendorPartNumber() {
+	o.ExtendedVendorPartNumber.Unset()
+}
+
+// GetCustomerPartNumber returns the CustomerPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetCustomerPartNumber() string {
-	if o == nil || IsNil(o.CustomerPartNumber) {
+	if o == nil || IsNil(o.CustomerPartNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CustomerPartNumber
+	return *o.CustomerPartNumber.Get()
 }
 
 // GetCustomerPartNumberOk returns a tuple with the CustomerPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetCustomerPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.CustomerPartNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CustomerPartNumber, true
+	return o.CustomerPartNumber.Get(), o.CustomerPartNumber.IsSet()
 }
 
 // HasCustomerPartNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasCustomerPartNumber() bool {
-	if o != nil && !IsNil(o.CustomerPartNumber) {
+	if o != nil && o.CustomerPartNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerPartNumber gets a reference to the given string and assigns it to the CustomerPartNumber field.
+// SetCustomerPartNumber gets a reference to the given NullableString and assigns it to the CustomerPartNumber field.
 func (o *PriceAndAvailabilityResponseInner) SetCustomerPartNumber(v string) {
-	o.CustomerPartNumber = &v
+	o.CustomerPartNumber.Set(&v)
+}
+// SetCustomerPartNumberNil sets the value for CustomerPartNumber to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetCustomerPartNumberNil() {
+	o.CustomerPartNumber.Set(nil)
 }
 
-// GetUpc returns the Upc field value if set, zero value otherwise.
+// UnsetCustomerPartNumber ensures that no value is present for CustomerPartNumber, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetCustomerPartNumber() {
+	o.CustomerPartNumber.Unset()
+}
+
+// GetUpc returns the Upc field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetUpc() string {
-	if o == nil || IsNil(o.Upc) {
+	if o == nil || IsNil(o.Upc.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Upc
+	return *o.Upc.Get()
 }
 
 // GetUpcOk returns a tuple with the Upc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetUpcOk() (*string, bool) {
-	if o == nil || IsNil(o.Upc) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Upc, true
+	return o.Upc.Get(), o.Upc.IsSet()
 }
 
 // HasUpc returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasUpc() bool {
-	if o != nil && !IsNil(o.Upc) {
+	if o != nil && o.Upc.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUpc gets a reference to the given string and assigns it to the Upc field.
+// SetUpc gets a reference to the given NullableString and assigns it to the Upc field.
 func (o *PriceAndAvailabilityResponseInner) SetUpc(v string) {
-	o.Upc = &v
+	o.Upc.Set(&v)
+}
+// SetUpcNil sets the value for Upc to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetUpcNil() {
+	o.Upc.Set(nil)
 }
 
-// GetPartNumberType returns the PartNumberType field value if set, zero value otherwise.
+// UnsetUpc ensures that no value is present for Upc, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetUpc() {
+	o.Upc.Unset()
+}
+
+// GetPartNumberType returns the PartNumberType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetPartNumberType() string {
-	if o == nil || IsNil(o.PartNumberType) {
+	if o == nil || IsNil(o.PartNumberType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PartNumberType
+	return *o.PartNumberType.Get()
 }
 
 // GetPartNumberTypeOk returns a tuple with the PartNumberType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetPartNumberTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.PartNumberType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PartNumberType, true
+	return o.PartNumberType.Get(), o.PartNumberType.IsSet()
 }
 
 // HasPartNumberType returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasPartNumberType() bool {
-	if o != nil && !IsNil(o.PartNumberType) {
+	if o != nil && o.PartNumberType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPartNumberType gets a reference to the given string and assigns it to the PartNumberType field.
+// SetPartNumberType gets a reference to the given NullableString and assigns it to the PartNumberType field.
 func (o *PriceAndAvailabilityResponseInner) SetPartNumberType(v string) {
-	o.PartNumberType = &v
+	o.PartNumberType.Set(&v)
+}
+// SetPartNumberTypeNil sets the value for PartNumberType to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetPartNumberTypeNil() {
+	o.PartNumberType.Set(nil)
 }
 
-// GetVendorNumber returns the VendorNumber field value if set, zero value otherwise.
+// UnsetPartNumberType ensures that no value is present for PartNumberType, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetPartNumberType() {
+	o.PartNumberType.Unset()
+}
+
+// GetVendorNumber returns the VendorNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetVendorNumber() string {
-	if o == nil || IsNil(o.VendorNumber) {
+	if o == nil || IsNil(o.VendorNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VendorNumber
+	return *o.VendorNumber.Get()
 }
 
 // GetVendorNumberOk returns a tuple with the VendorNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetVendorNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.VendorNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VendorNumber, true
+	return o.VendorNumber.Get(), o.VendorNumber.IsSet()
 }
 
 // HasVendorNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasVendorNumber() bool {
-	if o != nil && !IsNil(o.VendorNumber) {
+	if o != nil && o.VendorNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVendorNumber gets a reference to the given string and assigns it to the VendorNumber field.
+// SetVendorNumber gets a reference to the given NullableString and assigns it to the VendorNumber field.
 func (o *PriceAndAvailabilityResponseInner) SetVendorNumber(v string) {
-	o.VendorNumber = &v
+	o.VendorNumber.Set(&v)
+}
+// SetVendorNumberNil sets the value for VendorNumber to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetVendorNumberNil() {
+	o.VendorNumber.Set(nil)
 }
 
-// GetVendorName returns the VendorName field value if set, zero value otherwise.
+// UnsetVendorNumber ensures that no value is present for VendorNumber, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetVendorNumber() {
+	o.VendorNumber.Unset()
+}
+
+// GetVendorName returns the VendorName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetVendorName() string {
-	if o == nil || IsNil(o.VendorName) {
+	if o == nil || IsNil(o.VendorName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VendorName
+	return *o.VendorName.Get()
 }
 
 // GetVendorNameOk returns a tuple with the VendorName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetVendorNameOk() (*string, bool) {
-	if o == nil || IsNil(o.VendorName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VendorName, true
+	return o.VendorName.Get(), o.VendorName.IsSet()
 }
 
 // HasVendorName returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasVendorName() bool {
-	if o != nil && !IsNil(o.VendorName) {
+	if o != nil && o.VendorName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVendorName gets a reference to the given string and assigns it to the VendorName field.
+// SetVendorName gets a reference to the given NullableString and assigns it to the VendorName field.
 func (o *PriceAndAvailabilityResponseInner) SetVendorName(v string) {
-	o.VendorName = &v
+	o.VendorName.Set(&v)
+}
+// SetVendorNameNil sets the value for VendorName to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetVendorNameNil() {
+	o.VendorName.Set(nil)
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// UnsetVendorName ensures that no value is present for VendorName, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetVendorName() {
+	o.VendorName.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *PriceAndAvailabilityResponseInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetDescriptionNil() {
+	o.Description.Set(nil)
 }
 
-// GetProductClass returns the ProductClass field value if set, zero value otherwise.
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetProductClass returns the ProductClass field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetProductClass() string {
-	if o == nil || IsNil(o.ProductClass) {
+	if o == nil || IsNil(o.ProductClass.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProductClass
+	return *o.ProductClass.Get()
 }
 
 // GetProductClassOk returns a tuple with the ProductClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetProductClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductClass) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductClass, true
+	return o.ProductClass.Get(), o.ProductClass.IsSet()
 }
 
 // HasProductClass returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasProductClass() bool {
-	if o != nil && !IsNil(o.ProductClass) {
+	if o != nil && o.ProductClass.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductClass gets a reference to the given string and assigns it to the ProductClass field.
+// SetProductClass gets a reference to the given NullableString and assigns it to the ProductClass field.
 func (o *PriceAndAvailabilityResponseInner) SetProductClass(v string) {
-	o.ProductClass = &v
+	o.ProductClass.Set(&v)
+}
+// SetProductClassNil sets the value for ProductClass to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetProductClassNil() {
+	o.ProductClass.Set(nil)
 }
 
-// GetUom returns the Uom field value if set, zero value otherwise.
+// UnsetProductClass ensures that no value is present for ProductClass, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetProductClass() {
+	o.ProductClass.Unset()
+}
+
+// GetUom returns the Uom field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetUom() string {
-	if o == nil || IsNil(o.Uom) {
+	if o == nil || IsNil(o.Uom.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Uom
+	return *o.Uom.Get()
 }
 
 // GetUomOk returns a tuple with the Uom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetUomOk() (*string, bool) {
-	if o == nil || IsNil(o.Uom) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Uom, true
+	return o.Uom.Get(), o.Uom.IsSet()
 }
 
 // HasUom returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasUom() bool {
-	if o != nil && !IsNil(o.Uom) {
+	if o != nil && o.Uom.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUom gets a reference to the given string and assigns it to the Uom field.
+// SetUom gets a reference to the given NullableString and assigns it to the Uom field.
 func (o *PriceAndAvailabilityResponseInner) SetUom(v string) {
-	o.Uom = &v
+	o.Uom.Set(&v)
+}
+// SetUomNil sets the value for Uom to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetUomNil() {
+	o.Uom.Set(nil)
 }
 
-// GetProductStatus returns the ProductStatus field value if set, zero value otherwise.
+// UnsetUom ensures that no value is present for Uom, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetUom() {
+	o.Uom.Unset()
+}
+
+// GetProductStatus returns the ProductStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetProductStatus() string {
-	if o == nil || IsNil(o.ProductStatus) {
+	if o == nil || IsNil(o.ProductStatus.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProductStatus
+	return *o.ProductStatus.Get()
 }
 
 // GetProductStatusOk returns a tuple with the ProductStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetProductStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductStatus) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductStatus, true
+	return o.ProductStatus.Get(), o.ProductStatus.IsSet()
 }
 
 // HasProductStatus returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasProductStatus() bool {
-	if o != nil && !IsNil(o.ProductStatus) {
+	if o != nil && o.ProductStatus.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductStatus gets a reference to the given string and assigns it to the ProductStatus field.
+// SetProductStatus gets a reference to the given NullableString and assigns it to the ProductStatus field.
 func (o *PriceAndAvailabilityResponseInner) SetProductStatus(v string) {
-	o.ProductStatus = &v
+	o.ProductStatus.Set(&v)
+}
+// SetProductStatusNil sets the value for ProductStatus to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetProductStatusNil() {
+	o.ProductStatus.Set(nil)
 }
 
-// GetAcceptBackOrder returns the AcceptBackOrder field value if set, zero value otherwise.
+// UnsetProductStatus ensures that no value is present for ProductStatus, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetProductStatus() {
+	o.ProductStatus.Unset()
+}
+
+// GetAcceptBackOrder returns the AcceptBackOrder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetAcceptBackOrder() bool {
-	if o == nil || IsNil(o.AcceptBackOrder) {
+	if o == nil || IsNil(o.AcceptBackOrder.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AcceptBackOrder
+	return *o.AcceptBackOrder.Get()
 }
 
 // GetAcceptBackOrderOk returns a tuple with the AcceptBackOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetAcceptBackOrderOk() (*bool, bool) {
-	if o == nil || IsNil(o.AcceptBackOrder) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AcceptBackOrder, true
+	return o.AcceptBackOrder.Get(), o.AcceptBackOrder.IsSet()
 }
 
 // HasAcceptBackOrder returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasAcceptBackOrder() bool {
-	if o != nil && !IsNil(o.AcceptBackOrder) {
+	if o != nil && o.AcceptBackOrder.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAcceptBackOrder gets a reference to the given bool and assigns it to the AcceptBackOrder field.
+// SetAcceptBackOrder gets a reference to the given NullableBool and assigns it to the AcceptBackOrder field.
 func (o *PriceAndAvailabilityResponseInner) SetAcceptBackOrder(v bool) {
-	o.AcceptBackOrder = &v
+	o.AcceptBackOrder.Set(&v)
+}
+// SetAcceptBackOrderNil sets the value for AcceptBackOrder to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetAcceptBackOrderNil() {
+	o.AcceptBackOrder.Set(nil)
 }
 
-// GetProductAuthorized returns the ProductAuthorized field value if set, zero value otherwise.
+// UnsetAcceptBackOrder ensures that no value is present for AcceptBackOrder, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetAcceptBackOrder() {
+	o.AcceptBackOrder.Unset()
+}
+
+// GetProductAuthorized returns the ProductAuthorized field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetProductAuthorized() bool {
-	if o == nil || IsNil(o.ProductAuthorized) {
+	if o == nil || IsNil(o.ProductAuthorized.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.ProductAuthorized
+	return *o.ProductAuthorized.Get()
 }
 
 // GetProductAuthorizedOk returns a tuple with the ProductAuthorized field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetProductAuthorizedOk() (*bool, bool) {
-	if o == nil || IsNil(o.ProductAuthorized) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductAuthorized, true
+	return o.ProductAuthorized.Get(), o.ProductAuthorized.IsSet()
 }
 
 // HasProductAuthorized returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasProductAuthorized() bool {
-	if o != nil && !IsNil(o.ProductAuthorized) {
+	if o != nil && o.ProductAuthorized.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductAuthorized gets a reference to the given bool and assigns it to the ProductAuthorized field.
+// SetProductAuthorized gets a reference to the given NullableBool and assigns it to the ProductAuthorized field.
 func (o *PriceAndAvailabilityResponseInner) SetProductAuthorized(v bool) {
-	o.ProductAuthorized = &v
+	o.ProductAuthorized.Set(&v)
+}
+// SetProductAuthorizedNil sets the value for ProductAuthorized to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetProductAuthorizedNil() {
+	o.ProductAuthorized.Set(nil)
 }
 
-// GetReturnableProduct returns the ReturnableProduct field value if set, zero value otherwise.
+// UnsetProductAuthorized ensures that no value is present for ProductAuthorized, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetProductAuthorized() {
+	o.ProductAuthorized.Unset()
+}
+
+// GetReturnableProduct returns the ReturnableProduct field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetReturnableProduct() bool {
-	if o == nil || IsNil(o.ReturnableProduct) {
+	if o == nil || IsNil(o.ReturnableProduct.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.ReturnableProduct
+	return *o.ReturnableProduct.Get()
 }
 
 // GetReturnableProductOk returns a tuple with the ReturnableProduct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetReturnableProductOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReturnableProduct) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ReturnableProduct, true
+	return o.ReturnableProduct.Get(), o.ReturnableProduct.IsSet()
 }
 
 // HasReturnableProduct returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasReturnableProduct() bool {
-	if o != nil && !IsNil(o.ReturnableProduct) {
+	if o != nil && o.ReturnableProduct.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReturnableProduct gets a reference to the given bool and assigns it to the ReturnableProduct field.
+// SetReturnableProduct gets a reference to the given NullableBool and assigns it to the ReturnableProduct field.
 func (o *PriceAndAvailabilityResponseInner) SetReturnableProduct(v bool) {
-	o.ReturnableProduct = &v
+	o.ReturnableProduct.Set(&v)
+}
+// SetReturnableProductNil sets the value for ReturnableProduct to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetReturnableProductNil() {
+	o.ReturnableProduct.Set(nil)
 }
 
-// GetEndUserInfoRequired returns the EndUserInfoRequired field value if set, zero value otherwise.
+// UnsetReturnableProduct ensures that no value is present for ReturnableProduct, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetReturnableProduct() {
+	o.ReturnableProduct.Unset()
+}
+
+// GetEndUserInfoRequired returns the EndUserInfoRequired field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetEndUserInfoRequired() bool {
-	if o == nil || IsNil(o.EndUserInfoRequired) {
+	if o == nil || IsNil(o.EndUserInfoRequired.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.EndUserInfoRequired
+	return *o.EndUserInfoRequired.Get()
 }
 
 // GetEndUserInfoRequiredOk returns a tuple with the EndUserInfoRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetEndUserInfoRequiredOk() (*bool, bool) {
-	if o == nil || IsNil(o.EndUserInfoRequired) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndUserInfoRequired, true
+	return o.EndUserInfoRequired.Get(), o.EndUserInfoRequired.IsSet()
 }
 
 // HasEndUserInfoRequired returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasEndUserInfoRequired() bool {
-	if o != nil && !IsNil(o.EndUserInfoRequired) {
+	if o != nil && o.EndUserInfoRequired.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndUserInfoRequired gets a reference to the given bool and assigns it to the EndUserInfoRequired field.
+// SetEndUserInfoRequired gets a reference to the given NullableBool and assigns it to the EndUserInfoRequired field.
 func (o *PriceAndAvailabilityResponseInner) SetEndUserInfoRequired(v bool) {
-	o.EndUserInfoRequired = &v
+	o.EndUserInfoRequired.Set(&v)
+}
+// SetEndUserInfoRequiredNil sets the value for EndUserInfoRequired to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetEndUserInfoRequiredNil() {
+	o.EndUserInfoRequired.Set(nil)
 }
 
-// GetGovtSpecialPriceAvailable returns the GovtSpecialPriceAvailable field value if set, zero value otherwise.
+// UnsetEndUserInfoRequired ensures that no value is present for EndUserInfoRequired, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetEndUserInfoRequired() {
+	o.EndUserInfoRequired.Unset()
+}
+
+// GetGovtSpecialPriceAvailable returns the GovtSpecialPriceAvailable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetGovtSpecialPriceAvailable() bool {
-	if o == nil || IsNil(o.GovtSpecialPriceAvailable) {
+	if o == nil || IsNil(o.GovtSpecialPriceAvailable.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.GovtSpecialPriceAvailable
+	return *o.GovtSpecialPriceAvailable.Get()
 }
 
 // GetGovtSpecialPriceAvailableOk returns a tuple with the GovtSpecialPriceAvailable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetGovtSpecialPriceAvailableOk() (*bool, bool) {
-	if o == nil || IsNil(o.GovtSpecialPriceAvailable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GovtSpecialPriceAvailable, true
+	return o.GovtSpecialPriceAvailable.Get(), o.GovtSpecialPriceAvailable.IsSet()
 }
 
 // HasGovtSpecialPriceAvailable returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasGovtSpecialPriceAvailable() bool {
-	if o != nil && !IsNil(o.GovtSpecialPriceAvailable) {
+	if o != nil && o.GovtSpecialPriceAvailable.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGovtSpecialPriceAvailable gets a reference to the given bool and assigns it to the GovtSpecialPriceAvailable field.
+// SetGovtSpecialPriceAvailable gets a reference to the given NullableBool and assigns it to the GovtSpecialPriceAvailable field.
 func (o *PriceAndAvailabilityResponseInner) SetGovtSpecialPriceAvailable(v bool) {
-	o.GovtSpecialPriceAvailable = &v
+	o.GovtSpecialPriceAvailable.Set(&v)
+}
+// SetGovtSpecialPriceAvailableNil sets the value for GovtSpecialPriceAvailable to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetGovtSpecialPriceAvailableNil() {
+	o.GovtSpecialPriceAvailable.Set(nil)
 }
 
-// GetGovtProgramType returns the GovtProgramType field value if set, zero value otherwise.
+// UnsetGovtSpecialPriceAvailable ensures that no value is present for GovtSpecialPriceAvailable, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetGovtSpecialPriceAvailable() {
+	o.GovtSpecialPriceAvailable.Unset()
+}
+
+// GetGovtProgramType returns the GovtProgramType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetGovtProgramType() string {
-	if o == nil || IsNil(o.GovtProgramType) {
+	if o == nil || IsNil(o.GovtProgramType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GovtProgramType
+	return *o.GovtProgramType.Get()
 }
 
 // GetGovtProgramTypeOk returns a tuple with the GovtProgramType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetGovtProgramTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.GovtProgramType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GovtProgramType, true
+	return o.GovtProgramType.Get(), o.GovtProgramType.IsSet()
 }
 
 // HasGovtProgramType returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasGovtProgramType() bool {
-	if o != nil && !IsNil(o.GovtProgramType) {
+	if o != nil && o.GovtProgramType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGovtProgramType gets a reference to the given string and assigns it to the GovtProgramType field.
+// SetGovtProgramType gets a reference to the given NullableString and assigns it to the GovtProgramType field.
 func (o *PriceAndAvailabilityResponseInner) SetGovtProgramType(v string) {
-	o.GovtProgramType = &v
+	o.GovtProgramType.Set(&v)
+}
+// SetGovtProgramTypeNil sets the value for GovtProgramType to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetGovtProgramTypeNil() {
+	o.GovtProgramType.Set(nil)
 }
 
-// GetGovtEndUserType returns the GovtEndUserType field value if set, zero value otherwise.
+// UnsetGovtProgramType ensures that no value is present for GovtProgramType, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetGovtProgramType() {
+	o.GovtProgramType.Unset()
+}
+
+// GetGovtEndUserType returns the GovtEndUserType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetGovtEndUserType() string {
-	if o == nil || IsNil(o.GovtEndUserType) {
+	if o == nil || IsNil(o.GovtEndUserType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GovtEndUserType
+	return *o.GovtEndUserType.Get()
 }
 
 // GetGovtEndUserTypeOk returns a tuple with the GovtEndUserType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetGovtEndUserTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.GovtEndUserType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GovtEndUserType, true
+	return o.GovtEndUserType.Get(), o.GovtEndUserType.IsSet()
 }
 
 // HasGovtEndUserType returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasGovtEndUserType() bool {
-	if o != nil && !IsNil(o.GovtEndUserType) {
+	if o != nil && o.GovtEndUserType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGovtEndUserType gets a reference to the given string and assigns it to the GovtEndUserType field.
+// SetGovtEndUserType gets a reference to the given NullableString and assigns it to the GovtEndUserType field.
 func (o *PriceAndAvailabilityResponseInner) SetGovtEndUserType(v string) {
-	o.GovtEndUserType = &v
+	o.GovtEndUserType.Set(&v)
+}
+// SetGovtEndUserTypeNil sets the value for GovtEndUserType to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetGovtEndUserTypeNil() {
+	o.GovtEndUserType.Set(nil)
 }
 
-// GetAvailability returns the Availability field value if set, zero value otherwise.
+// UnsetGovtEndUserType ensures that no value is present for GovtEndUserType, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetGovtEndUserType() {
+	o.GovtEndUserType.Unset()
+}
+
+// GetAvailability returns the Availability field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetAvailability() PriceAndAvailabilityResponseInnerAvailability {
-	if o == nil || IsNil(o.Availability) {
+	if o == nil || IsNil(o.Availability.Get()) {
 		var ret PriceAndAvailabilityResponseInnerAvailability
 		return ret
 	}
-	return *o.Availability
+	return *o.Availability.Get()
 }
 
 // GetAvailabilityOk returns a tuple with the Availability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetAvailabilityOk() (*PriceAndAvailabilityResponseInnerAvailability, bool) {
-	if o == nil || IsNil(o.Availability) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Availability, true
+	return o.Availability.Get(), o.Availability.IsSet()
 }
 
 // HasAvailability returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasAvailability() bool {
-	if o != nil && !IsNil(o.Availability) {
+	if o != nil && o.Availability.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAvailability gets a reference to the given PriceAndAvailabilityResponseInnerAvailability and assigns it to the Availability field.
+// SetAvailability gets a reference to the given NullablePriceAndAvailabilityResponseInnerAvailability and assigns it to the Availability field.
 func (o *PriceAndAvailabilityResponseInner) SetAvailability(v PriceAndAvailabilityResponseInnerAvailability) {
-	o.Availability = &v
+	o.Availability.Set(&v)
+}
+// SetAvailabilityNil sets the value for Availability to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetAvailabilityNil() {
+	o.Availability.Set(nil)
+}
+
+// UnsetAvailability ensures that no value is present for Availability, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetAvailability() {
+	o.Availability.Unset()
 }
 
 // GetReserveInventoryDetails returns the ReserveInventoryDetails field value if set, zero value otherwise.
@@ -824,41 +1078,51 @@ func (o *PriceAndAvailabilityResponseInner) SetReserveInventoryDetails(v []Price
 	o.ReserveInventoryDetails = v
 }
 
-// GetPricing returns the Pricing field value if set, zero value otherwise.
+// GetPricing returns the Pricing field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetPricing() PriceAndAvailabilityResponseInnerPricing {
-	if o == nil || IsNil(o.Pricing) {
+	if o == nil || IsNil(o.Pricing.Get()) {
 		var ret PriceAndAvailabilityResponseInnerPricing
 		return ret
 	}
-	return *o.Pricing
+	return *o.Pricing.Get()
 }
 
 // GetPricingOk returns a tuple with the Pricing field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetPricingOk() (*PriceAndAvailabilityResponseInnerPricing, bool) {
-	if o == nil || IsNil(o.Pricing) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pricing, true
+	return o.Pricing.Get(), o.Pricing.IsSet()
 }
 
 // HasPricing returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasPricing() bool {
-	if o != nil && !IsNil(o.Pricing) {
+	if o != nil && o.Pricing.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPricing gets a reference to the given PriceAndAvailabilityResponseInnerPricing and assigns it to the Pricing field.
+// SetPricing gets a reference to the given NullablePriceAndAvailabilityResponseInnerPricing and assigns it to the Pricing field.
 func (o *PriceAndAvailabilityResponseInner) SetPricing(v PriceAndAvailabilityResponseInnerPricing) {
-	o.Pricing = &v
+	o.Pricing.Set(&v)
+}
+// SetPricingNil sets the value for Pricing to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetPricingNil() {
+	o.Pricing.Set(nil)
 }
 
-// GetDiscounts returns the Discounts field value if set, zero value otherwise.
+// UnsetPricing ensures that no value is present for Pricing, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetPricing() {
+	o.Pricing.Unset()
+}
+
+// GetDiscounts returns the Discounts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetDiscounts() []PriceAndAvailabilityResponseInnerDiscountsInner {
-	if o == nil || IsNil(o.Discounts) {
+	if o == nil {
 		var ret []PriceAndAvailabilityResponseInnerDiscountsInner
 		return ret
 	}
@@ -867,6 +1131,7 @@ func (o *PriceAndAvailabilityResponseInner) GetDiscounts() []PriceAndAvailabilit
 
 // GetDiscountsOk returns a tuple with the Discounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetDiscountsOk() ([]PriceAndAvailabilityResponseInnerDiscountsInner, bool) {
 	if o == nil || IsNil(o.Discounts) {
 		return nil, false
@@ -888,41 +1153,51 @@ func (o *PriceAndAvailabilityResponseInner) SetDiscounts(v []PriceAndAvailabilit
 	o.Discounts = v
 }
 
-// GetBundlePartIndicator returns the BundlePartIndicator field value if set, zero value otherwise.
+// GetBundlePartIndicator returns the BundlePartIndicator field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetBundlePartIndicator() bool {
-	if o == nil || IsNil(o.BundlePartIndicator) {
+	if o == nil || IsNil(o.BundlePartIndicator.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.BundlePartIndicator
+	return *o.BundlePartIndicator.Get()
 }
 
 // GetBundlePartIndicatorOk returns a tuple with the BundlePartIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetBundlePartIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.BundlePartIndicator) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BundlePartIndicator, true
+	return o.BundlePartIndicator.Get(), o.BundlePartIndicator.IsSet()
 }
 
 // HasBundlePartIndicator returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInner) HasBundlePartIndicator() bool {
-	if o != nil && !IsNil(o.BundlePartIndicator) {
+	if o != nil && o.BundlePartIndicator.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBundlePartIndicator gets a reference to the given bool and assigns it to the BundlePartIndicator field.
+// SetBundlePartIndicator gets a reference to the given NullableBool and assigns it to the BundlePartIndicator field.
 func (o *PriceAndAvailabilityResponseInner) SetBundlePartIndicator(v bool) {
-	o.BundlePartIndicator = &v
+	o.BundlePartIndicator.Set(&v)
+}
+// SetBundlePartIndicatorNil sets the value for BundlePartIndicator to be an explicit nil
+func (o *PriceAndAvailabilityResponseInner) SetBundlePartIndicatorNil() {
+	o.BundlePartIndicator.Set(nil)
 }
 
-// GetServiceFees returns the ServiceFees field value if set, zero value otherwise.
+// UnsetBundlePartIndicator ensures that no value is present for BundlePartIndicator, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInner) UnsetBundlePartIndicator() {
+	o.BundlePartIndicator.Unset()
+}
+
+// GetServiceFees returns the ServiceFees field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInner) GetServiceFees() []PriceAndAvailabilityResponseInnerServiceFeesInner {
-	if o == nil || IsNil(o.ServiceFees) {
+	if o == nil {
 		var ret []PriceAndAvailabilityResponseInnerServiceFeesInner
 		return ret
 	}
@@ -931,6 +1206,7 @@ func (o *PriceAndAvailabilityResponseInner) GetServiceFees() []PriceAndAvailabil
 
 // GetServiceFeesOk returns a tuple with the ServiceFees field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetServiceFeesOk() ([]PriceAndAvailabilityResponseInnerServiceFeesInner, bool) {
 	if o == nil || IsNil(o.ServiceFees) {
 		return nil, false
@@ -952,6 +1228,38 @@ func (o *PriceAndAvailabilityResponseInner) SetServiceFees(v []PriceAndAvailabil
 	o.ServiceFees = v
 }
 
+// GetSubscriptionPrice returns the SubscriptionPrice field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInner) GetSubscriptionPrice() []PriceAndAvailabilityResponseInnerSubscriptionPriceInner {
+	if o == nil || IsNil(o.SubscriptionPrice) {
+		var ret []PriceAndAvailabilityResponseInnerSubscriptionPriceInner
+		return ret
+	}
+	return o.SubscriptionPrice
+}
+
+// GetSubscriptionPriceOk returns a tuple with the SubscriptionPrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInner) GetSubscriptionPriceOk() ([]PriceAndAvailabilityResponseInnerSubscriptionPriceInner, bool) {
+	if o == nil || IsNil(o.SubscriptionPrice) {
+		return nil, false
+	}
+	return o.SubscriptionPrice, true
+}
+
+// HasSubscriptionPrice returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInner) HasSubscriptionPrice() bool {
+	if o != nil && !IsNil(o.SubscriptionPrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscriptionPrice gets a reference to the given []PriceAndAvailabilityResponseInnerSubscriptionPriceInner and assigns it to the SubscriptionPrice field.
+func (o *PriceAndAvailabilityResponseInner) SetSubscriptionPrice(v []PriceAndAvailabilityResponseInnerSubscriptionPriceInner) {
+	o.SubscriptionPrice = v
+}
+
 func (o PriceAndAvailabilityResponseInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -962,86 +1270,92 @@ func (o PriceAndAvailabilityResponseInner) MarshalJSON() ([]byte, error) {
 
 func (o PriceAndAvailabilityResponseInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ProductStatusCode) {
-		toSerialize["productStatusCode"] = o.ProductStatusCode
+	if !IsNil(o.Index) {
+		toSerialize["index"] = o.Index
 	}
-	if !IsNil(o.ProductStatusMessage) {
-		toSerialize["productStatusMessage"] = o.ProductStatusMessage
+	if o.ProductStatusCode.IsSet() {
+		toSerialize["productStatusCode"] = o.ProductStatusCode.Get()
 	}
-	if !IsNil(o.IngramPartNumber) {
-		toSerialize["ingramPartNumber"] = o.IngramPartNumber
+	if o.ProductStatusMessage.IsSet() {
+		toSerialize["productStatusMessage"] = o.ProductStatusMessage.Get()
 	}
-	if !IsNil(o.VendorPartNumber) {
-		toSerialize["vendorPartNumber"] = o.VendorPartNumber
+	if o.IngramPartNumber.IsSet() {
+		toSerialize["ingramPartNumber"] = o.IngramPartNumber.Get()
 	}
-	if !IsNil(o.ExtendedVendorPartNumber) {
-		toSerialize["extendedVendorPartNumber"] = o.ExtendedVendorPartNumber
+	if o.VendorPartNumber.IsSet() {
+		toSerialize["vendorPartNumber"] = o.VendorPartNumber.Get()
 	}
-	if !IsNil(o.CustomerPartNumber) {
-		toSerialize["customerPartNumber"] = o.CustomerPartNumber
+	if o.ExtendedVendorPartNumber.IsSet() {
+		toSerialize["extendedVendorPartNumber"] = o.ExtendedVendorPartNumber.Get()
 	}
-	if !IsNil(o.Upc) {
-		toSerialize["upc"] = o.Upc
+	if o.CustomerPartNumber.IsSet() {
+		toSerialize["customerPartNumber"] = o.CustomerPartNumber.Get()
 	}
-	if !IsNil(o.PartNumberType) {
-		toSerialize["partNumberType"] = o.PartNumberType
+	if o.Upc.IsSet() {
+		toSerialize["upc"] = o.Upc.Get()
 	}
-	if !IsNil(o.VendorNumber) {
-		toSerialize["vendorNumber"] = o.VendorNumber
+	if o.PartNumberType.IsSet() {
+		toSerialize["partNumberType"] = o.PartNumberType.Get()
 	}
-	if !IsNil(o.VendorName) {
-		toSerialize["vendorName"] = o.VendorName
+	if o.VendorNumber.IsSet() {
+		toSerialize["vendorNumber"] = o.VendorNumber.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.VendorName.IsSet() {
+		toSerialize["vendorName"] = o.VendorName.Get()
 	}
-	if !IsNil(o.ProductClass) {
-		toSerialize["productClass"] = o.ProductClass
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Uom) {
-		toSerialize["uom"] = o.Uom
+	if o.ProductClass.IsSet() {
+		toSerialize["productClass"] = o.ProductClass.Get()
 	}
-	if !IsNil(o.ProductStatus) {
-		toSerialize["productStatus"] = o.ProductStatus
+	if o.Uom.IsSet() {
+		toSerialize["uom"] = o.Uom.Get()
 	}
-	if !IsNil(o.AcceptBackOrder) {
-		toSerialize["acceptBackOrder"] = o.AcceptBackOrder
+	if o.ProductStatus.IsSet() {
+		toSerialize["productStatus"] = o.ProductStatus.Get()
 	}
-	if !IsNil(o.ProductAuthorized) {
-		toSerialize["productAuthorized"] = o.ProductAuthorized
+	if o.AcceptBackOrder.IsSet() {
+		toSerialize["acceptBackOrder"] = o.AcceptBackOrder.Get()
 	}
-	if !IsNil(o.ReturnableProduct) {
-		toSerialize["returnableProduct"] = o.ReturnableProduct
+	if o.ProductAuthorized.IsSet() {
+		toSerialize["productAuthorized"] = o.ProductAuthorized.Get()
 	}
-	if !IsNil(o.EndUserInfoRequired) {
-		toSerialize["endUserInfoRequired"] = o.EndUserInfoRequired
+	if o.ReturnableProduct.IsSet() {
+		toSerialize["returnableProduct"] = o.ReturnableProduct.Get()
 	}
-	if !IsNil(o.GovtSpecialPriceAvailable) {
-		toSerialize["govtSpecialPriceAvailable"] = o.GovtSpecialPriceAvailable
+	if o.EndUserInfoRequired.IsSet() {
+		toSerialize["endUserInfoRequired"] = o.EndUserInfoRequired.Get()
 	}
-	if !IsNil(o.GovtProgramType) {
-		toSerialize["govtProgramType"] = o.GovtProgramType
+	if o.GovtSpecialPriceAvailable.IsSet() {
+		toSerialize["govtSpecialPriceAvailable"] = o.GovtSpecialPriceAvailable.Get()
 	}
-	if !IsNil(o.GovtEndUserType) {
-		toSerialize["govtEndUserType"] = o.GovtEndUserType
+	if o.GovtProgramType.IsSet() {
+		toSerialize["govtProgramType"] = o.GovtProgramType.Get()
 	}
-	if !IsNil(o.Availability) {
-		toSerialize["availability"] = o.Availability
+	if o.GovtEndUserType.IsSet() {
+		toSerialize["govtEndUserType"] = o.GovtEndUserType.Get()
+	}
+	if o.Availability.IsSet() {
+		toSerialize["availability"] = o.Availability.Get()
 	}
 	if !IsNil(o.ReserveInventoryDetails) {
 		toSerialize["reserveInventoryDetails"] = o.ReserveInventoryDetails
 	}
-	if !IsNil(o.Pricing) {
-		toSerialize["pricing"] = o.Pricing
+	if o.Pricing.IsSet() {
+		toSerialize["pricing"] = o.Pricing.Get()
 	}
-	if !IsNil(o.Discounts) {
+	if o.Discounts != nil {
 		toSerialize["discounts"] = o.Discounts
 	}
-	if !IsNil(o.BundlePartIndicator) {
-		toSerialize["bundlePartIndicator"] = o.BundlePartIndicator
+	if o.BundlePartIndicator.IsSet() {
+		toSerialize["bundlePartIndicator"] = o.BundlePartIndicator.Get()
 	}
-	if !IsNil(o.ServiceFees) {
+	if o.ServiceFees != nil {
 		toSerialize["serviceFees"] = o.ServiceFees
+	}
+	if !IsNil(o.SubscriptionPrice) {
+		toSerialize["subscriptionPrice"] = o.SubscriptionPrice
 	}
 	return toSerialize, nil
 }
