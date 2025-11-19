@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -41,8 +41,12 @@ type OrderCreateV7Request struct {
 	ShipmentDetails NullableOrderCreateV7RequestShipmentDetails `json:"shipmentDetails,omitempty"`
 	// Shipment-level additional attributes.
 	AdditionalAttributes []OrderCreateV7RequestAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
-	// The object containing the list of fields required at a header level by the vendor.
+	// The object containing the list of fields required at a header level by the vendor.<br> This a <code>Deprecated</code> object. Kindly use <b>vmfVendorAdditionalAttributes</b> object
 	VmfAdditionalAttributes []OrderCreateV7RequestVmfAdditionalAttributesInner `json:"vmfAdditionalAttributes,omitempty"`
+	// The object containing the list of Vendor Mandatory Fields required by the vendor for the Hardware products.
+	VmfVendorAdditionalAttributes []OrderCreateV7RequestVmfVendorAdditionalAttributesInner `json:"vmfVendorAdditionalAttributes,omitempty"`
+	// The object containing the list of Vendor Mandatory Fields required by the vendor for the subscription products.<br> Use this object ONLY when using a full quote ordering for a subsciption product. For line-level ordering use <b>vriAdditionalAttributes</b> object inside the line object. 
+	VriAdditionalAttributes []OrderCreateV7RequestVmfVendorAdditionalAttributesInner `json:"vriAdditionalAttributes,omitempty"`
 	Lines []OrderCreateV7RequestLinesInner `json:"lines,omitempty"`
 }
 
@@ -560,9 +564,9 @@ func (o *OrderCreateV7Request) SetAdditionalAttributes(v []OrderCreateV7RequestA
 	o.AdditionalAttributes = v
 }
 
-// GetVmfAdditionalAttributes returns the VmfAdditionalAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetVmfAdditionalAttributes returns the VmfAdditionalAttributes field value if set, zero value otherwise.
 func (o *OrderCreateV7Request) GetVmfAdditionalAttributes() []OrderCreateV7RequestVmfAdditionalAttributesInner {
-	if o == nil {
+	if o == nil || IsNil(o.VmfAdditionalAttributes) {
 		var ret []OrderCreateV7RequestVmfAdditionalAttributesInner
 		return ret
 	}
@@ -571,7 +575,6 @@ func (o *OrderCreateV7Request) GetVmfAdditionalAttributes() []OrderCreateV7Reque
 
 // GetVmfAdditionalAttributesOk returns a tuple with the VmfAdditionalAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7Request) GetVmfAdditionalAttributesOk() ([]OrderCreateV7RequestVmfAdditionalAttributesInner, bool) {
 	if o == nil || IsNil(o.VmfAdditionalAttributes) {
 		return nil, false
@@ -591,6 +594,70 @@ func (o *OrderCreateV7Request) HasVmfAdditionalAttributes() bool {
 // SetVmfAdditionalAttributes gets a reference to the given []OrderCreateV7RequestVmfAdditionalAttributesInner and assigns it to the VmfAdditionalAttributes field.
 func (o *OrderCreateV7Request) SetVmfAdditionalAttributes(v []OrderCreateV7RequestVmfAdditionalAttributesInner) {
 	o.VmfAdditionalAttributes = v
+}
+
+// GetVmfVendorAdditionalAttributes returns the VmfVendorAdditionalAttributes field value if set, zero value otherwise.
+func (o *OrderCreateV7Request) GetVmfVendorAdditionalAttributes() []OrderCreateV7RequestVmfVendorAdditionalAttributesInner {
+	if o == nil || IsNil(o.VmfVendorAdditionalAttributes) {
+		var ret []OrderCreateV7RequestVmfVendorAdditionalAttributesInner
+		return ret
+	}
+	return o.VmfVendorAdditionalAttributes
+}
+
+// GetVmfVendorAdditionalAttributesOk returns a tuple with the VmfVendorAdditionalAttributes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7Request) GetVmfVendorAdditionalAttributesOk() ([]OrderCreateV7RequestVmfVendorAdditionalAttributesInner, bool) {
+	if o == nil || IsNil(o.VmfVendorAdditionalAttributes) {
+		return nil, false
+	}
+	return o.VmfVendorAdditionalAttributes, true
+}
+
+// HasVmfVendorAdditionalAttributes returns a boolean if a field has been set.
+func (o *OrderCreateV7Request) HasVmfVendorAdditionalAttributes() bool {
+	if o != nil && !IsNil(o.VmfVendorAdditionalAttributes) {
+		return true
+	}
+
+	return false
+}
+
+// SetVmfVendorAdditionalAttributes gets a reference to the given []OrderCreateV7RequestVmfVendorAdditionalAttributesInner and assigns it to the VmfVendorAdditionalAttributes field.
+func (o *OrderCreateV7Request) SetVmfVendorAdditionalAttributes(v []OrderCreateV7RequestVmfVendorAdditionalAttributesInner) {
+	o.VmfVendorAdditionalAttributes = v
+}
+
+// GetVriAdditionalAttributes returns the VriAdditionalAttributes field value if set, zero value otherwise.
+func (o *OrderCreateV7Request) GetVriAdditionalAttributes() []OrderCreateV7RequestVmfVendorAdditionalAttributesInner {
+	if o == nil || IsNil(o.VriAdditionalAttributes) {
+		var ret []OrderCreateV7RequestVmfVendorAdditionalAttributesInner
+		return ret
+	}
+	return o.VriAdditionalAttributes
+}
+
+// GetVriAdditionalAttributesOk returns a tuple with the VriAdditionalAttributes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7Request) GetVriAdditionalAttributesOk() ([]OrderCreateV7RequestVmfVendorAdditionalAttributesInner, bool) {
+	if o == nil || IsNil(o.VriAdditionalAttributes) {
+		return nil, false
+	}
+	return o.VriAdditionalAttributes, true
+}
+
+// HasVriAdditionalAttributes returns a boolean if a field has been set.
+func (o *OrderCreateV7Request) HasVriAdditionalAttributes() bool {
+	if o != nil && !IsNil(o.VriAdditionalAttributes) {
+		return true
+	}
+
+	return false
+}
+
+// SetVriAdditionalAttributes gets a reference to the given []OrderCreateV7RequestVmfVendorAdditionalAttributesInner and assigns it to the VriAdditionalAttributes field.
+func (o *OrderCreateV7Request) SetVriAdditionalAttributes(v []OrderCreateV7RequestVmfVendorAdditionalAttributesInner) {
+	o.VriAdditionalAttributes = v
 }
 
 // GetLines returns the Lines field value if set, zero value otherwise.
@@ -674,8 +741,14 @@ func (o OrderCreateV7Request) ToMap() (map[string]interface{}, error) {
 	if o.AdditionalAttributes != nil {
 		toSerialize["additionalAttributes"] = o.AdditionalAttributes
 	}
-	if o.VmfAdditionalAttributes != nil {
+	if !IsNil(o.VmfAdditionalAttributes) {
 		toSerialize["vmfAdditionalAttributes"] = o.VmfAdditionalAttributes
+	}
+	if !IsNil(o.VmfVendorAdditionalAttributes) {
+		toSerialize["vmfVendorAdditionalAttributes"] = o.VmfVendorAdditionalAttributes
+	}
+	if !IsNil(o.VriAdditionalAttributes) {
+		toSerialize["vriAdditionalAttributes"] = o.VriAdditionalAttributes
 	}
 	if !IsNil(o.Lines) {
 		toSerialize["lines"] = o.Lines

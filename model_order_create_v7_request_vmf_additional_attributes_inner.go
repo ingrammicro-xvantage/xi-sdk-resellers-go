@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &OrderCreateV7RequestVmfAdditionalAttributesInner{}
 // OrderCreateV7RequestVmfAdditionalAttributesInner struct for OrderCreateV7RequestVmfAdditionalAttributesInner
 type OrderCreateV7RequestVmfAdditionalAttributesInner struct {
 	// The name of the header level field.
-	AttributeName NullableString `json:"attributeName,omitempty"`
+	AttributeName *string `json:"attributeName,omitempty"`
 	// The value of the header level field.
-	AttributeValue NullableString `json:"attributeValue,omitempty"`
+	AttributeValue *string `json:"attributeValue,omitempty"`
 }
 
 // NewOrderCreateV7RequestVmfAdditionalAttributesInner instantiates a new OrderCreateV7RequestVmfAdditionalAttributesInner object
@@ -42,88 +42,68 @@ func NewOrderCreateV7RequestVmfAdditionalAttributesInnerWithDefaults() *OrderCre
 	return &this
 }
 
-// GetAttributeName returns the AttributeName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetAttributeName returns the AttributeName field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) GetAttributeName() string {
-	if o == nil || IsNil(o.AttributeName.Get()) {
+	if o == nil || IsNil(o.AttributeName) {
 		var ret string
 		return ret
 	}
-	return *o.AttributeName.Get()
+	return *o.AttributeName
 }
 
 // GetAttributeNameOk returns a tuple with the AttributeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) GetAttributeNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AttributeName) {
 		return nil, false
 	}
-	return o.AttributeName.Get(), o.AttributeName.IsSet()
+	return o.AttributeName, true
 }
 
 // HasAttributeName returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) HasAttributeName() bool {
-	if o != nil && o.AttributeName.IsSet() {
+	if o != nil && !IsNil(o.AttributeName) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributeName gets a reference to the given NullableString and assigns it to the AttributeName field.
+// SetAttributeName gets a reference to the given string and assigns it to the AttributeName field.
 func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) SetAttributeName(v string) {
-	o.AttributeName.Set(&v)
-}
-// SetAttributeNameNil sets the value for AttributeName to be an explicit nil
-func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) SetAttributeNameNil() {
-	o.AttributeName.Set(nil)
+	o.AttributeName = &v
 }
 
-// UnsetAttributeName ensures that no value is present for AttributeName, not even an explicit nil
-func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) UnsetAttributeName() {
-	o.AttributeName.Unset()
-}
-
-// GetAttributeValue returns the AttributeValue field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetAttributeValue returns the AttributeValue field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) GetAttributeValue() string {
-	if o == nil || IsNil(o.AttributeValue.Get()) {
+	if o == nil || IsNil(o.AttributeValue) {
 		var ret string
 		return ret
 	}
-	return *o.AttributeValue.Get()
+	return *o.AttributeValue
 }
 
 // GetAttributeValueOk returns a tuple with the AttributeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) GetAttributeValueOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AttributeValue) {
 		return nil, false
 	}
-	return o.AttributeValue.Get(), o.AttributeValue.IsSet()
+	return o.AttributeValue, true
 }
 
 // HasAttributeValue returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) HasAttributeValue() bool {
-	if o != nil && o.AttributeValue.IsSet() {
+	if o != nil && !IsNil(o.AttributeValue) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributeValue gets a reference to the given NullableString and assigns it to the AttributeValue field.
+// SetAttributeValue gets a reference to the given string and assigns it to the AttributeValue field.
 func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) SetAttributeValue(v string) {
-	o.AttributeValue.Set(&v)
-}
-// SetAttributeValueNil sets the value for AttributeValue to be an explicit nil
-func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) SetAttributeValueNil() {
-	o.AttributeValue.Set(nil)
-}
-
-// UnsetAttributeValue ensures that no value is present for AttributeValue, not even an explicit nil
-func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) UnsetAttributeValue() {
-	o.AttributeValue.Unset()
+	o.AttributeValue = &v
 }
 
 func (o OrderCreateV7RequestVmfAdditionalAttributesInner) MarshalJSON() ([]byte, error) {
@@ -136,11 +116,11 @@ func (o OrderCreateV7RequestVmfAdditionalAttributesInner) MarshalJSON() ([]byte,
 
 func (o OrderCreateV7RequestVmfAdditionalAttributesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AttributeName.IsSet() {
-		toSerialize["attributeName"] = o.AttributeName.Get()
+	if !IsNil(o.AttributeName) {
+		toSerialize["attributeName"] = o.AttributeName
 	}
-	if o.AttributeValue.IsSet() {
-		toSerialize["attributeValue"] = o.AttributeValue.Get()
+	if !IsNil(o.AttributeValue) {
+		toSerialize["attributeValue"] = o.AttributeValue
 	}
 	return toSerialize, nil
 }

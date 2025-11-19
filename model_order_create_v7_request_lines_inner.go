@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -22,21 +22,37 @@ type OrderCreateV7RequestLinesInner struct {
 	// The reseller's line item number for reference in their system. The customer line number needs to be a unique numeric value between 1 and 884. In the event we receive duplicate values or alphanumeric values in the customer line number, we will re-sequence the customer line number. To prevent re-sequencing, please use a unique numeric value between 1 and 884 in the customer line number.
 	CustomerLineNumber *string `json:"customerLineNumber,omitempty"`
 	// The unique IngramMicro part number.
-	IngramPartNumber NullableString `json:"ingramPartNumber,omitempty"`
+	IngramPartNumber *string `json:"ingramPartNumber,omitempty"`
 	// The vendor's part number for the line item.
-	VendorPartNumber NullableString `json:"vendorPartNumber,omitempty"`
+	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
 	// The requested quantity of the line item.
 	Quantity *int32 `json:"quantity,omitempty"`
 	// The reseller-requested unit price for the line item. The unit price is not guaranteed.
-	UnitPrice NullableFloat32 `json:"unitPrice,omitempty"`
+	UnitPrice *float32 `json:"unitPrice,omitempty"`
 	// The line-level bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number in the case of split orders or where different line items have different bid numbers. Line-level bid number take precedence over header-level bid numbers.
-	SpecialBidNumber NullableString `json:"specialBidNumber,omitempty"`
+	SpecialBidNumber *string `json:"specialBidNumber,omitempty"`
 	// The end-user price. Required for Export Orders.
-	EndUserPrice NullableFloat32 `json:"endUserPrice,omitempty"`
+	EndUserPrice *float32 `json:"endUserPrice,omitempty"`
 	// The attribute field data.
-	Notes NullableString `json:"notes,omitempty"`
+	Notes *string `json:"notes,omitempty"`
+	// The resource id of the subscription
+	ResourceId *string `json:"resourceId,omitempty"`
+	// ID of the subscription plan
+	Planid *string `json:"planid,omitempty"`
+	// The object containing the list of options related to the subscription period.
+	SubscriptionPeriod []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner `json:"subscriptionPeriod,omitempty"`
+	// The object containing the list of options related to the billing period.
+	BillingPeriod []OrderCreateV7RequestLinesInnerBillingPeriodInner `json:"billingPeriod,omitempty"`
+	// Line-level margin requested by customer
+	Margin *float32 `json:"margin,omitempty"`
+	// Line-level end-customer price requsted by customer
+	EndCustomerPrice *float32 `json:"endCustomerPrice,omitempty"`
+	// The object containing the list of Vendor Mandatory Fields required by the vendor for the subscription products.
+	VriAdditionalAttributes []OrderCreateV7RequestVmfVendorAdditionalAttributesInner `json:"vriAdditionalAttributes,omitempty"`
 	EndUserInfo []OrderCreateV7RequestLinesInnerEndUserInfoInner `json:"endUserInfo,omitempty"`
 	AdditionalAttributes []OrderCreateV7RequestLinesInnerAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
+	WarrantyInfo *OrderCreateV7RequestLinesInnerWarrantyInfo `json:"warrantyInfo,omitempty"`
+	// The object containing the list of fields required at a line level by the vendor.<br> This a <code>Deprecated</code> object. Kindly use <b>vmfVendorAdditionalAttributes</b> object
 	VmfAdditionalAttributesLines []OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner `json:"vmfAdditionalAttributesLines,omitempty"`
 }
 
@@ -89,88 +105,68 @@ func (o *OrderCreateV7RequestLinesInner) SetCustomerLineNumber(v string) {
 	o.CustomerLineNumber = &v
 }
 
-// GetIngramPartNumber returns the IngramPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetIngramPartNumber returns the IngramPartNumber field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetIngramPartNumber() string {
-	if o == nil || IsNil(o.IngramPartNumber.Get()) {
+	if o == nil || IsNil(o.IngramPartNumber) {
 		var ret string
 		return ret
 	}
-	return *o.IngramPartNumber.Get()
+	return *o.IngramPartNumber
 }
 
 // GetIngramPartNumberOk returns a tuple with the IngramPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestLinesInner) GetIngramPartNumberOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IngramPartNumber) {
 		return nil, false
 	}
-	return o.IngramPartNumber.Get(), o.IngramPartNumber.IsSet()
+	return o.IngramPartNumber, true
 }
 
 // HasIngramPartNumber returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestLinesInner) HasIngramPartNumber() bool {
-	if o != nil && o.IngramPartNumber.IsSet() {
+	if o != nil && !IsNil(o.IngramPartNumber) {
 		return true
 	}
 
 	return false
 }
 
-// SetIngramPartNumber gets a reference to the given NullableString and assigns it to the IngramPartNumber field.
+// SetIngramPartNumber gets a reference to the given string and assigns it to the IngramPartNumber field.
 func (o *OrderCreateV7RequestLinesInner) SetIngramPartNumber(v string) {
-	o.IngramPartNumber.Set(&v)
-}
-// SetIngramPartNumberNil sets the value for IngramPartNumber to be an explicit nil
-func (o *OrderCreateV7RequestLinesInner) SetIngramPartNumberNil() {
-	o.IngramPartNumber.Set(nil)
+	o.IngramPartNumber = &v
 }
 
-// UnsetIngramPartNumber ensures that no value is present for IngramPartNumber, not even an explicit nil
-func (o *OrderCreateV7RequestLinesInner) UnsetIngramPartNumber() {
-	o.IngramPartNumber.Unset()
-}
-
-// GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetVendorPartNumber() string {
-	if o == nil || IsNil(o.VendorPartNumber.Get()) {
+	if o == nil || IsNil(o.VendorPartNumber) {
 		var ret string
 		return ret
 	}
-	return *o.VendorPartNumber.Get()
+	return *o.VendorPartNumber
 }
 
 // GetVendorPartNumberOk returns a tuple with the VendorPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestLinesInner) GetVendorPartNumberOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VendorPartNumber) {
 		return nil, false
 	}
-	return o.VendorPartNumber.Get(), o.VendorPartNumber.IsSet()
+	return o.VendorPartNumber, true
 }
 
 // HasVendorPartNumber returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestLinesInner) HasVendorPartNumber() bool {
-	if o != nil && o.VendorPartNumber.IsSet() {
+	if o != nil && !IsNil(o.VendorPartNumber) {
 		return true
 	}
 
 	return false
 }
 
-// SetVendorPartNumber gets a reference to the given NullableString and assigns it to the VendorPartNumber field.
+// SetVendorPartNumber gets a reference to the given string and assigns it to the VendorPartNumber field.
 func (o *OrderCreateV7RequestLinesInner) SetVendorPartNumber(v string) {
-	o.VendorPartNumber.Set(&v)
-}
-// SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
-func (o *OrderCreateV7RequestLinesInner) SetVendorPartNumberNil() {
-	o.VendorPartNumber.Set(nil)
-}
-
-// UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
-func (o *OrderCreateV7RequestLinesInner) UnsetVendorPartNumber() {
-	o.VendorPartNumber.Unset()
+	o.VendorPartNumber = &v
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
@@ -205,177 +201,361 @@ func (o *OrderCreateV7RequestLinesInner) SetQuantity(v int32) {
 	o.Quantity = &v
 }
 
-// GetUnitPrice returns the UnitPrice field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetUnitPrice returns the UnitPrice field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetUnitPrice() float32 {
-	if o == nil || IsNil(o.UnitPrice.Get()) {
+	if o == nil || IsNil(o.UnitPrice) {
 		var ret float32
 		return ret
 	}
-	return *o.UnitPrice.Get()
+	return *o.UnitPrice
 }
 
 // GetUnitPriceOk returns a tuple with the UnitPrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestLinesInner) GetUnitPriceOk() (*float32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UnitPrice) {
 		return nil, false
 	}
-	return o.UnitPrice.Get(), o.UnitPrice.IsSet()
+	return o.UnitPrice, true
 }
 
 // HasUnitPrice returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestLinesInner) HasUnitPrice() bool {
-	if o != nil && o.UnitPrice.IsSet() {
+	if o != nil && !IsNil(o.UnitPrice) {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitPrice gets a reference to the given NullableFloat32 and assigns it to the UnitPrice field.
+// SetUnitPrice gets a reference to the given float32 and assigns it to the UnitPrice field.
 func (o *OrderCreateV7RequestLinesInner) SetUnitPrice(v float32) {
-	o.UnitPrice.Set(&v)
-}
-// SetUnitPriceNil sets the value for UnitPrice to be an explicit nil
-func (o *OrderCreateV7RequestLinesInner) SetUnitPriceNil() {
-	o.UnitPrice.Set(nil)
+	o.UnitPrice = &v
 }
 
-// UnsetUnitPrice ensures that no value is present for UnitPrice, not even an explicit nil
-func (o *OrderCreateV7RequestLinesInner) UnsetUnitPrice() {
-	o.UnitPrice.Unset()
-}
-
-// GetSpecialBidNumber returns the SpecialBidNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSpecialBidNumber returns the SpecialBidNumber field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetSpecialBidNumber() string {
-	if o == nil || IsNil(o.SpecialBidNumber.Get()) {
+	if o == nil || IsNil(o.SpecialBidNumber) {
 		var ret string
 		return ret
 	}
-	return *o.SpecialBidNumber.Get()
+	return *o.SpecialBidNumber
 }
 
 // GetSpecialBidNumberOk returns a tuple with the SpecialBidNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestLinesInner) GetSpecialBidNumberOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SpecialBidNumber) {
 		return nil, false
 	}
-	return o.SpecialBidNumber.Get(), o.SpecialBidNumber.IsSet()
+	return o.SpecialBidNumber, true
 }
 
 // HasSpecialBidNumber returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestLinesInner) HasSpecialBidNumber() bool {
-	if o != nil && o.SpecialBidNumber.IsSet() {
+	if o != nil && !IsNil(o.SpecialBidNumber) {
 		return true
 	}
 
 	return false
 }
 
-// SetSpecialBidNumber gets a reference to the given NullableString and assigns it to the SpecialBidNumber field.
+// SetSpecialBidNumber gets a reference to the given string and assigns it to the SpecialBidNumber field.
 func (o *OrderCreateV7RequestLinesInner) SetSpecialBidNumber(v string) {
-	o.SpecialBidNumber.Set(&v)
-}
-// SetSpecialBidNumberNil sets the value for SpecialBidNumber to be an explicit nil
-func (o *OrderCreateV7RequestLinesInner) SetSpecialBidNumberNil() {
-	o.SpecialBidNumber.Set(nil)
+	o.SpecialBidNumber = &v
 }
 
-// UnsetSpecialBidNumber ensures that no value is present for SpecialBidNumber, not even an explicit nil
-func (o *OrderCreateV7RequestLinesInner) UnsetSpecialBidNumber() {
-	o.SpecialBidNumber.Unset()
-}
-
-// GetEndUserPrice returns the EndUserPrice field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetEndUserPrice returns the EndUserPrice field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetEndUserPrice() float32 {
-	if o == nil || IsNil(o.EndUserPrice.Get()) {
+	if o == nil || IsNil(o.EndUserPrice) {
 		var ret float32
 		return ret
 	}
-	return *o.EndUserPrice.Get()
+	return *o.EndUserPrice
 }
 
 // GetEndUserPriceOk returns a tuple with the EndUserPrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestLinesInner) GetEndUserPriceOk() (*float32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.EndUserPrice) {
 		return nil, false
 	}
-	return o.EndUserPrice.Get(), o.EndUserPrice.IsSet()
+	return o.EndUserPrice, true
 }
 
 // HasEndUserPrice returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestLinesInner) HasEndUserPrice() bool {
-	if o != nil && o.EndUserPrice.IsSet() {
+	if o != nil && !IsNil(o.EndUserPrice) {
 		return true
 	}
 
 	return false
 }
 
-// SetEndUserPrice gets a reference to the given NullableFloat32 and assigns it to the EndUserPrice field.
+// SetEndUserPrice gets a reference to the given float32 and assigns it to the EndUserPrice field.
 func (o *OrderCreateV7RequestLinesInner) SetEndUserPrice(v float32) {
-	o.EndUserPrice.Set(&v)
-}
-// SetEndUserPriceNil sets the value for EndUserPrice to be an explicit nil
-func (o *OrderCreateV7RequestLinesInner) SetEndUserPriceNil() {
-	o.EndUserPrice.Set(nil)
+	o.EndUserPrice = &v
 }
 
-// UnsetEndUserPrice ensures that no value is present for EndUserPrice, not even an explicit nil
-func (o *OrderCreateV7RequestLinesInner) UnsetEndUserPrice() {
-	o.EndUserPrice.Unset()
-}
-
-// GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetNotes returns the Notes field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetNotes() string {
-	if o == nil || IsNil(o.Notes.Get()) {
+	if o == nil || IsNil(o.Notes) {
 		var ret string
 		return ret
 	}
-	return *o.Notes.Get()
+	return *o.Notes
 }
 
 // GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestLinesInner) GetNotesOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Notes) {
 		return nil, false
 	}
-	return o.Notes.Get(), o.Notes.IsSet()
+	return o.Notes, true
 }
 
 // HasNotes returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestLinesInner) HasNotes() bool {
-	if o != nil && o.Notes.IsSet() {
+	if o != nil && !IsNil(o.Notes) {
 		return true
 	}
 
 	return false
 }
 
-// SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
+// SetNotes gets a reference to the given string and assigns it to the Notes field.
 func (o *OrderCreateV7RequestLinesInner) SetNotes(v string) {
-	o.Notes.Set(&v)
-}
-// SetNotesNil sets the value for Notes to be an explicit nil
-func (o *OrderCreateV7RequestLinesInner) SetNotesNil() {
-	o.Notes.Set(nil)
+	o.Notes = &v
 }
 
-// UnsetNotes ensures that no value is present for Notes, not even an explicit nil
-func (o *OrderCreateV7RequestLinesInner) UnsetNotes() {
-	o.Notes.Unset()
+// GetResourceId returns the ResourceId field value if set, zero value otherwise.
+func (o *OrderCreateV7RequestLinesInner) GetResourceId() string {
+	if o == nil || IsNil(o.ResourceId) {
+		var ret string
+		return ret
+	}
+	return *o.ResourceId
 }
 
-// GetEndUserInfo returns the EndUserInfo field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetResourceIdOk returns a tuple with the ResourceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7RequestLinesInner) GetResourceIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ResourceId) {
+		return nil, false
+	}
+	return o.ResourceId, true
+}
+
+// HasResourceId returns a boolean if a field has been set.
+func (o *OrderCreateV7RequestLinesInner) HasResourceId() bool {
+	if o != nil && !IsNil(o.ResourceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceId gets a reference to the given string and assigns it to the ResourceId field.
+func (o *OrderCreateV7RequestLinesInner) SetResourceId(v string) {
+	o.ResourceId = &v
+}
+
+// GetPlanid returns the Planid field value if set, zero value otherwise.
+func (o *OrderCreateV7RequestLinesInner) GetPlanid() string {
+	if o == nil || IsNil(o.Planid) {
+		var ret string
+		return ret
+	}
+	return *o.Planid
+}
+
+// GetPlanidOk returns a tuple with the Planid field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7RequestLinesInner) GetPlanidOk() (*string, bool) {
+	if o == nil || IsNil(o.Planid) {
+		return nil, false
+	}
+	return o.Planid, true
+}
+
+// HasPlanid returns a boolean if a field has been set.
+func (o *OrderCreateV7RequestLinesInner) HasPlanid() bool {
+	if o != nil && !IsNil(o.Planid) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlanid gets a reference to the given string and assigns it to the Planid field.
+func (o *OrderCreateV7RequestLinesInner) SetPlanid(v string) {
+	o.Planid = &v
+}
+
+// GetSubscriptionPeriod returns the SubscriptionPeriod field value if set, zero value otherwise.
+func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriod() []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner {
+	if o == nil || IsNil(o.SubscriptionPeriod) {
+		var ret []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner
+		return ret
+	}
+	return o.SubscriptionPeriod
+}
+
+// GetSubscriptionPeriodOk returns a tuple with the SubscriptionPeriod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriodOk() ([]OrderCreateV7RequestLinesInnerSubscriptionPeriodInner, bool) {
+	if o == nil || IsNil(o.SubscriptionPeriod) {
+		return nil, false
+	}
+	return o.SubscriptionPeriod, true
+}
+
+// HasSubscriptionPeriod returns a boolean if a field has been set.
+func (o *OrderCreateV7RequestLinesInner) HasSubscriptionPeriod() bool {
+	if o != nil && !IsNil(o.SubscriptionPeriod) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscriptionPeriod gets a reference to the given []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner and assigns it to the SubscriptionPeriod field.
+func (o *OrderCreateV7RequestLinesInner) SetSubscriptionPeriod(v []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) {
+	o.SubscriptionPeriod = v
+}
+
+// GetBillingPeriod returns the BillingPeriod field value if set, zero value otherwise.
+func (o *OrderCreateV7RequestLinesInner) GetBillingPeriod() []OrderCreateV7RequestLinesInnerBillingPeriodInner {
+	if o == nil || IsNil(o.BillingPeriod) {
+		var ret []OrderCreateV7RequestLinesInnerBillingPeriodInner
+		return ret
+	}
+	return o.BillingPeriod
+}
+
+// GetBillingPeriodOk returns a tuple with the BillingPeriod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7RequestLinesInner) GetBillingPeriodOk() ([]OrderCreateV7RequestLinesInnerBillingPeriodInner, bool) {
+	if o == nil || IsNil(o.BillingPeriod) {
+		return nil, false
+	}
+	return o.BillingPeriod, true
+}
+
+// HasBillingPeriod returns a boolean if a field has been set.
+func (o *OrderCreateV7RequestLinesInner) HasBillingPeriod() bool {
+	if o != nil && !IsNil(o.BillingPeriod) {
+		return true
+	}
+
+	return false
+}
+
+// SetBillingPeriod gets a reference to the given []OrderCreateV7RequestLinesInnerBillingPeriodInner and assigns it to the BillingPeriod field.
+func (o *OrderCreateV7RequestLinesInner) SetBillingPeriod(v []OrderCreateV7RequestLinesInnerBillingPeriodInner) {
+	o.BillingPeriod = v
+}
+
+// GetMargin returns the Margin field value if set, zero value otherwise.
+func (o *OrderCreateV7RequestLinesInner) GetMargin() float32 {
+	if o == nil || IsNil(o.Margin) {
+		var ret float32
+		return ret
+	}
+	return *o.Margin
+}
+
+// GetMarginOk returns a tuple with the Margin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7RequestLinesInner) GetMarginOk() (*float32, bool) {
+	if o == nil || IsNil(o.Margin) {
+		return nil, false
+	}
+	return o.Margin, true
+}
+
+// HasMargin returns a boolean if a field has been set.
+func (o *OrderCreateV7RequestLinesInner) HasMargin() bool {
+	if o != nil && !IsNil(o.Margin) {
+		return true
+	}
+
+	return false
+}
+
+// SetMargin gets a reference to the given float32 and assigns it to the Margin field.
+func (o *OrderCreateV7RequestLinesInner) SetMargin(v float32) {
+	o.Margin = &v
+}
+
+// GetEndCustomerPrice returns the EndCustomerPrice field value if set, zero value otherwise.
+func (o *OrderCreateV7RequestLinesInner) GetEndCustomerPrice() float32 {
+	if o == nil || IsNil(o.EndCustomerPrice) {
+		var ret float32
+		return ret
+	}
+	return *o.EndCustomerPrice
+}
+
+// GetEndCustomerPriceOk returns a tuple with the EndCustomerPrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7RequestLinesInner) GetEndCustomerPriceOk() (*float32, bool) {
+	if o == nil || IsNil(o.EndCustomerPrice) {
+		return nil, false
+	}
+	return o.EndCustomerPrice, true
+}
+
+// HasEndCustomerPrice returns a boolean if a field has been set.
+func (o *OrderCreateV7RequestLinesInner) HasEndCustomerPrice() bool {
+	if o != nil && !IsNil(o.EndCustomerPrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetEndCustomerPrice gets a reference to the given float32 and assigns it to the EndCustomerPrice field.
+func (o *OrderCreateV7RequestLinesInner) SetEndCustomerPrice(v float32) {
+	o.EndCustomerPrice = &v
+}
+
+// GetVriAdditionalAttributes returns the VriAdditionalAttributes field value if set, zero value otherwise.
+func (o *OrderCreateV7RequestLinesInner) GetVriAdditionalAttributes() []OrderCreateV7RequestVmfVendorAdditionalAttributesInner {
+	if o == nil || IsNil(o.VriAdditionalAttributes) {
+		var ret []OrderCreateV7RequestVmfVendorAdditionalAttributesInner
+		return ret
+	}
+	return o.VriAdditionalAttributes
+}
+
+// GetVriAdditionalAttributesOk returns a tuple with the VriAdditionalAttributes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7RequestLinesInner) GetVriAdditionalAttributesOk() ([]OrderCreateV7RequestVmfVendorAdditionalAttributesInner, bool) {
+	if o == nil || IsNil(o.VriAdditionalAttributes) {
+		return nil, false
+	}
+	return o.VriAdditionalAttributes, true
+}
+
+// HasVriAdditionalAttributes returns a boolean if a field has been set.
+func (o *OrderCreateV7RequestLinesInner) HasVriAdditionalAttributes() bool {
+	if o != nil && !IsNil(o.VriAdditionalAttributes) {
+		return true
+	}
+
+	return false
+}
+
+// SetVriAdditionalAttributes gets a reference to the given []OrderCreateV7RequestVmfVendorAdditionalAttributesInner and assigns it to the VriAdditionalAttributes field.
+func (o *OrderCreateV7RequestLinesInner) SetVriAdditionalAttributes(v []OrderCreateV7RequestVmfVendorAdditionalAttributesInner) {
+	o.VriAdditionalAttributes = v
+}
+
+// GetEndUserInfo returns the EndUserInfo field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetEndUserInfo() []OrderCreateV7RequestLinesInnerEndUserInfoInner {
-	if o == nil {
+	if o == nil || IsNil(o.EndUserInfo) {
 		var ret []OrderCreateV7RequestLinesInnerEndUserInfoInner
 		return ret
 	}
@@ -384,7 +564,6 @@ func (o *OrderCreateV7RequestLinesInner) GetEndUserInfo() []OrderCreateV7Request
 
 // GetEndUserInfoOk returns a tuple with the EndUserInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestLinesInner) GetEndUserInfoOk() ([]OrderCreateV7RequestLinesInnerEndUserInfoInner, bool) {
 	if o == nil || IsNil(o.EndUserInfo) {
 		return nil, false
@@ -438,6 +617,38 @@ func (o *OrderCreateV7RequestLinesInner) SetAdditionalAttributes(v []OrderCreate
 	o.AdditionalAttributes = v
 }
 
+// GetWarrantyInfo returns the WarrantyInfo field value if set, zero value otherwise.
+func (o *OrderCreateV7RequestLinesInner) GetWarrantyInfo() OrderCreateV7RequestLinesInnerWarrantyInfo {
+	if o == nil || IsNil(o.WarrantyInfo) {
+		var ret OrderCreateV7RequestLinesInnerWarrantyInfo
+		return ret
+	}
+	return *o.WarrantyInfo
+}
+
+// GetWarrantyInfoOk returns a tuple with the WarrantyInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateV7RequestLinesInner) GetWarrantyInfoOk() (*OrderCreateV7RequestLinesInnerWarrantyInfo, bool) {
+	if o == nil || IsNil(o.WarrantyInfo) {
+		return nil, false
+	}
+	return o.WarrantyInfo, true
+}
+
+// HasWarrantyInfo returns a boolean if a field has been set.
+func (o *OrderCreateV7RequestLinesInner) HasWarrantyInfo() bool {
+	if o != nil && !IsNil(o.WarrantyInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetWarrantyInfo gets a reference to the given OrderCreateV7RequestLinesInnerWarrantyInfo and assigns it to the WarrantyInfo field.
+func (o *OrderCreateV7RequestLinesInner) SetWarrantyInfo(v OrderCreateV7RequestLinesInnerWarrantyInfo) {
+	o.WarrantyInfo = &v
+}
+
 // GetVmfAdditionalAttributesLines returns the VmfAdditionalAttributesLines field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetVmfAdditionalAttributesLines() []OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner {
 	if o == nil || IsNil(o.VmfAdditionalAttributesLines) {
@@ -483,32 +694,56 @@ func (o OrderCreateV7RequestLinesInner) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.CustomerLineNumber) {
 		toSerialize["customerLineNumber"] = o.CustomerLineNumber
 	}
-	if o.IngramPartNumber.IsSet() {
-		toSerialize["ingramPartNumber"] = o.IngramPartNumber.Get()
+	if !IsNil(o.IngramPartNumber) {
+		toSerialize["ingramPartNumber"] = o.IngramPartNumber
 	}
-	if o.VendorPartNumber.IsSet() {
-		toSerialize["vendorPartNumber"] = o.VendorPartNumber.Get()
+	if !IsNil(o.VendorPartNumber) {
+		toSerialize["vendorPartNumber"] = o.VendorPartNumber
 	}
 	if !IsNil(o.Quantity) {
 		toSerialize["quantity"] = o.Quantity
 	}
-	if o.UnitPrice.IsSet() {
-		toSerialize["unitPrice"] = o.UnitPrice.Get()
+	if !IsNil(o.UnitPrice) {
+		toSerialize["unitPrice"] = o.UnitPrice
 	}
-	if o.SpecialBidNumber.IsSet() {
-		toSerialize["specialBidNumber"] = o.SpecialBidNumber.Get()
+	if !IsNil(o.SpecialBidNumber) {
+		toSerialize["specialBidNumber"] = o.SpecialBidNumber
 	}
-	if o.EndUserPrice.IsSet() {
-		toSerialize["endUserPrice"] = o.EndUserPrice.Get()
+	if !IsNil(o.EndUserPrice) {
+		toSerialize["endUserPrice"] = o.EndUserPrice
 	}
-	if o.Notes.IsSet() {
-		toSerialize["notes"] = o.Notes.Get()
+	if !IsNil(o.Notes) {
+		toSerialize["notes"] = o.Notes
 	}
-	if o.EndUserInfo != nil {
+	if !IsNil(o.ResourceId) {
+		toSerialize["resourceId"] = o.ResourceId
+	}
+	if !IsNil(o.Planid) {
+		toSerialize["planid"] = o.Planid
+	}
+	if !IsNil(o.SubscriptionPeriod) {
+		toSerialize["subscriptionPeriod"] = o.SubscriptionPeriod
+	}
+	if !IsNil(o.BillingPeriod) {
+		toSerialize["billingPeriod"] = o.BillingPeriod
+	}
+	if !IsNil(o.Margin) {
+		toSerialize["margin"] = o.Margin
+	}
+	if !IsNil(o.EndCustomerPrice) {
+		toSerialize["endCustomerPrice"] = o.EndCustomerPrice
+	}
+	if !IsNil(o.VriAdditionalAttributes) {
+		toSerialize["vriAdditionalAttributes"] = o.VriAdditionalAttributes
+	}
+	if !IsNil(o.EndUserInfo) {
 		toSerialize["endUserInfo"] = o.EndUserInfo
 	}
 	if !IsNil(o.AdditionalAttributes) {
 		toSerialize["additionalAttributes"] = o.AdditionalAttributes
+	}
+	if !IsNil(o.WarrantyInfo) {
+		toSerialize["warrantyInfo"] = o.WarrantyInfo
 	}
 	if !IsNil(o.VmfAdditionalAttributesLines) {
 		toSerialize["vmfAdditionalAttributesLines"] = o.VmfAdditionalAttributesLines

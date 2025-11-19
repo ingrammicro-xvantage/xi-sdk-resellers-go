@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -247,8 +247,9 @@ func (a *QuotesAPIService) GetQuotessearchV6Execute(r ApiGetQuotessearchV6Reques
 	if r.pageNumber != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "form", "")
 	} else {
-		var defaultValue int32 = 1
-		r.pageNumber = &defaultValue
+        var defaultValue int32 = 1
+        parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", defaultValue, "form", "")
+        r.pageNumber = &defaultValue
 	}
 	if r.vendorName != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorName", r.vendorName, "form", "")

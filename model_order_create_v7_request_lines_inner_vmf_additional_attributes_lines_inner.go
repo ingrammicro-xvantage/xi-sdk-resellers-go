@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
+For Resellers seeking to innovate with Ingram Micro API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -17,7 +17,7 @@ import (
 // checks if the OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner{}
 
-// OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner The object containing the list of fields required at a line level by the vendor.
+// OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner struct for OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner
 type OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner struct {
 	// The name of the line level field.
 	AttributeName *string `json:"attributeName,omitempty"`

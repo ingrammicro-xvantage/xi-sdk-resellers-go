@@ -17,7 +17,9 @@ Name | Type | Description | Notes
 **ShipToInfo** | Pointer to [**NullableOrderCreateV7RequestShipToInfo**](OrderCreateV7RequestShipToInfo.md) |  | [optional] 
 **ShipmentDetails** | Pointer to [**NullableOrderCreateV7RequestShipmentDetails**](OrderCreateV7RequestShipmentDetails.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestAdditionalAttributesInner**](OrderCreateV7RequestAdditionalAttributesInner.md) | Shipment-level additional attributes. | [optional] 
-**VmfAdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestVmfAdditionalAttributesInner**](OrderCreateV7RequestVmfAdditionalAttributesInner.md) | The object containing the list of fields required at a header level by the vendor. | [optional] 
+**VmfAdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestVmfAdditionalAttributesInner**](OrderCreateV7RequestVmfAdditionalAttributesInner.md) | The object containing the list of fields required at a header level by the vendor.&lt;br&gt; This a &lt;code&gt;Deprecated&lt;/code&gt; object. Kindly use &lt;b&gt;vmfVendorAdditionalAttributes&lt;/b&gt; object | [optional] 
+**VmfVendorAdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestVmfVendorAdditionalAttributesInner**](OrderCreateV7RequestVmfVendorAdditionalAttributesInner.md) | The object containing the list of Vendor Mandatory Fields required by the vendor for the Hardware products. | [optional] 
+**VriAdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestVmfVendorAdditionalAttributesInner**](OrderCreateV7RequestVmfVendorAdditionalAttributesInner.md) | The object containing the list of Vendor Mandatory Fields required by the vendor for the subscription products.&lt;br&gt; Use this object ONLY when using a full quote ordering for a subsciption product. For line-level ordering use &lt;b&gt;vriAdditionalAttributes&lt;/b&gt; object inside the line object.  | [optional] 
 **Lines** | Pointer to [**[]OrderCreateV7RequestLinesInner**](OrderCreateV7RequestLinesInner.md) |  | [optional] 
 
 ## Methods
@@ -479,16 +481,56 @@ SetVmfAdditionalAttributes sets VmfAdditionalAttributes field to given value.
 
 HasVmfAdditionalAttributes returns a boolean if a field has been set.
 
-### SetVmfAdditionalAttributesNil
+### GetVmfVendorAdditionalAttributes
 
-`func (o *OrderCreateV7Request) SetVmfAdditionalAttributesNil(b bool)`
+`func (o *OrderCreateV7Request) GetVmfVendorAdditionalAttributes() []OrderCreateV7RequestVmfVendorAdditionalAttributesInner`
 
- SetVmfAdditionalAttributesNil sets the value for VmfAdditionalAttributes to be an explicit nil
+GetVmfVendorAdditionalAttributes returns the VmfVendorAdditionalAttributes field if non-nil, zero value otherwise.
 
-### UnsetVmfAdditionalAttributes
-`func (o *OrderCreateV7Request) UnsetVmfAdditionalAttributes()`
+### GetVmfVendorAdditionalAttributesOk
 
-UnsetVmfAdditionalAttributes ensures that no value is present for VmfAdditionalAttributes, not even an explicit nil
+`func (o *OrderCreateV7Request) GetVmfVendorAdditionalAttributesOk() (*[]OrderCreateV7RequestVmfVendorAdditionalAttributesInner, bool)`
+
+GetVmfVendorAdditionalAttributesOk returns a tuple with the VmfVendorAdditionalAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVmfVendorAdditionalAttributes
+
+`func (o *OrderCreateV7Request) SetVmfVendorAdditionalAttributes(v []OrderCreateV7RequestVmfVendorAdditionalAttributesInner)`
+
+SetVmfVendorAdditionalAttributes sets VmfVendorAdditionalAttributes field to given value.
+
+### HasVmfVendorAdditionalAttributes
+
+`func (o *OrderCreateV7Request) HasVmfVendorAdditionalAttributes() bool`
+
+HasVmfVendorAdditionalAttributes returns a boolean if a field has been set.
+
+### GetVriAdditionalAttributes
+
+`func (o *OrderCreateV7Request) GetVriAdditionalAttributes() []OrderCreateV7RequestVmfVendorAdditionalAttributesInner`
+
+GetVriAdditionalAttributes returns the VriAdditionalAttributes field if non-nil, zero value otherwise.
+
+### GetVriAdditionalAttributesOk
+
+`func (o *OrderCreateV7Request) GetVriAdditionalAttributesOk() (*[]OrderCreateV7RequestVmfVendorAdditionalAttributesInner, bool)`
+
+GetVriAdditionalAttributesOk returns a tuple with the VriAdditionalAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVriAdditionalAttributes
+
+`func (o *OrderCreateV7Request) SetVriAdditionalAttributes(v []OrderCreateV7RequestVmfVendorAdditionalAttributesInner)`
+
+SetVriAdditionalAttributes sets VriAdditionalAttributes field to given value.
+
+### HasVriAdditionalAttributes
+
+`func (o *OrderCreateV7Request) HasVriAdditionalAttributes() bool`
+
+HasVriAdditionalAttributes returns a boolean if a field has been set.
+
 ### GetLines
 
 `func (o *OrderCreateV7Request) GetLines() []OrderCreateV7RequestLinesInner`

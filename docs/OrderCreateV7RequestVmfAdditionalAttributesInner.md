@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeName** | Pointer to **NullableString** | The name of the header level field. | [optional] 
-**AttributeValue** | Pointer to **NullableString** | The value of the header level field. | [optional] 
+**AttributeName** | Pointer to **string** | The name of the header level field. | [optional] 
+**AttributeValue** | Pointer to **string** | The value of the header level field. | [optional] 
 
 ## Methods
 
@@ -51,16 +51,6 @@ SetAttributeName sets AttributeName field to given value.
 
 HasAttributeName returns a boolean if a field has been set.
 
-### SetAttributeNameNil
-
-`func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) SetAttributeNameNil(b bool)`
-
- SetAttributeNameNil sets the value for AttributeName to be an explicit nil
-
-### UnsetAttributeName
-`func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) UnsetAttributeName()`
-
-UnsetAttributeName ensures that no value is present for AttributeName, not even an explicit nil
 ### GetAttributeValue
 
 `func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) GetAttributeValue() string`
@@ -86,16 +76,6 @@ SetAttributeValue sets AttributeValue field to given value.
 
 HasAttributeValue returns a boolean if a field has been set.
 
-### SetAttributeValueNil
-
-`func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) SetAttributeValueNil(b bool)`
-
- SetAttributeValueNil sets the value for AttributeValue to be an explicit nil
-
-### UnsetAttributeValue
-`func (o *OrderCreateV7RequestVmfAdditionalAttributesInner) UnsetAttributeValue()`
-
-UnsetAttributeValue ensures that no value is present for AttributeValue, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

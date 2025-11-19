@@ -5,16 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomerLineNumber** | Pointer to **string** | The reseller&#39;s line item number for reference in their system. The customer line number needs to be a unique numeric value between 1 and 884. In the event we receive duplicate values or alphanumeric values in the customer line number, we will re-sequence the customer line number. To prevent re-sequencing, please use a unique numeric value between 1 and 884 in the customer line number. | [optional] 
-**IngramPartNumber** | Pointer to **NullableString** | The unique IngramMicro part number. | [optional] 
-**VendorPartNumber** | Pointer to **NullableString** | The vendor&#39;s part number for the line item. | [optional] 
+**IngramPartNumber** | Pointer to **string** | The unique IngramMicro part number. | [optional] 
+**VendorPartNumber** | Pointer to **string** | The vendor&#39;s part number for the line item. | [optional] 
 **Quantity** | Pointer to **int32** | The requested quantity of the line item. | [optional] 
-**UnitPrice** | Pointer to **NullableFloat32** | The reseller-requested unit price for the line item. The unit price is not guaranteed. | [optional] 
-**SpecialBidNumber** | Pointer to **NullableString** | The line-level bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number in the case of split orders or where different line items have different bid numbers. Line-level bid number take precedence over header-level bid numbers. | [optional] 
-**EndUserPrice** | Pointer to **NullableFloat32** | The end-user price. Required for Export Orders. | [optional] 
-**Notes** | Pointer to **NullableString** | The attribute field data. | [optional] 
+**UnitPrice** | Pointer to **float32** | The reseller-requested unit price for the line item. The unit price is not guaranteed. | [optional] 
+**SpecialBidNumber** | Pointer to **string** | The line-level bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number in the case of split orders or where different line items have different bid numbers. Line-level bid number take precedence over header-level bid numbers. | [optional] 
+**EndUserPrice** | Pointer to **float32** | The end-user price. Required for Export Orders. | [optional] 
+**Notes** | Pointer to **string** | The attribute field data. | [optional] 
+**ResourceId** | Pointer to **string** | The resource id of the subscription | [optional] 
+**Planid** | Pointer to **string** | ID of the subscription plan | [optional] 
+**SubscriptionPeriod** | Pointer to [**[]OrderCreateV7RequestLinesInnerSubscriptionPeriodInner**](OrderCreateV7RequestLinesInnerSubscriptionPeriodInner.md) | The object containing the list of options related to the subscription period. | [optional] 
+**BillingPeriod** | Pointer to [**[]OrderCreateV7RequestLinesInnerBillingPeriodInner**](OrderCreateV7RequestLinesInnerBillingPeriodInner.md) | The object containing the list of options related to the billing period. | [optional] 
+**Margin** | Pointer to **float32** | Line-level margin requested by customer | [optional] 
+**EndCustomerPrice** | Pointer to **float32** | Line-level end-customer price requsted by customer | [optional] 
+**VriAdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestVmfVendorAdditionalAttributesInner**](OrderCreateV7RequestVmfVendorAdditionalAttributesInner.md) | The object containing the list of Vendor Mandatory Fields required by the vendor for the subscription products. | [optional] 
 **EndUserInfo** | Pointer to [**[]OrderCreateV7RequestLinesInnerEndUserInfoInner**](OrderCreateV7RequestLinesInnerEndUserInfoInner.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestLinesInnerAdditionalAttributesInner**](OrderCreateV7RequestLinesInnerAdditionalAttributesInner.md) |  | [optional] 
-**VmfAdditionalAttributesLines** | Pointer to [**[]OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner**](OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner.md) |  | [optional] 
+**WarrantyInfo** | Pointer to [**OrderCreateV7RequestLinesInnerWarrantyInfo**](OrderCreateV7RequestLinesInnerWarrantyInfo.md) |  | [optional] 
+**VmfAdditionalAttributesLines** | Pointer to [**[]OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner**](OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner.md) | The object containing the list of fields required at a line level by the vendor.&lt;br&gt; This a &lt;code&gt;Deprecated&lt;/code&gt; object. Kindly use &lt;b&gt;vmfVendorAdditionalAttributes&lt;/b&gt; object | [optional] 
 
 ## Methods
 
@@ -85,16 +93,6 @@ SetIngramPartNumber sets IngramPartNumber field to given value.
 
 HasIngramPartNumber returns a boolean if a field has been set.
 
-### SetIngramPartNumberNil
-
-`func (o *OrderCreateV7RequestLinesInner) SetIngramPartNumberNil(b bool)`
-
- SetIngramPartNumberNil sets the value for IngramPartNumber to be an explicit nil
-
-### UnsetIngramPartNumber
-`func (o *OrderCreateV7RequestLinesInner) UnsetIngramPartNumber()`
-
-UnsetIngramPartNumber ensures that no value is present for IngramPartNumber, not even an explicit nil
 ### GetVendorPartNumber
 
 `func (o *OrderCreateV7RequestLinesInner) GetVendorPartNumber() string`
@@ -120,16 +118,6 @@ SetVendorPartNumber sets VendorPartNumber field to given value.
 
 HasVendorPartNumber returns a boolean if a field has been set.
 
-### SetVendorPartNumberNil
-
-`func (o *OrderCreateV7RequestLinesInner) SetVendorPartNumberNil(b bool)`
-
- SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
-
-### UnsetVendorPartNumber
-`func (o *OrderCreateV7RequestLinesInner) UnsetVendorPartNumber()`
-
-UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
 ### GetQuantity
 
 `func (o *OrderCreateV7RequestLinesInner) GetQuantity() int32`
@@ -180,16 +168,6 @@ SetUnitPrice sets UnitPrice field to given value.
 
 HasUnitPrice returns a boolean if a field has been set.
 
-### SetUnitPriceNil
-
-`func (o *OrderCreateV7RequestLinesInner) SetUnitPriceNil(b bool)`
-
- SetUnitPriceNil sets the value for UnitPrice to be an explicit nil
-
-### UnsetUnitPrice
-`func (o *OrderCreateV7RequestLinesInner) UnsetUnitPrice()`
-
-UnsetUnitPrice ensures that no value is present for UnitPrice, not even an explicit nil
 ### GetSpecialBidNumber
 
 `func (o *OrderCreateV7RequestLinesInner) GetSpecialBidNumber() string`
@@ -215,16 +193,6 @@ SetSpecialBidNumber sets SpecialBidNumber field to given value.
 
 HasSpecialBidNumber returns a boolean if a field has been set.
 
-### SetSpecialBidNumberNil
-
-`func (o *OrderCreateV7RequestLinesInner) SetSpecialBidNumberNil(b bool)`
-
- SetSpecialBidNumberNil sets the value for SpecialBidNumber to be an explicit nil
-
-### UnsetSpecialBidNumber
-`func (o *OrderCreateV7RequestLinesInner) UnsetSpecialBidNumber()`
-
-UnsetSpecialBidNumber ensures that no value is present for SpecialBidNumber, not even an explicit nil
 ### GetEndUserPrice
 
 `func (o *OrderCreateV7RequestLinesInner) GetEndUserPrice() float32`
@@ -250,16 +218,6 @@ SetEndUserPrice sets EndUserPrice field to given value.
 
 HasEndUserPrice returns a boolean if a field has been set.
 
-### SetEndUserPriceNil
-
-`func (o *OrderCreateV7RequestLinesInner) SetEndUserPriceNil(b bool)`
-
- SetEndUserPriceNil sets the value for EndUserPrice to be an explicit nil
-
-### UnsetEndUserPrice
-`func (o *OrderCreateV7RequestLinesInner) UnsetEndUserPrice()`
-
-UnsetEndUserPrice ensures that no value is present for EndUserPrice, not even an explicit nil
 ### GetNotes
 
 `func (o *OrderCreateV7RequestLinesInner) GetNotes() string`
@@ -285,16 +243,181 @@ SetNotes sets Notes field to given value.
 
 HasNotes returns a boolean if a field has been set.
 
-### SetNotesNil
+### GetResourceId
 
-`func (o *OrderCreateV7RequestLinesInner) SetNotesNil(b bool)`
+`func (o *OrderCreateV7RequestLinesInner) GetResourceId() string`
 
- SetNotesNil sets the value for Notes to be an explicit nil
+GetResourceId returns the ResourceId field if non-nil, zero value otherwise.
 
-### UnsetNotes
-`func (o *OrderCreateV7RequestLinesInner) UnsetNotes()`
+### GetResourceIdOk
 
-UnsetNotes ensures that no value is present for Notes, not even an explicit nil
+`func (o *OrderCreateV7RequestLinesInner) GetResourceIdOk() (*string, bool)`
+
+GetResourceIdOk returns a tuple with the ResourceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceId
+
+`func (o *OrderCreateV7RequestLinesInner) SetResourceId(v string)`
+
+SetResourceId sets ResourceId field to given value.
+
+### HasResourceId
+
+`func (o *OrderCreateV7RequestLinesInner) HasResourceId() bool`
+
+HasResourceId returns a boolean if a field has been set.
+
+### GetPlanid
+
+`func (o *OrderCreateV7RequestLinesInner) GetPlanid() string`
+
+GetPlanid returns the Planid field if non-nil, zero value otherwise.
+
+### GetPlanidOk
+
+`func (o *OrderCreateV7RequestLinesInner) GetPlanidOk() (*string, bool)`
+
+GetPlanidOk returns a tuple with the Planid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanid
+
+`func (o *OrderCreateV7RequestLinesInner) SetPlanid(v string)`
+
+SetPlanid sets Planid field to given value.
+
+### HasPlanid
+
+`func (o *OrderCreateV7RequestLinesInner) HasPlanid() bool`
+
+HasPlanid returns a boolean if a field has been set.
+
+### GetSubscriptionPeriod
+
+`func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriod() []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner`
+
+GetSubscriptionPeriod returns the SubscriptionPeriod field if non-nil, zero value otherwise.
+
+### GetSubscriptionPeriodOk
+
+`func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriodOk() (*[]OrderCreateV7RequestLinesInnerSubscriptionPeriodInner, bool)`
+
+GetSubscriptionPeriodOk returns a tuple with the SubscriptionPeriod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionPeriod
+
+`func (o *OrderCreateV7RequestLinesInner) SetSubscriptionPeriod(v []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner)`
+
+SetSubscriptionPeriod sets SubscriptionPeriod field to given value.
+
+### HasSubscriptionPeriod
+
+`func (o *OrderCreateV7RequestLinesInner) HasSubscriptionPeriod() bool`
+
+HasSubscriptionPeriod returns a boolean if a field has been set.
+
+### GetBillingPeriod
+
+`func (o *OrderCreateV7RequestLinesInner) GetBillingPeriod() []OrderCreateV7RequestLinesInnerBillingPeriodInner`
+
+GetBillingPeriod returns the BillingPeriod field if non-nil, zero value otherwise.
+
+### GetBillingPeriodOk
+
+`func (o *OrderCreateV7RequestLinesInner) GetBillingPeriodOk() (*[]OrderCreateV7RequestLinesInnerBillingPeriodInner, bool)`
+
+GetBillingPeriodOk returns a tuple with the BillingPeriod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingPeriod
+
+`func (o *OrderCreateV7RequestLinesInner) SetBillingPeriod(v []OrderCreateV7RequestLinesInnerBillingPeriodInner)`
+
+SetBillingPeriod sets BillingPeriod field to given value.
+
+### HasBillingPeriod
+
+`func (o *OrderCreateV7RequestLinesInner) HasBillingPeriod() bool`
+
+HasBillingPeriod returns a boolean if a field has been set.
+
+### GetMargin
+
+`func (o *OrderCreateV7RequestLinesInner) GetMargin() float32`
+
+GetMargin returns the Margin field if non-nil, zero value otherwise.
+
+### GetMarginOk
+
+`func (o *OrderCreateV7RequestLinesInner) GetMarginOk() (*float32, bool)`
+
+GetMarginOk returns a tuple with the Margin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMargin
+
+`func (o *OrderCreateV7RequestLinesInner) SetMargin(v float32)`
+
+SetMargin sets Margin field to given value.
+
+### HasMargin
+
+`func (o *OrderCreateV7RequestLinesInner) HasMargin() bool`
+
+HasMargin returns a boolean if a field has been set.
+
+### GetEndCustomerPrice
+
+`func (o *OrderCreateV7RequestLinesInner) GetEndCustomerPrice() float32`
+
+GetEndCustomerPrice returns the EndCustomerPrice field if non-nil, zero value otherwise.
+
+### GetEndCustomerPriceOk
+
+`func (o *OrderCreateV7RequestLinesInner) GetEndCustomerPriceOk() (*float32, bool)`
+
+GetEndCustomerPriceOk returns a tuple with the EndCustomerPrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndCustomerPrice
+
+`func (o *OrderCreateV7RequestLinesInner) SetEndCustomerPrice(v float32)`
+
+SetEndCustomerPrice sets EndCustomerPrice field to given value.
+
+### HasEndCustomerPrice
+
+`func (o *OrderCreateV7RequestLinesInner) HasEndCustomerPrice() bool`
+
+HasEndCustomerPrice returns a boolean if a field has been set.
+
+### GetVriAdditionalAttributes
+
+`func (o *OrderCreateV7RequestLinesInner) GetVriAdditionalAttributes() []OrderCreateV7RequestVmfVendorAdditionalAttributesInner`
+
+GetVriAdditionalAttributes returns the VriAdditionalAttributes field if non-nil, zero value otherwise.
+
+### GetVriAdditionalAttributesOk
+
+`func (o *OrderCreateV7RequestLinesInner) GetVriAdditionalAttributesOk() (*[]OrderCreateV7RequestVmfVendorAdditionalAttributesInner, bool)`
+
+GetVriAdditionalAttributesOk returns a tuple with the VriAdditionalAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVriAdditionalAttributes
+
+`func (o *OrderCreateV7RequestLinesInner) SetVriAdditionalAttributes(v []OrderCreateV7RequestVmfVendorAdditionalAttributesInner)`
+
+SetVriAdditionalAttributes sets VriAdditionalAttributes field to given value.
+
+### HasVriAdditionalAttributes
+
+`func (o *OrderCreateV7RequestLinesInner) HasVriAdditionalAttributes() bool`
+
+HasVriAdditionalAttributes returns a boolean if a field has been set.
+
 ### GetEndUserInfo
 
 `func (o *OrderCreateV7RequestLinesInner) GetEndUserInfo() []OrderCreateV7RequestLinesInnerEndUserInfoInner`
@@ -320,16 +443,6 @@ SetEndUserInfo sets EndUserInfo field to given value.
 
 HasEndUserInfo returns a boolean if a field has been set.
 
-### SetEndUserInfoNil
-
-`func (o *OrderCreateV7RequestLinesInner) SetEndUserInfoNil(b bool)`
-
- SetEndUserInfoNil sets the value for EndUserInfo to be an explicit nil
-
-### UnsetEndUserInfo
-`func (o *OrderCreateV7RequestLinesInner) UnsetEndUserInfo()`
-
-UnsetEndUserInfo ensures that no value is present for EndUserInfo, not even an explicit nil
 ### GetAdditionalAttributes
 
 `func (o *OrderCreateV7RequestLinesInner) GetAdditionalAttributes() []OrderCreateV7RequestLinesInnerAdditionalAttributesInner`
@@ -354,6 +467,31 @@ SetAdditionalAttributes sets AdditionalAttributes field to given value.
 `func (o *OrderCreateV7RequestLinesInner) HasAdditionalAttributes() bool`
 
 HasAdditionalAttributes returns a boolean if a field has been set.
+
+### GetWarrantyInfo
+
+`func (o *OrderCreateV7RequestLinesInner) GetWarrantyInfo() OrderCreateV7RequestLinesInnerWarrantyInfo`
+
+GetWarrantyInfo returns the WarrantyInfo field if non-nil, zero value otherwise.
+
+### GetWarrantyInfoOk
+
+`func (o *OrderCreateV7RequestLinesInner) GetWarrantyInfoOk() (*OrderCreateV7RequestLinesInnerWarrantyInfo, bool)`
+
+GetWarrantyInfoOk returns a tuple with the WarrantyInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWarrantyInfo
+
+`func (o *OrderCreateV7RequestLinesInner) SetWarrantyInfo(v OrderCreateV7RequestLinesInnerWarrantyInfo)`
+
+SetWarrantyInfo sets WarrantyInfo field to given value.
+
+### HasWarrantyInfo
+
+`func (o *OrderCreateV7RequestLinesInner) HasWarrantyInfo() bool`
+
+HasWarrantyInfo returns a boolean if a field has been set.
 
 ### GetVmfAdditionalAttributesLines
 
