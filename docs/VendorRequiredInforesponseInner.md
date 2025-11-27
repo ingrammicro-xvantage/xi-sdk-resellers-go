@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **PlanId** | Pointer to **string** | ID of the subscription plan | [optional] 
 **PlanName** | Pointer to **string** | Name of the subscription plan | [optional] 
 **ResponseMessages** | Pointer to [**[]VendorRequiredInforesponseInnerResponseMessagesInner**](VendorRequiredInforesponseInnerResponseMessagesInner.md) |  | [optional] 
-**VmfAdditionalAttributes** | Pointer to [**[]VendorRequiredInforesponseInnerVmfAdditionalAttributesInner**](VendorRequiredInforesponseInnerVmfAdditionalAttributesInner.md) |  | [optional] 
-**VriAdditionalAttributes** | Pointer to [**[]VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner**](VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner.md) |  | [optional] 
+**VmfAdditionalAttributes** | Pointer to [**[]VmfVriAdditionalAttributeContainer**](VmfVriAdditionalAttributeContainer.md) |  | [optional] 
+**VriAdditionalAttributes** | Pointer to [**[]VmfVriAdditionalAttributeContainer**](VmfVriAdditionalAttributeContainer.md) |  | [optional] 
 
 ## Methods
 
@@ -184,20 +184,20 @@ HasResponseMessages returns a boolean if a field has been set.
 
 ### GetVmfAdditionalAttributes
 
-`func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributes() []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner`
+`func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributes() []VmfVriAdditionalAttributeContainer`
 
 GetVmfAdditionalAttributes returns the VmfAdditionalAttributes field if non-nil, zero value otherwise.
 
 ### GetVmfAdditionalAttributesOk
 
-`func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributesOk() (*[]VendorRequiredInforesponseInnerVmfAdditionalAttributesInner, bool)`
+`func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributesOk() (*[]VmfVriAdditionalAttributeContainer, bool)`
 
 GetVmfAdditionalAttributesOk returns a tuple with the VmfAdditionalAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVmfAdditionalAttributes
 
-`func (o *VendorRequiredInforesponseInner) SetVmfAdditionalAttributes(v []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner)`
+`func (o *VendorRequiredInforesponseInner) SetVmfAdditionalAttributes(v []VmfVriAdditionalAttributeContainer)`
 
 SetVmfAdditionalAttributes sets VmfAdditionalAttributes field to given value.
 
@@ -209,20 +209,20 @@ HasVmfAdditionalAttributes returns a boolean if a field has been set.
 
 ### GetVriAdditionalAttributes
 
-`func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributes() []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner`
+`func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributes() []VmfVriAdditionalAttributeContainer`
 
 GetVriAdditionalAttributes returns the VriAdditionalAttributes field if non-nil, zero value otherwise.
 
 ### GetVriAdditionalAttributesOk
 
-`func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributesOk() (*[]VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner, bool)`
+`func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributesOk() (*[]VmfVriAdditionalAttributeContainer, bool)`
 
 GetVriAdditionalAttributesOk returns a tuple with the VriAdditionalAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVriAdditionalAttributes
 
-`func (o *VendorRequiredInforesponseInner) SetVriAdditionalAttributes(v []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner)`
+`func (o *VendorRequiredInforesponseInner) SetVriAdditionalAttributes(v []VmfVriAdditionalAttributeContainer)`
 
 SetVriAdditionalAttributes sets VriAdditionalAttributes field to given value.
 

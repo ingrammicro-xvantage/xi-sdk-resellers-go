@@ -30,8 +30,8 @@ type VendorRequiredInforesponseInner struct {
 	// Name of the subscription plan
 	PlanName *string `json:"planName,omitempty"`
 	ResponseMessages []VendorRequiredInforesponseInnerResponseMessagesInner `json:"responseMessages,omitempty"`
-	VmfAdditionalAttributes []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner `json:"vmfAdditionalAttributes,omitempty"`
-	VriAdditionalAttributes []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner `json:"vriAdditionalAttributes,omitempty"`
+	VmfAdditionalAttributes []VmfVriAdditionalAttributeContainer `json:"vmfAdditionalAttributes,omitempty"`
+	VriAdditionalAttributes []VmfVriAdditionalAttributeContainer `json:"vriAdditionalAttributes,omitempty"`
 }
 
 // NewVendorRequiredInforesponseInner instantiates a new VendorRequiredInforesponseInner object
@@ -244,9 +244,9 @@ func (o *VendorRequiredInforesponseInner) SetResponseMessages(v []VendorRequired
 }
 
 // GetVmfAdditionalAttributes returns the VmfAdditionalAttributes field value if set, zero value otherwise.
-func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributes() []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner {
+func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributes() []VmfVriAdditionalAttributeContainer {
 	if o == nil || IsNil(o.VmfAdditionalAttributes) {
-		var ret []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner
+		var ret []VmfVriAdditionalAttributeContainer
 		return ret
 	}
 	return o.VmfAdditionalAttributes
@@ -254,7 +254,7 @@ func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributes() []VendorR
 
 // GetVmfAdditionalAttributesOk returns a tuple with the VmfAdditionalAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributesOk() ([]VendorRequiredInforesponseInnerVmfAdditionalAttributesInner, bool) {
+func (o *VendorRequiredInforesponseInner) GetVmfAdditionalAttributesOk() ([]VmfVriAdditionalAttributeContainer, bool) {
 	if o == nil || IsNil(o.VmfAdditionalAttributes) {
 		return nil, false
 	}
@@ -270,15 +270,15 @@ func (o *VendorRequiredInforesponseInner) HasVmfAdditionalAttributes() bool {
 	return false
 }
 
-// SetVmfAdditionalAttributes gets a reference to the given []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner and assigns it to the VmfAdditionalAttributes field.
-func (o *VendorRequiredInforesponseInner) SetVmfAdditionalAttributes(v []VendorRequiredInforesponseInnerVmfAdditionalAttributesInner) {
+// SetVmfAdditionalAttributes gets a reference to the given []VmfVriAdditionalAttributeContainer and assigns it to the VmfAdditionalAttributes field.
+func (o *VendorRequiredInforesponseInner) SetVmfAdditionalAttributes(v []VmfVriAdditionalAttributeContainer) {
 	o.VmfAdditionalAttributes = v
 }
 
 // GetVriAdditionalAttributes returns the VriAdditionalAttributes field value if set, zero value otherwise.
-func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributes() []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner {
+func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributes() []VmfVriAdditionalAttributeContainer {
 	if o == nil || IsNil(o.VriAdditionalAttributes) {
-		var ret []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner
+		var ret []VmfVriAdditionalAttributeContainer
 		return ret
 	}
 	return o.VriAdditionalAttributes
@@ -286,7 +286,7 @@ func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributes() []VendorR
 
 // GetVriAdditionalAttributesOk returns a tuple with the VriAdditionalAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributesOk() ([]VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner, bool) {
+func (o *VendorRequiredInforesponseInner) GetVriAdditionalAttributesOk() ([]VmfVriAdditionalAttributeContainer, bool) {
 	if o == nil || IsNil(o.VriAdditionalAttributes) {
 		return nil, false
 	}
@@ -302,8 +302,8 @@ func (o *VendorRequiredInforesponseInner) HasVriAdditionalAttributes() bool {
 	return false
 }
 
-// SetVriAdditionalAttributes gets a reference to the given []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner and assigns it to the VriAdditionalAttributes field.
-func (o *VendorRequiredInforesponseInner) SetVriAdditionalAttributes(v []VendorRequiredInforesponseInnerVmfAdditionalAttributesInnerAdditionalAttributesInner) {
+// SetVriAdditionalAttributes gets a reference to the given []VmfVriAdditionalAttributeContainer and assigns it to the VriAdditionalAttributes field.
+func (o *VendorRequiredInforesponseInner) SetVriAdditionalAttributes(v []VmfVriAdditionalAttributeContainer) {
 	o.VriAdditionalAttributes = v
 }
 
