@@ -448,7 +448,7 @@ type ApiGetResellerV6ProductsearchRequest struct {
 	vendorPartNumber *[]string
 	acceptLanguage *string
 	vendorNumber *string
-	keyword *[]string
+	keyword *string
 	category *string
 	skipAuthorisation *string
 	groupName *string
@@ -529,7 +529,7 @@ func (r ApiGetResellerV6ProductsearchRequest) VendorNumber(vendorNumber string) 
 }
 
 // Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name.
-func (r ApiGetResellerV6ProductsearchRequest) Keyword(keyword []string) ApiGetResellerV6ProductsearchRequest {
+func (r ApiGetResellerV6ProductsearchRequest) Keyword(keyword string) ApiGetResellerV6ProductsearchRequest {
 	r.keyword = &keyword
 	return r
 }
@@ -663,15 +663,7 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductsearchExecute(r ApiGetRes
 		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorNumber", r.vendorNumber, "form", "")
 	}
 	if r.keyword != nil {
-		t := *r.keyword
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "keyword", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "keyword", t, "form", "multi")
-		}
+		parameterAddToHeaderOrQuery(localVarQueryParams, "keyword", r.keyword, "form", "")
 	}
 	if r.category != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "category", r.category, "form", "")

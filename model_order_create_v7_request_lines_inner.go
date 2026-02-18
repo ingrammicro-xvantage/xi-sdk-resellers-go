@@ -39,10 +39,8 @@ type OrderCreateV7RequestLinesInner struct {
 	ResourceId *string `json:"resourceId,omitempty"`
 	// ID of the subscription plan
 	Planid *string `json:"planid,omitempty"`
-	// The object containing the list of options related to the subscription period.
-	SubscriptionPeriod []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner `json:"subscriptionPeriod,omitempty"`
-	// The object containing the list of options related to the billing period.
-	BillingPeriod []OrderCreateV7RequestLinesInnerBillingPeriodInner `json:"billingPeriod,omitempty"`
+	SubscriptionPeriod *OrderCreateV7RequestLinesInnerSubscriptionPeriod `json:"subscriptionPeriod,omitempty"`
+	BillingPeriod *OrderCreateV7RequestLinesInnerBillingPeriod `json:"billingPeriod,omitempty"`
 	// Line-level margin requested by customer
 	Margin *float32 `json:"margin,omitempty"`
 	// Line-level end-customer price requsted by customer
@@ -394,17 +392,17 @@ func (o *OrderCreateV7RequestLinesInner) SetPlanid(v string) {
 }
 
 // GetSubscriptionPeriod returns the SubscriptionPeriod field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriod() []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner {
+func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriod() OrderCreateV7RequestLinesInnerSubscriptionPeriod {
 	if o == nil || IsNil(o.SubscriptionPeriod) {
-		var ret []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner
+		var ret OrderCreateV7RequestLinesInnerSubscriptionPeriod
 		return ret
 	}
-	return o.SubscriptionPeriod
+	return *o.SubscriptionPeriod
 }
 
 // GetSubscriptionPeriodOk returns a tuple with the SubscriptionPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriodOk() ([]OrderCreateV7RequestLinesInnerSubscriptionPeriodInner, bool) {
+func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriodOk() (*OrderCreateV7RequestLinesInnerSubscriptionPeriod, bool) {
 	if o == nil || IsNil(o.SubscriptionPeriod) {
 		return nil, false
 	}
@@ -420,23 +418,23 @@ func (o *OrderCreateV7RequestLinesInner) HasSubscriptionPeriod() bool {
 	return false
 }
 
-// SetSubscriptionPeriod gets a reference to the given []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner and assigns it to the SubscriptionPeriod field.
-func (o *OrderCreateV7RequestLinesInner) SetSubscriptionPeriod(v []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) {
-	o.SubscriptionPeriod = v
+// SetSubscriptionPeriod gets a reference to the given OrderCreateV7RequestLinesInnerSubscriptionPeriod and assigns it to the SubscriptionPeriod field.
+func (o *OrderCreateV7RequestLinesInner) SetSubscriptionPeriod(v OrderCreateV7RequestLinesInnerSubscriptionPeriod) {
+	o.SubscriptionPeriod = &v
 }
 
 // GetBillingPeriod returns the BillingPeriod field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestLinesInner) GetBillingPeriod() []OrderCreateV7RequestLinesInnerBillingPeriodInner {
+func (o *OrderCreateV7RequestLinesInner) GetBillingPeriod() OrderCreateV7RequestLinesInnerBillingPeriod {
 	if o == nil || IsNil(o.BillingPeriod) {
-		var ret []OrderCreateV7RequestLinesInnerBillingPeriodInner
+		var ret OrderCreateV7RequestLinesInnerBillingPeriod
 		return ret
 	}
-	return o.BillingPeriod
+	return *o.BillingPeriod
 }
 
 // GetBillingPeriodOk returns a tuple with the BillingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestLinesInner) GetBillingPeriodOk() ([]OrderCreateV7RequestLinesInnerBillingPeriodInner, bool) {
+func (o *OrderCreateV7RequestLinesInner) GetBillingPeriodOk() (*OrderCreateV7RequestLinesInnerBillingPeriod, bool) {
 	if o == nil || IsNil(o.BillingPeriod) {
 		return nil, false
 	}
@@ -452,9 +450,9 @@ func (o *OrderCreateV7RequestLinesInner) HasBillingPeriod() bool {
 	return false
 }
 
-// SetBillingPeriod gets a reference to the given []OrderCreateV7RequestLinesInnerBillingPeriodInner and assigns it to the BillingPeriod field.
-func (o *OrderCreateV7RequestLinesInner) SetBillingPeriod(v []OrderCreateV7RequestLinesInnerBillingPeriodInner) {
-	o.BillingPeriod = v
+// SetBillingPeriod gets a reference to the given OrderCreateV7RequestLinesInnerBillingPeriod and assigns it to the BillingPeriod field.
+func (o *OrderCreateV7RequestLinesInner) SetBillingPeriod(v OrderCreateV7RequestLinesInnerBillingPeriod) {
+	o.BillingPeriod = &v
 }
 
 // GetMargin returns the Margin field value if set, zero value otherwise.

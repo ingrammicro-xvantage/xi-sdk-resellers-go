@@ -49,13 +49,22 @@ type ProductSearchResponseCatalogInner struct {
 	DirectShip *string `json:"directShip,omitempty"`
 	// Indicates if the product has a warranty.
 	HasWarranty *string `json:"hasWarranty,omitempty"`
-	Links []ProductSearchResponseCatalogInnerLinksInner `json:"links,omitempty"`
 	// The extended description of the product.
 	ExtraDescription *string `json:"extraDescription,omitempty"`
 	// Identifies a SKU that is a comparable subsititution of the current SKU if available.
 	ReplacementSku *string `json:"replacementSku,omitempty"`
 	// It is true when it exists in matched queries field of ealstic search API.
 	AuthorizedToPurchase *string `json:"authorizedToPurchase,omitempty"`
+	IsMsrpVisible *bool `json:"isMsrpVisible,omitempty"`
+	IsPriceVisible *bool `json:"isPriceVisible,omitempty"`
+	CustomerAuthorization *bool `json:"customerAuthorization,omitempty"`
+	SkuAvailableInFeed *bool `json:"skuAvailableInFeed,omitempty"`
+	Msrpvisibleorg *string `json:"msrpvisibleorg,omitempty"`
+	Pricevisibleorg *string `json:"pricevisibleorg,omitempty"`
+	Intorderableorg *string `json:"intorderableorg,omitempty"`
+	Nonintorderableorg *string `json:"nonintorderableorg,omitempty"`
+	Webvisibleorg *string `json:"webvisibleorg,omitempty"`
+	Links []ProductSearchResponseCatalogInnerLinksInner `json:"links,omitempty"`
 }
 
 // NewProductSearchResponseCatalogInner instantiates a new ProductSearchResponseCatalogInner object
@@ -555,38 +564,6 @@ func (o *ProductSearchResponseCatalogInner) SetHasWarranty(v string) {
 	o.HasWarranty = &v
 }
 
-// GetLinks returns the Links field value if set, zero value otherwise.
-func (o *ProductSearchResponseCatalogInner) GetLinks() []ProductSearchResponseCatalogInnerLinksInner {
-	if o == nil || IsNil(o.Links) {
-		var ret []ProductSearchResponseCatalogInnerLinksInner
-		return ret
-	}
-	return o.Links
-}
-
-// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProductSearchResponseCatalogInner) GetLinksOk() ([]ProductSearchResponseCatalogInnerLinksInner, bool) {
-	if o == nil || IsNil(o.Links) {
-		return nil, false
-	}
-	return o.Links, true
-}
-
-// HasLinks returns a boolean if a field has been set.
-func (o *ProductSearchResponseCatalogInner) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
-		return true
-	}
-
-	return false
-}
-
-// SetLinks gets a reference to the given []ProductSearchResponseCatalogInnerLinksInner and assigns it to the Links field.
-func (o *ProductSearchResponseCatalogInner) SetLinks(v []ProductSearchResponseCatalogInnerLinksInner) {
-	o.Links = v
-}
-
 // GetExtraDescription returns the ExtraDescription field value if set, zero value otherwise.
 func (o *ProductSearchResponseCatalogInner) GetExtraDescription() string {
 	if o == nil || IsNil(o.ExtraDescription) {
@@ -683,6 +660,326 @@ func (o *ProductSearchResponseCatalogInner) SetAuthorizedToPurchase(v string) {
 	o.AuthorizedToPurchase = &v
 }
 
+// GetIsMsrpVisible returns the IsMsrpVisible field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetIsMsrpVisible() bool {
+	if o == nil || IsNil(o.IsMsrpVisible) {
+		var ret bool
+		return ret
+	}
+	return *o.IsMsrpVisible
+}
+
+// GetIsMsrpVisibleOk returns a tuple with the IsMsrpVisible field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetIsMsrpVisibleOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsMsrpVisible) {
+		return nil, false
+	}
+	return o.IsMsrpVisible, true
+}
+
+// HasIsMsrpVisible returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasIsMsrpVisible() bool {
+	if o != nil && !IsNil(o.IsMsrpVisible) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsMsrpVisible gets a reference to the given bool and assigns it to the IsMsrpVisible field.
+func (o *ProductSearchResponseCatalogInner) SetIsMsrpVisible(v bool) {
+	o.IsMsrpVisible = &v
+}
+
+// GetIsPriceVisible returns the IsPriceVisible field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetIsPriceVisible() bool {
+	if o == nil || IsNil(o.IsPriceVisible) {
+		var ret bool
+		return ret
+	}
+	return *o.IsPriceVisible
+}
+
+// GetIsPriceVisibleOk returns a tuple with the IsPriceVisible field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetIsPriceVisibleOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsPriceVisible) {
+		return nil, false
+	}
+	return o.IsPriceVisible, true
+}
+
+// HasIsPriceVisible returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasIsPriceVisible() bool {
+	if o != nil && !IsNil(o.IsPriceVisible) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPriceVisible gets a reference to the given bool and assigns it to the IsPriceVisible field.
+func (o *ProductSearchResponseCatalogInner) SetIsPriceVisible(v bool) {
+	o.IsPriceVisible = &v
+}
+
+// GetCustomerAuthorization returns the CustomerAuthorization field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetCustomerAuthorization() bool {
+	if o == nil || IsNil(o.CustomerAuthorization) {
+		var ret bool
+		return ret
+	}
+	return *o.CustomerAuthorization
+}
+
+// GetCustomerAuthorizationOk returns a tuple with the CustomerAuthorization field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetCustomerAuthorizationOk() (*bool, bool) {
+	if o == nil || IsNil(o.CustomerAuthorization) {
+		return nil, false
+	}
+	return o.CustomerAuthorization, true
+}
+
+// HasCustomerAuthorization returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasCustomerAuthorization() bool {
+	if o != nil && !IsNil(o.CustomerAuthorization) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomerAuthorization gets a reference to the given bool and assigns it to the CustomerAuthorization field.
+func (o *ProductSearchResponseCatalogInner) SetCustomerAuthorization(v bool) {
+	o.CustomerAuthorization = &v
+}
+
+// GetSkuAvailableInFeed returns the SkuAvailableInFeed field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetSkuAvailableInFeed() bool {
+	if o == nil || IsNil(o.SkuAvailableInFeed) {
+		var ret bool
+		return ret
+	}
+	return *o.SkuAvailableInFeed
+}
+
+// GetSkuAvailableInFeedOk returns a tuple with the SkuAvailableInFeed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetSkuAvailableInFeedOk() (*bool, bool) {
+	if o == nil || IsNil(o.SkuAvailableInFeed) {
+		return nil, false
+	}
+	return o.SkuAvailableInFeed, true
+}
+
+// HasSkuAvailableInFeed returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasSkuAvailableInFeed() bool {
+	if o != nil && !IsNil(o.SkuAvailableInFeed) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkuAvailableInFeed gets a reference to the given bool and assigns it to the SkuAvailableInFeed field.
+func (o *ProductSearchResponseCatalogInner) SetSkuAvailableInFeed(v bool) {
+	o.SkuAvailableInFeed = &v
+}
+
+// GetMsrpvisibleorg returns the Msrpvisibleorg field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetMsrpvisibleorg() string {
+	if o == nil || IsNil(o.Msrpvisibleorg) {
+		var ret string
+		return ret
+	}
+	return *o.Msrpvisibleorg
+}
+
+// GetMsrpvisibleorgOk returns a tuple with the Msrpvisibleorg field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetMsrpvisibleorgOk() (*string, bool) {
+	if o == nil || IsNil(o.Msrpvisibleorg) {
+		return nil, false
+	}
+	return o.Msrpvisibleorg, true
+}
+
+// HasMsrpvisibleorg returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasMsrpvisibleorg() bool {
+	if o != nil && !IsNil(o.Msrpvisibleorg) {
+		return true
+	}
+
+	return false
+}
+
+// SetMsrpvisibleorg gets a reference to the given string and assigns it to the Msrpvisibleorg field.
+func (o *ProductSearchResponseCatalogInner) SetMsrpvisibleorg(v string) {
+	o.Msrpvisibleorg = &v
+}
+
+// GetPricevisibleorg returns the Pricevisibleorg field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetPricevisibleorg() string {
+	if o == nil || IsNil(o.Pricevisibleorg) {
+		var ret string
+		return ret
+	}
+	return *o.Pricevisibleorg
+}
+
+// GetPricevisibleorgOk returns a tuple with the Pricevisibleorg field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetPricevisibleorgOk() (*string, bool) {
+	if o == nil || IsNil(o.Pricevisibleorg) {
+		return nil, false
+	}
+	return o.Pricevisibleorg, true
+}
+
+// HasPricevisibleorg returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasPricevisibleorg() bool {
+	if o != nil && !IsNil(o.Pricevisibleorg) {
+		return true
+	}
+
+	return false
+}
+
+// SetPricevisibleorg gets a reference to the given string and assigns it to the Pricevisibleorg field.
+func (o *ProductSearchResponseCatalogInner) SetPricevisibleorg(v string) {
+	o.Pricevisibleorg = &v
+}
+
+// GetIntorderableorg returns the Intorderableorg field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetIntorderableorg() string {
+	if o == nil || IsNil(o.Intorderableorg) {
+		var ret string
+		return ret
+	}
+	return *o.Intorderableorg
+}
+
+// GetIntorderableorgOk returns a tuple with the Intorderableorg field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetIntorderableorgOk() (*string, bool) {
+	if o == nil || IsNil(o.Intorderableorg) {
+		return nil, false
+	}
+	return o.Intorderableorg, true
+}
+
+// HasIntorderableorg returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasIntorderableorg() bool {
+	if o != nil && !IsNil(o.Intorderableorg) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntorderableorg gets a reference to the given string and assigns it to the Intorderableorg field.
+func (o *ProductSearchResponseCatalogInner) SetIntorderableorg(v string) {
+	o.Intorderableorg = &v
+}
+
+// GetNonintorderableorg returns the Nonintorderableorg field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetNonintorderableorg() string {
+	if o == nil || IsNil(o.Nonintorderableorg) {
+		var ret string
+		return ret
+	}
+	return *o.Nonintorderableorg
+}
+
+// GetNonintorderableorgOk returns a tuple with the Nonintorderableorg field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetNonintorderableorgOk() (*string, bool) {
+	if o == nil || IsNil(o.Nonintorderableorg) {
+		return nil, false
+	}
+	return o.Nonintorderableorg, true
+}
+
+// HasNonintorderableorg returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasNonintorderableorg() bool {
+	if o != nil && !IsNil(o.Nonintorderableorg) {
+		return true
+	}
+
+	return false
+}
+
+// SetNonintorderableorg gets a reference to the given string and assigns it to the Nonintorderableorg field.
+func (o *ProductSearchResponseCatalogInner) SetNonintorderableorg(v string) {
+	o.Nonintorderableorg = &v
+}
+
+// GetWebvisibleorg returns the Webvisibleorg field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetWebvisibleorg() string {
+	if o == nil || IsNil(o.Webvisibleorg) {
+		var ret string
+		return ret
+	}
+	return *o.Webvisibleorg
+}
+
+// GetWebvisibleorgOk returns a tuple with the Webvisibleorg field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetWebvisibleorgOk() (*string, bool) {
+	if o == nil || IsNil(o.Webvisibleorg) {
+		return nil, false
+	}
+	return o.Webvisibleorg, true
+}
+
+// HasWebvisibleorg returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasWebvisibleorg() bool {
+	if o != nil && !IsNil(o.Webvisibleorg) {
+		return true
+	}
+
+	return false
+}
+
+// SetWebvisibleorg gets a reference to the given string and assigns it to the Webvisibleorg field.
+func (o *ProductSearchResponseCatalogInner) SetWebvisibleorg(v string) {
+	o.Webvisibleorg = &v
+}
+
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *ProductSearchResponseCatalogInner) GetLinks() []ProductSearchResponseCatalogInnerLinksInner {
+	if o == nil || IsNil(o.Links) {
+		var ret []ProductSearchResponseCatalogInnerLinksInner
+		return ret
+	}
+	return o.Links
+}
+
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductSearchResponseCatalogInner) GetLinksOk() ([]ProductSearchResponseCatalogInnerLinksInner, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
+	}
+	return o.Links, true
+}
+
+// HasLinks returns a boolean if a field has been set.
+func (o *ProductSearchResponseCatalogInner) HasLinks() bool {
+	if o != nil && !IsNil(o.Links) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinks gets a reference to the given []ProductSearchResponseCatalogInnerLinksInner and assigns it to the Links field.
+func (o *ProductSearchResponseCatalogInner) SetLinks(v []ProductSearchResponseCatalogInnerLinksInner) {
+	o.Links = v
+}
+
 func (o ProductSearchResponseCatalogInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -738,9 +1035,6 @@ func (o ProductSearchResponseCatalogInner) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.HasWarranty) {
 		toSerialize["hasWarranty"] = o.HasWarranty
 	}
-	if !IsNil(o.Links) {
-		toSerialize["links"] = o.Links
-	}
 	if !IsNil(o.ExtraDescription) {
 		toSerialize["extraDescription"] = o.ExtraDescription
 	}
@@ -749,6 +1043,36 @@ func (o ProductSearchResponseCatalogInner) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.AuthorizedToPurchase) {
 		toSerialize["authorizedToPurchase"] = o.AuthorizedToPurchase
+	}
+	if !IsNil(o.IsMsrpVisible) {
+		toSerialize["isMsrpVisible"] = o.IsMsrpVisible
+	}
+	if !IsNil(o.IsPriceVisible) {
+		toSerialize["isPriceVisible"] = o.IsPriceVisible
+	}
+	if !IsNil(o.CustomerAuthorization) {
+		toSerialize["customerAuthorization"] = o.CustomerAuthorization
+	}
+	if !IsNil(o.SkuAvailableInFeed) {
+		toSerialize["skuAvailableInFeed"] = o.SkuAvailableInFeed
+	}
+	if !IsNil(o.Msrpvisibleorg) {
+		toSerialize["msrpvisibleorg"] = o.Msrpvisibleorg
+	}
+	if !IsNil(o.Pricevisibleorg) {
+		toSerialize["pricevisibleorg"] = o.Pricevisibleorg
+	}
+	if !IsNil(o.Intorderableorg) {
+		toSerialize["intorderableorg"] = o.Intorderableorg
+	}
+	if !IsNil(o.Nonintorderableorg) {
+		toSerialize["nonintorderableorg"] = o.Nonintorderableorg
+	}
+	if !IsNil(o.Webvisibleorg) {
+		toSerialize["webvisibleorg"] = o.Webvisibleorg
+	}
+	if !IsNil(o.Links) {
+		toSerialize["links"] = o.Links
 	}
 	return toSerialize, nil
 }

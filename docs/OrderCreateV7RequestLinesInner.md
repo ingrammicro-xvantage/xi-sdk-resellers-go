@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **Notes** | Pointer to **string** | The attribute field data. | [optional] 
 **ResourceId** | Pointer to **string** | The resource id of the subscription | [optional] 
 **Planid** | Pointer to **string** | ID of the subscription plan | [optional] 
-**SubscriptionPeriod** | Pointer to [**[]OrderCreateV7RequestLinesInnerSubscriptionPeriodInner**](OrderCreateV7RequestLinesInnerSubscriptionPeriodInner.md) | The object containing the list of options related to the subscription period. | [optional] 
-**BillingPeriod** | Pointer to [**[]OrderCreateV7RequestLinesInnerBillingPeriodInner**](OrderCreateV7RequestLinesInnerBillingPeriodInner.md) | The object containing the list of options related to the billing period. | [optional] 
+**SubscriptionPeriod** | Pointer to [**OrderCreateV7RequestLinesInnerSubscriptionPeriod**](OrderCreateV7RequestLinesInnerSubscriptionPeriod.md) |  | [optional] 
+**BillingPeriod** | Pointer to [**OrderCreateV7RequestLinesInnerBillingPeriod**](OrderCreateV7RequestLinesInnerBillingPeriod.md) |  | [optional] 
 **Margin** | Pointer to **float32** | Line-level margin requested by customer | [optional] 
 **EndCustomerPrice** | Pointer to **float32** | Line-level end-customer price requsted by customer | [optional] 
 **VriAdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestVmfVendorAdditionalAttributesInner**](OrderCreateV7RequestVmfVendorAdditionalAttributesInner.md) | The object containing the list of Vendor Mandatory Fields required by the vendor for the subscription products. | [optional] 
@@ -295,20 +295,20 @@ HasPlanid returns a boolean if a field has been set.
 
 ### GetSubscriptionPeriod
 
-`func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriod() []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner`
+`func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriod() OrderCreateV7RequestLinesInnerSubscriptionPeriod`
 
 GetSubscriptionPeriod returns the SubscriptionPeriod field if non-nil, zero value otherwise.
 
 ### GetSubscriptionPeriodOk
 
-`func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriodOk() (*[]OrderCreateV7RequestLinesInnerSubscriptionPeriodInner, bool)`
+`func (o *OrderCreateV7RequestLinesInner) GetSubscriptionPeriodOk() (*OrderCreateV7RequestLinesInnerSubscriptionPeriod, bool)`
 
 GetSubscriptionPeriodOk returns a tuple with the SubscriptionPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscriptionPeriod
 
-`func (o *OrderCreateV7RequestLinesInner) SetSubscriptionPeriod(v []OrderCreateV7RequestLinesInnerSubscriptionPeriodInner)`
+`func (o *OrderCreateV7RequestLinesInner) SetSubscriptionPeriod(v OrderCreateV7RequestLinesInnerSubscriptionPeriod)`
 
 SetSubscriptionPeriod sets SubscriptionPeriod field to given value.
 
@@ -320,20 +320,20 @@ HasSubscriptionPeriod returns a boolean if a field has been set.
 
 ### GetBillingPeriod
 
-`func (o *OrderCreateV7RequestLinesInner) GetBillingPeriod() []OrderCreateV7RequestLinesInnerBillingPeriodInner`
+`func (o *OrderCreateV7RequestLinesInner) GetBillingPeriod() OrderCreateV7RequestLinesInnerBillingPeriod`
 
 GetBillingPeriod returns the BillingPeriod field if non-nil, zero value otherwise.
 
 ### GetBillingPeriodOk
 
-`func (o *OrderCreateV7RequestLinesInner) GetBillingPeriodOk() (*[]OrderCreateV7RequestLinesInnerBillingPeriodInner, bool)`
+`func (o *OrderCreateV7RequestLinesInner) GetBillingPeriodOk() (*OrderCreateV7RequestLinesInnerBillingPeriod, bool)`
 
 GetBillingPeriodOk returns a tuple with the BillingPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillingPeriod
 
-`func (o *OrderCreateV7RequestLinesInner) SetBillingPeriod(v []OrderCreateV7RequestLinesInnerBillingPeriodInner)`
+`func (o *OrderCreateV7RequestLinesInner) SetBillingPeriod(v OrderCreateV7RequestLinesInnerBillingPeriod)`
 
 SetBillingPeriod sets BillingPeriod field to given value.
 

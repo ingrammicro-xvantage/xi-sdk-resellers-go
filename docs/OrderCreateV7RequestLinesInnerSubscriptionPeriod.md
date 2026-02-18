@@ -1,4 +1,4 @@
-# OrderCreateV7RequestLinesInnerSubscriptionPeriodInner
+# OrderCreateV7RequestLinesInnerSubscriptionPeriod
 
 ## Properties
 
@@ -12,145 +12,145 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInner
+### NewOrderCreateV7RequestLinesInnerSubscriptionPeriod
 
-`func NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInner() *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner`
+`func NewOrderCreateV7RequestLinesInnerSubscriptionPeriod() *OrderCreateV7RequestLinesInnerSubscriptionPeriod`
 
-NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInner instantiates a new OrderCreateV7RequestLinesInnerSubscriptionPeriodInner object
+NewOrderCreateV7RequestLinesInnerSubscriptionPeriod instantiates a new OrderCreateV7RequestLinesInnerSubscriptionPeriod object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInnerWithDefaults
+### NewOrderCreateV7RequestLinesInnerSubscriptionPeriodWithDefaults
 
-`func NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInnerWithDefaults() *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner`
+`func NewOrderCreateV7RequestLinesInnerSubscriptionPeriodWithDefaults() *OrderCreateV7RequestLinesInnerSubscriptionPeriod`
 
-NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInnerWithDefaults instantiates a new OrderCreateV7RequestLinesInnerSubscriptionPeriodInner object
+NewOrderCreateV7RequestLinesInnerSubscriptionPeriodWithDefaults instantiates a new OrderCreateV7RequestLinesInnerSubscriptionPeriod object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetType() string`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetTypeOk() (*string, bool)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetType(v string)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetType(v string)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasType() bool`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetDuration
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetDuration() int32`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetDuration() int32`
 
 GetDuration returns the Duration field if non-nil, zero value otherwise.
 
 ### GetDurationOk
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetDurationOk() (*int32, bool)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetDurationOk() (*int32, bool)`
 
 GetDurationOk returns a tuple with the Duration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuration
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetDuration(v int32)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetDuration(v int32)`
 
 SetDuration sets Duration field to given value.
 
 ### HasDuration
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasDuration() bool`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasDuration() bool`
 
 HasDuration returns a boolean if a field has been set.
 
 ### GetStartDate
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetStartDate() string`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetStartDate() string`
 
 GetStartDate returns the StartDate field if non-nil, zero value otherwise.
 
 ### GetStartDateOk
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetStartDateOk() (*string, bool)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetStartDateOk() (*string, bool)`
 
 GetStartDateOk returns a tuple with the StartDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartDate
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetStartDate(v string)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetStartDate(v string)`
 
 SetStartDate sets StartDate field to given value.
 
 ### HasStartDate
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasStartDate() bool`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasStartDate() bool`
 
 HasStartDate returns a boolean if a field has been set.
 
 ### GetEndDateAlignmentType
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetEndDateAlignmentType() string`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetEndDateAlignmentType() string`
 
 GetEndDateAlignmentType returns the EndDateAlignmentType field if non-nil, zero value otherwise.
 
 ### GetEndDateAlignmentTypeOk
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetEndDateAlignmentTypeOk() (*string, bool)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetEndDateAlignmentTypeOk() (*string, bool)`
 
 GetEndDateAlignmentTypeOk returns a tuple with the EndDateAlignmentType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndDateAlignmentType
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetEndDateAlignmentType(v string)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetEndDateAlignmentType(v string)`
 
 SetEndDateAlignmentType sets EndDateAlignmentType field to given value.
 
 ### HasEndDateAlignmentType
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasEndDateAlignmentType() bool`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasEndDateAlignmentType() bool`
 
 HasEndDateAlignmentType returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetSubscriptionId() string`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetSubscriptionId() string`
 
 GetSubscriptionId returns the SubscriptionId field if non-nil, zero value otherwise.
 
 ### GetSubscriptionIdOk
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetSubscriptionIdOk() (*string, bool)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetSubscriptionIdOk() (*string, bool)`
 
 GetSubscriptionIdOk returns a tuple with the SubscriptionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscriptionId
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetSubscriptionId(v string)`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetSubscriptionId(v string)`
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
 ### HasSubscriptionId
 
-`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasSubscriptionId() bool`
+`func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasSubscriptionId() bool`
 
 HasSubscriptionId returns a boolean if a field has been set.
 

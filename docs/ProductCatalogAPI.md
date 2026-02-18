@@ -200,7 +200,7 @@ func main() {
 	vendorPartNumber := []string{"Inner_example"} // []string | The vendors part number for the product. (optional)
 	acceptLanguage := "acceptLanguage_example" // string | Header to the API calls, the content will help us identify the response language. (optional) (default to "en")
 	vendorNumber := "vendorNumber_example" // string | Vendor number of the product (optional)
-	keyword := []string{"Inner_example"} // []string | Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name. (optional)
+	keyword := "keyword_example" // string | Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name. (optional)
 	category := "Accessories" // string | The category of the product. Example: Displays. (optional)
 	skipAuthorisation := "true" // string | This parameter is True when you want Skip the authorization, so template will work like current B2b template. (optional)
 	groupName := "Microsoft Defender for Endpoint P2 (NCE COM MTH)" // string | Name of the Product Group (optional)
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
  **vendorPartNumber** | **[]string** | The vendors part number for the product. | 
  **acceptLanguage** | **string** | Header to the API calls, the content will help us identify the response language. | [default to &quot;en&quot;]
  **vendorNumber** | **string** | Vendor number of the product | 
- **keyword** | **[]string** | Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name. | 
+ **keyword** | **string** | Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name. | 
  **category** | **string** | The category of the product. Example: Displays. | 
  **skipAuthorisation** | **string** | This parameter is True when you want Skip the authorization, so template will work like current B2b template. | 
  **groupName** | **string** | Name of the Product Group | 

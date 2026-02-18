@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderCreateV7RequestLinesInnerSubscriptionPeriodInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderCreateV7RequestLinesInnerSubscriptionPeriodInner{}
+// checks if the OrderCreateV7RequestLinesInnerSubscriptionPeriod type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderCreateV7RequestLinesInnerSubscriptionPeriod{}
 
-// OrderCreateV7RequestLinesInnerSubscriptionPeriodInner struct for OrderCreateV7RequestLinesInnerSubscriptionPeriodInner
-type OrderCreateV7RequestLinesInnerSubscriptionPeriodInner struct {
+// OrderCreateV7RequestLinesInnerSubscriptionPeriod The object containing the list of options related to the subscription period.
+type OrderCreateV7RequestLinesInnerSubscriptionPeriod struct {
 	// Unit period of the subscription. Example, Years, Months
 	Type *string `json:"type,omitempty"`
 	// Length of the subscription. Example 1, 3
@@ -31,25 +31,25 @@ type OrderCreateV7RequestLinesInnerSubscriptionPeriodInner struct {
 	SubscriptionId *string `json:"subscriptionId,omitempty"`
 }
 
-// NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInner instantiates a new OrderCreateV7RequestLinesInnerSubscriptionPeriodInner object
+// NewOrderCreateV7RequestLinesInnerSubscriptionPeriod instantiates a new OrderCreateV7RequestLinesInnerSubscriptionPeriod object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInner() *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner {
-	this := OrderCreateV7RequestLinesInnerSubscriptionPeriodInner{}
+func NewOrderCreateV7RequestLinesInnerSubscriptionPeriod() *OrderCreateV7RequestLinesInnerSubscriptionPeriod {
+	this := OrderCreateV7RequestLinesInnerSubscriptionPeriod{}
 	return &this
 }
 
-// NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInnerWithDefaults instantiates a new OrderCreateV7RequestLinesInnerSubscriptionPeriodInner object
+// NewOrderCreateV7RequestLinesInnerSubscriptionPeriodWithDefaults instantiates a new OrderCreateV7RequestLinesInnerSubscriptionPeriod object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOrderCreateV7RequestLinesInnerSubscriptionPeriodInnerWithDefaults() *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner {
-	this := OrderCreateV7RequestLinesInnerSubscriptionPeriodInner{}
+func NewOrderCreateV7RequestLinesInnerSubscriptionPeriodWithDefaults() *OrderCreateV7RequestLinesInnerSubscriptionPeriod {
+	this := OrderCreateV7RequestLinesInnerSubscriptionPeriod{}
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetType() string {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetType() string {
 	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
@@ -59,7 +59,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetType() string
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetTypeOk() (*string, bool) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -67,7 +67,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetTypeOk() (*st
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasType() bool {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -76,12 +76,12 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetType(v string) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetType(v string) {
 	o.Type = &v
 }
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetDuration() int32 {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetDuration() int32 {
 	if o == nil || IsNil(o.Duration) {
 		var ret int32
 		return ret
@@ -91,7 +91,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetDuration() in
 
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetDurationOk() (*int32, bool) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetDurationOk() (*int32, bool) {
 	if o == nil || IsNil(o.Duration) {
 		return nil, false
 	}
@@ -99,7 +99,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetDurationOk() 
 }
 
 // HasDuration returns a boolean if a field has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasDuration() bool {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasDuration() bool {
 	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
@@ -108,12 +108,12 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasDuration() bo
 }
 
 // SetDuration gets a reference to the given int32 and assigns it to the Duration field.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetDuration(v int32) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetDuration(v int32) {
 	o.Duration = &v
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetStartDate() string {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetStartDate() string {
 	if o == nil || IsNil(o.StartDate) {
 		var ret string
 		return ret
@@ -123,7 +123,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetStartDate() s
 
 // GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetStartDateOk() (*string, bool) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetStartDateOk() (*string, bool) {
 	if o == nil || IsNil(o.StartDate) {
 		return nil, false
 	}
@@ -131,7 +131,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetStartDateOk()
 }
 
 // HasStartDate returns a boolean if a field has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasStartDate() bool {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasStartDate() bool {
 	if o != nil && !IsNil(o.StartDate) {
 		return true
 	}
@@ -140,12 +140,12 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasStartDate() b
 }
 
 // SetStartDate gets a reference to the given string and assigns it to the StartDate field.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetStartDate(v string) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetStartDate(v string) {
 	o.StartDate = &v
 }
 
 // GetEndDateAlignmentType returns the EndDateAlignmentType field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetEndDateAlignmentType() string {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetEndDateAlignmentType() string {
 	if o == nil || IsNil(o.EndDateAlignmentType) {
 		var ret string
 		return ret
@@ -155,7 +155,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetEndDateAlignm
 
 // GetEndDateAlignmentTypeOk returns a tuple with the EndDateAlignmentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetEndDateAlignmentTypeOk() (*string, bool) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetEndDateAlignmentTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.EndDateAlignmentType) {
 		return nil, false
 	}
@@ -163,7 +163,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetEndDateAlignm
 }
 
 // HasEndDateAlignmentType returns a boolean if a field has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasEndDateAlignmentType() bool {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasEndDateAlignmentType() bool {
 	if o != nil && !IsNil(o.EndDateAlignmentType) {
 		return true
 	}
@@ -172,12 +172,12 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasEndDateAlignm
 }
 
 // SetEndDateAlignmentType gets a reference to the given string and assigns it to the EndDateAlignmentType field.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetEndDateAlignmentType(v string) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetEndDateAlignmentType(v string) {
 	o.EndDateAlignmentType = &v
 }
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetSubscriptionId() string {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetSubscriptionId() string {
 	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
@@ -187,7 +187,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetSubscriptionI
 
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetSubscriptionIdOk() (*string, bool) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) GetSubscriptionIdOk() (*string, bool) {
 	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
@@ -195,7 +195,7 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) GetSubscriptionI
 }
 
 // HasSubscriptionId returns a boolean if a field has been set.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasSubscriptionId() bool {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) HasSubscriptionId() bool {
 	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
@@ -204,11 +204,11 @@ func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) HasSubscriptionI
 }
 
 // SetSubscriptionId gets a reference to the given string and assigns it to the SubscriptionId field.
-func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) SetSubscriptionId(v string) {
+func (o *OrderCreateV7RequestLinesInnerSubscriptionPeriod) SetSubscriptionId(v string) {
 	o.SubscriptionId = &v
 }
 
-func (o OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) MarshalJSON() ([]byte, error) {
+func (o OrderCreateV7RequestLinesInnerSubscriptionPeriod) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -216,7 +216,7 @@ func (o OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) MarshalJSON() ([]
 	return json.Marshal(toSerialize)
 }
 
-func (o OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) ToMap() (map[string]interface{}, error) {
+func (o OrderCreateV7RequestLinesInnerSubscriptionPeriod) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -236,38 +236,38 @@ func (o OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) ToMap() (map[stri
 	return toSerialize, nil
 }
 
-type NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner struct {
-	value *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner
+type NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod struct {
+	value *OrderCreateV7RequestLinesInnerSubscriptionPeriod
 	isSet bool
 }
 
-func (v NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner) Get() *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner {
+func (v NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod) Get() *OrderCreateV7RequestLinesInnerSubscriptionPeriod {
 	return v.value
 }
 
-func (v *NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner) Set(val *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) {
+func (v *NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod) Set(val *OrderCreateV7RequestLinesInnerSubscriptionPeriod) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner) IsSet() bool {
+func (v NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner) Unset() {
+func (v *NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner(val *OrderCreateV7RequestLinesInnerSubscriptionPeriodInner) *NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner {
-	return &NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner{value: val, isSet: true}
+func NewNullableOrderCreateV7RequestLinesInnerSubscriptionPeriod(val *OrderCreateV7RequestLinesInnerSubscriptionPeriod) *NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod {
+	return &NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod{value: val, isSet: true}
 }
 
-func (v NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner) MarshalJSON() ([]byte, error) {
+func (v NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableOrderCreateV7RequestLinesInnerSubscriptionPeriodInner) UnmarshalJSON(src []byte) error {
+func (v *NullableOrderCreateV7RequestLinesInnerSubscriptionPeriod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -1,4 +1,4 @@
-# OrderCreateV7RequestLinesInnerBillingPeriodInner
+# OrderCreateV7RequestLinesInnerBillingPeriod
 
 ## Properties
 
@@ -9,70 +9,70 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewOrderCreateV7RequestLinesInnerBillingPeriodInner
+### NewOrderCreateV7RequestLinesInnerBillingPeriod
 
-`func NewOrderCreateV7RequestLinesInnerBillingPeriodInner() *OrderCreateV7RequestLinesInnerBillingPeriodInner`
+`func NewOrderCreateV7RequestLinesInnerBillingPeriod() *OrderCreateV7RequestLinesInnerBillingPeriod`
 
-NewOrderCreateV7RequestLinesInnerBillingPeriodInner instantiates a new OrderCreateV7RequestLinesInnerBillingPeriodInner object
+NewOrderCreateV7RequestLinesInnerBillingPeriod instantiates a new OrderCreateV7RequestLinesInnerBillingPeriod object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOrderCreateV7RequestLinesInnerBillingPeriodInnerWithDefaults
+### NewOrderCreateV7RequestLinesInnerBillingPeriodWithDefaults
 
-`func NewOrderCreateV7RequestLinesInnerBillingPeriodInnerWithDefaults() *OrderCreateV7RequestLinesInnerBillingPeriodInner`
+`func NewOrderCreateV7RequestLinesInnerBillingPeriodWithDefaults() *OrderCreateV7RequestLinesInnerBillingPeriod`
 
-NewOrderCreateV7RequestLinesInnerBillingPeriodInnerWithDefaults instantiates a new OrderCreateV7RequestLinesInnerBillingPeriodInner object
+NewOrderCreateV7RequestLinesInnerBillingPeriodWithDefaults instantiates a new OrderCreateV7RequestLinesInnerBillingPeriod object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *OrderCreateV7RequestLinesInnerBillingPeriodInner) GetType() string`
+`func (o *OrderCreateV7RequestLinesInnerBillingPeriod) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *OrderCreateV7RequestLinesInnerBillingPeriodInner) GetTypeOk() (*string, bool)`
+`func (o *OrderCreateV7RequestLinesInnerBillingPeriod) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *OrderCreateV7RequestLinesInnerBillingPeriodInner) SetType(v string)`
+`func (o *OrderCreateV7RequestLinesInnerBillingPeriod) SetType(v string)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *OrderCreateV7RequestLinesInnerBillingPeriodInner) HasType() bool`
+`func (o *OrderCreateV7RequestLinesInnerBillingPeriod) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetDuration
 
-`func (o *OrderCreateV7RequestLinesInnerBillingPeriodInner) GetDuration() int32`
+`func (o *OrderCreateV7RequestLinesInnerBillingPeriod) GetDuration() int32`
 
 GetDuration returns the Duration field if non-nil, zero value otherwise.
 
 ### GetDurationOk
 
-`func (o *OrderCreateV7RequestLinesInnerBillingPeriodInner) GetDurationOk() (*int32, bool)`
+`func (o *OrderCreateV7RequestLinesInnerBillingPeriod) GetDurationOk() (*int32, bool)`
 
 GetDurationOk returns a tuple with the Duration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuration
 
-`func (o *OrderCreateV7RequestLinesInnerBillingPeriodInner) SetDuration(v int32)`
+`func (o *OrderCreateV7RequestLinesInnerBillingPeriod) SetDuration(v int32)`
 
 SetDuration sets Duration field to given value.
 
 ### HasDuration
 
-`func (o *OrderCreateV7RequestLinesInnerBillingPeriodInner) HasDuration() bool`
+`func (o *OrderCreateV7RequestLinesInnerBillingPeriod) HasDuration() bool`
 
 HasDuration returns a boolean if a field has been set.
 
